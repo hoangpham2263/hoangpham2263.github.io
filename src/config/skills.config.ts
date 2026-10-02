@@ -5,7 +5,7 @@ export const skillsConfig = [
   },
   {
     category: "Frameworks",
-    technologies: ["WordPress", "WooCommerce", "React", "Next.js", "Node.js"],
+    technologies: ["WordPress", "WooCommerce", "React", "Next.js", "Node.js", "Django"],
   },
   {
     category: "Styling",
