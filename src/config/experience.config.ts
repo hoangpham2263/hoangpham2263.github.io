@@ -31,8 +31,8 @@ export const experiencesConfig: Experience[] = [
     start: "July 2026",
     end: "Present",
     description: [
-      "Create and review advanced mathematics problems with verified reference solutions for evaluating AI models",
-      "Build coding benchmark tasks with reproducible Docker environments, automated tests and reference solutions",
+      "Create and review advanced mathematics problems with verified reference solutions",
+      "Build coding benchmark tasks with reproducible Docker environments and automated tests",
     ],
   },
   {
@@ -50,10 +50,11 @@ export const experiencesConfig: Experience[] = [
     description: [
       "Developed and operated web and CRM systems, collaborating with third-party partners to automate management processes",
       "Built and customized WordPress themes and plugins for 30+ client websites based on their requirements",
-      "Deployment & configuration: developed and deployed products across multiple platforms to meet each partner's needs",
-      "Testing & delivery: ensured product stability, reliability, and performance before delivery",
-      "Optimized website performance, SEO, and Core Web Vitals",
-      "Troubleshooting: handled requests, analyzed root causes, and promptly resolved issues",
+      "Developed custom WordPress features using PHP, JavaScript and the WordPress REST API",
+      "Integrated third-party services and APIs to automate business workflows",
+      "Optimized website performance, SEO and Core Web Vitals for faster loading and better search rankings",
+      "Troubleshot, maintained and secured WordPress websites to keep them stable",
+      "Collaborated with designers, QA and project managers to deliver high-quality solutions",
     ],
   },
   {
