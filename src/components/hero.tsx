@@ -30,7 +30,7 @@ export default function Hero() {
       </h3>
       <p className="my-6 max-w-2xl text-foreground/80">
       Hey there 👋 I'm a Full-Stack Developer with a strong focus on WordPress. I design and build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup, and PageSpeed optimization — with 30+ websites delivered for businesses.
-      Currently a Software Engineer at HD TechLabs Solution (Jul 2026 — present), building evaluation systems for AI coding agents. Previously a Web Developer at Puramu.
+      Currently freelancing with HD TechLabs Solution (Jul 2026 — present), creating and reviewing advanced math problems and coding benchmark tasks for evaluating AI models. Previously a Web Developer at Puramu.
       I'm also the founder of <a href="https://hoanhoi.com" className="underline" target="_blank" rel="noopener noreferrer">Hoàn Hời</a>, a cashback platform built with Next.js. I also work with React, Next.js, Node.js, and Python.
         <span className="sr-only">bio</span>
       </p>

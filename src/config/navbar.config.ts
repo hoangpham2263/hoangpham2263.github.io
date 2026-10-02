@@ -10,11 +10,11 @@ export const navbarConfig: NavItem[] = [
     url: "/experience"
   },
   {
-    title: "TIL",
-    url: "/til"
+    title: "Services",
+    url: "/services"
   },
   {
-    title: "Blogs",
-    url: "/blogs",
+    title: "Contact",
+    url: "/contact",
   },
 ];

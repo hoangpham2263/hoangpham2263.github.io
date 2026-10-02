@@ -1,4 +1,4 @@
-import { blogs, projects, tils } from "#site/content";
+import { projects } from "#site/content";
 import { siteConfig } from "@/config/site.config";
 import { portfolioConfig } from "@/config/portfolio.config";
 
@@ -35,31 +35,7 @@ export function GET() {
     category: "Project",
   }));
 
-  const tilItems: FeedItem[] = tils.map((til) => ({
-    title: `TIL — ${new Date(til.date).toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    })}`,
-    link: `${origin}/til#${til.slugAsParams}`,
-    guid: `${origin}/til/${til.slugAsParams}`,
-    pubDate: toRfc822(til.date),
-    description: `Today I Learned entry from ${new Date(til.date).toDateString()}.`,
-    category: "TIL",
-  }));
-
-  const blogItems: FeedItem[] = blogs
-    .filter((blog) => blog.published)
-    .map((blog) => ({
-      title: blog.title,
-      link: `${origin}/blogs/${blog.slugAsParams}`,
-      guid: `${origin}/blogs/${blog.slugAsParams}`,
-      pubDate: toRfc822(blog.date),
-      description: blog.description,
-      category: "Blog",
-    }));
-
-  const items = [...projectItems, ...tilItems, ...blogItems]
+  const items = [...projectItems]
     .sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime())
     .slice(0, 50);
 
@@ -81,7 +57,7 @@ export function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(`${portfolioConfig.name} — Blog, Projects & TIL`)}</title>
+    <title>${escapeXml(`${portfolioConfig.name} — Projects`)}</title>
     <link>${origin}</link>
     <atom:link href="${origin}/rss.xml" rel="self" type="application/rss+xml" />
     <description>${escapeXml(siteConfig.description)}</description>

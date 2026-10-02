@@ -19,8 +19,8 @@ export const experiencesConfig: Experience[] = [
     ],
   },
   {
-    title: "Software Engineer",
-    employmentType: "Full time",
+    title: "Software Engineer (AI Evaluation)",
+    employmentType: "Freelance",
     company: {
       name: "HD TechLabs Solution",
       url: "",
@@ -31,13 +31,8 @@ export const experiencesConfig: Experience[] = [
     start: "July 2026",
     end: "Present",
     description: [
-      "Develop and maintain automated evaluation systems that measure the reliability, accuracy, and problem-solving capabilities of AI coding agents",
-      "Design realistic coding and system-administration evaluation tasks for AI agents",
-      "Develop automated test suites, behavioral verifiers, and reference solutions",
-      "Build reproducible Docker environments and CI validation pipelines",
-      "Analyze AI-generated solutions to identify failure patterns, regressions, and coverage gaps",
-      "Validate task packages for security, reproducibility, and platform compliance",
-      "Compare model performance across scenarios and document actionable findings",
+      "Freelance work creating and reviewing advanced mathematics problems used to evaluate AI models",
+      "Build coding benchmark tasks with reproducible Docker environments, automated tests and reference solutions",
     ],
   },
   {
