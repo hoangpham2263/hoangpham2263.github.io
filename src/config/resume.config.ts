@@ -1,51 +1,36 @@
+// Mirrors the PDF resume (Canva) so the web /cv page and the PDF read the same
 export const resumeConfig = {
-  name: "Phạm Quốc Hoàng (Will Pham)",
-  title: "Full-Stack Developer",
-  photo: "/resume/me.webp",
-  intro: [
-    "Hi! I'm Hoang, a Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — with 30+ websites delivered for businesses.",
-    "I also built and run Hoàn Hời, a cashback platform made with Next.js and live in production. Beyond WordPress, I work with React, Node.js and Python, and use Claude Code and Codex to ship faster.",
-  ],
+  name: "Pham Quoc Hoang",
+  title: "Full-Stack Developer · WordPress",
+  summary:
+    "Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — with 30+ websites delivered for businesses.",
   contacts: [
-    { icon: "address", label: "Address", value: "Ho Chi Minh City, Vietnam" },
-    { icon: "phone", label: "Phone", value: "0971 955 144", href: "tel:+84971955144" },
-    { icon: "mail", label: "Email", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
-    { icon: "github", label: "GitHub", value: "hoangpham2263", href: "https://github.com/hoangpham2263" },
-    { icon: "linkedin", label: "LinkedIn", value: "hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
+    { icon: "address", value: "Ho Chi Minh City, Vietnam" },
+    { icon: "phone", value: "0971 955 144", href: "tel:+84971955144" },
+    { icon: "mail", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
   ],
-  skills: [
-    { group: "Frontend", items: ["HTML5 & CSS3 (Tailwind)", "JavaScript", "React & Next.js", "WordPress Themes & Plugins", "WooCommerce"] },
-    { group: "Backend", items: ["PHP", "Node.js", "Python & Django", "MySQL, PostgreSQL & MongoDB", "REST API"] },
-    { group: "Other", items: ["Git", "Docker", "CI", "Technical SEO, PageSpeed & Core Web Vitals"] },
-    { group: "AI Tools", items: ["Claude Code", "Codex", "Gemini", "Prompt Engineering", "AI Agent Skills"] },
-  ],
-  education: [
-    { period: "2021 – 2025", degree: "Bachelor in Software Engineering", school: "Duy Tan University" },
+  links: [
+    { icon: "globe", label: "CV Online", value: "hoangpham2263.github.io/cv", href: "https://hoangpham2263.github.io/cv" },
+    { icon: "linkedin", label: "", value: "linkedin.com/in/hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
+    { icon: "globe", label: "Portfolio", value: "hoangpham2263.github.io", href: "https://hoangpham2263.github.io" },
+    { icon: "github", label: "Github", value: "github.com/hoangpham2263", href: "https://github.com/hoangpham2263" },
   ],
   work: [
     {
+      role: "Creator & Developer",
       company: "Hoàn Hời",
-      logo: "",
-      role: "Creator & Developer · Personal project",
-      start: "2026",
-      end: "Present",
-      duration: "",
-      location: "Ho Chi Minh City, Vietnam",
+      meta: "2026 – Present • Personal project | hoanhoi.com",
       description:
-        "A cashback platform where users create tracked shopping links and get money back once orders are reconciled. Live in production at hoanhoi.com.",
+        "A cashback platform where users create tracked shopping links and get money back once orders are reconciled. Live in production.",
       responsibilities: [
         "Build and run the product end-to-end with Next.js, from user features to the admin system.",
         "Handle deployment and operations in production.",
       ],
     },
     {
+      role: "Software Engineer (AI Evaluation)",
       company: "HD TechLabs Solution",
-      logo: "",
-      role: "Software Engineer (AI Evaluation) · Freelance",
-      start: "Jul 2026",
-      end: "Present",
-      duration: "",
-      location: "Remote",
+      meta: "Jul 2026 – Present • Freelance | Remote",
       description:
         "Freelance work creating and reviewing advanced mathematics problems and coding benchmark tasks used to evaluate AI models.",
       responsibilities: [
@@ -54,13 +39,9 @@ export const resumeConfig = {
       ],
     },
     {
-      company: "Puramu",
-      logo: "/resume/puramu.svg",
       role: "Web Developer",
-      start: "Feb 2025",
-      end: "Jun 2026",
-      duration: "1 year 4 months",
-      location: "Ho Chi Minh City, Vietnam",
+      company: "Puramu",
+      meta: "Feb 2025 – Jun 2026 • 1 yr 4 mos | Ho Chi Minh City, Vietnam",
       description:
         "Developed and operated web and CRM systems, collaborating with third-party partners to automate management processes.",
       responsibilities: [
@@ -73,13 +54,9 @@ export const resumeConfig = {
       ],
     },
     {
-      company: "Meta Technology",
-      logo: "",
       role: "Backend Intern",
-      start: "Apr 2024",
-      end: "Jul 2024",
-      duration: "3 months",
-      location: "Da Nang, Vietnam",
+      company: "Meta Technology",
+      meta: "Apr 2024 – Jul 2024 • 3 mos | Da Nang City, Vietnam",
       description: "Participated in developing API systems, focusing on backend logic and data processing performance.",
       responsibilities: [
         "Developed APIs using Next.js to connect the frontend and backend.",
@@ -89,13 +66,9 @@ export const resumeConfig = {
       ],
     },
     {
-      company: "LiftSoft",
-      logo: "/resume/liftsoft.webp",
       role: "Backend Developer",
-      start: "Mar 2022",
-      end: "Jun 2022",
-      duration: "3 months",
-      location: "Da Nang, Vietnam",
+      company: "LiftSoft",
+      meta: "Mar 2022 – Jun 2022 • 3 mos | Da Nang City, Vietnam",
       description: "Contributed to API development and unit testing to ensure stable system performance.",
       responsibilities: [
         "Developed APIs using Django.",
@@ -105,4 +78,17 @@ export const resumeConfig = {
       ],
     },
   ],
+  skills: [
+    { group: "Frontend", items: "HTML5, CSS3, Tailwind CSS, JavaScript, React, Next.js, Responsive Design" },
+    { group: "Backend", items: "PHP, Node.js, Python, Django, REST API, API Integration" },
+    { group: "WordPress", items: "Custom Themes, Plugin Development, WooCommerce, ACF, WP REST API, WP Hooks & Filters" },
+    { group: "Database", items: "MySQL, PostgreSQL, MongoDB" },
+    { group: "Performance & SEO", items: "Technical SEO, PageSpeed, Core Web Vitals, LiteSpeed Cache, Security Hardening" },
+    { group: "Tools", items: "Git, Docker, CI" },
+    { group: "AI Tools", items: "Claude Code, Codex, Gemini, Prompt Engineering, AI Agent Skills" },
+  ],
+  education: [
+    { school: "Duy Tan University", degree: "Bachelor in Software Engineering", period: "2021 – 2025" },
+  ],
+  languages: ["English"],
 };
