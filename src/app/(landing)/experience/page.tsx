@@ -3,11 +3,20 @@ import type { Experience as ExperienceType } from "@/types";
 
 export default function ExperiencePage() {
   return (
-    <div className="w-full max-w-5xl space-y-10 mt-10">
+    <div className="w-full max-w-5xl mt-10 relative border-l-2 border-muted-foreground/20 ml-1.5 pl-6 space-y-10">
       {experiencesConfig.map((exp, i) => (
-        <Experience key={i} experience={exp} />
+        <div key={i} className="relative">
+          <span
+            aria-hidden="true"
+            className={`absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2 ${
+              exp.end === "Present" ? "bg-primary border-primary" : "bg-background border-muted-foreground/50"
+            }`}
+          />
+          <Experience experience={exp} />
+        </div>
       ))}
-      <div>
+      <div className="relative">
+        <span aria-hidden="true" className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2 bg-background border-muted-foreground/50" />
         <div className="flex justify-between flex-wrap">
           <span className="font-semibold font-heading text-lg">Duy Tan University</span>
           <p className="text-muted-foreground text-xs">2021 - 2025</p>

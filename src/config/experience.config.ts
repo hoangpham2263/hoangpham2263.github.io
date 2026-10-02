@@ -26,7 +26,7 @@ export const experiencesConfig: Experience[] = [
       url: "",
     },
     location: {
-      name: "Da Nang, Vietnam",
+      name: "Remote",
     },
     start: "July 2026",
     end: "Present",
