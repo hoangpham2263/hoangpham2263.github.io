@@ -66,9 +66,34 @@ export default function ResumePage() {
         <ThemeToggler />
       </div>
 
-      <h1 className="text-center font-heading text-4xl md:text-5xl tracking-widest text-primary mb-10 print:hidden">
-        RESUME
-      </h1>
+      <div className="resume-page-label mb-16 print:hidden">
+        <span className="resume-page-label__line" />
+        <h1 className="resume-page-label__text">
+          Resume
+          <span className="resume-page-label__underline" aria-hidden="true">
+            <svg viewBox="0 0 320 28" preserveAspectRatio="none">
+              <path
+                className="resume-page-label__stroke resume-page-label__stroke--main"
+                d="M6 15C48 6 82 21 126 13S204 7 246 14s50 4 68-1"
+              />
+              <path
+                className="resume-page-label__stroke resume-page-label__stroke--accent"
+                d="M24 21c54-7 96 4 142-2s87-2 126-4"
+              />
+            </svg>
+            <svg className="resume-page-label__pen" viewBox="0 0 24 24" fill="none">
+              <path
+                d="m14.5 5.5 4 4M4 20l4.6-1 10.7-10.7a1.4 1.4 0 0 0 0-2l-1.6-1.6a1.4 1.4 0 0 0-2 0L5 15.4 4 20Z"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </h1>
+        <span className="resume-page-label__line" />
+      </div>
 
       <section className="flex flex-col md:flex-row gap-8 items-start">
         {/* eslint-disable-next-line @next/next/no-img-element */}
