@@ -148,7 +148,7 @@ export default function Home() {
               <FormItem className="w-full">
                 <FormControl>
                   <Input
-                    className="rounded-lg rounded-r-none current focus-visible:ring-0 bg-background backdrop-blur-md"
+                    className="h-auto py-2 leading-5 text-sm md:text-sm rounded-lg rounded-r-none border-0 border-t-[0.5px] border-l-[0.5px] shadow-none current focus-visible:ring-0 bg-background backdrop-blur-md"
                     placeholder="Search projects"
                     autoComplete="off"
                     {...field}
@@ -171,9 +171,9 @@ export default function Home() {
                     <FormControl>
                       <SelectTrigger
                         className={cn(
-                          "p-2 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
+                          "h-auto p-2 leading-5 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
                           "nav-item hover:bg-background rounded-none gap-1 focus:ring-0 focus-visible:ring-1",
-                          type === "Featured" && "rounded-r-lg"
+                          type === "Featured" && "rounded-r-lg border-r-[0.5px]"
                         )}
                       >
                         {field.value}
@@ -209,9 +209,9 @@ export default function Home() {
                       <FormControl>
                         <SelectTrigger
                           className={cn(
-                            "p-2 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
+                            "h-auto p-2 leading-5 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
                             "nav-item hover:bg-background rounded-none gap-1 focus:ring-0 focus-visible:ring-1",
-                            "rounded-r-lg"
+                            "rounded-r-lg border-r-[0.5px]"
                           )}
                         >
                           {field.value}
