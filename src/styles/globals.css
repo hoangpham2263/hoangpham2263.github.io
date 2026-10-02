@@ -217,6 +217,19 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+/* Subtle scrollbar that only shows when the content overflows */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: hsl(var(--muted-foreground) / 0.3);
+}
+
 
 ::-moz-selection {
   color: hsl(var(--background));

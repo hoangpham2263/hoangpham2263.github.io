@@ -9,7 +9,7 @@ export default function LandingPageLayout({
   return (
     <main className="relative w-full lg:h-screen lg:overflow-hidden p-0 sm:p-5">
       <div className="w-full h-full rounded-2xl sm:border flex flex-wrap lg:flex-nowrap justify-between lg:divide-x">
-        <div className="w-full lg:w-2/5 p-2 md:p-8 lg:h-full lg:min-h-0 lg:overflow-y-auto scrollbar-hide">
+        <div className="w-full lg:w-2/5 p-2 md:p-8 lg:h-full lg:min-h-0 lg:overflow-y-auto scrollbar-thin">
           <Hero />
         </div>
         <div
