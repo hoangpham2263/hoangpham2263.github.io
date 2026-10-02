@@ -11,16 +11,10 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import ProjectCard from "@/components/project/project-card";
-import { Star } from "lucide-react";
+import { ChevronDown, Star } from "lucide-react";
 import { projects } from "#site/content";
 
 const schema = z.object({
@@ -159,40 +153,19 @@ export default function Home() {
             )}
           />
           <div className="flex items-center">
+            {/* Native selects: reliable on mobile and no lingering focus ring */}
             <FormField
               control={form.control}
               name="type"
               render={({ field }) => (
                 <FormItem>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger
-                        className={cn(
-                          "h-10 px-3 min-w-16 lg:min-w-24 text-base md:text-sm cursor-pointer border-0 border-l rounded-none shadow-none bg-transparent hover:bg-muted transition-colors",
-                          "gap-1 focus:ring-0 focus-visible:ring-1",
-                          type === "Featured" && "rounded-r-lg"
-                        )}
-                      >
-                        {field.value}
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent
-                      ref={(ref) =>
-                        // temporary workaround from https://github.com/shadcn-ui/ui/issues/1220
-                        ref?.addEventListener(
-                          "touchend",
-                          (e) => e.preventDefault()
-                        )
-                      }
-                    >
-                      <SelectItem value="Featured">Featured</SelectItem>
-                      <SelectItem value="Github">Github</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
+                  <FormControl>
+                    <FilterSelect
+                      {...field}
+                      options={["Featured", "Github"]}
+                      className={cn(type === "Featured" && "rounded-r-lg")}
+                    />
+                  </FormControl>
                 </FormItem>
               )}
             />
@@ -202,37 +175,13 @@ export default function Home() {
                 name="sort"
                 render={({ field }) => (
                   <FormItem>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger
-                          className={cn(
-                            "h-10 px-3 min-w-16 lg:min-w-24 text-base md:text-sm cursor-pointer border-0 border-l rounded-none shadow-none bg-transparent hover:bg-muted transition-colors",
-                            "gap-1 focus:ring-0 focus-visible:ring-1",
-                            "rounded-r-lg"
-                          )}
-                        >
-                          {field.value}
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent
-                        ref={(ref) =>
-                          // temporary workaround from https://github.com/shadcn-ui/ui/issues/1220
-                          ref?.addEventListener(
-                            "touchend",
-                            (e) => e.preventDefault()
-                          )
-                        }
-                      >
-                        <SelectItem value="Last updated">
-                          Last updated
-                        </SelectItem>
-                        <SelectItem value="Stars">Stars</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
+                    <FormControl>
+                      <FilterSelect
+                        {...field}
+                        options={["Stars", "Last updated"]}
+                        className="rounded-r-lg"
+                      />
+                    </FormControl>
                   </FormItem>
                 )}
               />
@@ -269,3 +218,33 @@ const GithubRepo = React.memo(({ repo }: { repo: any }) => (
 ));
 
 GithubRepo.displayName = "GithubRepo";
+
+type FilterSelectProps = React.ComponentPropsWithoutRef<"select"> & {
+  options: string[];
+};
+
+const FilterSelect = React.forwardRef<HTMLSelectElement, FilterSelectProps>(
+  ({ options, className, ...props }, ref) => (
+    <div className="relative">
+      <select
+        ref={ref}
+        {...props}
+        className={cn(
+          "h-10 min-w-16 lg:min-w-24 appearance-none bg-transparent pl-3 pr-8 text-base md:text-sm border-0 border-l rounded-none cursor-pointer outline-none hover:bg-muted transition-colors",
+          className
+        )}
+      >
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+      <ChevronDown
+        size={16}
+        className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 opacity-50"
+      />
+    </div>
+  )
+);
+FilterSelect.displayName = "FilterSelect";
