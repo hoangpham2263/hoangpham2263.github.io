@@ -3,20 +3,14 @@ import type { Experience as ExperienceType } from "@/types";
 
 export default function ExperiencePage() {
   return (
-    <div className="w-full max-w-5xl mt-10 relative border-l-2 border-muted-foreground/20 ml-1.5 pl-6 space-y-10">
+    <div className="w-full max-w-5xl mt-6 divide-y divide-border">
       {experiencesConfig.map((exp, i) => (
-        <div key={i} className="relative">
-          <span
-            aria-hidden="true"
-            className={`absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2 ${
-              exp.end === "Present" ? "bg-primary border-primary" : "bg-background border-muted-foreground/50"
-            }`}
-          />
+        <div key={i} className="py-8 first:pt-4">
           <Experience experience={exp} />
         </div>
       ))}
-      <div className="relative">
-        <span aria-hidden="true" className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full border-2 bg-background border-muted-foreground/50" />
+      <div className="py-8">
+        <p className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Education</p>
         <div className="flex justify-between flex-wrap">
           <span className="font-semibold font-heading text-lg">Duy Tan University</span>
           <p className="text-muted-foreground text-xs">2021 - 2025</p>
@@ -50,6 +44,9 @@ const Experience = ({ experience }: { experience: ExperienceType }) => {
           <span className="text-xs px-2 py-1 bg-secondary rounded cursor-default">
             {experience.location.name}
           </span>
+          {experience.end === "Present" && (
+            <span className="text-xs px-2 py-1 rounded bg-primary text-primary-foreground cursor-default">Current</span>
+          )}
         </div>
         <p className="text-muted-foreground text-xs">
           {experience.start} - {experience.end}
