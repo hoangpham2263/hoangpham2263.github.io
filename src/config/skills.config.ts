@@ -1,11 +1,11 @@
 export const skillsConfig = [
   {
     category: "Languages",
-    technologies: ["PHP", "JavaScript", "HTML5", "CSS3"],
+    technologies: ["PHP", "JavaScript", "Python", "HTML5", "CSS3"],
   },
   {
     category: "Frameworks",
-    technologies: ["WordPress", "WooCommerce", "Next.js", "Node.js"],
+    technologies: ["WordPress", "WooCommerce", "React", "Next.js", "Node.js", "Django"],
   },
   {
     category: "Styling",
@@ -13,14 +13,18 @@ export const skillsConfig = [
   },
   {
     category: "WordPress",
-    technologies: ["Custom Themes", "Plugin Development", "WordPress REST API", "WP Hooks & Filters"],
+    technologies: ["Custom Themes", "Plugin Development", "ACF", "WordPress REST API", "WP Hooks & Filters"],
+  },
+  {
+    category: "Database",
+    technologies: ["MySQL", "PostgreSQL"],
   },
   {
     category: "Performance & SEO",
-    technologies: ["Technical SEO", "PageSpeed Optimization", "Core Web Vitals", "LiteSpeed Cache", "Security Hardening"],
+    technologies: ["Technical SEO", "PageSpeed", "Core Web Vitals", "Security", "Deployment"],
   },
   {
     category: "Tools",
-    technologies: ["Git", "API Integration"],
+    technologies: ["Git", "Docker", "CI", "REST API"],
   },
 ];

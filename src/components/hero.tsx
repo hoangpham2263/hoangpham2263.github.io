@@ -29,10 +29,9 @@ export default function Hero() {
         {portfolioConfig.tagline} <span className="sr-only">tagline</span>
       </h3>
       <p className="my-6 max-w-2xl text-foreground/80">
-      Hey there 👋 I'm a WordPress Developer who designs and builds websites from user interfaces to admin systems.
-      Currently at Puramu (Feb 2025 — present), developing custom themes and plugins, integrating third-party APIs, and optimizing SEO, PageSpeed, and Core Web Vitals.
-      I'm also the founder of <a href="https://hoanhoi.com" className="underline" target="_blank" rel="noopener noreferrer">Hoàn Hời</a>, a cashback platform built with Next.js and running in production.
-      Bachelor in Software Engineering from Duy Tan University.
+      Hey there 👋 I'm a Full-Stack Developer with a strong focus on WordPress. I design and build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup, and PageSpeed optimization — with 30+ websites delivered for businesses.
+      Currently a Software Engineer at HD TechLabs Solution (Jul 2026 — present), building evaluation systems for AI coding agents. Previously a Web Developer at Puramu.
+      I'm also the founder of <a href="https://hoanhoi.com" className="underline" target="_blank" rel="noopener noreferrer">Hoàn Hời</a>, a cashback platform built with Next.js. I also work with React, Next.js, Node.js, and Python.
         <span className="sr-only">bio</span>
       </p>
       <Socials />

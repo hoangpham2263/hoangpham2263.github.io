@@ -87,7 +87,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               />
               <span className="sr-only">Back to home</span>
             </Link>
-            <p className="px-2 py-1 text-xs rounded bg-secondary">{new Date(project.date).toDateString()}</p>
+            <p className="px-2 py-1 text-xs rounded bg-secondary">{new Date(project.date).getFullYear()}</p>
           </div>
           <Picture
             image={project.image}

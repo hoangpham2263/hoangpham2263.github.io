@@ -7,6 +7,13 @@ export default function ExperiencePage() {
       {experiencesConfig.map((exp, i) => (
         <Experience key={i} experience={exp} />
       ))}
+      <div>
+        <div className="flex justify-between flex-wrap">
+          <span className="font-semibold font-heading text-lg">Duy Tan University</span>
+          <p className="text-muted-foreground text-xs">2021 - 2025</p>
+        </div>
+        <p className="tracking-tight">Bachelor in Software Engineering</p>
+      </div>
     </div>
   );
 }
