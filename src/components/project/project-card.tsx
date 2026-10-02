@@ -28,7 +28,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <p className="text-sm text-secondary-foreground/80 font-light max-w-2xl">{project.description}</p>
         </Link>
         <div className="flex items-center gap-2 flex-wrap">
-          {project.tags.map((tag) => (
+          {/* Employer tag is shown on the detail page only */}
+          {project.tags.filter((tag) => tag !== "Puramu").map((tag) => (
             <p key={tag} className="px-2 py-1 rounded bg-muted text-muted-foreground text-xs cursor-pointer">
               {tag}
             </p>
