@@ -151,7 +151,7 @@ export default function ResumePage() {
 
       <section className="mt-10">
         <SectionTitle icon={<CheckCircle2 size={18} />}>Skills</SectionTitle>
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {resumeConfig.skills.map((s) => (
             <div key={s.group}>
               <h3 className="font-semibold mb-2">{s.group}</h3>
