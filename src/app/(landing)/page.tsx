@@ -72,8 +72,11 @@ export default function Home() {
   }, [fetchGithubRepos]);
 
   const sortedFeaturedProjects = useMemo(() => {
+    // Projects with a working live site come first, then newest first
     return [...projects].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      (a, b) =>
+        Number(b.links.length > 0) - Number(a.links.length > 0) ||
+        new Date(b.date).getTime() - new Date(a.date).getTime()
     );
   }, []);
 
