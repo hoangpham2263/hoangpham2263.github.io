@@ -40,7 +40,7 @@ export const experiencesConfig: Experience[] = [
     employmentType: "Full time",
     company: {
       name: "Puramu",
-      url: "",
+      url: "https://www.puramu.com/",
     },
     location: {
       name: "Ho Chi Minh City, Vietnam",
