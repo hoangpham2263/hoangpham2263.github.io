@@ -80,15 +80,27 @@ export default function ResumePage() {
                 className="resume-page-label__stroke resume-page-label__stroke--accent"
                 d="M24 21c54-7 96 4 142-2s87-2 126-4"
               />
-            </svg>
-            <svg className="resume-page-label__pen" viewBox="0 0 24 24" fill="none">
-              <path
-                d="m14.5 5.5 4 4M4 20l4.6-1 10.7-10.7a1.4 1.4 0 0 0 0-2l-1.6-1.6a1.4 1.4 0 0 0-2 0L5 15.4 4 20Z"
-                stroke="currentColor"
-                strokeWidth="1.7"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <g className="resume-page-label__pen">
+                <g transform="translate(-4 -16)">
+                  <path
+                    d="m14.5 5.5 4 4M4 20l4.6-1 10.7-10.7a1.4 1.4 0 0 0 0-2l-1.6-1.6a1.4 1.4 0 0 0-2 0L5 15.4 4 20Z"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </g>
+                <animateMotion
+                  path="M24 21c54-7 96 4 142-2s87-2 126-4"
+                  dur="1.2s"
+                  begin="0.25s"
+                  fill="freeze"
+                  keyPoints="0;0.94"
+                  keyTimes="0;1"
+                  calcMode="linear"
+                />
+              </g>
             </svg>
           </span>
         </h1>

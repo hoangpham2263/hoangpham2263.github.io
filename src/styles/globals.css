@@ -354,7 +354,7 @@ html::-webkit-scrollbar {
   margin: 0;
   color: hsl(var(--primary) / 0.5);
   font-family: var(--font-heading), var(--font-sans);
-  font-size: clamp(36px, 6vw, 72px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -367,9 +367,9 @@ html::-webkit-scrollbar {
 .resume-page-label__underline {
   position: absolute;
   right: 4%;
-  bottom: -22px;
+  bottom: -18px;
   left: 2%;
-  height: 24px;
+  height: 18px;
 }
 
 .resume-page-label__underline > svg:first-child {
@@ -399,31 +399,12 @@ html::-webkit-scrollbar {
 }
 
 .resume-page-label__pen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
   color: hsl(var(--primary));
-  offset-anchor: 20% 78%;
-  offset-path: path("M24 21c54-7 96 4 142-2s87-2 126-4");
-  offset-distance: 0%;
-  offset-rotate: auto -12deg;
-  animation: resumeLabelPen 1.2s ease-out 0.25s forwards;
 }
 
 @keyframes resumeLabelDraw {
   to {
     stroke-dashoffset: 0;
-  }
-}
-
-@keyframes resumeLabelPen {
-  0% {
-    offset-distance: 0%;
-  }
-  100% {
-    offset-distance: 94%;
   }
 }
 
