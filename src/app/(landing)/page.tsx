@@ -172,7 +172,7 @@ export default function Home() {
                       <SelectTrigger
                         className={cn(
                           "p-2 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
-                          "nav-item hover:bg-background rounded-none gap-1",
+                          "nav-item hover:bg-background rounded-none gap-1 focus:ring-0 focus-visible:ring-1",
                           type === "Featured" && "rounded-r-lg"
                         )}
                       >
@@ -210,7 +210,7 @@ export default function Home() {
                         <SelectTrigger
                           className={cn(
                             "p-2 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
-                            "nav-item hover:bg-background rounded-none gap-1",
+                            "nav-item hover:bg-background rounded-none gap-1 focus:ring-0 focus-visible:ring-1",
                             "rounded-r-lg"
                           )}
                         >
