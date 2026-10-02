@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </p>
           ))}
         </div>
-        <div className="mb-4">
+        <div className="pt-2 mb-4">
           <LinksSection links={project.links} />
         </div>
       </div>
