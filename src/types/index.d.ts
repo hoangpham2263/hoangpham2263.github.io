@@ -25,6 +25,7 @@ export type Portfolio = {
   name: string;
   tagline: string;
   resume: string;
+  schedule: string;
   links: Partial<Record<"github" | "linkedin" | "mail" | "phone" | "facebook" | "website" | "twitter" | "instagram", string>>;
 }
 
