@@ -8,6 +8,10 @@ type ProjectLink = {
   url: string;
 };
 
+// Visible label next to each link icon
+const linkLabel = (name: string) =>
+  name.toLowerCase() === "website" ? "Visit website" : name;
+
 const LinksSection = ({ links }: { links: ProjectLink[] }) => {
   const hasMoreLinks = links.length > 3;
   const remainingCount = links.length - 3;
@@ -37,7 +41,8 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
             key={i}
             href={link.url}
             target="_blank"
-            className="social-link"
+            rel="noopener noreferrer"
+            className="social-link w-auto px-3 gap-2 text-sm font-medium"
             initial={{ opacity: 1 }}
             variants={{
               collapsed: { opacity: 1 },
@@ -45,9 +50,7 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
             }}
           >
             {IconMap[link.name.toLowerCase() as keyof typeof IconMap]}
-            <span className="sr-only">
-              {`${link.name} - ${link.url}`}
-            </span>
+            <span>{linkLabel(link.name)}</span>
           </motion.a>
         ))}
 
@@ -103,7 +106,7 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
               key={i + 3}
               href={link.url}
               target="_blank"
-              className="social-link"
+              className="social-link w-auto px-3 gap-2 text-sm font-medium"
               variants={{
                 collapsed: { 
                   opacity: 0,
@@ -126,9 +129,7 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
               }}
             >
               {IconMap[link.name.toLowerCase() as keyof typeof IconMap]}
-              <span className="sr-only">
-                {`${link.name} - ${link.url}`}
-              </span>
+              <span>{linkLabel(link.name)}</span>
             </motion.a>
           ))}
         </AnimatePresence>

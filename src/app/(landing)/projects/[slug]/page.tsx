@@ -99,10 +99,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       />
       <header className="space-y-3">
         <h1 className="font-heading text-2xl font-bold leading-tight sm:text-3xl">{project.title}</h1>
-        <p className="text-sm text-secondary-foreground/80 font-light">{project.description}</p>
+        <p className="text-sm text-foreground/80 leading-6">{project.description}</p>
         <div className="flex flex-wrap items-center gap-2">
           {project.tags.map((tag) => (
-            <p key={tag} className="px-2 py-1 rounded bg-muted text-muted-foreground text-xs">
+            <p key={tag} className="px-2 py-1 rounded bg-muted text-foreground/75 text-xs">
               {tag}
             </p>
           ))}
