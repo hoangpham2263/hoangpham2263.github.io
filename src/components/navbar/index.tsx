@@ -30,7 +30,10 @@ type NavItemProps = {
 
 const NavItem = ({ children, url, className }: NavItemProps) => {
   const pathname = usePathname();
-  const active = pathname === url || (pathname.includes(url) && url !== "/");
+  const active =
+    pathname === url ||
+    (pathname.includes(url) && url !== "/") ||
+    (url === "/" && pathname.startsWith("/projects"));
 
   return (
     <Link href={url}>
