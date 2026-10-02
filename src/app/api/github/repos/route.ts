@@ -15,6 +15,8 @@ export async function GET() {
       type: "owner",
       direction: "desc",
       sort: "pushed",
+      // Unique header per build so the Next.js fetch cache never serves a stale repo list
+      headers: { "x-build-time": String(Date.now()) },
     });
 
     const filteredRepos = repos.data.filter(repo => !repo.fork && !repo.private);
