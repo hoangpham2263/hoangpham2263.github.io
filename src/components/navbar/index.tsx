@@ -8,15 +8,15 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <div className="sticky top-0 z-50 inline-flex items-center gap-1 rounded-lg border bg-muted p-1 text-sm">
-      {navbarConfig.map((item, index) => (
-        <NavItem
-          key={index}
-          url={item.url}
-                  >
-          {item.title}
-        </NavItem>
-      ))}
+    // Full-width backdrop so scrolled content does not show beside the sticky menu
+    <div className="sticky top-0 z-50 w-full bg-background">
+      <div className="inline-flex items-center gap-1 rounded-lg border bg-muted p-1 text-sm">
+        {navbarConfig.map((item, index) => (
+          <NavItem key={index} url={item.url}>
+            {item.title}
+          </NavItem>
+        ))}
+      </div>
     </div>
   );
 }
