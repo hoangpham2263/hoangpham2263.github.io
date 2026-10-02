@@ -2,8 +2,8 @@ import type { Experience } from "@/types";
 
 export const experiencesConfig: Experience[] = [
   {
-    title: "Founder & Developer",
-    employmentType: "Self-employed",
+    title: "Creator & Developer",
+    employmentType: "Personal project",
     company: {
       name: "Hoàn Hời",
       url: "https://hoanhoi.com",
@@ -14,8 +14,8 @@ export const experiencesConfig: Experience[] = [
     start: "2026",
     end: "Present",
     description: [
-      "Founded and operate Hoàn Hời, a cashback platform where users create tracked shopping links and get money back once orders are reconciled",
-      "Built the product end-to-end with Next.js and run it in production",
+      "Built and run Hoàn Hời, a cashback platform where users create tracked shopping links and get money back once orders are reconciled",
+      "Developed the product end-to-end with Next.js, from user features to the admin system, deployment and operations in production",
     ],
   },
   {

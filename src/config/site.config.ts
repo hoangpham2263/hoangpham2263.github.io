@@ -3,7 +3,7 @@ import { SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   name: "HoangPham",
   title: "HoangPham | Full-Stack Developer",
-  description: "Hey there! I'm Pham Quoc Hoang, a Full-Stack Developer focused on WordPress and founder of Hoàn Hời. I build SEO-friendly, fast WordPress and Next.js websites, from user interfaces to admin systems.",
+  description: "Hey there! I'm Pham Quoc Hoang, a Full-Stack Developer focused on WordPress, and the creator of Hoàn Hời. I build SEO-friendly, fast WordPress and Next.js websites, from user interfaces to admin systems.",
   origin: "https://hoangpham2263.github.io",
   keywords: [
     "Pham Quoc Hoang",
