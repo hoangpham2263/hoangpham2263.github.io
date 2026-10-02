@@ -140,7 +140,7 @@ export default function Home() {
   return (
     <section className="w-full space-y-6 mt-5">
       <Form {...form}>
-        <form className="w-full flex items-center nav-container sticky top-14 z-20">
+        <form className="w-full flex items-center sticky top-14 z-20 rounded-lg border bg-background shadow-sm">
           <FormField
             control={form.control}
             name="query"
@@ -148,7 +148,7 @@ export default function Home() {
               <FormItem className="w-full">
                 <FormControl>
                   <Input
-                    className="h-auto py-2 leading-5 text-sm md:text-sm rounded-lg rounded-r-none border-0 border-t-[0.5px] border-l-[0.5px] shadow-none current focus-visible:ring-0 bg-background backdrop-blur-md"
+                    className="h-10 text-sm md:text-sm rounded-lg rounded-r-none border-0 shadow-none focus-visible:ring-0 bg-transparent"
                     placeholder="Search projects"
                     autoComplete="off"
                     {...field}
@@ -171,9 +171,9 @@ export default function Home() {
                     <FormControl>
                       <SelectTrigger
                         className={cn(
-                          "h-auto p-2 leading-5 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
-                          "nav-item hover:bg-background rounded-none gap-1 focus:ring-0 focus-visible:ring-1",
-                          type === "Featured" && "rounded-r-lg border-r-[0.5px]"
+                          "h-10 px-3 min-w-16 lg:min-w-24 text-sm cursor-pointer border-0 border-l rounded-none shadow-none bg-transparent hover:bg-muted transition-colors",
+                          "gap-1 focus:ring-0 focus-visible:ring-1",
+                          type === "Featured" && "rounded-r-lg"
                         )}
                       >
                         {field.value}
@@ -209,9 +209,9 @@ export default function Home() {
                       <FormControl>
                         <SelectTrigger
                           className={cn(
-                            "h-auto p-2 leading-5 min-w-16 lg:min-w-24 text-center text-sm hover:bg-secondary cursor-pointer border-0 border-t-[0.5px] bg-background transition-all duration-100 ease-out",
-                            "nav-item hover:bg-background rounded-none gap-1 focus:ring-0 focus-visible:ring-1",
-                            "rounded-r-lg border-r-[0.5px]"
+                            "h-10 px-3 min-w-16 lg:min-w-24 text-sm cursor-pointer border-0 border-l rounded-none shadow-none bg-transparent hover:bg-muted transition-colors",
+                            "gap-1 focus:ring-0 focus-visible:ring-1",
+                            "rounded-r-lg"
                           )}
                         >
                           {field.value}
