@@ -15,7 +15,7 @@ export const resumeConfig = {
   ],
   skills: [
     { group: "Frontend", items: ["HTML5 & CSS3 (Tailwind)", "WordPress Theme & Plugin Development", "JavaScript", "Next.js & React"] },
-    { group: "Backend", items: ["Node.js", "Python", "MySQL, PostgreSQL "MySQL & PostgreSQL" MongoDB", "PHP", "REST API"] },
+    { group: "Backend", items: ["Node.js", "Python", "MySQL, PostgreSQL & MongoDB", "PHP", "REST API"] },
     { group: "Other", items: ["Git", "Docker", "Technical SEO & PageSpeed"] },
     { group: "AI Tools", items: ["Claude Code", "Codex", "Gemini", "Prompt Engineering", "AI Agent Skills"] },
   ],
