@@ -77,7 +77,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="w-full mt-6 space-y-6">
-      <div className="flex items-center justify-between">
+      <div>
         <Link
           href="/"
           className="group/back inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -88,7 +88,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           />
           All projects
         </Link>
-        <p className="px-2 py-1 text-xs rounded bg-secondary">{new Date(project.date).getFullYear()}</p>
       </div>
       <Picture
         image={project.image}

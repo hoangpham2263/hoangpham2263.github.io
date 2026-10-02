@@ -42,7 +42,7 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-8 items-center gap-2 whitespace-nowrap rounded border px-3 text-sm font-medium [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.97] hover:border-b-4 hover:border-primary/30 transition-all duration-100 ease-in-out"
+            className="inline-flex h-7 items-center gap-1.5 whitespace-nowrap rounded-md border px-2.5 text-xs font-medium [&_svg]:size-3.5 [&_svg]:shrink-0 active:scale-[0.97] hover:border-b-4 hover:border-primary/30 transition-all duration-100 ease-in-out"
             initial={{ opacity: 1 }}
             variants={{
               collapsed: { opacity: 1 },
@@ -106,7 +106,7 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
               key={i + 3}
               href={link.url}
               target="_blank"
-              className="inline-flex h-8 items-center gap-2 whitespace-nowrap rounded border px-3 text-sm font-medium [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.97] hover:border-b-4 hover:border-primary/30 transition-all duration-100 ease-in-out"
+              className="inline-flex h-7 items-center gap-1.5 whitespace-nowrap rounded-md border px-2.5 text-xs font-medium [&_svg]:size-3.5 [&_svg]:shrink-0 active:scale-[0.97] hover:border-b-4 hover:border-primary/30 transition-all duration-100 ease-in-out"
               variants={{
                 collapsed: { 
                   opacity: 0,
