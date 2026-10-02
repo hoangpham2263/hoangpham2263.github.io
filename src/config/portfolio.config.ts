@@ -8,7 +8,7 @@ export const portfolioConfig: Portfolio = {
   links: {
     github: "https://github.com/hoangpham2263",
     mail: "mailto:quochoang.idx@gmail.com",
-    linkedin: "https://www.linkedin.com/in/quochoangidx/",
+    linkedin: "https://www.linkedin.com/in/hoangpham2263/",
     phone: "tel:+84971955144",
   },
 }
