@@ -17,7 +17,7 @@ export const skillsConfig = [
   },
   {
     category: "Database",
-    technologies: ["MySQL", "PostgreSQL"],
+    technologies: ["MySQL", "PostgreSQL", "MongoDB"],
   },
   {
     category: "Performance & SEO",
