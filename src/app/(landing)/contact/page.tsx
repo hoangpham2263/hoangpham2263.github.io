@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site.config";
 
 export const metadata: Metadata = {
   title: `Contact | ${siteConfig.creator.name}`,
-  description: "Have a project in mind? Get in touch via Zalo, email or phone.",
+  description: "Get in touch with Pham Quoc Hoang via email, Zalo or LinkedIn.",
 };
 
 const contacts = [
@@ -21,8 +21,8 @@ export default function ContactPage() {
   return (
     <div className="w-full max-w-5xl mt-10">
       <p className="text-sm text-muted-foreground max-w-2xl">
-        Have a project in mind? I&apos;d love to hear about it. Message me on Zalo for the fastest reply, or send an
-        email with your project details and I&apos;ll get back to you as soon as possible.
+        Want to talk about WordPress, web performance, or one of my projects? Feel free to reach out — I&apos;m happy to
+        connect with fellow developers.
       </p>
       <div className="mt-8 grid sm:grid-cols-2 gap-3">
         {contacts.map((c) => {

@@ -4,7 +4,7 @@ export const resumeConfig = {
   photo: "/resume/me.webp",
   intro: [
     "Hi! I am Hoang, a Web Developer with a strong focus on WordPress. I build and customize WordPress websites, including themes, plugins, hosting setup, and styling with Tailwind CSS.",
-    "I also have experience working with React.js, Next.js, and Node.js for more advanced features. In addition, I use Python for data crawling and automation tasks when needed. I am currently available for new projects.",
+    "I also have experience working with React.js, Next.js, and Node.js for more advanced features. In addition, I use Python for data crawling and automation tasks when needed.",
   ],
   contacts: [
     { icon: "address", label: "Address", value: "Ho Chi Minh City, Vietnam" },

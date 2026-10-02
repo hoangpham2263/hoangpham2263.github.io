@@ -4,16 +4,16 @@ import { cn } from "@/lib/utils";
 import "@/styles/code.css";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import localFont from "next/font/local";
+import { Be_Vietnam_Pro, Geist } from "next/font/google";
 
 const fontSans = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-const fontHeading = localFont({
-  src: "../../public/fonts/CalSans-SemiBold.woff2",
+const fontHeading = Be_Vietnam_Pro({
+  subsets: ["latin", "vietnamese"],
+  weight: ["600", "700"],
   variable: "--font-heading",
 });
 
