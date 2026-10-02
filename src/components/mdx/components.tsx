@@ -127,7 +127,7 @@ export const mdxComponents = {
   }: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
       className={cn(
-        "border p-2 rounded-lg [&>*]:text-foreground/70 [&>*]:dark:text-muted-foreground text-sm flex gap-2",
+        "border p-2 rounded-lg [&>*]:text-foreground/85 [&>*]:dark:text-muted-foreground text-sm flex gap-2",
         className
       )}
       {...props}

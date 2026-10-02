@@ -22,12 +22,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <StepForward size={12} />
             </span>
           </div>
-          <p className="text-sm text-foreground/80 leading-6 max-w-2xl">{project.description}</p>
+          <p className="text-sm text-foreground/85 leading-6 max-w-2xl">{project.description}</p>
         </Link>
         <div className="flex items-center gap-2 flex-wrap">
           {/* Employer tag is shown on the detail page only */}
           {project.tags.filter((tag) => tag !== "Puramu").map((tag) => (
-            <p key={tag} className="px-2 py-1 rounded bg-muted text-foreground/75 text-xs">
+            <p key={tag} className="px-2 py-1 rounded bg-muted text-foreground/85 text-xs">
               {tag}
             </p>
           ))}

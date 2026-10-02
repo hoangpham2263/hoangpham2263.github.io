@@ -10,10 +10,10 @@ export default function ExperiencePage() {
         </div>
       ))}
       <div className="py-7">
-        <p className="text-xs font-medium uppercase tracking-wider text-foreground/60 mb-3">Education</p>
+        <p className="text-xs font-medium uppercase tracking-wider text-foreground/75 mb-3">Education</p>
         <div className="flex items-center justify-between flex-wrap gap-2">
           <span className="font-semibold font-heading text-lg">Duy Tan University</span>
-          <p className="text-sm text-foreground/70">2021 - 2025</p>
+          <p className="text-sm text-foreground/85">2021 - 2025</p>
         </div>
         <p className="mt-1 text-[15px] font-medium text-foreground/90">Bachelor in Software Engineering</p>
       </div>
@@ -48,12 +48,12 @@ const Experience = ({ experience }: { experience: ExperienceType }) => {
             <span className="text-xs font-medium px-2 py-0.5 rounded bg-primary text-primary-foreground cursor-default">Current</span>
           )}
         </div>
-        <p className="text-sm text-foreground/70">
+        <p className="text-sm text-foreground/85">
           {experience.start} - {experience.end}
         </p>
       </div>
       <p className="mt-1 text-[15px] font-medium text-foreground/90">{experience.title}</p>
-      <ul className="mt-3 list-disc pl-5 text-sm leading-6 text-foreground/80 space-y-1.5">
+      <ul className="mt-3 list-disc pl-5 text-sm leading-6 text-foreground/85 space-y-1.5">
         {experience.description.map((desc, i) => (
           <li key={i}>{desc}</li>
         ))}

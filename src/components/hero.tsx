@@ -28,14 +28,14 @@ export default function Hero() {
       <h3 className="mt-2 text-lg">
         {portfolioConfig.tagline} <span className="sr-only">tagline</span>
       </h3>
-      <p className="my-6 max-w-2xl text-foreground/80">
+      <p className="my-6 max-w-2xl text-foreground/85">
       Hey there 👋 I'm a Full-Stack Developer with a strong focus on WordPress. I design and build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup, and PageSpeed optimization — with 30+ websites delivered for businesses.
       Currently freelancing with HD TechLabs Solution (Jul 2026 — present), creating and reviewing advanced math problems and coding benchmark tasks for evaluating AI models. Previously a Web Developer at Puramu.
       I'm also the founder of <a href="https://hoanhoi.com" className="underline" target="_blank" rel="noopener noreferrer">Hoàn Hời</a>, a cashback platform built with Next.js. I also work with React, Next.js, Node.js, and Python, and use Claude Code and Codex with reusable project skills to ship faster.
         <span className="sr-only">bio</span>
       </p>
       <Socials />
-      <div className="hidden md:flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/70 my-7">
+      <div className="hidden md:flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/85 my-7">
         {skillsConfig.map((skill) => (
           <p key={skill.category}>
             <span className="font-semibold text-primary/90">{skill.category}:</span> {skill.technologies.join(", ")}

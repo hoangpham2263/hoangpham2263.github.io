@@ -119,7 +119,7 @@ export default function ResumePage() {
         <div className="flex-1">
           <h2 className="font-heading text-2xl md:text-3xl">{resumeConfig.name}</h2>
           <p className="mt-1 font-medium">{resumeConfig.title}</p>
-          <div className="mt-3 space-y-2 text-sm text-foreground/80 max-w-2xl">
+          <div className="mt-3 space-y-2 text-sm text-foreground/85 max-w-2xl">
             {resumeConfig.intro.map((p) => (
               <p key={p}>{p}</p>
             ))}
@@ -155,7 +155,7 @@ export default function ResumePage() {
           {resumeConfig.skills.map((s) => (
             <div key={s.group}>
               <h3 className="font-semibold mb-2">{s.group}</h3>
-              <ul className="space-y-1.5 text-sm text-foreground/80">
+              <ul className="space-y-1.5 text-sm text-foreground/85">
                 {s.items.map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <CheckCircle2 size={14} className="text-muted-foreground shrink-0" />
@@ -211,9 +211,9 @@ export default function ResumePage() {
                 {w.start} - {w.end} • {duration(w.start, w.end)} | {w.location}
               </p>
               <p className="text-sm font-semibold mt-3">Description:</p>
-              <p className="text-sm text-foreground/80 mt-1">{w.description}</p>
+              <p className="text-sm text-foreground/85 mt-1">{w.description}</p>
               <p className="text-sm font-semibold mt-3">Responsibilities:</p>
-              <ul className="list-disc pl-5 text-sm text-foreground/80 mt-1 space-y-1">
+              <ul className="list-disc pl-5 text-sm text-foreground/85 mt-1 space-y-1">
                 {w.responsibilities.map((r) => (
                   <li key={r}>{r}</li>
                 ))}
