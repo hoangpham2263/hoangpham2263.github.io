@@ -7,7 +7,8 @@ export const runtime = 'nodejs';
 
 export async function GET() {
   try {
-    const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+    // Public data only: the Actions GITHUB_TOKEN is scoped to this repo and hides the others
+    const octokit = new Octokit({ auth: process.env.GH_PUBLIC_TOKEN });
     const repos = await octokit.rest.repos.listForUser({
       username: "hoangpham2263",
       per_page: 100,
@@ -16,7 +17,7 @@ export async function GET() {
       sort: "pushed",
     });
 
-    const filteredRepos = repos.data.filter(repo => !repo.fork);
+    const filteredRepos = repos.data.filter(repo => !repo.fork && !repo.private);
     
     return NextResponse.json(filteredRepos);
   } catch (error) {
