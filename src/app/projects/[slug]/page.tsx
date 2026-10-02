@@ -76,43 +76,44 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className="relative w-full lg:h-screen lg:overflow-hidden p-0 sm:p-5">
-      <div className="w-full h-full rounded-2xl sm:border flex flex-wrap lg:flex-nowrap justify-between lg:divide-x">
-        <div className="relative w-full lg:w-2/5 lg:h-full lg:min-h-0 p-2 md:p-8 pb-16 lg:pb-20 lg:overflow-y-auto scroll-smooth">
-          <div className="flex justify-between mb-2 sticky top-0 z-10 bg-transparent">
-            <Link href="/" className="group/back text-xs">
-              <ArrowLeft
-                size={18}
-                className="group-hover/back:-translate-x-1 transition-transform transform-gpu duration-100 ease-in-out"
-              />
-              <span className="sr-only">Back to home</span>
-            </Link>
-            <p className="px-2 py-1 text-xs rounded bg-secondary">{new Date(project.date).getFullYear()}</p>
-          </div>
-          <Picture
-            image={project.image}
-            width={600}
-            height={400}
-            alt={project.title}
-            className="border rounded-xl mx-auto"
-          />
-          <h1 className="head-text-sm py-1 mt-6 mb-4">{project.title}</h1>
-          <div className="mb-8">
+    <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:py-10">
+      <div className="rounded-2xl sm:border p-0 sm:p-6 lg:p-8">
+        <div className="flex items-center justify-between mb-5">
+          <Link href="/" className="group/back text-xs">
+            <ArrowLeft
+              size={18}
+              className="group-hover/back:-translate-x-1 transition-transform transform-gpu duration-100 ease-in-out"
+            />
+            <span className="sr-only">Back to home</span>
+          </Link>
+          <p className="px-2 py-1 text-xs rounded bg-secondary">{new Date(project.date).getFullYear()}</p>
+        </div>
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-12">
+          <aside className="lg:sticky lg:top-8">
+            <Picture
+              image={project.image}
+              width={600}
+              height={400}
+              alt={project.title}
+              className="border rounded-xl mx-auto"
+            />
+            <h1 className="mt-6 mb-3 font-heading text-2xl font-bold leading-tight sm:text-3xl">{project.title}</h1>
+            <p className="mb-4 text-sm leading-6 text-muted-foreground">{project.description}</p>
             <div className="mb-4">
               <LinksSection links={project.links} />
             </div>
             <div className="flex flex-wrap items-center gap-2">
               {project.tags.map((tag) => (
-                <p key={tag} className="text-xs p-1 rounded bg-secondary cursor-pointer">
+                <p key={tag} className="text-xs px-2 py-1 rounded bg-secondary">
                   {tag}
                 </p>
               ))}
             </div>
-          </div>
-          <p className="rounded mb-4">{project.description}</p>
-        </div>
-        <div id="tab-section" className="relative w-full lg:h-full lg:min-h-0 lg:w-3/5 p-2 md:p-8 pb-16 lg:pb-20 lg:overflow-y-auto scroll-smooth">
-          <MDXContentRenderer code={project.body} />
+          </aside>
+          {/* Compact typography for short project write-ups */}
+          <article className="text-[15px] leading-7 [&_h2]:mt-8 [&_h2]:mb-2 [&_h2]:pb-0 [&_h2]:text-xl [&_h2:first-child]:mt-0 [&_h3]:mt-6 [&_h3]:text-lg [&_p:not(:first-child)]:mt-3 [&_ul]:my-2 [&_ol]:my-2">
+            <MDXContentRenderer code={project.body} />
+          </article>
         </div>
       </div>
     </main>
