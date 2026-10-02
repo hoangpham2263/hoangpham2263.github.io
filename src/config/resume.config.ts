@@ -17,7 +17,7 @@ export const resumeConfig = {
     { group: "Frontend", items: ["HTML5 & CSS3 (Tailwind)", "WordPress Theme & Plugin Development", "JavaScript", "Next.js & React"] },
     { group: "Backend", items: ["Node.js", "Python", "MySQL & PostgreSQL", "PHP", "REST API"] },
     { group: "Other", items: ["Git", "Docker", "Technical SEO & PageSpeed"] },
-    { group: "AI Tools", items: ["Claude Code & Codex", "ChatGPT", "Prompt Engineering", "AI Agent Skills"] },
+    { group: "AI Tools", items: ["Claude Code", "Codex", "Prompt Engineering", "AI Agent Skills"] },
   ],
   education: [
     { period: "2021 – 2025", degree: "Bachelor in Software Engineering", school: "Duy Tan University" },

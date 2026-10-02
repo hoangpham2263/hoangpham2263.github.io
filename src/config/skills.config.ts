@@ -29,6 +29,6 @@ export const skillsConfig = [
   },
   {
     category: "AI Tools",
-    technologies: ["Claude Code", "Codex", "ChatGPT", "Prompt Engineering", "AI Agent Skills"],
+    technologies: ["Claude Code", "Codex", "Prompt Engineering", "AI Agent Skills"],
   },
 ];
