@@ -3,8 +3,8 @@ export const resumeConfig = {
   title: "Full-Stack Developer",
   photo: "/resume/me.webp",
   intro: [
-    "Hi! I am Hoang, a Web Developer with a strong focus on WordPress. I build and customize WordPress websites, including themes, plugins, hosting setup, and styling with Tailwind CSS.",
-    "I also have experience working with React.js, Next.js, and Node.js for more advanced features. In addition, I use Python for data crawling and automation tasks when needed.",
+    "Hi! I'm Hoang, a Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — with 30+ websites delivered for businesses.",
+    "I also built and run Hoàn Hời, a cashback platform made with Next.js and live in production. Beyond WordPress, I work with React, Node.js and Python, and use Claude Code and Codex to ship faster.",
   ],
   contacts: [
     { icon: "address", label: "Address", value: "Ho Chi Minh City, Vietnam" },
@@ -14,9 +14,9 @@ export const resumeConfig = {
     { icon: "linkedin", label: "LinkedIn", value: "hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
   ],
   skills: [
-    { group: "Frontend", items: ["HTML5 & CSS3 (Tailwind)", "WordPress Theme & Plugin Development", "JavaScript", "Next.js & React"] },
-    { group: "Backend", items: ["Node.js", "Python", "MySQL, PostgreSQL & MongoDB", "PHP", "REST API"] },
-    { group: "Other", items: ["Git", "Docker", "Technical SEO & PageSpeed"] },
+    { group: "Frontend", items: ["HTML5 & CSS3 (Tailwind)", "JavaScript", "React & Next.js", "WordPress Themes & Plugins", "WooCommerce"] },
+    { group: "Backend", items: ["PHP", "Node.js", "Python & Django", "MySQL, PostgreSQL & MongoDB", "REST API"] },
+    { group: "Other", items: ["Git", "Docker", "CI", "Technical SEO, PageSpeed & Core Web Vitals"] },
     { group: "AI Tools", items: ["Claude Code", "Codex", "Gemini", "Prompt Engineering", "AI Agent Skills"] },
   ],
   education: [
@@ -24,17 +24,32 @@ export const resumeConfig = {
   ],
   work: [
     {
+      company: "Hoàn Hời",
+      logo: "",
+      role: "Creator & Developer · Personal project",
+      start: "2026",
+      end: "Present",
+      duration: "",
+      location: "Ho Chi Minh City, Vietnam",
+      description:
+        "A cashback platform where users create tracked shopping links and get money back once orders are reconciled. Live in production at hoanhoi.com.",
+      responsibilities: [
+        "Build and run the product end-to-end with Next.js, from user features to the admin system.",
+        "Handle deployment and operations in production.",
+      ],
+    },
+    {
       company: "HD TechLabs Solution",
       logo: "",
       role: "Software Engineer (AI Evaluation) · Freelance",
       start: "Jul 2026",
       end: "Present",
       duration: "",
-      location: "Remote · Da Nang, Vietnam",
+      location: "Remote",
       description:
         "Freelance work creating and reviewing advanced mathematics problems and coding benchmark tasks used to evaluate AI models.",
       responsibilities: [
-        "Create and review advanced mathematics problems with verified reference solutions.",
+        "Create and review advanced mathematics problems with verified reference solutions for evaluating AI models.",
         "Build coding benchmark tasks with reproducible Docker environments, automated tests and reference solutions.",
       ],
     },
@@ -47,11 +62,13 @@ export const resumeConfig = {
       duration: "1 year 4 months",
       location: "Ho Chi Minh City, Vietnam",
       description:
-        "Develop and operate web and CRM systems, collaborate with third-party partners to automate management processes, and provide flexible, scalable customization solutions to meet specific customer requirements.",
+        "Developed and operated web and CRM systems, collaborating with third-party partners to automate management processes.",
       responsibilities: [
-        "Deployment & Configuration: Develop and deploy products across multiple platforms to meet the specific needs of each partner.",
-        "Testing & Delivery: Participate in quality assurance to ensure product stability, reliability, and optimal performance before delivery.",
-        "Troubleshooting: Handle requests, analyze root causes, and promptly resolve issues to maintain system stability and performance.",
+        "Built and customized WordPress themes and plugins for 30+ client websites based on their requirements.",
+        "Optimized website performance, SEO and Core Web Vitals.",
+        "Deployment & configuration: developed and deployed products across multiple platforms to meet each partner's needs.",
+        "Testing & delivery: ensured product stability, reliability and performance before delivery.",
+        "Troubleshooting: handled requests, analyzed root causes and promptly resolved issues.",
       ],
     },
     {
@@ -64,11 +81,10 @@ export const resumeConfig = {
       location: "Da Nang, Vietnam",
       description: "Participated in developing API systems, focusing on backend logic and data processing performance.",
       responsibilities: [
-        "Develop APIs using Next.js to connect the frontend and backend",
-        "Build and maintain data flow between frontend and backend",
-        "Improve API performance for faster response",
-        "Find and fix issues in the system",
-        "Work with team members to make sure everything runs smoothly",
+        "Developed APIs using Next.js to connect the frontend and backend.",
+        "Built and maintained data flow between frontend and backend.",
+        "Improved API performance for faster response.",
+        "Found and fixed issues in the system.",
       ],
     },
     {
@@ -81,12 +97,10 @@ export const resumeConfig = {
       location: "Da Nang, Vietnam",
       description: "Contributed to API development and unit testing to ensure stable system performance.",
       responsibilities: [
-        "Develop APIs using Django",
-        "Write unit tests to check functionality",
-        "Work with databases to store and retrieve data",
-        "Fix bugs and support system maintenance",
-        "Assist in building backend features",
-        "Work with team members to complete tasks",
+        "Developed APIs using Django.",
+        "Wrote unit tests to check functionality.",
+        "Worked with databases to store and retrieve data.",
+        "Fixed bugs and supported system maintenance.",
       ],
     },
   ],

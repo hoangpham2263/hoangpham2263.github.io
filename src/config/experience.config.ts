@@ -14,8 +14,8 @@ export const experiencesConfig: Experience[] = [
     start: "2026",
     end: "Present",
     description: [
-      "Built and run Hoàn Hời, a cashback platform where users create tracked shopping links and get money back once orders are reconciled",
-      "Developed the product end-to-end with Next.js, from user features to the admin system, deployment and operations in production",
+      "Build and run Hoàn Hời, a cashback platform where users create tracked shopping links and get money back once orders are reconciled",
+      "Develop the product end-to-end with Next.js, from user features to the admin system, deployment and operations in production",
     ],
   },
   {
@@ -31,7 +31,7 @@ export const experiencesConfig: Experience[] = [
     start: "July 2026",
     end: "Present",
     description: [
-      "Freelance work creating and reviewing advanced mathematics problems used to evaluate AI models",
+      "Create and review advanced mathematics problems with verified reference solutions for evaluating AI models",
       "Build coding benchmark tasks with reproducible Docker environments, automated tests and reference solutions",
     ],
   },
@@ -49,7 +49,7 @@ export const experiencesConfig: Experience[] = [
     end: "June 2026",
     description: [
       "Developed and operated web and CRM systems, collaborating with third-party partners to automate management processes",
-      "Developed and customized WordPress themes and plugins based on client requirements",
+      "Built and customized WordPress themes and plugins for 30+ client websites based on their requirements",
       "Deployment & configuration: developed and deployed products across multiple platforms to meet each partner's needs",
       "Testing & delivery: ensured product stability, reliability, and performance before delivery",
       "Optimized website performance, SEO, and Core Web Vitals",
