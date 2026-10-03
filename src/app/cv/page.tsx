@@ -132,9 +132,9 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Experience">
-          <div className="space-y-5">
+          <div className="divide-y divide-border">
             {resumeConfig.work.map((w) => (
-              <article key={w.company} className="break-inside-avoid text-sm">
+              <article key={w.company} className="break-inside-avoid text-sm py-4 first:pt-0 last:pb-0">
                 <h3 className="font-bold uppercase">
                   {w.role} • {w.company}
                 </h3>
