@@ -20,11 +20,14 @@ export const resumeConfig = {
       role: "Creator & Developer",
       company: "Hoàn Hời",
       meta: "2026 – Present • Personal project | hoanhoi.com",
-      description:
-        "A cashback platform where users create tracked shopping links and get money back once orders are reconciled. Live in production.",
+      description: "",
+      // Short context line shown in italics instead of the Description/Key Responsibilities labels
+      summary: "A cashback platform for online shopping, live in production.",
       responsibilities: [
-        "Build and run the product end-to-end with Next.js, from user features to the admin system.",
-        "Handle deployment and operations in production.",
+        "Built the full product with Next.js, PostgreSQL and Redis: user app and admin system.",
+        "Integrated Shopee, Lazada and ACCESSTRADE to sync and reconcile affiliate orders.",
+        "Designed the wallet and ledger flow for cashback, withdrawals and reversals.",
+        "Set up CI/CD with GitHub Actions and deploy to a VPS with automatic database backups.",
       ],
     },
     {
