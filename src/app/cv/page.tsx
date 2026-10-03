@@ -26,7 +26,7 @@ const icons = {
 // Section heading with a full-width rule, same as the PDF resume
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mt-6 break-inside-avoid-page">
-    <h2 className="font-heading text-base font-bold uppercase tracking-wide border-b border-foreground pb-1 mb-3">
+    <h2 className="text-sm font-bold uppercase tracking-wide border-b border-foreground/40 pb-1 mb-2.5">
       {title}
     </h2>
     {children}
@@ -166,20 +166,22 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Education">
-          {resumeConfig.education.map((e) => (
-            <div key={e.school} className="text-sm">
-              <p className="font-semibold">{e.school}</p>
-              <ul className="mt-1 list-disc pl-5 text-foreground/85">
-                <li>
-                  {e.degree} • {e.period}
-                </li>
-              </ul>
-            </div>
-          ))}
+          <ul className="list-disc pl-5 text-sm">
+            {resumeConfig.education.map((e) => (
+              <li key={e.school}>
+                <span className="font-semibold">{e.school}</span>
+                <span className="text-foreground/85">: {e.degree} • {e.period}</span>
+              </li>
+            ))}
+          </ul>
         </Section>
 
         <Section title="Language">
-          <p className="text-sm text-foreground/85">{resumeConfig.languages.join(", ")}</p>
+          <ul className="list-disc pl-5 text-sm text-foreground/85">
+            {resumeConfig.languages.map((l) => (
+              <li key={l}>{l}</li>
+            ))}
+          </ul>
         </Section>
       </div>
     </main>
