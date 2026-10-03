@@ -29,7 +29,7 @@ export default function Hero() {
         {portfolioConfig.tagline} <span className="sr-only">tagline</span>
       </h3>
       <p className="my-5 max-w-2xl text-foreground/85">
-      Hey there 👋 I'm a Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — with 30+ websites delivered for businesses.
+      Hey there 👋 I'm a Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — for businesses in e-commerce, education, real estate and services.
       Currently freelancing with HD TechLabs Solution, creating and reviewing advanced math problems and coding benchmark tasks for evaluating AI models. Previously a Web Developer at Puramu.
       I also built and run <a href="https://hoanhoi.com" className="underline" target="_blank" rel="noopener noreferrer">Hoàn Hời</a>, a cashback platform made with Next.js and live in production. Beyond WordPress, I work with React, Node.js and Python, and use Claude Code and Codex with reusable project skills to ship faster.
         <span className="sr-only">bio</span>

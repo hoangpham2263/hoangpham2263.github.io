@@ -3,7 +3,7 @@ export const resumeConfig = {
   name: "Pham Quoc Hoang",
   title: "Full-Stack Developer · WordPress",
   summary:
-    "Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — with 30+ websites delivered for businesses.",
+    "Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — for businesses in e-commerce, education, real estate and services.",
   contacts: [
     { icon: "address", value: "Ho Chi Minh City, Vietnam" },
     { icon: "phone", value: "0971 955 144", href: "tel:+84971955144" },
@@ -45,7 +45,7 @@ export const resumeConfig = {
       description:
         "Developed and operated web and CRM systems, collaborating with third-party partners to automate management processes.",
       responsibilities: [
-        "Built and customized WordPress themes and plugins for 30+ client websites based on their requirements.",
+        "Built and customized WordPress themes and plugins for client websites based on their requirements.",
         "Developed custom WordPress features using PHP, JavaScript and the WordPress REST API.",
         "Integrated third-party services and APIs to automate business workflows.",
         "Optimized website performance, SEO and Core Web Vitals for faster loading and better search rankings.",

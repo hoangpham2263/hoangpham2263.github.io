@@ -49,7 +49,7 @@ export const experiencesConfig: Experience[] = [
     end: "June 2026",
     description: [
       "Developed and operated web and CRM systems, collaborating with third-party partners to automate management processes",
-      "Built and customized WordPress themes and plugins for 30+ client websites based on their requirements",
+      "Built and customized WordPress themes and plugins for client websites based on their requirements",
       "Developed custom WordPress features using PHP, JavaScript and the WordPress REST API",
       "Integrated third-party services and APIs to automate business workflows",
       "Optimized website performance, SEO and Core Web Vitals for faster loading and better search rankings",
