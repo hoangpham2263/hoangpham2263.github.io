@@ -37,7 +37,7 @@ export default function ResumePage() {
   return (
     <div className="w-full lg:h-screen lg:overflow-y-auto print:h-auto print:overflow-visible">
     <main className="w-full max-w-5xl mx-auto px-4 py-8 md:py-12 print:py-0">
-      <div className="flex justify-between items-center mb-4 md:mb-8 print:hidden">
+      <div className="flex justify-between items-center mb-4 print:hidden">
         <Link href="/" className="group/back flex items-center gap-1 text-sm">
           <ArrowLeft size={16} className="group-hover/back:-translate-x-1 transition-transform" />
           Home
@@ -45,7 +45,7 @@ export default function ResumePage() {
         <ThemeToggler />
       </div>
 
-      <div className="resume-page-label mb-8 md:mb-16 print:hidden">
+      <div className="resume-page-label mb-8 print:hidden">
         <span className="resume-page-label__line" />
         <h1 className="resume-page-label__text">
           Resume
