@@ -139,18 +139,7 @@ export default function ResumePage() {
                   {w.role} • {w.company}
                 </h3>
                 <p className="mt-0.5 text-foreground/85">{w.meta}</p>
-                {"summary" in w && w.summary ? (
-                  // Compact format: italic context line, then bullets only
-                  <p className="mt-1 italic text-foreground/85">{w.summary}</p>
-                ) : (
-                  <>
-                    <p className="mt-2">
-                      <span className="font-semibold">Description:</span>{" "}
-                      <span className="text-foreground/85">{w.description}</span>
-                    </p>
-                    <p className="mt-2 font-semibold">Key Responsibilities:</p>
-                  </>
-                )}
+                {w.summary && <p className="mt-1 italic text-foreground/85">{w.summary}</p>}
                 <ul className="mt-1.5 list-disc pl-5 space-y-0.5 text-foreground/85">
                   {w.responsibilities.map((r) => (
                     <li key={r}>{r}</li>

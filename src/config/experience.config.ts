@@ -14,8 +14,10 @@ export const experiencesConfig: Experience[] = [
     start: "2026",
     end: "Present",
     description: [
-      "Build and run Hoàn Hời, a cashback platform where users create tracked shopping links and get money back once orders are reconciled",
-      "Develop the product end-to-end with Next.js, from user features to the admin system, deployment and operations in production",
+      "Built the full product with Next.js, PostgreSQL and Redis: user app and admin system",
+      "Integrated Shopee, Lazada and ACCESSTRADE to sync and reconcile affiliate orders",
+      "Designed the wallet and ledger flow for cashback, withdrawals and reversals",
+      "Set up CI/CD with GitHub Actions and deploy to a VPS with automatic database backups",
     ],
   },
   {
@@ -31,8 +33,8 @@ export const experiencesConfig: Experience[] = [
     start: "July 2026",
     end: "Present",
     description: [
-      "Create and review advanced mathematics problems with verified reference solutions",
-      "Build coding benchmark tasks with reproducible Docker environments and automated tests",
+      "Write and review advanced math problems with verified reference solutions",
+      "Build coding benchmark tasks with Docker environments and automated tests",
     ],
   },
   {
@@ -48,13 +50,12 @@ export const experiencesConfig: Experience[] = [
     start: "February 2025",
     end: "June 2026",
     description: [
-      "Developed and operated web and CRM systems, collaborating with third-party partners to automate management processes",
-      "Built and customized WordPress themes and plugins for client websites based on their requirements",
-      "Developed custom WordPress features using PHP, JavaScript and the WordPress REST API",
+      "Built and customized WordPress themes and plugins from client requirements",
+      "Developed custom features with PHP, JavaScript and the WordPress REST API",
       "Integrated third-party services and APIs to automate business workflows",
-      "Optimized website performance, SEO and Core Web Vitals for faster loading and better search rankings",
-      "Troubleshot, maintained and secured WordPress websites to keep them stable",
-      "Collaborated with designers, QA and project managers to deliver high-quality solutions",
+      "Improved page speed, technical SEO and Core Web Vitals",
+      "Maintained, secured and troubleshot client websites",
+      "Worked with designers, QA and project managers to deliver projects on time",
     ],
   },
   {
@@ -70,10 +71,9 @@ export const experiencesConfig: Experience[] = [
     start: "April 2024",
     end: "July 2024",
     description: [
-      "Developed APIs using Next.js to connect the frontend and backend",
-      "Built and maintained data flow between frontend and backend",
-      "Improved API performance for faster response",
-      "Found and fixed issues in the system",
+      "Built APIs with Next.js to connect the frontend and backend",
+      "Maintained data flow between frontend and backend services",
+      "Improved API response times and fixed system issues",
     ],
   },
   {
@@ -89,9 +89,9 @@ export const experiencesConfig: Experience[] = [
     start: "March 2022",
     end: "June 2022",
     description: [
-      "Developed APIs using Django",
-      "Wrote unit tests to check functionality",
-      "Worked with databases to store and retrieve data",
+      "Built APIs with Django",
+      "Wrote unit tests to verify functionality",
+      "Worked with databases to store and query data",
       "Fixed bugs and supported system maintenance",
     ],
   },
