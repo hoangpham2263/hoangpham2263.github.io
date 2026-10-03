@@ -45,7 +45,7 @@ export default function ResumePage() {
         <ThemeToggler />
       </div>
 
-      <div className="resume-page-label mb-16 print:hidden">
+      <div className="resume-page-label mb-8 md:mb-16 print:hidden">
         <span className="resume-page-label__line" />
         <h1 className="resume-page-label__text">
           Resume
