@@ -42,6 +42,7 @@ export const projects = defineCollection({
     date: s.coerce.date().default(new Date()),
     tags: s.array(s.string()).default([]),
     sortLast: s.boolean().default(false),
+    priority: s.number().default(999),
     image: s.image(),
     body: s.mdx(),
     links: s.array(s.object({
