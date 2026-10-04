@@ -31,7 +31,7 @@ export default function Hero() {
       <p className="my-5 max-w-2xl text-foreground/85">
         Hey there 👋 Welcome to my portfolio! I love turning ideas into
         websites that are fast, easy to use and easy to find on Google. Most of my work is building websites for
-        businesses, and in my free time I build my own products. Take a look at the projects below, and feel free to
+        businesses, and in my free time I explore new technologies and use them to build my own products. Take a look at the projects below, and feel free to
         reach out if you&apos;d like to work together.
         <span className="sr-only">bio</span>
       </p>
