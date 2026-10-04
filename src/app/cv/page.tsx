@@ -25,8 +25,8 @@ const icons = {
 
 // Section heading with a full-width rule, same as the PDF resume
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <section className="mt-8 md:mt-10 break-inside-avoid-page">
-    <h2 className="text-base md:text-lg font-bold uppercase tracking-wider border-b border-foreground/40 pb-1.5 mb-4">
+  <section className="mt-6 md:mt-7 break-inside-avoid-page">
+    <h2 className="text-base md:text-lg font-bold uppercase tracking-wider border-b border-foreground/40 pb-1 mb-3">
       {title}
     </h2>
     {children}
@@ -60,7 +60,7 @@ const Entry = ({
       {role} <span className="text-muted-foreground">— {stack}</span>
     </p>
     {summary && <p className="mt-1 text-foreground/85">{summary}</p>}
-    <ul className="mt-1.5 list-disc pl-5 space-y-1 text-foreground/85">
+    <ul className="mt-1 list-disc pl-5 space-y-0.5 text-foreground/85">
       {items.map((r) => (
         <li key={r}>{r}</li>
       ))}
@@ -122,14 +122,14 @@ export default function ResumePage() {
         <span className="resume-page-label__line" />
       </div>
 
-      <div className="max-w-3xl mx-auto text-[15px] md:text-base leading-relaxed print:text-[13px]">
+      <div className="max-w-3xl mx-auto text-[15px] md:text-base leading-[1.6] print:text-[13px]">
         <header className="text-center">
           <h2 className="font-heading text-3xl md:text-[40px] md:leading-tight uppercase tracking-wide">{resumeConfig.name}</h2>
           <p className="mt-1.5 text-base md:text-lg font-semibold">{resumeConfig.title}</p>
           {[resumeConfig.contacts, resumeConfig.links].map((row, r) => (
             <p
               key={r}
-              className="mt-2.5 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-[15px] text-foreground/85"
+              className="mt-2 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-[15px] text-foreground/85"
             >
               {row.map((c, i) => (
                 <span key={c.value} className="inline-flex items-center gap-1.5">
@@ -146,7 +146,7 @@ export default function ResumePage() {
               ))}
             </p>
           ))}
-          <div className="mt-6 flex justify-center gap-2 print:hidden">
+          <div className="mt-5 flex justify-center gap-2 print:hidden">
             <PrintButton />
             <Button size="sm" variant="outline" className="shadow-none" asChild>
               <Link href="/">View Portfolio</Link>
@@ -159,7 +159,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Experience">
-          <div className="space-y-5 md:space-y-6">
+          <div className="space-y-4">
             {resumeConfig.work.map((w) => (
               <Entry
                 key={w.company}
@@ -171,7 +171,7 @@ export default function ResumePage() {
                 items={w.responsibilities}
               >
                 {w.selected.length > 0 && (
-                  <p className="mt-2 text-foreground/85">
+                  <p className="mt-1.5 text-foreground/85">
                     <span className="font-semibold text-foreground">Selected sites:</span> {w.selected.join(", ")} — see
                     the full list on the{" "}
                     <Link href="/" className="underline underline-offset-2 hover:text-primary">
@@ -186,7 +186,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Projects">
-          <div className="space-y-5 md:space-y-6">
+          <div className="space-y-4">
             {resumeConfig.projects.map((p) => (
               <Entry
                 key={p.name}
@@ -212,7 +212,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Skills">
-          <div className="space-y-1.5">
+          <div className="space-y-1">
             {resumeConfig.skills.map((s) => (
               <p key={s.group}>
                 <span className="font-semibold">{s.group}:</span>{" "}
@@ -223,7 +223,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Education">
-          <div className="space-y-1.5">
+          <div className="space-y-1">
             {resumeConfig.education.map((e) => (
               <div key={e.school} className="flex flex-wrap justify-between gap-x-4">
                 <p>
