@@ -43,7 +43,7 @@ export const resumeConfig = {
         "Maintained, secured and troubleshot client websites.",
         "Worked with designers, QA and project managers to deliver projects on time.",
       ],
-      selected: ["CityHouse More", "Đại Nam Corp", "ROHDE", "EuroLife", "Kim Quốc Tiến", "An Sinh Pharma"],
+      selected: ["Kim Quốc Tiến", "Nhật Nam Home", "GFC Security", "Đức Trí Piano Boutique", "Melody Preschool", "EuroLife"],
     },
     {
       company: "Meta Technology",
