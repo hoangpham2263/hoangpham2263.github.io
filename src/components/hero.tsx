@@ -29,8 +29,10 @@ export default function Hero() {
         {portfolioConfig.tagline} <span className="sr-only">tagline</span>
       </h3>
       <p className="my-5 max-w-2xl text-foreground/85">
-      Hey there 👋 I'm a Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — for businesses in e-commerce, education, real estate and services.
-      Beyond WordPress, I work with React, Next.js, Node.js and Python, and use Claude Code and Codex with reusable project skills to ship faster.
+        Hey there 👋 Welcome to my portfolio! I&apos;m Will, a developer from Vietnam who loves turning ideas into
+        websites that are fast, easy to use and easy to find on Google. Most of my work is building websites for
+        businesses, and in my free time I build my own products. Take a look at the projects below, and feel free to
+        reach out if you&apos;d like to work together.
         <span className="sr-only">bio</span>
       </p>
       <Socials />
