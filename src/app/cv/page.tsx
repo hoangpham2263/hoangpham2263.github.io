@@ -25,8 +25,8 @@ const icons = {
 
 // Section heading with a full-width rule, same as the PDF resume
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <section className="mt-6 break-inside-avoid-page">
-    <h2 className="text-sm font-bold uppercase tracking-wide border-b border-foreground/40 pb-1 mb-2.5">
+  <section className="mt-8 md:mt-10 break-inside-avoid-page">
+    <h2 className="text-lg font-bold uppercase tracking-wider border-b border-foreground/40 pb-1.5 mb-4">
       {title}
     </h2>
     {children}
@@ -51,16 +51,16 @@ const Entry = ({
   items: string[];
   children?: React.ReactNode;
 }) => (
-  <article className="break-inside-avoid text-sm">
+  <article className="break-inside-avoid">
     <div className="flex flex-wrap justify-between items-baseline gap-x-4">
       <h3 className="font-bold text-base">{title}</h3>
-      <span className="text-muted-foreground">{period}</span>
+      <span className="text-sm text-muted-foreground">{period}</span>
     </div>
-    <p className="italic text-foreground/85">
+    <p className="mt-0.5 italic text-foreground/85">
       {role} <span className="text-muted-foreground">— {stack}</span>
     </p>
-    {summary && <p className="mt-1 text-foreground/85">{summary}</p>}
-    <ul className="mt-1 list-disc pl-5 space-y-0.5 text-foreground/85">
+    {summary && <p className="mt-1.5 text-foreground/85">{summary}</p>}
+    <ul className="mt-2 list-disc pl-5 space-y-1 text-foreground/85">
       {items.map((r) => (
         <li key={r}>{r}</li>
       ))}
@@ -125,11 +125,11 @@ export default function ResumePage() {
       <div className="max-w-3xl mx-auto text-[15px] leading-relaxed print:text-[13px]">
         <header className="text-center">
           <h2 className="font-heading text-3xl md:text-4xl uppercase tracking-wide">{resumeConfig.name}</h2>
-          <p className="mt-1 text-lg font-semibold">{resumeConfig.title}</p>
+          <p className="mt-2 text-lg md:text-xl font-semibold">{resumeConfig.title}</p>
           {[resumeConfig.contacts, resumeConfig.links].map((row, r) => (
             <p
               key={r}
-              className="mt-2 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-foreground/85"
+              className="mt-3 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-foreground/85"
             >
               {row.map((c, i) => (
                 <span key={c.value} className="inline-flex items-center gap-1.5">
@@ -146,7 +146,7 @@ export default function ResumePage() {
               ))}
             </p>
           ))}
-          <div className="mt-5 flex justify-center gap-2 print:hidden">
+          <div className="mt-6 flex justify-center gap-2 print:hidden">
             <PrintButton href={resumeConfig.pdf} />
             <Button size="sm" variant="outline" className="shadow-none" asChild>
               <Link href="/">View Portfolio</Link>
@@ -155,11 +155,11 @@ export default function ResumePage() {
         </header>
 
         <Section title="Summary">
-          <p className="text-sm text-foreground/85">{resumeConfig.summary}</p>
+          <p className="text-foreground/85">{resumeConfig.summary}</p>
         </Section>
 
         <Section title="Experience">
-          <div className="space-y-4">
+          <div className="space-y-6">
             {resumeConfig.work.map((w) => (
               <Entry
                 key={w.company}
@@ -171,7 +171,7 @@ export default function ResumePage() {
                 items={w.responsibilities}
               >
                 {w.selected.length > 0 && (
-                  <p className="mt-1.5 text-foreground/85">
+                  <p className="mt-2 text-foreground/85">
                     <span className="font-semibold text-foreground">Selected sites:</span> {w.selected.join(", ")} — see
                     the full list on the{" "}
                     <Link href="/" className="underline underline-offset-2 hover:text-primary">
@@ -186,7 +186,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Projects">
-          <div className="space-y-4">
+          <div className="space-y-6">
             {resumeConfig.projects.map((p) => (
               <Entry
                 key={p.name}
@@ -212,7 +212,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Skills">
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1.5">
             {resumeConfig.skills.map((s) => (
               <p key={s.group}>
                 <span className="font-semibold">{s.group}:</span>{" "}
@@ -223,14 +223,14 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Education">
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1.5">
             {resumeConfig.education.map((e) => (
               <div key={e.school} className="flex flex-wrap justify-between gap-x-4">
                 <p>
-                  <span className="font-bold">{e.school}</span>{" "}
+                  <span className="font-bold text-base">{e.school}</span>{" "}
                   <span className="italic text-foreground/85">— {e.degree}</span>
                 </p>
-                <span className="text-muted-foreground">{e.period}</span>
+                <span className="text-sm text-muted-foreground">{e.period}</span>
               </div>
             ))}
             <p>
