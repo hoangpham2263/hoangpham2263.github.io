@@ -147,7 +147,7 @@ export default function ResumePage() {
             </p>
           ))}
           <div className="mt-6 flex justify-center gap-2 print:hidden">
-            <PrintButton href={resumeConfig.pdf} />
+            <PrintButton />
             <Button size="sm" variant="outline" className="shadow-none" asChild>
               <Link href="/">View Portfolio</Link>
             </Button>

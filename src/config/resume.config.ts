@@ -1,8 +1,7 @@
-// Mirrors the PDF resume (public/Pham_Quoc_Hoang_CV.pdf) so the web /cv page and the PDF read the same
+// Content for the web /cv page
 export const resumeConfig = {
   name: "Pham Quoc Hoang",
   title: "Full-Stack Developer · WordPress",
-  pdf: "/Pham_Quoc_Hoang_CV.pdf",
   summary:
     "Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — for businesses in e-commerce, education, real estate and services. Beyond WordPress, I build full-stack apps with React, Next.js, Node.js and Python, and use Claude Code and Codex to ship faster.",
   contacts: [
