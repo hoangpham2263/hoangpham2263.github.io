@@ -179,28 +179,48 @@ export default function ResumePage() {
 
         <Section title="Experience">
           <div className="divide-y divide-border [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
-            {resumeConfig.work.map((w) => (
-              <Entry
-                key={w.company}
-                title={w.company}
-                period={[w.period, w.location].filter(Boolean).join(" · ")}
-                role={w.role}
-                stack={w.stack}
-                summary={w.summary}
-                items={w.responsibilities}
-              >
-                {w.selected.length > 0 && (
-                  <p className="mt-1.5 text-foreground/85">
-                    <span className="font-semibold text-foreground">Selected sites:</span> {w.selected.join(", ")} — see
-                    the full list on the{" "}
-                    <Link href="/" className="underline underline-offset-2 hover:text-primary">
-                      portfolio
-                    </Link>
-                    .
-                  </p>
-                )}
-              </Entry>
-            ))}
+            {resumeConfig.work
+              .filter((w) => !("compact" in w))
+              .map((w) => (
+                <Entry
+                  key={w.company}
+                  title={w.company}
+                  period={[w.period, w.location].filter(Boolean).join(" · ")}
+                  role={w.role}
+                  stack={w.stack}
+                  summary={w.summary}
+                  items={w.responsibilities}
+                >
+                  {w.selected.length > 0 && (
+                    <p className="mt-1.5 text-foreground/85">
+                      <span className="font-semibold text-foreground">Selected sites:</span> {w.selected.join(", ")} — see
+                      the full list on the{" "}
+                      <Link href="/" className="underline underline-offset-2 hover:text-primary">
+                        portfolio
+                      </Link>
+                      .
+                    </p>
+                  )}
+                </Entry>
+              ))}
+            {/* Earlier part-time roles, one line each like the PDF resume */}
+            <div className="space-y-0.5">
+              {resumeConfig.work
+                .filter((w) => "compact" in w)
+                .map((w) => (
+                  <div key={w.company} className="flex flex-wrap justify-between items-baseline gap-x-4">
+                    <p>
+                      <span className="font-bold">{w.company}</span>{" "}
+                      <span className="italic text-foreground/85">
+                        — {w.role} ({w.stack})
+                      </span>
+                    </p>
+                    <span className="text-sm md:text-[15px] text-muted-foreground">
+                      {[w.period, w.location].filter(Boolean).join(" · ")}
+                    </span>
+                  </div>
+                ))}
+            </div>
           </div>
         </Section>
 

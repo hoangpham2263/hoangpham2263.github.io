@@ -3,7 +3,7 @@ export const resumeConfig = {
   name: "Pham Quoc Hoang",
   title: "Full-Stack Developer · WordPress",
   summary:
-    "Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — for businesses in e-commerce, education, real estate and services. Beyond WordPress, I build full-stack apps with React, Next.js, Node.js and Python, and use Claude Code and Codex to ship faster.",
+    "Full-Stack Developer with a strong focus on WordPress. I build SEO-friendly websites from user interfaces to admin systems — custom themes, plugins, WooCommerce, hosting setup and PageSpeed optimization — for businesses in e-commerce, education, real estate and services.",
   contacts: [
     { icon: "address", value: "Ho Chi Minh City, Vietnam" },
     { icon: "phone", value: "0971 955 144", href: "tel:+84971955144" },
@@ -49,6 +49,7 @@ export const resumeConfig = {
       company: "Meta Technology",
       role: "Backend Developer, part-time",
       stack: "Next.js APIs",
+      compact: true,
       period: "Apr 2024 – Jul 2024",
       location: "Da Nang",
       summary: "",
@@ -62,7 +63,8 @@ export const resumeConfig = {
     {
       company: "Lift Software Vietnam",
       role: "Backend Developer, part-time",
-      stack: "Django APIs, unit tests",
+      stack: "Django",
+      compact: true,
       period: "Mar 2022 – Jun 2022",
       location: "Da Nang",
       summary: "",
