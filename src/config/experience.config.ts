@@ -52,10 +52,10 @@ export const experiencesConfig: Experience[] = [
     description: [
       "Built custom WordPress themes from designs for e-commerce, corporate, education and service websites",
       "Built WooCommerce stores with product catalogues, search and online ordering",
-      "Developed custom features with PHP, JavaScript and the WordPress REST API, and integrated third-party services",
-      "Wrote Python crawlers and import scripts to fill product and quiz data, and migrated a store from Haravan to WooCommerce",
+      "Built custom features with PHP, JavaScript, the WP REST API and third-party APIs",
+      "Wrote Python crawlers to import product and quiz data, and moved a Haravan store to WooCommerce",
       "Set up technical SEO with Rank Math and improved page speed and Core Web Vitals",
-      "Maintained and secured client websites, working with designers, QA and project managers to deliver on time",
+      "Maintained and secured client websites, working with designers, QA and PMs to deliver on time",
     ],
   },
   {
