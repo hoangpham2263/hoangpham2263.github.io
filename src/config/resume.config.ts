@@ -81,7 +81,7 @@ export const resumeConfig = {
       link: { label: "hoanhoi.com", href: "https://hoanhoi.com" },
       role: "Creator & Developer",
       stack: "Next.js, PostgreSQL, Redis, GitHub Actions",
-      period: "2026 – Present",
+      period: "Aug 2026 – Present",
       summary: "A cashback platform for online shopping, live in production.",
       responsibilities: [
         "Built the full product with Next.js, PostgreSQL and Redis: user app and admin system.",

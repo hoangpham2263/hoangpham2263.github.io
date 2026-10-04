@@ -11,7 +11,7 @@ export const experiencesConfig: Experience[] = [
     location: {
       name: "",
     },
-    start: "2026",
+    start: "August 2026",
     end: "Present",
     description: [
       "Built the full product with Next.js, PostgreSQL and Redis: user app and admin system",
