@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { siteConfig } from "@/config/site.config";
 
 export const metadata: Metadata = {
   title: `Contact | ${siteConfig.creator.name}`,
-  description: "Get in touch with Pham Quoc Hoang via email, Zalo or LinkedIn.",
+  description: "Get in touch with Pham Quoc Hoang via email or LinkedIn.",
 };
 
 const contacts = [
-  { icon: <MessageCircle size={18} />, label: "Zalo", value: "0971 955 144", href: "https://zalo.me/0971955144" },
   { icon: <Mail size={18} />, label: "Email", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
-  { icon: <Phone size={18} />, label: "Phone", value: "0971 955 144", href: "tel:+84971955144" },
   { icon: <LinkedInLogoIcon width={18} height={18} />, label: "LinkedIn", value: "hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
   { icon: <GitHubLogoIcon width={18} height={18} />, label: "GitHub", value: "hoangpham2263", href: "https://github.com/hoangpham2263" },
   { icon: <MapPin size={18} />, label: "Location", value: "Ho Chi Minh City, Vietnam" },

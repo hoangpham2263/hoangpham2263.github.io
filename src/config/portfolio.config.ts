@@ -8,6 +8,5 @@ export const portfolioConfig: Portfolio = {
     github: "https://github.com/hoangpham2263",
     mail: "mailto:hoangpham2263@gmail.com",
     linkedin: "https://www.linkedin.com/in/hoangpham2263/",
-    phone: "tel:+84971955144",
   },
 }
