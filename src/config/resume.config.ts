@@ -31,7 +31,7 @@ export const resumeConfig = {
     {
       company: "Puramu",
       role: "Web Developer",
-      stack: "WordPress, PHP, JavaScript, WooCommerce, MySQL, Python",
+      stack: "WordPress, PHP, JavaScript, Next.js, WooCommerce, MySQL, Python",
       period: "Feb 2025 – Jun 2026",
       location: "Ho Chi Minh City",
       summary: "",
