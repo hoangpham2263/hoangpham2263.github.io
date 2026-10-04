@@ -126,7 +126,7 @@ export default function ResumePage() {
         <header className="text-center">
           <h2 className="font-heading text-3xl md:text-[40px] md:leading-tight uppercase tracking-wide">{resumeConfig.name}</h2>
           <p className="mt-1.5 text-base md:text-lg font-semibold">{resumeConfig.title}</p>
-          {[resumeConfig.contacts, resumeConfig.links].map((row, r) => (
+          {[resumeConfig.contacts].map((row, r) => (
             <p
               key={r}
               className="mt-2 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-[15px] text-foreground/85"
@@ -156,6 +156,25 @@ export default function ResumePage() {
 
         <Section title="Summary">
           <p className="text-foreground/85">{resumeConfig.summary}</p>
+        </Section>
+
+        <Section title="Links">
+          <ul className="space-y-1">
+            {resumeConfig.links.map((l) => (
+              <li key={l.href} className="flex items-center gap-2">
+                <span className="shrink-0 text-muted-foreground">{icons[l.icon as keyof typeof icons]}</span>
+                <span className="font-semibold">{l.label}:</span>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/85 underline underline-offset-2 hover:text-primary"
+                >
+                  {l.value}
+                </a>
+              </li>
+            ))}
+          </ul>
         </Section>
 
         <Section title="Experience">
