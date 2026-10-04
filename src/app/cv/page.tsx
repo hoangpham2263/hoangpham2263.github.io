@@ -33,6 +33,42 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
   </section>
 );
 
+// One experience / project block: name left, period right, italic role with the stack, then bullets
+const Entry = ({
+  title,
+  period,
+  role,
+  stack,
+  summary,
+  items,
+  children,
+}: {
+  title: React.ReactNode;
+  period: string;
+  role: string;
+  stack: string;
+  summary: string;
+  items: string[];
+  children?: React.ReactNode;
+}) => (
+  <article className="break-inside-avoid text-sm">
+    <div className="flex flex-wrap justify-between items-baseline gap-x-4">
+      <h3 className="font-bold text-base">{title}</h3>
+      <span className="text-muted-foreground">{period}</span>
+    </div>
+    <p className="italic text-foreground/85">
+      {role} <span className="text-muted-foreground">— {stack}</span>
+    </p>
+    {summary && <p className="mt-1 text-foreground/85">{summary}</p>}
+    <ul className="mt-1 list-disc pl-5 space-y-0.5 text-foreground/85">
+      {items.map((r) => (
+        <li key={r}>{r}</li>
+      ))}
+    </ul>
+    {children}
+  </article>
+);
+
 export default function ResumePage() {
   return (
     <div className="w-full lg:h-screen lg:overflow-y-auto print:h-auto print:overflow-visible">
@@ -89,95 +125,119 @@ export default function ResumePage() {
       <div className="max-w-3xl mx-auto text-[15px] leading-relaxed print:text-[13px]">
         <header className="text-center">
           <h2 className="font-heading text-3xl md:text-4xl uppercase tracking-wide">{resumeConfig.name}</h2>
-          <p className="mt-1 text-lg">{resumeConfig.title}</p>
-          <p className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-foreground/85">
-            {resumeConfig.contacts.map((c, i) => (
-              <span key={c.value} className="inline-flex items-center gap-1.5">
-                {i > 0 && <span className="text-muted-foreground mr-1.5">|</span>}
-                <span className="text-muted-foreground">{icons[c.icon as keyof typeof icons]}</span>
-                {c.href ? (
-                  <a href={c.href} className="hover:underline">
-                    {c.value}
-                  </a>
-                ) : (
-                  c.value
-                )}
-              </span>
-            ))}
-          </p>
-          <p className="mt-3 text-sm text-foreground/85 max-w-2xl mx-auto">{resumeConfig.summary}</p>
+          <p className="mt-1 text-lg font-semibold">{resumeConfig.title}</p>
+          {[resumeConfig.contacts, resumeConfig.links].map((row, r) => (
+            <p
+              key={r}
+              className="mt-2 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-foreground/85"
+            >
+              {row.map((c, i) => (
+                <span key={c.value} className="inline-flex items-center gap-1.5">
+                  {i > 0 && <span className="hidden sm:inline text-muted-foreground mr-1.5">·</span>}
+                  <span className="text-muted-foreground">{icons[c.icon as keyof typeof icons]}</span>
+                  {c.href ? (
+                    <a href={c.href} className="hover:underline">
+                      {c.value}
+                    </a>
+                  ) : (
+                    c.value
+                  )}
+                </span>
+              ))}
+            </p>
+          ))}
           <div className="mt-5 flex justify-center gap-2 print:hidden">
-            <PrintButton />
+            <PrintButton href={resumeConfig.pdf} />
             <Button size="sm" variant="outline" className="shadow-none" asChild>
               <Link href="/">View Portfolio</Link>
             </Button>
           </div>
         </header>
 
-        <Section title="Social & Links">
-          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-1.5 text-sm">
-            {resumeConfig.links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 underline underline-offset-2 hover:text-primary"
+        <Section title="Summary">
+          <p className="text-sm text-foreground/85">{resumeConfig.summary}</p>
+        </Section>
+
+        <Section title="Experience">
+          <div className="space-y-4">
+            {resumeConfig.work.map((w) => (
+              <Entry
+                key={w.company}
+                title={w.company}
+                period={[w.period, w.location].filter(Boolean).join(" · ")}
+                role={w.role}
+                stack={w.stack}
+                summary={w.summary}
+                items={w.responsibilities}
               >
-                <span className="shrink-0">{icons[l.icon as keyof typeof icons]}</span>
-                {l.label ? `${l.label}: ${l.value}` : l.value}
-              </a>
+                {w.selected.length > 0 && (
+                  <p className="mt-1.5 text-foreground/85">
+                    <span className="font-semibold text-foreground">Selected sites:</span> {w.selected.join(", ")} — see
+                    the full list on the{" "}
+                    <Link href="/" className="underline underline-offset-2 hover:text-primary">
+                      portfolio
+                    </Link>
+                    .
+                  </p>
+                )}
+              </Entry>
             ))}
           </div>
         </Section>
 
-        <Section title="Experience">
-          <div className="divide-y divide-border">
-            {resumeConfig.work.map((w) => (
-              <article key={w.company} className="break-inside-avoid text-sm py-4 first:pt-0 last:pb-0">
-                <h3 className="font-bold uppercase">
-                  {w.role} • {w.company}
-                </h3>
-                <p className="mt-0.5 text-foreground/85">{w.meta}</p>
-                {w.summary && <p className="mt-1 italic text-foreground/85">{w.summary}</p>}
-                <ul className="mt-1.5 list-disc pl-5 space-y-0.5 text-foreground/85">
-                  {w.responsibilities.map((r) => (
-                    <li key={r}>{r}</li>
-                  ))}
-                </ul>
-              </article>
+        <Section title="Projects">
+          <div className="space-y-4">
+            {resumeConfig.projects.map((p) => (
+              <Entry
+                key={p.name}
+                title={
+                  <>
+                    {p.name}{" "}
+                    <span className="font-normal text-muted-foreground">
+                      ·{" "}
+                      <a href={p.link.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-primary">
+                        {p.link.label}
+                      </a>
+                    </span>
+                  </>
+                }
+                period={p.period}
+                role={p.role}
+                stack={p.stack}
+                summary={p.summary}
+                items={p.responsibilities}
+              />
             ))}
           </div>
         </Section>
 
         <Section title="Skills">
-          <ul className="list-disc pl-5 space-y-1 text-sm">
+          <div className="space-y-1 text-sm">
             {resumeConfig.skills.map((s) => (
-              <li key={s.group}>
+              <p key={s.group}>
                 <span className="font-semibold">{s.group}:</span>{" "}
                 <span className="text-foreground/85">{s.items}</span>
-              </li>
+              </p>
             ))}
-          </ul>
+          </div>
         </Section>
 
         <Section title="Education">
-          <ul className="list-disc pl-5 text-sm">
+          <div className="space-y-1 text-sm">
             {resumeConfig.education.map((e) => (
-              <li key={e.school}>
-                <span className="font-semibold">{e.school}</span>
-                <span className="text-foreground/85">: {e.degree} • {e.period}</span>
-              </li>
+              <div key={e.school} className="flex flex-wrap justify-between gap-x-4">
+                <p>
+                  <span className="font-bold">{e.school}</span>{" "}
+                  <span className="italic text-foreground/85">— {e.degree}</span>
+                </p>
+                <span className="text-muted-foreground">{e.period}</span>
+              </div>
             ))}
-          </ul>
-        </Section>
-
-        <Section title="Language">
-          <ul className="list-disc pl-5 text-sm text-foreground/85">
-            {resumeConfig.languages.map((l) => (
-              <li key={l}>{l}</li>
-            ))}
-          </ul>
+            <p>
+              <span className="font-semibold">Languages:</span>{" "}
+              <span className="text-foreground/85">{resumeConfig.languages.join(", ")}</span>
+            </p>
+          </div>
         </Section>
       </div>
     </main>
