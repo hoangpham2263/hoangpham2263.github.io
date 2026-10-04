@@ -251,7 +251,7 @@ html::-webkit-scrollbar {
 }
 
 .head-text-sm {
-  @apply text-xl font-extrabold font-heading leading-[1.15] sm:text-2xl;
+  @apply text-[22px] font-extrabold font-heading leading-[1.15] sm:text-[28px];
 }
 
 .social-link {
