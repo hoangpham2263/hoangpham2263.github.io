@@ -50,7 +50,7 @@ export const experiencesConfig: Experience[] = [
     start: "February 2025",
     end: "June 2026",
     description: [
-      "Built custom WordPress themes from Figma designs for e-commerce, corporate, education and service websites",
+      "Built custom WordPress themes from Figma for e-commerce, corporate, education and service websites",
       "Built WooCommerce stores with product catalogues, search and online ordering",
       "Built custom features with PHP, JavaScript, the WP REST API and third-party APIs",
       "Wrote Python crawlers to import product and quiz data, and moved a Haravan store to WooCommerce",
