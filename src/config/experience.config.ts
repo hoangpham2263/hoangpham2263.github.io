@@ -9,7 +9,7 @@ export const experiencesConfig: Experience[] = [
       url: "https://hoanhoi.com",
     },
     location: {
-      name: "Ho Chi Minh City, Vietnam",
+      name: "",
     },
     start: "2026",
     end: "Present",

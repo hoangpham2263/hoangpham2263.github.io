@@ -41,9 +41,11 @@ const Experience = ({ experience }: { experience: ExperienceType }) => {
           <span className="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded cursor-default">
             {experience.employmentType}
           </span>
-          <span className="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded cursor-default">
-            {experience.location.name}
-          </span>
+          {experience.location.name && (
+            <span className="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded cursor-default">
+              {experience.location.name}
+            </span>
+          )}
           {experience.end === "Present" && (
             <span className="text-xs font-medium px-2 py-0.5 rounded bg-primary text-primary-foreground cursor-default">Current</span>
           )}
