@@ -178,7 +178,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Experience">
-          <div className="space-y-4">
+          <div className="divide-y divide-border [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
             {resumeConfig.work.map((w) => (
               <Entry
                 key={w.company}
@@ -205,7 +205,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Projects">
-          <div className="space-y-4">
+          <div className="divide-y divide-border [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
             {resumeConfig.projects.map((p) => (
               <Entry
                 key={p.name}
@@ -242,21 +242,19 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Education">
-          <div className="space-y-1">
-            {resumeConfig.education.map((e) => (
-              <div key={e.school} className="flex flex-wrap justify-between gap-x-4">
-                <p>
-                  <span className="font-bold text-base md:text-[17px]">{e.school}</span>{" "}
-                  <span className="italic text-foreground/85">— {e.degree}</span>
-                </p>
-                <span className="text-sm md:text-[15px] text-muted-foreground">{e.period}</span>
-              </div>
-            ))}
-            <p>
-              <span className="font-semibold">Languages:</span>{" "}
-              <span className="text-foreground/85">{resumeConfig.languages.join(", ")}</span>
-            </p>
-          </div>
+          {resumeConfig.education.map((e) => (
+            <div key={e.school} className="flex flex-wrap justify-between items-baseline gap-x-4">
+              <p>
+                <span className="font-bold">{e.school}</span>{" "}
+                <span className="italic text-foreground/85">— {e.degree}</span>
+              </p>
+              <span className="text-sm md:text-[15px] text-muted-foreground">{e.period}</span>
+            </div>
+          ))}
+          <p className="mt-0.5">
+            <span className="font-bold">Languages:</span>{" "}
+            <span className="text-foreground/85">{resumeConfig.languages.join(", ")}</span>
+          </p>
         </Section>
       </div>
     </main>
