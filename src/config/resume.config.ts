@@ -96,7 +96,7 @@ export const resumeConfig = {
     { group: "Frontend", items: "HTML5, CSS3, Tailwind CSS, JavaScript, React, Next.js, Responsive Design" },
     { group: "Backend", items: "PHP, Node.js, Python, Django, REST API, API Integration" },
     { group: "Database", items: "MySQL, PostgreSQL, MongoDB" },
-    { group: "Crawl Data", items: "Python, Requests, BeautifulSoup, import via WordPress & WooCommerce REST API" },
+    { group: "Crawl Data", items: "Python, import to WordPress & WooCommerce" },
     { group: "Performance & SEO", items: "Technical SEO, PageSpeed, Core Web Vitals, LiteSpeed Cache, Security Hardening" },
     { group: "Tools & AI", items: "Git, Docker, CI, Claude Code, Codex, Gemini, Prompt Engineering" },
   ],

@@ -25,7 +25,7 @@ export const skillsConfig = [
   },
   {
     category: "Crawl Data",
-    technologies: ["Python", "Requests", "BeautifulSoup", "Import via WordPress & WooCommerce REST API"],
+    technologies: ["Python", "Import to WordPress & WooCommerce"],
   },
   {
     category: "Tools",
