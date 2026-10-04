@@ -23,7 +23,7 @@ const icons = {
   linkedin: <LinkedInLogoIcon width={14} height={14} />,
 };
 
-// Section heading with a full-width rule, same as the PDF resume
+// Section heading with a full-width rule
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mt-6 md:mt-7 break-inside-avoid-page">
     <h2 className="text-base md:text-lg font-semibold uppercase tracking-wider border-b border-foreground/40 pb-1 mb-3">

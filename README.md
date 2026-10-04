@@ -1,6 +1,6 @@
 # Pham Quoc Hoang — Portfolio & Blog
 
-Personal portfolio and blog of **Pham Quoc Hoang**, WordPress Developer and founder of [Hoàn Hời](https://hoanhoi.com).
+Personal portfolio and blog of **Pham Quoc Hoang (Will)**, Full-Stack Developer · WordPress and creator of [Hoàn Hời](https://hoanhoi.com).
 
 Live: https://hoangpham2263.github.io
 
@@ -21,8 +21,14 @@ content/
 ├── projects/   # Portfolio projects (.mdx + assets/)
 ├── tils/       # Today I Learned notes
 └── blogs/      # Blog posts
-src/config/     # Name, links, experience, skills, navbar
+src/config/     # Name, links, experience, skills, resume, navbar
+public/
+└── Pham-Quoc-Hoang-CV.pdf   # File served by the "Download CV" button on /cv
 ```
+
+## Updating the CV PDF
+
+Export the CV from Canva as PDF, then replace `public/Pham-Quoc-Hoang-CV.pdf` with the new file, keeping the same file name. The "Download CV" button on `/cv` always serves this file.
 
 ## Credits
 
