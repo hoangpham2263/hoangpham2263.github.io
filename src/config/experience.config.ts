@@ -59,8 +59,8 @@ export const experiencesConfig: Experience[] = [
     ],
   },
   {
-    title: "Backend Intern",
-    employmentType: "Internship",
+    title: "Backend Developer",
+    employmentType: "Part time",
     company: {
       name: "Meta Technology",
       url: "",

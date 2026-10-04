@@ -47,7 +47,7 @@ export const resumeConfig = {
     },
     {
       company: "Meta Technology",
-      role: "Backend Intern",
+      role: "Backend Developer, part-time",
       stack: "Next.js APIs",
       period: "Apr 2024 – Jul 2024",
       location: "Da Nang",
