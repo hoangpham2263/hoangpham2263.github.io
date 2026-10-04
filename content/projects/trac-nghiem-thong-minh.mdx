@@ -2,7 +2,7 @@
 title: "Trắc Nghiệm Thông Minh"
 description: "Online quiz and exam platform for students, with practice tests, study materials and personality tests (IQ, EQ, MBTI, DISC)."
 date: "2026-01-01"
-tags: ["WordPress", "PHP", "Custom Theme", "Rank Math", "LiteSpeed Cache", "Puramu"]
+tags: ["WordPress", "PHP", "Python", "Web Scraping", "BeautifulSoup", "WP REST API", "Custom Theme", "Rank Math", "Puramu"]
 links: [
   {
     name: "Website",
@@ -22,3 +22,12 @@ Online quiz and exam platform for students, with practice tests, study materials
 - **Company:** [Puramu](https://www.puramu.com/)
 - **Role:** Web Developer — built the WordPress theme and features from the design, optimized speed and SEO
 - **Live:** [tracnghiemthongminh.com](https://tracnghiemthongminh.com/)
+
+## Data Pipeline
+
+The quiz library was filled by a crawler I wrote in Python:
+
+- Read target URLs from sitemaps and URL lists, then crawl the HTML with Requests and BeautifulSoup.
+- Extract questions, answers and exam details (subject, school, year, difficulty, question count) into clean JSON.
+- Import quizzes into WordPress through a custom REST endpoint, creating categories and quiz meta fields automatically.
+- Track progress and failed URLs so long runs can resume and retry; separate runs for exam papers and IQ, EQ, MBTI and DISC tests.

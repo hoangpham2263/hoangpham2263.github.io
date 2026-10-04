@@ -2,7 +2,7 @@
 title: "EuroLife"
 description: "Online store for kitchen, bathroom and water-filtration equipment, with product bundles and online checkout."
 date: "2026-01-01"
-tags: ["WordPress", "PHP", "Custom Theme", "WooCommerce", "Rank Math", "LiteSpeed Cache", "Puramu"]
+tags: ["WordPress", "PHP", "Custom Theme", "WooCommerce", "Python", "Data Migration", "Rank Math", "Puramu"]
 links: [
   {
     name: "Website",
@@ -22,3 +22,10 @@ Online store for kitchen, bathroom and water-filtration equipment, with product 
 - **Company:** [Puramu](https://www.puramu.com/)
 - **Role:** Web Developer — built the WordPress theme and features from the design, optimized speed and SEO
 - **Live:** [eurolife.com.vn](https://eurolife.com.vn/)
+
+## Data Migration
+
+Moved the product catalogue from the client's old Haravan store with a Python script:
+
+- Read the Haravan product export (CSV) and map products, variants and descriptions to WooCommerce.
+- Download product images and import everything through the WooCommerce REST API.
