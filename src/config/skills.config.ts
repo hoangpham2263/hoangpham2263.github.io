@@ -1,38 +1,30 @@
 export const skillsConfig = [
   {
-    category: "Languages",
-    technologies: ["PHP", "JavaScript", "Python", "HTML5", "CSS3"],
-  },
-  {
-    category: "Frameworks",
-    technologies: ["WordPress", "WooCommerce", "React", "Next.js", "Node.js", "Django"],
-  },
-  {
-    category: "Styling",
-    technologies: ["Tailwind CSS", "Responsive Design"],
-  },
-  {
     category: "WordPress",
-    technologies: ["Custom Themes", "Plugin Development", "ACF", "WordPress REST API", "WP Hooks & Filters"],
+    technologies: ["Custom Themes", "Plugin Development", "WooCommerce", "Elementor", "ACF", "WP REST API", "Hooks & Filters"],
+  },
+  {
+    category: "Frontend",
+    technologies: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Responsive Design"],
+  },
+  {
+    category: "Backend",
+    technologies: ["PHP", "Node.js", "Python", "Django", "REST API", "API Integration"],
   },
   {
     category: "Database",
-    technologies: ["MySQL", "PostgreSQL", "MongoDB"],
-  },
-  {
-    category: "Performance & SEO",
-    technologies: ["Technical SEO", "PageSpeed", "Core Web Vitals", "Security", "Deployment"],
+    technologies: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
   },
   {
     category: "Crawl Data",
     technologies: ["Python", "Import to WordPress & WooCommerce"],
   },
   {
-    category: "Tools",
-    technologies: ["Git", "Docker", "CI", "Figma", "REST API"],
+    category: "Performance & SEO",
+    technologies: ["Technical SEO", "Rank Math", "PageSpeed", "Core Web Vitals", "LiteSpeed Cache", "Security Hardening"],
   },
   {
-    category: "AI Tools",
-    technologies: ["Claude Code", "Codex", "Gemini", "Prompt Engineering", "AI Agent Skills"],
+    category: "Tools & AI",
+    technologies: ["Git", "Docker", "GitHub Actions (CI/CD)", "Figma", "Claude Code", "Codex", "Gemini"],
   },
 ];

@@ -92,13 +92,13 @@ export const resumeConfig = {
     },
   ],
   skills: [
-    { group: "WordPress", items: "Custom Themes, Plugin Development, WooCommerce, ACF, WP REST API, Hooks & Filters" },
-    { group: "Frontend", items: "HTML5, CSS3, Tailwind CSS, JavaScript, React, Next.js, Responsive Design" },
+    { group: "WordPress", items: "Custom Themes, Plugin Development, WooCommerce, Elementor, ACF, WP REST API, Hooks & Filters" },
+    { group: "Frontend", items: "HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Responsive Design" },
     { group: "Backend", items: "PHP, Node.js, Python, Django, REST API, API Integration" },
-    { group: "Database", items: "MySQL, PostgreSQL, MongoDB" },
+    { group: "Database", items: "MySQL, PostgreSQL, MongoDB, Redis" },
     { group: "Crawl Data", items: "Python, import to WordPress & WooCommerce" },
-    { group: "Performance & SEO", items: "Technical SEO, PageSpeed, Core Web Vitals, LiteSpeed Cache, Security Hardening" },
-    { group: "Tools & AI", items: "Git, Docker, CI, Figma, Claude Code, Codex, Gemini, Prompt Engineering" },
+    { group: "Performance & SEO", items: "Technical SEO, Rank Math, PageSpeed, Core Web Vitals, LiteSpeed Cache, Security Hardening" },
+    { group: "Tools & AI", items: "Git, Docker, GitHub Actions (CI/CD), Figma, Claude Code, Codex, Gemini" },
   ],
   education: [
     { school: "Duy Tan University", degree: "Bachelor in Software Engineering", period: "2021 – 2025" },
