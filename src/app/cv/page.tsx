@@ -26,7 +26,7 @@ const icons = {
 // Section heading with a full-width rule, same as the PDF resume
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mt-6 md:mt-7 break-inside-avoid-page">
-    <h2 className="text-base md:text-lg font-bold uppercase tracking-wider border-b border-foreground/40 pb-1 mb-3">
+    <h2 className="text-base md:text-lg font-semibold uppercase tracking-wider border-b border-foreground/40 pb-1 mb-3">
       {title}
     </h2>
     {children}
@@ -53,7 +53,7 @@ const Entry = ({
 }) => (
   <article className="break-inside-avoid">
     <div className="flex flex-wrap justify-between items-baseline gap-x-4">
-      <h3 className="font-bold text-base md:text-[17px]">{title}</h3>
+      <h3 className="font-semibold text-base md:text-[17px]">{title}</h3>
       <span className="text-sm md:text-[15px] text-muted-foreground">{period}</span>
     </div>
     <p className="mt-0.5 italic text-foreground/85">
@@ -234,7 +234,7 @@ export default function ResumePage() {
           <ul className="list-disc pl-5 space-y-0.5">
             {resumeConfig.skills.map((s) => (
               <li key={s.group}>
-                <span className="font-bold">{s.group}:</span>{" "}
+                <span className="font-semibold">{s.group}:</span>{" "}
                 <span className="text-foreground/85">{s.items}</span>
               </li>
             ))}
@@ -247,7 +247,7 @@ export default function ResumePage() {
               <li key={e.school}>
                 <div className="flex flex-wrap justify-between items-baseline gap-x-4">
                   <p>
-                    <span className="font-bold">{e.school}</span>{" "}
+                    <span className="font-semibold">{e.school}</span>{" "}
                     <span className="italic text-foreground/85">— {e.degree}</span>
                   </p>
                   <span className="text-sm md:text-[15px] text-muted-foreground">{e.period}</span>
@@ -255,7 +255,7 @@ export default function ResumePage() {
               </li>
             ))}
             <li>
-              <span className="font-bold">Languages:</span>{" "}
+              <span className="font-semibold">Languages:</span>{" "}
               <span className="text-foreground/85">{resumeConfig.languages.join(", ")}</span>
             </li>
           </ul>
