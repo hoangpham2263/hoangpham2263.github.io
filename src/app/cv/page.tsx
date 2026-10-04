@@ -26,7 +26,7 @@ const icons = {
 // Section heading with a full-width rule, same as the PDF resume
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mt-8 md:mt-10 break-inside-avoid-page">
-    <h2 className="text-lg font-bold uppercase tracking-wider border-b border-foreground/40 pb-1.5 mb-4">
+    <h2 className="text-base md:text-lg font-bold uppercase tracking-wider border-b border-foreground/40 pb-1.5 mb-4">
       {title}
     </h2>
     {children}
@@ -53,14 +53,14 @@ const Entry = ({
 }) => (
   <article className="break-inside-avoid">
     <div className="flex flex-wrap justify-between items-baseline gap-x-4">
-      <h3 className="font-bold text-base">{title}</h3>
-      <span className="text-sm text-muted-foreground">{period}</span>
+      <h3 className="font-bold text-base md:text-[17px]">{title}</h3>
+      <span className="text-sm md:text-[15px] text-muted-foreground">{period}</span>
     </div>
     <p className="mt-0.5 italic text-foreground/85">
       {role} <span className="text-muted-foreground">— {stack}</span>
     </p>
-    {summary && <p className="mt-1.5 text-foreground/85">{summary}</p>}
-    <ul className="mt-2 list-disc pl-5 space-y-1 text-foreground/85">
+    {summary && <p className="mt-1 text-foreground/85">{summary}</p>}
+    <ul className="mt-1.5 list-disc pl-5 space-y-1 text-foreground/85">
       {items.map((r) => (
         <li key={r}>{r}</li>
       ))}
@@ -122,14 +122,14 @@ export default function ResumePage() {
         <span className="resume-page-label__line" />
       </div>
 
-      <div className="max-w-3xl mx-auto text-[15px] leading-relaxed print:text-[13px]">
+      <div className="max-w-3xl mx-auto text-[15px] md:text-base leading-relaxed print:text-[13px]">
         <header className="text-center">
-          <h2 className="font-heading text-3xl md:text-4xl uppercase tracking-wide">{resumeConfig.name}</h2>
-          <p className="mt-2 text-lg md:text-xl font-semibold">{resumeConfig.title}</p>
+          <h2 className="font-heading text-3xl md:text-[40px] md:leading-tight uppercase tracking-wide">{resumeConfig.name}</h2>
+          <p className="mt-1.5 text-base md:text-lg font-semibold">{resumeConfig.title}</p>
           {[resumeConfig.contacts, resumeConfig.links].map((row, r) => (
             <p
               key={r}
-              className="mt-3 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-foreground/85"
+              className="mt-2.5 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-[15px] text-foreground/85"
             >
               {row.map((c, i) => (
                 <span key={c.value} className="inline-flex items-center gap-1.5">
@@ -159,7 +159,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Experience">
-          <div className="space-y-6">
+          <div className="space-y-5 md:space-y-6">
             {resumeConfig.work.map((w) => (
               <Entry
                 key={w.company}
@@ -186,7 +186,7 @@ export default function ResumePage() {
         </Section>
 
         <Section title="Projects">
-          <div className="space-y-6">
+          <div className="space-y-5 md:space-y-6">
             {resumeConfig.projects.map((p) => (
               <Entry
                 key={p.name}
@@ -227,10 +227,10 @@ export default function ResumePage() {
             {resumeConfig.education.map((e) => (
               <div key={e.school} className="flex flex-wrap justify-between gap-x-4">
                 <p>
-                  <span className="font-bold text-base">{e.school}</span>{" "}
+                  <span className="font-bold text-base md:text-[17px]">{e.school}</span>{" "}
                   <span className="italic text-foreground/85">— {e.degree}</span>
                 </p>
-                <span className="text-sm text-muted-foreground">{e.period}</span>
+                <span className="text-sm md:text-[15px] text-muted-foreground">{e.period}</span>
               </div>
             ))}
             <p>
