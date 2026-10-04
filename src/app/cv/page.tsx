@@ -126,26 +126,21 @@ export default function ResumePage() {
         <header className="text-center">
           <h2 className="font-heading text-3xl md:text-[40px] md:leading-tight uppercase tracking-wide">{resumeConfig.name}</h2>
           <p className="mt-1.5 text-base md:text-lg font-semibold">{resumeConfig.title}</p>
-          {[resumeConfig.contacts, resumeConfig.links].map((row, r) => (
-            <p
-              key={r}
-              className="mt-2 flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-[15px] text-foreground/85"
-            >
-              {row.map((c, i) => (
-                <span key={c.value} className="inline-flex items-center gap-1.5">
-                  {i > 0 && <span className="hidden sm:inline text-muted-foreground mr-1.5">·</span>}
-                  <span className="text-muted-foreground">{icons[c.icon as keyof typeof icons]}</span>
-                  {c.href ? (
-                    <a href={c.href} className="hover:underline">
-                      {c.value}
-                    </a>
-                  ) : (
-                    c.value
-                  )}
-                </span>
-              ))}
-            </p>
-          ))}
+          {/* Contact details as a two-column list: personal info left, links right */}
+          <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-3 sm:grid-flow-col gap-x-8 gap-y-1.5 text-left text-sm md:text-[15px] text-foreground/85">
+            {[...resumeConfig.contacts, ...resumeConfig.links].map((c) => (
+              <li key={c.value} className="flex items-center gap-2">
+                <span className="shrink-0 text-muted-foreground">{icons[c.icon as keyof typeof icons]}</span>
+                {c.href ? (
+                  <a href={c.href} className="hover:underline">
+                    {c.value}
+                  </a>
+                ) : (
+                  c.value
+                )}
+              </li>
+            ))}
+          </ul>
           <div className="mt-5 flex justify-center gap-2 print:hidden">
             <PrintButton />
             <Button size="sm" variant="outline" className="shadow-none" asChild>
