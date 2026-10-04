@@ -39,7 +39,7 @@ export const resumeConfig = {
         "Built custom WordPress themes from Figma for e-commerce, corporate, education and service websites.",
         "Built WooCommerce stores with product catalogues, search and online ordering.",
         "Built custom features with PHP, JavaScript, the WP REST API and third-party APIs.",
-        "Wrote Python crawlers to import product and quiz data, and moved a Haravan store to WooCommerce.",
+        "Wrote Python crawlers to import data and migrated stores from third-party platforms to WooCommerce.",
         "Set up technical SEO with Rank Math and improved page speed and Core Web Vitals.",
         "Maintained and secured client websites, working with designers, QA and PMs to deliver on time.",
       ],
