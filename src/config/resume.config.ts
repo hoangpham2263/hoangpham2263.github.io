@@ -49,7 +49,6 @@ export const resumeConfig = {
       company: "Meta Technology",
       role: "Backend Developer, part-time",
       stack: "Next.js APIs",
-      compact: true,
       period: "Apr 2024 – Jul 2024",
       location: "Da Nang",
       summary: "",
@@ -63,8 +62,7 @@ export const resumeConfig = {
     {
       company: "Lift Software Vietnam",
       role: "Backend Developer, part-time",
-      stack: "Django",
-      compact: true,
+      stack: "Django APIs, unit tests",
       period: "Mar 2022 – Jun 2022",
       location: "Da Nang",
       summary: "",
