@@ -24,6 +24,10 @@ export const skillsConfig = [
     technologies: ["Technical SEO", "PageSpeed", "Core Web Vitals", "Security", "Deployment"],
   },
   {
+    category: "Crawl Data",
+    technologies: ["Python", "Requests", "BeautifulSoup", "Import via WordPress & WooCommerce REST API"],
+  },
+  {
     category: "Tools",
     technologies: ["Git", "Docker", "CI", "REST API"],
   },
