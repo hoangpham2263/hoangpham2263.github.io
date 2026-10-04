@@ -36,7 +36,7 @@ export const resumeConfig = {
       location: "Ho Chi Minh City",
       summary: "",
       responsibilities: [
-        "Built custom WordPress themes from designs for e-commerce, corporate, education and service websites.",
+        "Built custom WordPress themes from Figma designs for e-commerce, corporate, education and service websites.",
         "Built WooCommerce stores with product catalogues, search and online ordering.",
         "Built custom features with PHP, JavaScript, the WP REST API and third-party APIs.",
         "Wrote Python crawlers to import product and quiz data, and moved a Haravan store to WooCommerce.",
@@ -98,7 +98,7 @@ export const resumeConfig = {
     { group: "Database", items: "MySQL, PostgreSQL, MongoDB" },
     { group: "Crawl Data", items: "Python, import to WordPress & WooCommerce" },
     { group: "Performance & SEO", items: "Technical SEO, PageSpeed, Core Web Vitals, LiteSpeed Cache, Security Hardening" },
-    { group: "Tools & AI", items: "Git, Docker, CI, Claude Code, Codex, Gemini, Prompt Engineering" },
+    { group: "Tools & AI", items: "Git, Docker, CI, Figma, Claude Code, Codex, Gemini, Prompt Engineering" },
   ],
   education: [
     { school: "Duy Tan University", degree: "Bachelor in Software Engineering", period: "2021 – 2025" },

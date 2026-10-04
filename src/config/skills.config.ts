@@ -29,7 +29,7 @@ export const skillsConfig = [
   },
   {
     category: "Tools",
-    technologies: ["Git", "Docker", "CI", "REST API"],
+    technologies: ["Git", "Docker", "CI", "Figma", "REST API"],
   },
   {
     category: "AI Tools",
