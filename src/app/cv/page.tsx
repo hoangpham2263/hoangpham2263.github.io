@@ -122,7 +122,7 @@ export default function ResumePage() {
         <span className="resume-page-label__line" />
       </div>
 
-      <div className="max-w-3xl mx-auto text-[15px] md:text-base leading-[1.6] print:text-[13px]">
+      <div className="text-[15px] md:text-base leading-[1.6] print:text-[13px]">
         <header className="text-center">
           <h2 className="font-heading text-3xl md:text-[40px] md:leading-tight uppercase tracking-wide">{resumeConfig.name}</h2>
           <p className="mt-1.5 text-base md:text-lg font-semibold">{resumeConfig.title}</p>
