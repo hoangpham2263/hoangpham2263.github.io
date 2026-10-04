@@ -161,8 +161,8 @@ export default function ResumePage() {
         <Section title="Links">
           <ul className="space-y-1">
             {resumeConfig.links.map((l) => (
-              <li key={l.href} className="flex items-center gap-2">
-                <span className="shrink-0 text-muted-foreground">{icons[l.icon as keyof typeof icons]}</span>
+              <li key={l.href} className="flex items-center gap-2 leading-6">
+                <span className="flex shrink-0 items-center -translate-y-px text-muted-foreground">{icons[l.icon as keyof typeof icons]}</span>
                 <span className="font-semibold">{l.label}:</span>
                 <a
                   href={l.href}
