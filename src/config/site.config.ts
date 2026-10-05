@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   name: "HoangPham",
   title: "HoangPham | Full-Stack Developer",
   description: "Pham Quoc Hoang — Full-Stack Developer focused on WordPress. I build fast, SEO-friendly WordPress and Next.js websites, from user interfaces to admin systems for businesses in e-commerce, education, real estate and services.",
-  origin: "https://hoangpham2263.github.io",
+  origin: "https://hoangpham.is-a.dev",
   keywords: [
     "Pham Quoc Hoang",
     "HoangPham",
@@ -23,14 +23,14 @@ export const siteConfig: SiteConfig = {
     "Cashback",
     "Portfolio",
   ],
-  og: "https://hoangpham2263.github.io/og.png",
+  og: "https://hoangpham.is-a.dev/og.png",
   creator: {
     name: "HoangPham",
-    url: "https://hoangpham2263.github.io",
+    url: "https://hoangpham.is-a.dev",
   },
   socials: {
     github: "https://github.com/hoangpham2263",
     x: "",
   },
-  siteUrl: "https://hoangpham2263.github.io",
+  siteUrl: "https://hoangpham.is-a.dev",
 }

@@ -2,7 +2,7 @@
   "name": "hoangpham-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hoangpham2263.github.io/",
+  "homepage": "https://hoangpham.is-a.dev/",
   "scripts": {
     "dev": "velite && next dev --turbopack",
     "build": "velite && next build",

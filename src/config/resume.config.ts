@@ -10,7 +10,7 @@ export const resumeConfig = {
     { icon: "mail", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
   ],
   links: [
-    { icon: "globe", label: "Portfolio", value: "hoangpham2263.github.io", href: "https://hoangpham2263.github.io" },
+    { icon: "globe", label: "Portfolio", value: "hoangpham.is-a.dev", href: "https://hoangpham.is-a.dev" },
     { icon: "linkedin", label: "LinkedIn", value: "linkedin.com/in/hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
     { icon: "github", label: "GitHub", value: "github.com/hoangpham2263", href: "https://github.com/hoangpham2263" },
   ],

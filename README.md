@@ -2,7 +2,7 @@
 
 Personal portfolio and blog of **Pham Quoc Hoang (Will)**, Full-Stack Developer · WordPress and creator of [Hoàn Hời](https://hoanhoi.com).
 
-Live: https://hoangpham2263.github.io
+Live: https://hoangpham.is-a.dev
 
 Built with Next.js 15, MDX, Velite and shadcn/ui, statically exported and deployed to GitHub Pages.
 
