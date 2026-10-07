@@ -85,7 +85,7 @@ export const resumeConfig = {
       summary: "A cashback platform for online shopping, live in production.",
       responsibilities: [
         "Built the full product with Next.js, PostgreSQL and Redis: user app and admin system.",
-        "Integrated Shopee, Lazada and ACCESSTRADE to sync and reconcile affiliate orders.",
+        "Integrated Shopee, Lazada, TikTok Shop and ACCESSTRADE to sync and reconcile affiliate orders.",
         "Designed the wallet and ledger flow for cashback, withdrawals and reversals.",
         "Set up CI/CD with GitHub Actions and deploy to a VPS with automatic database backups.",
       ],

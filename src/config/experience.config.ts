@@ -15,7 +15,7 @@ export const experiencesConfig: Experience[] = [
     end: "Present",
     description: [
       "Built the full product with Next.js, PostgreSQL and Redis: user app and admin system",
-      "Integrated Shopee, Lazada and ACCESSTRADE to sync and reconcile affiliate orders",
+      "Integrated Shopee, Lazada, TikTok Shop and ACCESSTRADE to sync and reconcile affiliate orders",
       "Designed the wallet and ledger flow for cashback, withdrawals and reversals",
       "Set up CI/CD with GitHub Actions and deploy to a VPS with automatic database backups",
     ],
