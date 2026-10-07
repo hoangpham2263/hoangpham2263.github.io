@@ -23,12 +23,12 @@ content/
 └── blogs/      # Blog posts
 src/config/     # Name, links, experience, skills, resume, navbar
 public/
-└── pham-quoc-hoang-cv.pdf   # File served by the "Download CV" button on /cv
+└── pham-quoc-hoang-cv.pdf   # File opened by the "View CV" button on /cv
 ```
 
 ## Updating the CV PDF
 
-Export the CV from Canva as PDF, then replace `public/pham-quoc-hoang-cv.pdf` with the new file, keeping the same file name. The "Download CV" button on `/cv` always serves this file.
+Export the CV from Canva as PDF, then replace `public/pham-quoc-hoang-cv.pdf` with the new file, keeping the same file name. The "View CV" button on `/cv` always opens this file in a new tab.
 
 ## Credits
 
