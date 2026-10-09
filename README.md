@@ -18,7 +18,7 @@ yarn dev
 
 ```
 content/
-├── projects/   # Portfolio projects (.mdx + assets/)
+├── projects/   # One folder per project: <slug>/index.mdx + images
 ├── tils/       # Today I Learned notes
 └── blogs/      # Blog posts
 src/config/     # Name, links, experience, skills, resume, navbar
