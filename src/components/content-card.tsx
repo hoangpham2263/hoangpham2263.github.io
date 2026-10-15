@@ -69,7 +69,7 @@ export default function ContentCard({ title, description, href, image, tags = []
         )}
       </div>
       {image && (
-        <div className="w-full md:w-2/5 shrink-0 self-start md:self-center md:order-first aspect-video overflow-hidden rounded-xl border">
+        <div className="pointer-events-none w-full md:w-2/5 shrink-0 self-start md:self-center md:order-first aspect-video overflow-hidden rounded-xl border">
             <Picture
               image={image as ImageType}
               width={600}
