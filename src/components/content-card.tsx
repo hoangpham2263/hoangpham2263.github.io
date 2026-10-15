@@ -21,7 +21,7 @@ type ContentCardProps = {
 export default function ContentCard({ title, description, href, image, tags = [], links = [], meta, badge, locale = "vi" }: ContentCardProps) {
 
   return (
-    <div className={`group/card relative flex flex-col-reverse md:flex-row p-3 justify-between gap-3 md:gap-2 rounded-xl border overflow-hidden transition-colors ${href ? "hover:border-primary/40 hover:bg-primary/[0.03] hover:shadow-lg hover:shadow-blue-500/5" : ""}`}>
+    <div className={`group/card relative flex flex-col-reverse md:flex-row p-3 justify-between gap-3 md:gap-2 rounded-xl border overflow-hidden transition-[border-color,box-shadow] duration-200 ${href ? "hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]" : ""}`}>
       <div className={image ? "space-y-2 w-full md:w-3/5" : "space-y-2 w-full"}>
         <div className="space-y-2">
           {meta && <p className="text-xs text-muted-foreground">{meta}</p>}
@@ -76,7 +76,7 @@ export default function ContentCard({ title, description, href, image, tags = []
               height={338}
               quality={100}
               alt={title}
-              className="w-full h-full object-cover object-top scale-100 group-hover/card:scale-105 transition-all transform-gpu ease-in-out"
+              className="w-full h-full object-cover object-top scale-100 group-hover/card:scale-[1.03] transition-transform duration-300 transform-gpu ease-out"
             />
         </div>
       )}
