@@ -46,7 +46,7 @@ export default function ContentCard({ title, description, href, image, tags = []
                 <ArrowRight
                   size={18}
                   aria-hidden
-                  className="inline-block ml-1.5 align-[-2px] text-primary opacity-0 -translate-x-1 transition-all duration-200 group-hover/card:opacity-100 group-hover/card:translate-x-0"
+                  className="hidden md:inline-block ml-1.5 align-[-2px] text-primary opacity-0 -translate-x-1 transition-all duration-200 group-hover/card:opacity-100 group-hover/card:translate-x-0"
                 />
               )}
               </h2>
