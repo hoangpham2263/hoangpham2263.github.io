@@ -29,10 +29,10 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
           <ThemeToggler />
         </div>
       </div>
-      <h3 className="mt-2 text-lg">
+      <h3 className="mt-1 text-lg">
         {portfolioConfig.tagline} <span className="sr-only">tagline</span>
       </h3>
-      <p className="mt-3 mb-5 md:my-5 max-w-2xl text-foreground/85">
+      <p className="mt-3 mb-5 max-w-2xl text-foreground/85">
         {t.hero.bio}
         <span className="sr-only">bio</span>
       </p>
