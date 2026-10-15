@@ -106,7 +106,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           className="bg-white text-[#111] shadow-sm ring-1 ring-black/5 rounded-sm px-4 py-6 sm:px-8 sm:py-8 font-['Times_New_Roman',Times,serif] text-[14px] leading-[1.55] print:shadow-none print:ring-0 print:rounded-none print:px-0 print:py-0"
         >
           <header className="text-center">
-            <h1 className="text-[30px] sm:text-[34px] font-bold uppercase tracking-wide font-[Arial,Helvetica,sans-serif] leading-tight">
+            <h1 className="text-[24px] sm:text-[26px] font-bold uppercase tracking-wide font-[Arial,Helvetica,sans-serif] leading-tight">
               {resumeConfig.name}
             </h1>
             <p className="mt-1 text-[16px] font-[Arial,Helvetica,sans-serif]">{resumeConfig.title}</p>
