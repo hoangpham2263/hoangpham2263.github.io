@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, MapPin } from "lucide-react";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import TelegramIcon from "@/components/icons/telegram";
 import { siteConfig } from "@/config/site.config";
 import { getDictionary, languageAlternates, type Locale } from "@/i18n";
 
@@ -15,6 +16,7 @@ export function contactMetadata(locale: Locale = "en"): Metadata {
 
 const getContacts = (t: ReturnType<typeof getDictionary>["contact"]) => [
   { icon: <Mail size={18} />, label: "Email", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
+  { icon: <TelegramIcon size={18} />, label: "Telegram", value: "@hoangpham2263", href: "https://t.me/hoangpham2263" },
   { icon: <LinkedInLogoIcon width={18} height={18} />, label: "LinkedIn", value: "hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
   { icon: <GitHubLogoIcon width={18} height={18} />, label: "GitHub", value: "hoangpham2263", href: "https://github.com/hoangpham2263" },
   { icon: <MapPin size={18} />, label: t.location, value: t.locationValue },

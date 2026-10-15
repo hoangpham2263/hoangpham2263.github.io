@@ -10,6 +10,7 @@ import {
 import { FacebookIcon, Mail, Phone } from "lucide-react";
 import AppStoreIcon from "./icons/appstore";
 import GooglePlayIcon from "./icons/google-play";
+import TelegramIcon from "./icons/telegram";
 
 export const IconMap = {
   github: <GitHubLogoIcon />,
@@ -24,4 +25,5 @@ export const IconMap = {
   facebook: <FacebookIcon />,
   appstore: <AppStoreIcon />,
   googleplay: <GooglePlayIcon />,
+  telegram: <TelegramIcon />,
 };
