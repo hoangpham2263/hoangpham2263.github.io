@@ -1,7 +1,7 @@
 // Content for the web /cv page
 export const resumeConfig = {
   name: "Pham Quoc Hoang",
-  title: "Full-Stack Developer · WordPress",
+  title: "Full-Stack Developer",
   summary:
     "I'm a web developer currently focused on WordPress. I enjoy turning designs into fast, SEO-friendly websites, automating repetitive work, and building features that help businesses grow online. I keep learning and improving every day.",
   contacts: [

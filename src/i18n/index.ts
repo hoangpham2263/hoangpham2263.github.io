@@ -111,7 +111,7 @@ const vi: typeof en = {
   hero: {
     bio: "Xin chào 👋 Chào mừng bạn đến với portfolio của mình! Mình thích biến ý tưởng thành những website nhanh, dễ dùng và dễ tìm thấy trên Google. Phần lớn công việc của mình là xây dựng website cho doanh nghiệp, còn thời gian rảnh mình tìm hiểu công nghệ mới và dùng chúng để làm sản phẩm của riêng mình. Mời bạn xem các dự án bên dưới, và cứ liên hệ nếu muốn cùng hợp tác nhé.",
     contact: "Liên hệ",
-    resume: "CV",
+    resume: "Xem CV",
     switchLabel: "English",
     switchShort: "EN",
   },

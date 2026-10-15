@@ -3,7 +3,7 @@ import { resumeConfig } from "@/config/resume.config";
 // Vietnamese content for the web /vi/cv page
 export const resumeConfigVi: typeof resumeConfig = {
   name: "Phạm Quốc Hoàng",
-  title: "Full-Stack Developer · WordPress",
+  title: "Full-Stack Developer",
   summary:
     "Mình là web developer, hiện tập trung vào WordPress. Mình thích biến thiết kế thành những website nhanh, chuẩn SEO, tự động hóa các việc lặp lại và xây dựng tính năng giúp doanh nghiệp phát triển online. Mình luôn học hỏi và cải thiện mỗi ngày.",
   contacts: [
