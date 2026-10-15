@@ -13,9 +13,8 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
   const t = getDictionary(locale);
   return (
     <section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)]">
-      <Link href={localePath(locale, "/")} className="w-fit" aria-label={siteConfig.name}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/hp-icon.svg" alt={siteConfig.name} width={44} height={44} className="block" />
+      <Link href={localePath(locale, "/")}>
+        <span className="font-mono text-sm underline">{siteConfig.name}</span>
       </Link>
       <div className="flex justify-between items-center mt-3">
         <h1 className="head-text-sm">{locale === "vi" ? "Phạm Quốc Hoàng (Will)" : portfolioConfig.name}</h1>
