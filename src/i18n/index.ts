@@ -86,6 +86,7 @@ const en = {
     description: "Notes on WordPress, Next.js, automation and things I learn while building.",
     empty: "No posts yet.",
     allPosts: "All posts",
+    all: "All",
   },
   tools: {
     title: "Tools",
@@ -162,6 +163,7 @@ const vi: typeof en = {
     description: "Ghi chép về WordPress, Next.js, automation và những gì mình học được khi làm sản phẩm.",
     empty: "Chưa có bài viết nào.",
     allPosts: "Tất cả bài viết",
+    all: "Tất cả",
   },
   tools: {
     title: "Công cụ",

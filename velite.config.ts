@@ -36,6 +36,7 @@ export const blogs = defineCollection({
       date: s.isodate(),
       published: s.boolean().default(true),
       tags: s.array(s.string()),
+      category: s.string().default("Khác"),
       body: s.mdx(),
       image: s.image().optional(),
       toc: s.toc(),

@@ -1,0 +1,216 @@
+---
+title: "WordPress 2026 toàn tập: từ hosting, theme, plugin đến tốc độ, SEO và bảo mật"
+description: "Tổng hợp những gì mình áp dụng khi làm website WordPress và WooCommerce cho doanh nghiệp: chọn môi trường, theme, plugin, tối ưu Core Web Vitals, SEO kỹ thuật, bảo mật và quy trình làm việc — kèm checklist bàn giao."
+date: "2026-10-15T22:00:00+07:00"
+tags: ["WordPress", "WooCommerce", "Core Web Vitals", "SEO", "Bảo mật"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Hơn 2 năm làm website WordPress và WooCommerce cho doanh nghiệp, mình rút ra một điều: WordPress không chậm và không kém an toàn — **cách dựng** mới quyết định. Bài này gom lại toàn bộ quy trình mình đang dùng, từ lúc chọn hosting đến khi bàn giao, kèm số liệu mới nhất và checklist để bạn áp dụng ngay.
+
+## WordPress năm 2026 qua vài con số
+
+- Theo W3Techs (số liệu ngày 15/10/2026), WordPress chạy trên **39,7% tổng số website** và chiếm **58,5% các website dùng CMS** xác định được — vẫn là nền tảng phổ biến nhất.
+- Phiên bản mới nhất là **WordPress 7.1.3** (phát hành 06/10/2026). Nhánh 7.0 vẫn nhận bản vá bảo mật (7.0.7 cùng ngày).
+- Yêu cầu khuyến nghị chính thức: **PHP 8.3 trở lên**, **MySQL 8.0+** hoặc **MariaDB 10.11+**, kèm HTTPS. PHP 7.4 vẫn chạy được nhưng đã hết hỗ trợ, không nên dùng.
+
+Điểm đáng chú ý là tỉ lệ dùng WordPress trên toàn bộ web giảm nhẹ so với vài năm trước, khi các nền tảng như Shopify, Wix và các framework như Next.js lớn dần. Nhưng với website doanh nghiệp, blog, tin tức và shop vừa và nhỏ, WordPress vẫn là lựa chọn cân bằng nhất giữa chi phí, tốc độ làm và khả năng tự quản lý nội dung.
+
+## Khi nào nên (và không nên) dùng WordPress
+
+**Nên dùng khi:**
+- Website giới thiệu doanh nghiệp, landing page, blog, tin tức — nội dung cần cập nhật thường xuyên bởi người không biết code.
+- Shop bán hàng vừa và nhỏ (WooCommerce), cần kiểm soát dữ liệu và không muốn trả phí theo doanh thu.
+- Cần SEO tốt với chi phí thấp: hệ sinh thái plugin SEO, schema, sitemap rất trưởng thành.
+
+**Cân nhắc giải pháp khác khi:**
+- Ứng dụng có nghiệp vụ phức tạp (ví, đối soát, phân quyền nhiều tầng) — mình chọn Next.js + PostgreSQL như dự án Hoàn Hời.
+- Trang cực kỳ đơn giản, gần như không đổi nội dung — một trang tĩnh sẽ nhẹ và rẻ hơn.
+- Shop rất lớn với lưu lượng đột biến mà đội ngũ không có người vận hành server — nền tảng SaaS có thể an toàn hơn.
+
+## 1. Chọn hosting và môi trường
+
+Hosting là nền móng: tối ưu code đến đâu cũng không cứu được một server yếu. Những gì mình kiểm tra trước khi chốt:
+
+| Hạng mục | Nên có | Vì sao |
+|---|---|---|
+| PHP | 8.3+ | Nhanh hơn, còn được vá bảo mật |
+| Database | MariaDB 10.11+ / MySQL 8.0+ | Theo khuyến nghị chính thức |
+| Web server | LiteSpeed hoặc Nginx | Page cache phía server, HTTP/3 |
+| Object cache | Redis hoặc Memcached | Giảm truy vấn database lặp lại |
+| HTTPS | Let's Encrypt tự gia hạn | Bắt buộc cho SEO và trình duyệt |
+| Backup | Tự động hằng ngày, lưu ngoài server | Khôi phục khi có sự cố |
+| Staging | Có môi trường thử | Cập nhật plugin không sợ hỏng site thật |
+| Vị trí server | Gần người dùng (Singapore cho khách Việt Nam) | Giảm thời gian phản hồi |
+
+Với khách Việt Nam, mình ưu tiên server đặt tại Việt Nam hoặc Singapore, kết hợp CDN cho ảnh và file tĩnh.
+
+## 2. Theme: ít nhưng chất
+
+Có ba hướng chính:
+
+1. **Theme riêng từ thiết kế Figma** — cách mình làm cho hầu hết khách. Chỉ chứa đúng những gì thiết kế cần, nên nhẹ và dễ đạt điểm Core Web Vitals tốt. Kết hợp **ACF** để khách tự sửa nội dung từng khối mà không phá bố cục.
+2. **Block theme (Full Site Editing)** — dựng header, footer, template bằng trình soạn thảo khối. Hợp với site nội dung, ít logic đặc thù.
+3. **Theme bán sẵn + page builder** — nhanh lúc đầu nhưng thường kéo theo nhiều CSS/JS thừa. Nếu dùng, chỉ chọn **một** builder và tắt các module không dùng.
+
+Nguyên tắc chung:
+- Luôn tách tùy biến vào **child theme** hoặc plugin riêng, không sửa thẳng theme gốc.
+- Tránh tuyệt đối theme/plugin "nulled" (bản crack) — nguồn mã độc phổ biến nhất mình từng gặp khi nhận lại site của người khác.
+- Hạn chế slider, hiệu ứng nặng ở phần đầu trang vì chúng ảnh hưởng trực tiếp đến LCP.
+
+## 3. Plugin: mỗi việc một plugin
+
+![Bộ plugin gọn: mỗi nhu cầu một plugin](./plugins.webp)
+
+Số lượng plugin không phải vấn đề — **chất lượng và sự trùng lặp** mới là vấn đề. Hai plugin cache cùng chạy, hay ba plugin cùng thêm schema, là nguyên nhân lỗi phổ biến. Bộ cơ bản mình hay dùng:
+
+- **Tốc độ:** LiteSpeed Cache (nếu server LiteSpeed) hoặc WP Rocket; một plugin tối ưu ảnh sang WebP/AVIF.
+- **SEO:** Rank Math hoặc Yoast SEO; Redirection để quản lý chuyển hướng 301.
+- **Bảo mật:** Wordfence hoặc Solid Security, bật xác thực 2 lớp cho tài khoản quản trị.
+- **Sao lưu:** UpdraftPlus hoặc backup của hosting, luôn có bản lưu ngoài server.
+- **Nội dung:** ACF cho trường tùy biến.
+- **Form và email:** Contact Form 7 hoặc Fluent Forms; WP Mail SMTP để email không vào spam.
+
+Trước khi cài plugin mới, mình kiểm tra: lần cập nhật gần nhất, số lượt cài, tương thích phiên bản WordPress hiện tại, và liệu có thể làm việc đó bằng vài dòng code trong theme hay không.
+
+## 4. Tối ưu tốc độ và Core Web Vitals
+
+### Hiểu đường đi của một trang
+
+![Đường đi của một trang WordPress qua các lớp cache](./stack.webp)
+
+Mỗi lần có người mở trang, WordPress phải chạy PHP, gọi theme, plugin và truy vấn database để dựng HTML. Mục tiêu tối ưu là để **càng nhiều yêu cầu được trả lời từ cache càng tốt**: trình duyệt → CDN → page cache → object cache → database.
+
+### Mục tiêu cần đạt
+
+![Ngưỡng Core Web Vitals theo web.dev](./cwv.webp)
+
+Google đo Core Web Vitals trên dữ liệu người dùng thật, tính ở **phân vị 75**:
+
+- **LCP** (tốc độ hiện nội dung chính): tốt khi ≤ 2,5 giây, kém khi > 4 giây.
+- **INP** (độ phản hồi khi tương tác): tốt khi ≤ 200 ms, kém khi > 500 ms. INP đã thay FID từ 12/03/2024.
+- **CLS** (độ ổn định bố cục): tốt khi ≤ 0,1, kém khi > 0,25.
+
+### Checklist tốc độ mình áp dụng
+
+**Ảnh — thường là thủ phạm số 1**
+- Xuất ảnh đúng kích thước hiển thị, không tải ảnh 4000px cho khung 800px.
+- Dùng WebP hoặc AVIF; nén ở chất lượng khoảng 75–85%.
+- Ảnh đầu trang (ảnh LCP) **không lazy-load**, nên ưu tiên tải (`fetchpriority="high"`); các ảnh bên dưới thì lazy-load.
+- Luôn khai báo `width` và `height` để tránh nhảy bố cục (CLS).
+
+**CSS, JavaScript và font**
+- Gỡ plugin/module không dùng thay vì chỉ ẩn đi.
+- Hoãn (defer) JavaScript không cần thiết; tránh chèn quá nhiều script bên thứ ba (chat, pixel, widget).
+- Tự host font, chỉ tải đúng các độ đậm cần dùng, dùng `font-display: swap`.
+
+**Cache và server**
+- Bật page cache; loại trừ giỏ hàng, thanh toán, tài khoản khi dùng WooCommerce.
+- Bật object cache (Redis) cho site có nhiều truy vấn.
+- Dùng CDN cho file tĩnh; bật nén Brotli/Gzip và HTTP/2 hoặc HTTP/3.
+- Nâng PHP lên bản được khuyến nghị.
+
+**Database**
+- Giới hạn số bản nháp lưu lại, dọn transient hết hạn, tối ưu bảng định kỳ.
+
+Một vài thiết lập mình thường thêm vào `wp-config.php`:
+
+```php
+// Giới hạn số bản sửa đổi lưu cho mỗi bài
+define( 'WP_POST_REVISIONS', 5 );
+
+// Tắt trình sửa file theme/plugin trong trang quản trị
+define( 'DISALLOW_FILE_EDIT', true );
+
+// Tăng bộ nhớ cho WordPress khi cần
+define( 'WP_MEMORY_LIMIT', '256M' );
+```
+
+Và dọn dẹp bằng WP-CLI:
+
+```bash
+wp transient delete --expired
+wp db optimize
+```
+
+### Đo trước, đo sau
+
+Mình luôn đo bằng **PageSpeed Insights** trước và sau khi tối ưu, lưu lại kết quả cho khách. Lưu ý điểm Lighthouse (dữ liệu phòng lab) có thể dao động; dữ liệu **người dùng thật** (phần "Discover what your real users are experiencing") mới là thứ Google dùng để đánh giá.
+
+## 5. SEO kỹ thuật cho WordPress
+
+Tốc độ tốt là nền, nhưng còn nhiều việc kỹ thuật khác:
+
+- **Đường dẫn (permalink)** dạng `/%postname%/`, ngắn và có từ khóa; chọn một lần và giữ cố định.
+- **Sitemap XML** và gửi lên Google Search Console.
+- **Thẻ tiêu đề và mô tả** riêng cho từng trang; mỗi trang một H1.
+- **Schema**: Organization, Article, Product, Breadcrumb… — chỉ để một plugin quản lý schema để tránh trùng.
+- **Canonical** đúng để tránh nội dung trùng lặp (ví dụ trang phân trang, tham số lọc sản phẩm).
+- **Chuyển hướng 301** đầy đủ khi đổi đường dẫn hoặc chuyển từ nền tảng khác sang — bước này quyết định có giữ được thứ hạng cũ hay không.
+- **Hreflang** khi website có nhiều ngôn ngữ.
+- **Robots** hợp lý: chặn trang tìm kiếm nội bộ, trang giỏ hàng khỏi kết quả tìm kiếm.
+
+Khi chuyển website từ nền tảng cũ (Haravan, Shopee, site tự code) sang WordPress, mình luôn lập **bảng đối chiếu URL cũ → URL mới** trước, nhập dữ liệu bằng script, rồi kiểm tra lại bằng Search Console sau khi chuyển.
+
+## 6. Ghi chú riêng cho WooCommerce
+
+- Bật **HPOS** (High-Performance Order Storage) — lưu đơn hàng trong bảng riêng thay vì bảng bài viết, giúp truy vấn đơn nhanh hơn; mặc định cho cửa hàng mới ở các phiên bản WooCommerce gần đây.
+- Cấu hình cache **loại trừ** giỏ hàng, thanh toán, tài khoản và các cookie phiên.
+- Ảnh sản phẩm thống nhất một tỉ lệ (thường là 1:1) để danh mục gọn và không nhảy bố cục — công cụ [Image Resizer](https://hoangpham.is-a.dev/image-resizer/) mình làm phục vụ đúng việc này.
+- Sản phẩm nhiều biến thể: tránh tạo hàng trăm biến thể không cần thiết; dùng thuộc tính lọc hợp lý.
+- Theo dõi tác vụ nền (Action Scheduler) để không bị dồn hàng nghìn tác vụ lỗi.
+- Kiểm tra lại toàn bộ luồng đặt hàng, email thông báo và cổng thanh toán sau **mỗi lần cập nhật lớn**.
+
+## 7. Bảo mật: phòng còn hơn chữa
+
+Phần lớn website bị tấn công mà mình từng xử lý đều do: plugin/theme cũ có lỗ hổng, bản nulled chứa mã độc, hoặc mật khẩu yếu. Checklist:
+
+- **Cập nhật** WordPress, theme, plugin thường xuyên — thử trên staging trước với site quan trọng.
+- **Xác thực 2 lớp** cho mọi tài khoản quản trị; mật khẩu mạnh, không dùng tên đăng nhập `admin`.
+- **Phân quyền tối thiểu**: người viết bài chỉ cần quyền Biên tập viên hoặc Tác giả.
+- Giới hạn số lần đăng nhập sai; cân nhắc tắt XML-RPC nếu không dùng.
+- Tắt trình sửa file trong quản trị (`DISALLOW_FILE_EDIT`).
+- Dùng **WAF/tường lửa** (của plugin bảo mật hoặc Cloudflare).
+- **Backup theo nguyên tắc 3-2-1**: 3 bản, 2 nơi lưu khác nhau, 1 bản ngoài server — và **thử khôi phục** ít nhất một lần.
+- Gỡ hẳn plugin, theme và tài khoản không còn dùng.
+
+## 8. Quy trình làm việc của mình
+
+1. **Làm local** bằng Docker hoặc LocalWP, quản lý theme/plugin tự viết bằng **Git**.
+2. Đẩy lên **staging** để khách duyệt.
+3. Triển khai lên site thật; dùng **WP-CLI** cho các việc lặp lại:
+
+```bash
+# Cập nhật lõi và plugin
+wp core update
+wp plugin update --all
+
+# Đổi domain sau khi chuyển site (thử trước với --dry-run)
+wp search-replace 'https://staging.example.com' 'https://example.com' --dry-run
+```
+
+4. Đo tốc độ, kiểm tra SEO, gửi sitemap, bật backup và giám sát.
+
+## Checklist bàn giao website WordPress
+
+- [ ] PHP 8.3+, HTTPS, chuyển hướng www/không www thống nhất
+- [ ] Page cache, CDN, ảnh WebP/AVIF, ảnh đầu trang không lazy-load
+- [ ] Core Web Vitals đạt mức "tốt" trên di động
+- [ ] Sitemap gửi Search Console, robots đúng, schema không trùng
+- [ ] Chuyển hướng 301 đầy đủ nếu là site chuyển đổi
+- [ ] 2FA cho quản trị, phân quyền đúng, tắt sửa file trong admin
+- [ ] Backup tự động có bản ngoài server, đã thử khôi phục
+- [ ] Form liên hệ gửi email qua SMTP và đã test
+- [ ] Tài liệu hướng dẫn quản trị cho khách
+
+## Kết
+
+WordPress năm 2026 vẫn là công cụ mạnh cho đa số website doanh nghiệp — miễn là được dựng gọn: theme vừa đủ, plugin không trùng việc, cache nhiều lớp, cập nhật và sao lưu đều đặn. Nếu bạn cần làm mới, tăng tốc hoặc chuyển website sang WordPress, xem các [dịch vụ](/services) hoặc [liên hệ](/contact) với mình nhé.
+
+## Nguồn tham khảo
+
+- [W3Techs — Usage statistics of WordPress](https://w3techs.com/technologies/details/cm-wordpress) (số liệu 15/10/2026)
+- [WordPress.org — Releases](https://wordpress.org/download/releases/)
+- [WordPress.org — Requirements](https://wordpress.org/about/requirements/)
+- [web.dev — How the Core Web Vitals thresholds were defined](https://web.dev/articles/defining-core-web-vitals-thresholds)

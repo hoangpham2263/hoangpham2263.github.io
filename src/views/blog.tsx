@@ -3,6 +3,7 @@ import { MDXContentRenderer } from "@/components/mdx/mdx-content-renderer";
 import Picture from "@/components/picture";
 import ZoomImage from "@/components/zoom-image";
 import ContentCard from "@/components/content-card";
+import BlogFilter from "@/components/blog-filter";
 import { siteConfig } from "@/config/site.config";
 import { getDictionary, languageAlternates, localePath, ogLocale, type Locale } from "@/i18n";
 import { ArrowLeft } from "lucide-react";
@@ -22,6 +23,12 @@ const postsFor = (locale: Locale) =>
     .filter((b) => b.published && b.lang === locale)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
+const categoriesOf = (posts: ReturnType<typeof postsFor>) => {
+  const counts = new Map<string, number>();
+  posts.forEach((p) => counts.set(p.category, (counts.get(p.category) ?? 0) + 1));
+  return [...counts].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+};
+
 export function blogListMetadata(locale: Locale): Metadata {
   const t = getDictionary(locale).blog;
   return {
@@ -39,20 +46,21 @@ export function BlogListView({ locale }: { locale: Locale }) {
       {posts.length === 0 ? (
         <p className="text-sm text-muted-foreground">{t.empty}</p>
       ) : (
-        <div className="space-y-3 md:space-y-6">
+        <BlogFilter categories={categoriesOf(posts)} allLabel={t.all}>
           {posts.map((post) => (
+            <div key={post.slugAsParams} data-category={post.category}>
             <ContentCard
-              key={post.slugAsParams}
               title={post.title}
               description={post.description}
               href={localePath(locale, `/blog/${post.slugAsParams}`)}
               image={post.image}
               tags={post.tags}
-              meta={formatDate(post.date, locale)}
+              meta={`${formatDate(post.date, locale)} · ${post.category}`}
               locale={locale}
             />
+            </div>
           ))}
-        </div>
+        </BlogFilter>
       )}
     </div>
   );
@@ -106,7 +114,7 @@ export async function BlogPostView({ params, locale }: BlogPostProps & { locale:
         {t.allPosts}
       </Link>
       <header className="space-y-2">
-        <p className="text-xs text-muted-foreground">{formatDate(post.date, locale)}</p>
+        <p className="text-xs text-muted-foreground">{formatDate(post.date, locale)} · {post.category}</p>
         <h1 className="font-heading text-2xl font-bold leading-tight sm:text-3xl">{post.title}</h1>
         <p className="text-sm text-foreground/85 leading-6">{post.description}</p>
       </header>
