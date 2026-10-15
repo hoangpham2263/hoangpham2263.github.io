@@ -71,6 +71,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
+      <head>
+        {/* Before first paint: hide lists that will switch to a remembered filter, to avoid a visible jump */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var l=localStorage;if(l.getItem("hp-blog-category")||l.getItem("hp-projects-type")==="Github"){var d=document.documentElement;d.classList.add("hp-restoring");setTimeout(function(){d.classList.remove("hp-restoring")},800)}}catch(e){}`,
+          }}
+        />
+      </head>
       <body className={cn("min-h-screen lg:h-screen lg:overflow-hidden bg-background font-sans antialiased", fontSans.variable, fontHeading.variable)}>
         <RootProviders>{children}</RootProviders>
       </body>

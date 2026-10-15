@@ -23,6 +23,7 @@ export default function BlogFilter({
       const saved = localStorage.getItem("hp-blog-category");
       if (saved && categories.some((c) => c.name === saved)) setActive(saved);
     } catch {}
+    setTimeout(() => document.documentElement.classList.remove("hp-restoring"), 0);
   }, [categories]);
 
   const choose = (value: string | null) => {
@@ -55,7 +56,7 @@ export default function BlogFilter({
   );
 
   return (
-    <>
+    <div data-restore>
       {categories.length > 1 && (
         <div className="mb-4 flex flex-wrap gap-2">
           {chip(allLabel, total, null)}
@@ -65,6 +66,6 @@ export default function BlogFilter({
       <div ref={listRef} className="space-y-3 md:space-y-6">
         {children}
       </div>
-    </>
+    </div>
   );
 }

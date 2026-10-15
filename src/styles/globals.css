@@ -454,3 +454,6 @@ html::-webkit-scrollbar {
     background: #fff !important;
   }
 }
+
+/* Hidden until a remembered filter is applied (see the inline script in layout) */
+.hp-restoring [data-restore] { visibility: hidden; }

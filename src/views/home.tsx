@@ -47,6 +47,7 @@ export default function HomeView({ locale = "en" }: { locale?: Locale }) {
       const saved = localStorage.getItem("hp-projects-type");
       if (saved === "Featured" || saved === "Github") form.setValue("type", saved);
     } catch {}
+    setTimeout(() => document.documentElement.classList.remove("hp-restoring"), 0);
   }, [form]);
   useEffect(() => {
     try {
@@ -149,7 +150,7 @@ export default function HomeView({ locale = "en" }: { locale?: Locale }) {
   }, [type, filteredProjects, loading, locale, t]);
 
   return (
-    <section className="w-full space-y-3 mt-3 md:space-y-6 md:mt-5">
+    <section data-restore className="w-full space-y-3 mt-3 md:space-y-6 md:mt-5">
       <Form {...form}>
         <form className="w-full flex items-center rounded-lg border bg-background shadow-sm">
           <FormField
