@@ -59,9 +59,9 @@ const Entry = ({
   <article className="break-inside-avoid">
     <div className="flex flex-wrap justify-between items-baseline gap-x-4">
       <h3 className="font-bold">{title}</h3>
-      <span className="text-[#333]">{period}</span>
+      <span className="text-[#1a1a1a]">{period}</span>
     </div>
-    <p className="italic text-[#333]">{role}</p>
+    <p className="italic text-[#1a1a1a]">{role}</p>
     {summary && <p className="mt-0.5">{summary}</p>}
     <ul className="mt-1 list-disc pl-5 space-y-0.5">
       {items.map((r) => (
@@ -87,7 +87,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
             <ArrowLeft size={16} className="group-hover/back:-translate-x-1 transition-transform" />
             {t.home}
           </Link>
-          <p className="order-last w-full sm:order-none sm:w-auto text-xs text-muted-foreground">{t.webNote}</p>
+          <p className="order-last w-full sm:order-none sm:w-auto text-sm text-foreground/80">{t.webNote}</p>
           <div className="flex items-center gap-1">
             <LanguageSwitcher />
             <ThemeToggler />
@@ -103,7 +103,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
         {/* Paper: always light, like a printed A4 page */}
         <div
           id="cv-paper"
-          className="bg-white text-[#111] shadow-sm ring-1 ring-black/5 rounded-sm px-4 py-6 sm:px-8 sm:py-8 font-['Times_New_Roman',Times,serif] text-[14px] leading-[1.55] print:shadow-none print:ring-0 print:rounded-none print:px-0 print:py-0"
+          className="bg-white text-black shadow-sm ring-1 ring-black/5 rounded-sm px-4 py-6 sm:px-8 sm:py-8 font-['Times_New_Roman',Times,serif] text-[14px] leading-[1.55] print:shadow-none print:ring-0 print:rounded-none print:px-0 print:py-0"
         >
           <header className="text-center">
             <h1 className="text-[24px] sm:text-[26px] font-bold uppercase tracking-wide font-[Arial,Helvetica,sans-serif] leading-tight">
@@ -202,7 +202,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                 <p>
                   <b>{e.school}</b> — <i>{e.degree}</i>
                 </p>
-                <span className="text-[#333]">{e.period}</span>
+                <span className="text-[#1a1a1a]">{e.period}</span>
               </div>
             ))}
             <p className="mt-0.5">
