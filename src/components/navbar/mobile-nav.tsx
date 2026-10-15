@@ -21,7 +21,7 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/services": t.nav.services, "/blog": t.nav.blog, "/tools": t.nav.tools, "/contact": t.nav.contact };
   const isActive = (url: string) =>
-    path === url || (path.includes(url) && url !== "/") || (url === "/" && (path === "/" || path.startsWith("/projects")));
+    path === url || (path.includes(url) && url !== "/") || (url === "/" && path.startsWith("/projects"));
 
   // Close on navigation, lock page scroll while open
   useEffect(() => setOpen(false), [pathname]);
@@ -76,7 +76,7 @@ export default function MobileNav() {
                 {navbarConfig.map((item) => (
                   <li key={item.url}>
                     <Link
-                      href={`${localePath(locale, item.url)}#tab-section`}
+                      href={localePath(locale, item.url === "/" ? "/projects" : item.url)}
                       onClick={() => setOpen(false)}
                       className={cn(
                         "flex items-center justify-between rounded-md px-3 py-3 text-base",
