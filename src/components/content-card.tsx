@@ -1,7 +1,7 @@
 import Picture from "@/components/picture";
 import LinksSection from "@/components/links-section";
 import type { Locale } from "@/i18n";
-import { StepForward } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Image as ImageType } from "velite";
 
@@ -31,25 +31,27 @@ export default function ContentCard({ title, description, href, image, tags = []
                 {href ? (
                   // Stretched link: the whole card opens the detail page
                   /^https?:/.test(href) ? (
-                    <a href={href} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0 after:z-0 group-hover/card:underline underline-offset-4">
+                    <a href={href} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0 after:z-0 transition-colors duration-200 group-hover/card:text-primary">
                       {title}
                     </a>
                   ) : (
-                    <Link href={href} className="after:absolute after:inset-0 after:z-0 group-hover/card:underline underline-offset-4">
+                    <Link href={href} className="after:absolute after:inset-0 after:z-0 transition-colors duration-200 group-hover/card:text-primary">
                       {title}
                     </Link>
                   )
                 ) : (
                   title
                 )}
+              {href && (
+                <ArrowRight
+                  size={18}
+                  aria-hidden
+                  className="inline-block ml-1.5 align-[-2px] text-primary opacity-0 -translate-x-1 transition-all duration-200 group-hover/card:opacity-100 group-hover/card:translate-x-0"
+                />
+              )}
               </h2>
               {badge}
             </div>
-            {href && (
-              <span className="-translate-x-1 opacity-0 group-hover/card:translate-x-0 group-hover/card:opacity-100 transition-all duration-100 ease-in-out">
-                <StepForward size={12} />
-              </span>
-            )}
           </div>
           <p className="text-sm text-foreground/85 leading-6 max-w-2xl">{description}</p>
         </div>
