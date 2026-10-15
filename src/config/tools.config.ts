@@ -24,4 +24,18 @@ export const toolsConfig: Tool[] = [
     ],
     image: "/tools/image-converter.webp",
   },
+  {
+    name: "File Compressor",
+    description: {
+      vi: "Giảm dung lượng file PDF, Word, PowerPoint, Excel ngay trên trình duyệt — PDF nén bằng Ghostscript, file Office nén lại ảnh bên trong; file không được tải lên đâu cả.",
+      en: "Shrink PDF, Word, PowerPoint and Excel files in the browser — PDFs via Ghostscript, Office files by re-compressing embedded images; nothing is uploaded.",
+    },
+    status: "done",
+    tags: ["JavaScript", "WebAssembly", "Ghostscript", "PDF", "Office"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/file-compressor/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/file-compressor" },
+    ],
+    image: "/tools/file-compressor.webp",
+  },
 ];

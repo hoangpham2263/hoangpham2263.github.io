@@ -28,6 +28,7 @@ export function ToolsView({ locale }: { locale: Locale }) {
               key={tool.name}
               title={tool.name}
               description={tool.description[locale]}
+              href={tool.links.find((l) => l.name.toLowerCase() === "website")?.url ?? tool.links[0]?.url}
               image={tool.image ? { src: tool.image, width: 1200, height: 675 } : undefined}
               tags={tool.tags}
               links={tool.links}

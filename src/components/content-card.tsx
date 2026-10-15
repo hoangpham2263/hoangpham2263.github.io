@@ -30,9 +30,15 @@ export default function ContentCard({ title, description, href, image, tags = []
               <h2 className="text-xl font-semibold font-heading">
                 {href ? (
                   // Stretched link: the whole card opens the detail page
-                  <Link href={href} className="after:absolute after:inset-0 after:z-0 group-hover/card:underline underline-offset-4">
-                    {title}
-                  </Link>
+                  /^https?:/.test(href) ? (
+                    <a href={href} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0 after:z-0 group-hover/card:underline underline-offset-4">
+                      {title}
+                    </a>
+                  ) : (
+                    <Link href={href} className="after:absolute after:inset-0 after:z-0 group-hover/card:underline underline-offset-4">
+                      {title}
+                    </Link>
+                  )
                 ) : (
                   title
                 )}
