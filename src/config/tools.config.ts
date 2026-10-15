@@ -38,4 +38,18 @@ export const toolsConfig: Tool[] = [
     ],
     image: "/tools/file-compressor.webp",
   },
+  {
+    name: "PDF Cutter",
+    description: {
+      vi: "Cắt file PDF ngay trên trình duyệt: xem trước từng trang, chọn trang cần giữ (hoặc gõ 1-3, 5), tải 1 file hoặc tách mỗi trang 1 file — file không được tải lên đâu cả.",
+      en: "Cut PDFs in the browser: preview every page, pick the ones to keep (or type 1-3, 5), download one file or one file per page — nothing is uploaded.",
+    },
+    status: "done",
+    tags: ["JavaScript", "PDF.js", "pdf-lib", "PDF"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/pdf-cutter/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/pdf-cutter" },
+    ],
+    image: "/tools/pdf-cutter.webp",
+  },
 ];
