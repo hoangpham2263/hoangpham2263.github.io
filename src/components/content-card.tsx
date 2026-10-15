@@ -76,7 +76,7 @@ export default function ContentCard({ title, description, href, image, tags = []
               height={338}
               quality={100}
               alt={title}
-              className="w-full h-full object-cover scale-100 group-hover/card:scale-105 transition-all transform-gpu ease-in-out"
+              className="w-full h-full object-cover object-top scale-100 group-hover/card:scale-105 transition-all transform-gpu ease-in-out"
             />
         </div>
       )}
