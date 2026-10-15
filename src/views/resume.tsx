@@ -109,10 +109,10 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
             <h1 className="text-[24px] sm:text-[26px] lg:text-[30px] font-bold uppercase tracking-wide font-[Arial,Helvetica,sans-serif] leading-tight">
               {resumeConfig.name}
             </h1>
-            <p className="mt-1 text-[16px] lg:text-[17px] font-[Arial,Helvetica,sans-serif]">{resumeConfig.title}</p>
-            <p className="mt-2 flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 gap-y-1 text-[13px] sm:text-[14px] lg:text-[15px]">
+            <p className="mt-2 text-[16px] lg:text-[17px] font-[Arial,Helvetica,sans-serif]">{resumeConfig.title}</p>
+            <p className="mt-3 flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-[13px] sm:text-[14px] lg:text-[15px]">
               {resumeConfig.contacts.map((c) => (
-                <span key={c.value} className="inline-flex items-center gap-1.5 leading-none">
+                <span key={c.value} className="inline-flex items-center gap-2 leading-none">
                   {icons[c.icon as keyof typeof icons]}
                   {c.href ? (
                     <a href={c.href} className="hover:underline">
@@ -123,7 +123,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                   )}
                 </span>
               ))}
-              <span className="inline-flex items-center gap-1.5 leading-none">
+              <span className="inline-flex items-center gap-2 leading-none">
                 {icons.globe}
                 <a href={siteConfig.siteUrl} className="hover:underline">
                   hoangpham.is-a.dev
