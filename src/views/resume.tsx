@@ -103,7 +103,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
         {/* Paper: always light, like a printed A4 page */}
         <div
           id="cv-paper"
-          className="bg-white text-[#111] shadow-sm ring-1 ring-black/5 rounded-sm px-6 py-8 sm:px-12 sm:py-12 font-['Times_New_Roman',Times,serif] text-[14.5px] leading-[1.55] print:shadow-none print:ring-0 print:rounded-none print:px-0 print:py-0"
+          className="bg-white text-[#111] shadow-sm ring-1 ring-black/5 rounded-sm px-4 py-6 sm:px-8 sm:py-8 font-['Times_New_Roman',Times,serif] text-[14.5px] leading-[1.55] print:shadow-none print:ring-0 print:rounded-none print:px-0 print:py-0"
         >
           <header className="text-center">
             <h1 className="text-[30px] sm:text-[34px] font-bold uppercase tracking-wide font-[Arial,Helvetica,sans-serif] leading-tight">
