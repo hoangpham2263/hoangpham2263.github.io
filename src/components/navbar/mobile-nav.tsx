@@ -21,7 +21,7 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/services": t.nav.services, "/blog": t.nav.blog, "/tools": t.nav.tools, "/contact": t.nav.contact };
   const isActive = (url: string) =>
-    path === url || (path.includes(url) && url !== "/") || (url === "/" && path.startsWith("/projects"));
+    url === "/" ? path.startsWith("/projects") : path === url || path.startsWith(`${url}/`);
 
   // Close on navigation, lock page scroll while open
   useEffect(() => setOpen(false), [pathname]);
