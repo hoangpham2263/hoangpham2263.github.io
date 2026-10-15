@@ -2,6 +2,7 @@ import { projects } from "#site/content";
 import LinksSection from "@/components/links-section";
 import { MDXContentRenderer } from "@/components/mdx/mdx-content-renderer";
 import Picture from "@/components/picture";
+import ZoomImage from "@/components/zoom-image";
 import { siteConfig } from "@/config/site.config";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
@@ -95,13 +96,15 @@ export default async function ProjectView({ params, locale = "en" }: ProjectPage
           {t.allProjects}
         </Link>
       </div>
-      <Picture
-        image={project.image}
-        width={1200}
-        height={800}
-        alt={project.title}
-        className="w-full border rounded-2xl"
-      />
+      <ZoomImage src={project.image.src} alt={project.title}>
+        <Picture
+          image={project.image}
+          width={1200}
+          height={800}
+          alt={project.title}
+          className="w-full border rounded-2xl"
+        />
+      </ZoomImage>
       <header className="space-y-3">
         <h1 className="font-heading text-2xl font-bold leading-tight sm:text-3xl">{project.title}</h1>
         <p className="text-sm text-foreground/85 leading-6">{project.description}</p>
