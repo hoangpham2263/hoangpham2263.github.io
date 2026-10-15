@@ -7,17 +7,17 @@ export default function NotFound() {
     <div className="min-h-screen flex items-center justify-center">
       <Card className="w-[420px]">
         <CardHeader>
-          <CardTitle>Page Not Found</CardTitle>
+          <CardTitle>Không tìm thấy trang</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            The page you are looking for doesn&apos;t exist or has been moved.
+            Trang bạn tìm không tồn tại hoặc đã được chuyển đi.
           </p>
         </CardContent>
         <CardFooter>
           <Button asChild>
             <Link href="/">
-              Return Home
+              Về trang chủ
             </Link>
           </Button>
         </CardFooter>

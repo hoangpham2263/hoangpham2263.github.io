@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { IconMap } from "@/components/icon-map";
+import { getDictionary, type Locale } from "@/i18n";
 
 type ProjectLink = {
   name: string;
@@ -9,10 +10,10 @@ type ProjectLink = {
 };
 
 // Visible label next to each link icon
-const linkLabel = (name: string) =>
-  name.toLowerCase() === "website" ? "Visit website" : name;
+const linkLabel = (name: string, locale: Locale) =>
+  name.toLowerCase() === "website" ? getDictionary(locale).project.visitWebsite : name;
 
-const LinksSection = ({ links }: { links: ProjectLink[] }) => {
+const LinksSection = ({ links, locale = "en" }: { links: ProjectLink[]; locale?: Locale }) => {
   const hasMoreLinks = links.length > 3;
   const remainingCount = links.length - 3;
   const visibleLinks = links.slice(0, 3);
@@ -50,7 +51,7 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
             }}
           >
             {IconMap[link.name.toLowerCase() as keyof typeof IconMap]}
-            <span>{linkLabel(link.name)}</span>
+            <span>{linkLabel(link.name, locale)}</span>
           </motion.a>
         ))}
 
@@ -129,7 +130,7 @@ const LinksSection = ({ links }: { links: ProjectLink[] }) => {
               }}
             >
               {IconMap[link.name.toLowerCase() as keyof typeof IconMap]}
-              <span>{linkLabel(link.name)}</span>
+              <span>{linkLabel(link.name, locale)}</span>
             </motion.a>
           ))}
         </AnimatePresence>

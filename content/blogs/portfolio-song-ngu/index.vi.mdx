@@ -1,0 +1,21 @@
+---
+title: "Chuyển portfolio Next.js sang song ngữ Việt – Anh"
+description: "Cách mình thêm bản tiếng Việt (mặc định) và tiếng Anh cho portfolio Next.js xuất tĩnh trên GitHub Pages: route /en, hreflang và nội dung MDX hai ngôn ngữ."
+date: "2026-10-15"
+tags: ["Next.js", "i18n", "SEO", "GitHub Pages"]
+---
+
+## Vì sao cần song ngữ
+
+Phần lớn nhà tuyển dụng mình gửi CV là người Việt, trong khi portfolio trước đây chỉ có tiếng Anh. Mình muốn bản tiếng Việt là mặc định, còn bản tiếng Anh vẫn giữ để gửi khi cần.
+
+## Cách làm
+
+- **Đường dẫn:** tiếng Việt ở gốc (`/`, `/projects/...`), tiếng Anh thêm `/en` phía trước.
+- **Nội dung:** mỗi dự án có `index.mdx` (tiếng Anh) và `index.vi.mdx` (tiếng Việt) trong cùng thư mục, dùng chung ảnh. Velite đọc tên file để gắn ngôn ngữ.
+- **Giao diện:** chữ trên menu, nút và tiêu đề mục nằm trong một file từ điển cho hai ngôn ngữ.
+- **SEO:** mỗi trang có `hreflang` cho `vi` và `en`, cùng `canonical` riêng.
+
+## Lưu ý với static export
+
+Site xuất tĩnh (`output: "export"`) nên không dùng được middleware để đoán ngôn ngữ. Mình dùng nút EN / VI để chuyển sang đúng trang tương ứng, và thêm một bước sau build để GitHub Pages mở được `/en`.

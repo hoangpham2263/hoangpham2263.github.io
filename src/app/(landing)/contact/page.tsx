@@ -1,55 +1,7 @@
-import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
-import { siteConfig } from "@/config/site.config";
+import ContactView, { contactMetadata } from "@/views/contact";
 
-export const metadata: Metadata = {
-  title: `Contact | ${siteConfig.creator.name}`,
-  description: "Get in touch with Pham Quoc Hoang via email or LinkedIn.",
-};
-
-const contacts = [
-  { icon: <Mail size={18} />, label: "Email", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
-  { icon: <LinkedInLogoIcon width={18} height={18} />, label: "LinkedIn", value: "hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
-  { icon: <GitHubLogoIcon width={18} height={18} />, label: "GitHub", value: "hoangpham2263", href: "https://github.com/hoangpham2263" },
-  { icon: <MapPin size={18} />, label: "Location", value: "Ho Chi Minh City, Vietnam" },
-];
+export const metadata = contactMetadata("vi");
 
 export default function ContactPage() {
-  return (
-    <div className="w-full max-w-5xl mt-10">
-      <p className="text-sm text-muted-foreground max-w-2xl">
-        Want to talk about WordPress, web performance, or one of my projects? Feel free to reach out — I&apos;m happy to
-        connect with fellow developers.
-      </p>
-      <div className="mt-8 grid sm:grid-cols-2 gap-3">
-        {contacts.map((c) => {
-          const content = (
-            <>
-              <span className="text-muted-foreground">{c.icon}</span>
-              <span>
-                <span className="block text-xs text-muted-foreground">{c.label}</span>
-                <span className="text-sm font-medium">{c.value}</span>
-              </span>
-            </>
-          );
-          return c.href ? (
-            <a
-              key={c.label}
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border p-4 flex items-center gap-3 hover:border-b-4 hover:border-primary/30 transition-all duration-100"
-            >
-              {content}
-            </a>
-          ) : (
-            <div key={c.label} className="rounded-xl border p-4 flex items-center gap-3">
-              {content}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+  return <ContactView locale="vi" />;
 }

@@ -1,5 +1,6 @@
 import RootProviders from "@/components/providers";
 import { siteConfig } from "@/config/site.config";
+import { getSiteText } from "@/config/localized";
 import { cn } from "@/lib/utils";
 import "@/styles/code.css";
 import "@/styles/globals.css";
@@ -17,10 +18,12 @@ const fontHeading = Be_Vietnam_Pro({
   variable: "--font-heading",
 });
 
+const text = getSiteText("vi");
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.origin),
-  title: siteConfig.title,
-  description: siteConfig.description,
+  title: text.title,
+  description: text.description,
   keywords: siteConfig.keywords,
   creator: siteConfig.name,
   icons: {
@@ -28,8 +31,8 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
   },
   openGraph: {
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: text.title,
+    description: text.description,
     url: siteConfig.origin,
     siteName: siteConfig.name,
     images: [
@@ -41,13 +44,13 @@ export const metadata: Metadata = {
       },
     ],
     type: "website",
-    locale: "en_US",
+    locale: "vi_VN",
   },
   twitter: {
     card: "summary_large_image",
     site: siteConfig.socials.x,
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: text.title,
+    description: text.description,
     images: {
       url: siteConfig.og,
       width: 2880,
@@ -63,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning>
       <body className={cn("min-h-screen lg:h-screen lg:overflow-hidden bg-background font-sans antialiased", fontSans.variable, fontHeading.variable)}>
         <RootProviders>{children}</RootProviders>
       </body>

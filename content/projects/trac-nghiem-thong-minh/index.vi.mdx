@@ -1,0 +1,34 @@
+---
+title: "Trắc Nghiệm Thông Minh"
+description: "Nền tảng thi trắc nghiệm trực tuyến cho học sinh, sinh viên, có đề luyện tập, tài liệu học tập và các bài trắc nghiệm tính cách (IQ, EQ, MBTI, DISC)."
+date: "2026-01-01"
+priority: 16
+tags: ["WordPress", "PHP", "Python", "Crawl Data", "Custom Theme", "Rank Math", "Puramu"]
+links: [
+  {
+    name: "Website",
+    url: "https://tracnghiemthongminh.com/",
+  },
+]
+image: "./cover.webp"
+---
+
+## Tổng quan
+
+Nền tảng thi trắc nghiệm trực tuyến cho học sinh, sinh viên, có đề luyện tập, tài liệu học tập và các bài trắc nghiệm tính cách (IQ, EQ, MBTI, DISC).
+
+- **Khách hàng:** Trắc Nghiệm Thông Minh
+- **Loại:** Giáo dục
+- **Năm:** 2026
+- **Công ty:** [Puramu](https://www.puramu.com/)
+- **Vai trò:** Web Developer — xây dựng theme WordPress và các tính năng theo thiết kế, tối ưu tốc độ và SEO
+- **Website:** [tracnghiemthongminh.com](https://tracnghiemthongminh.com/)
+
+## Quy trình dữ liệu
+
+Thư viện đề trắc nghiệm được đổ dữ liệu bằng một crawler do tôi tự viết bằng Python:
+
+- Đọc các URL mục tiêu từ sitemap và danh sách URL, sau đó crawl từng trang bằng Python.
+- Trích xuất câu hỏi, đáp án và thông tin đề thi (môn học, trường, năm, độ khó, số câu hỏi) thành JSON sạch.
+- Import đề trắc nghiệm vào WordPress qua một REST endpoint tùy chỉnh, tự động tạo danh mục và các meta field của đề.
+- Theo dõi tiến độ và các URL lỗi để những lượt chạy dài có thể tiếp tục và chạy lại; tách riêng các lượt chạy cho đề thi và cho các bài test IQ, EQ, MBTI, DISC.

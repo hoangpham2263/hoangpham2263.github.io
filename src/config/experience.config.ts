@@ -2,25 +2,6 @@ import type { Experience } from "@/types";
 
 export const experiencesConfig: Experience[] = [
   {
-    title: "Creator & Developer",
-    employmentType: "Personal project",
-    company: {
-      name: "Hoàn Hời",
-      url: "https://hoanhoi.com",
-    },
-    location: {
-      name: "",
-    },
-    start: "August 2026",
-    end: "Present",
-    description: [
-      "Built the full product with Next.js, PostgreSQL and Redis: user app and admin system",
-      "Integrated Shopee, Lazada, TikTok Shop and ACCESSTRADE to sync and reconcile affiliate orders",
-      "Designed the wallet and ledger flow for cashback, withdrawals and reversals",
-      "Set up CI/CD with GitHub Actions and deploy to a VPS with automatic database backups",
-    ],
-  },
-  {
     title: "Software Engineer (AI Evaluation)",
     employmentType: "Freelance",
     company: {

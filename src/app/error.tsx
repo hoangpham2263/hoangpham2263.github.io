@@ -19,11 +19,11 @@ export default function Error({
     <div className="min-h-screen flex items-center justify-center">
       <Card className="w-[420px]">
         <CardHeader>
-          <CardTitle>Something went wrong!</CardTitle>
+          <CardTitle>Đã có lỗi xảy ra!</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            An error occurred while loading this page.
+            Có lỗi khi tải trang này.
           </p>
         </CardContent>
         <CardFooter>
@@ -33,7 +33,7 @@ export default function Error({
             }
             variant="default"
           >
-            Try again
+            Thử lại
           </Button>
         </CardFooter>
       </Card>

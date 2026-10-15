@@ -1,0 +1,21 @@
+---
+title: "Making my Next.js portfolio bilingual (Vietnamese – English)"
+description: "How I added Vietnamese (default) and English versions to a statically exported Next.js portfolio on GitHub Pages: /en routes, hreflang and bilingual MDX content."
+date: "2026-10-15"
+tags: ["Next.js", "i18n", "SEO", "GitHub Pages"]
+---
+
+## Why bilingual
+
+Most recruiters I send my CV to are Vietnamese, while my portfolio used to be English only. I wanted Vietnamese as the default and kept English for when I need it.
+
+## How it works
+
+- **URLs:** Vietnamese lives at the root (`/`, `/projects/...`); English adds an `/en` prefix.
+- **Content:** each project has `index.mdx` (English) and `index.vi.mdx` (Vietnamese) in the same folder, sharing images. Velite reads the file name to tag the language.
+- **UI:** menu, button and section labels live in one dictionary file for both languages.
+- **SEO:** every page has `hreflang` for `vi` and `en`, plus its own `canonical`.
+
+## Static export notes
+
+The site is statically exported (`output: "export"`), so there is no middleware to detect the language. An EN / VI button links to the matching page, and a post-build step lets GitHub Pages serve `/en`.

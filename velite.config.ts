@@ -13,6 +13,18 @@ const computedFields = <T extends { slug: string }>(data: T) => ({
   slugAsParams: data.slug.split("/").slice(1).join("/"),
 });
 
+// index.mdx = English, index.vi.mdx = Vietnamese; both share the folder slug
+const projectFields = <T extends { slug: string }>(data: T) => {
+  const isVi = /(\/index)?\.vi$/.test(data.slug);
+  const slug = data.slug.replace(/(\/index)?\.vi$/, "");
+  return {
+    ...data,
+    slug,
+    slugAsParams: slug.split("/").slice(1).join("/"),
+    lang: (isVi ? "vi" : "en") as "en" | "vi",
+  };
+};
+
 export const blogs = defineCollection({
   name: "Blog",
   pattern: "blogs/**/*.mdx",
@@ -29,7 +41,7 @@ export const blogs = defineCollection({
       toc: s.toc(),
       author: s.string().default("HoangPham"),
     })
-    .transform(computedFields),
+    .transform(projectFields),
 });
 
 export const projects = defineCollection({
@@ -49,7 +61,7 @@ export const projects = defineCollection({
       name: s.string(),
       url: s.string(),
     })),
-  }).transform(computedFields),
+  }).transform(projectFields),
 });
 
 export const tils = defineCollection({

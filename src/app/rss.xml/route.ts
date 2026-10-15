@@ -1,6 +1,7 @@
 import { projects } from "#site/content";
 import { siteConfig } from "@/config/site.config";
 import { portfolioConfig } from "@/config/portfolio.config";
+import { getSiteText } from "@/config/localized";
 
 export const dynamic = "force-static";
 
@@ -26,7 +27,7 @@ type FeedItem = {
 export function GET() {
   const origin = siteConfig.origin.replace(/\/$/, "");
 
-  const projectItems: FeedItem[] = projects.map((project) => ({
+  const projectItems: FeedItem[] = projects.filter((project) => project.lang === "vi").map((project) => ({
     title: project.title,
     link: `${origin}/projects/${project.slugAsParams}`,
     guid: `${origin}/projects/${project.slugAsParams}`,
@@ -57,11 +58,11 @@ export function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${escapeXml(`${portfolioConfig.name} — Projects`)}</title>
+    <title>${escapeXml(`${portfolioConfig.name} — Dự án`)}</title>
     <link>${origin}</link>
     <atom:link href="${origin}/rss.xml" rel="self" type="application/rss+xml" />
-    <description>${escapeXml(siteConfig.description)}</description>
-    <language>en-us</language>
+    <description>${escapeXml(getSiteText("vi").description)}</description>
+    <language>vi-vn</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
 ${itemsXml}
   </channel>

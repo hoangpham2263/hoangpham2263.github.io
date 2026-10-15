@@ -5,7 +5,7 @@
   "homepage": "https://hoangpham.is-a.dev/",
   "scripts": {
     "dev": "velite && next dev --turbopack",
-    "build": "velite && next build",
+    "build": "velite && next build && cp out/en.html out/en/index.html",
     "start": "velite && next start",
     "lint": "next lint"
   },

@@ -15,6 +15,29 @@ Site là Next.js xuất tĩnh (`output: "export"`), đẩy lên GitHub là **t�
 | Menu trên cùng | `src/config/navbar.config.ts` |
 | File CV PDF (nút "View CV") | `public/pham-quoc-hoang-cv.pdf` — thay file mới, **giữ nguyên tên** |
 
+## Song ngữ (Việt mặc định, Anh ở /en)
+
+- Tiếng Việt ở đường dẫn gốc (`/`, `/experience`, `/projects/...`, `/cv`); tiếng Anh thêm `/en` phía trước (`/en`, `/en/experience`...). Nút **EN / VI** góc trên chuyển qua lại đúng trang tương ứng.
+- Mỗi dự án có 2 file trong cùng thư mục: `index.mdx` (tiếng Anh) và `index.vi.mdx` (tiếng Việt), dùng chung ảnh. Thêm dự án mới thì tạo cả hai file, phần đầu (`date`, `tags`, `links`, `image`...) giữ giống nhau, chỉ dịch `title`/`description` và nội dung.
+- Chữ giao diện (menu, nút, tiêu đề mục): `src/i18n/index.ts`.
+- Experience tiếng Việt: `src/config/vi/experience.config.ts`; CV web tiếng Việt: `src/config/vi/resume.config.ts`. Bản tiếng Anh vẫn ở `src/config/experience.config.ts` và `src/config/resume.config.ts`.
+- Tiêu đề & mô tả SEO tiếng Việt, tên kỹ năng tiếng Việt: `src/config/localized.ts`.
+
+## Blog & Tool
+
+- **Viết bài blog:** tạo thư mục `content/blogs/<ten-bai>/` gồm `index.vi.mdx` (tiếng Việt) và `index.mdx` (tiếng Anh, có thể bỏ qua nếu không cần). Phần đầu cần `title`, `description`, `date`, `tags`; thêm `published: false` nếu muốn ẩn bài nháp. Xem mẫu ở `content/blogs/portfolio-song-ngu/`.
+- **Thêm tool:** sửa `src/config/tools.config.ts`, thêm một object vào `toolsConfig`:
+
+```ts
+{
+  name: "WP Auto Poster",
+  description: { vi: "Tự động đăng bài lên WordPress từ Google Sheets.", en: "Auto-publish WordPress posts from Google Sheets." },
+  status: "building", // hoặc "done"
+  tags: ["Python", "WordPress REST API"],
+  links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-auto-poster" }],
+},
+```
+
 ## 2. Chạy thử trên máy (lần đầu)
 
 ```bash

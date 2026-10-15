@@ -5,17 +5,21 @@ import Link from "next/link";
 import ThemeToggler from "@/components/theme/toggler";
 import { Rss } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { skillsConfig } from "@/config/skills.config";
+import { getSkills } from "@/config/localized";
+import LanguageSwitcher from "@/components/language-switcher";
+import { getDictionary, localePath, type Locale } from "@/i18n";
 
-export default function Hero() {
+export default function Hero({ locale = "en" }: { locale?: Locale }) {
+  const t = getDictionary(locale);
   return (
     <section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)]">
-      <Link href="/">
+      <Link href={localePath(locale, "/")}>
         <span className="font-mono text-sm underline">{siteConfig.name}</span>
       </Link>
       <div className="flex justify-between items-center mt-3">
-        <h1 className="head-text-sm">{portfolioConfig.name}</h1>
+        <h1 className="head-text-sm">{locale === "vi" ? "Phạm Quốc Hoàng (Will)" : portfolioConfig.name}</h1>
         <div className="flex items-center gap-2">
+          <LanguageSwitcher />
           <Button size="icon" variant="ghost" className="rounded-full" asChild>
             <Link href="/rss.xml">
               <Rss size={18} />
@@ -29,15 +33,12 @@ export default function Hero() {
         {portfolioConfig.tagline} <span className="sr-only">tagline</span>
       </h3>
       <p className="my-5 max-w-2xl text-foreground/85">
-        Hey there 👋 Welcome to my portfolio! I love turning ideas into
-        websites that are fast, easy to use and easy to find on Google. Most of my work is building websites for
-        businesses, and in my free time I explore new technologies and use them to build my own products. Take a look at the projects below, and feel free to
-        reach out if you&apos;d like to work together.
+        {t.hero.bio}
         <span className="sr-only">bio</span>
       </p>
-      <Socials />
+      <Socials locale={locale} />
       <div className="flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/85 mt-6 mb-2 lg:my-6">
-        {skillsConfig.map((skill) => (
+        {getSkills(locale).map((skill) => (
           <p key={skill.category}>
             <span className="font-semibold text-primary/90">{skill.category}:</span> {skill.technologies.join(", ")}
           </p>

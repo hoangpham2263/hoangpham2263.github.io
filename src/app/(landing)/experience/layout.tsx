@@ -1,11 +1,7 @@
-import { generateMetadata } from "./metadata";
+import { experienceMetadata } from "@/views/experience-metadata";
 
-export { generateMetadata };
+export const metadata = experienceMetadata("vi");
 
-export default function ExperienceLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ExperienceLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
