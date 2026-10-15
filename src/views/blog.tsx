@@ -36,11 +36,10 @@ export function BlogListView({ locale }: { locale: Locale }) {
   const posts = postsFor(locale);
   return (
     <div className="w-full max-w-5xl mt-0 md:mt-6">
-      <p className="text-sm text-muted-foreground max-w-2xl">{t.description}</p>
       {posts.length === 0 ? (
-        <p className="mt-8 text-sm text-muted-foreground">{t.empty}</p>
+        <p className="text-sm text-muted-foreground">{t.empty}</p>
       ) : (
-        <div className="mt-6 space-y-3 md:space-y-6">
+        <div className="space-y-3 md:space-y-6">
           {posts.map((post) => (
             <ContentCard
               key={post.slugAsParams}

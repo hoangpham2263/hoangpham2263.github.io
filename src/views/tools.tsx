@@ -18,11 +18,10 @@ export function ToolsView({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).tools;
   return (
     <div className="w-full max-w-5xl mt-0 md:mt-6">
-      <p className="text-sm text-muted-foreground max-w-2xl">{t.intro}</p>
       {toolsConfig.length === 0 ? (
-        <p className="mt-8 rounded-xl border border-dashed p-6 text-sm text-muted-foreground">{t.empty}</p>
+        <p className="rounded-xl border border-dashed p-6 text-sm text-muted-foreground">{t.empty}</p>
       ) : (
-        <div className="mt-6 space-y-3 md:space-y-6">
+        <div className="space-y-3 md:space-y-6">
           {toolsConfig.map((tool) => (
             <ContentCard
               key={tool.name}
