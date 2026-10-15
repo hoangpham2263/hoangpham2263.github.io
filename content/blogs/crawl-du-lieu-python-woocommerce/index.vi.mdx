@@ -1,0 +1,120 @@
+---
+title: "Crawl dữ liệu sản phẩm bằng Python và nhập vào WooCommerce qua REST API"
+description: "Quy trình mình dùng để lấy dữ liệu sản phẩm từ website khác, làm sạch và nhập hàng loạt vào WooCommerce: kiểm tra quyền, requests + BeautifulSoup, chuẩn hóa dữ liệu, gọi REST API và chạy lại định kỳ."
+date: "2026-03-18T21:00:00+07:00"
+tags: ["Python", "Crawler", "WooCommerce", "REST API"]
+category: "Crawl dữ liệu"
+image: "./cover.webp"
+---
+
+Nhập tay vài trăm sản phẩm vừa tốn thời gian vừa dễ sai. Trong nhiều dự án, mình viết công cụ Python để **thu thập dữ liệu, làm sạch và nhập thẳng vào WooCommerce** — từ việc chuyển shop từ nền tảng cũ sang, đến cập nhật giá định kỳ từ nhà cung cấp.
+
+## Trước khi crawl: kiểm tra quyền
+
+- Chỉ lấy dữ liệu **bạn có quyền dùng**: website cũ của chính khách hàng, dữ liệu nhà cung cấp đã đồng ý cung cấp, hoặc nội dung có giấy phép rõ ràng.
+- Đọc điều khoản sử dụng và `robots.txt` của website nguồn.
+- Nếu nguồn có API hoặc file xuất (CSV, feed), **luôn ưu tiên** cách đó thay vì crawl HTML.
+- Crawl nhẹ nhàng: giới hạn tốc độ, có `User-Agent` rõ ràng, chạy ngoài giờ cao điểm.
+
+## Kiến trúc đơn giản
+
+```
+Nguồn (HTML/API) → Crawler → Dữ liệu thô (JSON) → Làm sạch → CSV/JSON chuẩn → WooCommerce REST API
+```
+
+Tách thành từng bước giúp bạn chạy lại một bước mà không phải crawl lại từ đầu, và dễ kiểm tra dữ liệu trước khi nhập.
+
+## Bước 1: Lấy dữ liệu
+
+```python
+import time, json, requests
+from bs4 import BeautifulSoup
+
+session = requests.Session()
+session.headers["User-Agent"] = "ProductSync/1.0 (lien-he@example.com)"
+
+def get_product(url):
+    html = session.get(url, timeout=20).text
+    soup = BeautifulSoup(html, "html.parser")
+    return {
+        "url": url,
+        "name": soup.select_one("h1").get_text(strip=True),
+        "price": soup.select_one(".price").get_text(strip=True),
+        "images": [img["src"] for img in soup.select(".gallery img")],
+        "description": str(soup.select_one(".description")),
+    }
+
+products = []
+for url in open("urls.txt").read().split():
+    products.append(get_product(url))
+    time.sleep(1)  # nhẹ tay với server nguồn
+
+json.dump(products, open("raw.json", "w"), ensure_ascii=False, indent=2)
+```
+
+Website dựng bằng JavaScript (dữ liệu tải sau) thì dùng **Playwright** để mở trang như trình duyệt thật, hoặc tìm API JSON mà trang đang gọi trong tab Network.
+
+## Bước 2: Làm sạch và chuẩn hóa
+
+Đây là bước tốn công nhất nhưng quyết định chất lượng shop:
+
+- **Giá**: bỏ ký hiệu `₫`, dấu chấm phân cách → số nguyên.
+- **Tên**: bỏ khoảng trắng thừa, ký tự lạ, thống nhất cách viết hoa.
+- **Mô tả**: loại bỏ script, style, link về website nguồn, giữ thẻ HTML cơ bản.
+- **Ảnh**: tải về, đổi tên theo slug sản phẩm, nén WebP, cùng tỉ lệ.
+- **Biến thể**: gom các dòng cùng sản phẩm, tách thuộc tính (Màu, Size).
+- **Danh mục**: ánh xạ danh mục nguồn sang cây danh mục mới.
+
+```python
+import re
+
+def clean_price(text):
+    digits = re.sub(r"[^\d]", "", text)
+    return int(digits) if digits else None
+```
+
+## Bước 3: Nhập vào WooCommerce qua REST API
+
+Tạo khóa API trong **WooCommerce → Cài đặt → Nâng cao → REST API** (quyền Đọc/Ghi), rồi gọi endpoint `/wp-json/wc/v3/products`:
+
+```python
+from requests.auth import HTTPBasicAuth
+
+API = "https://example.com/wp-json/wc/v3"
+auth = HTTPBasicAuth("ck_xxx", "cs_xxx")
+
+def create_product(p):
+    data = {
+        "name": p["name"],
+        "type": "simple",
+        "regular_price": str(p["price"]),
+        "description": p["description"],
+        "sku": p["sku"],
+        "categories": [{"id": cid} for cid in p["category_ids"]],
+        "images": [{"src": src} for src in p["images"]],
+    }
+    r = requests.post(f"{API}/products", json=data, auth=auth, timeout=60)
+    r.raise_for_status()
+    return r.json()["id"]
+```
+
+Mẹo thực tế:
+
+- Dùng **SKU làm khóa**: trước khi tạo, tìm theo SKU (`GET /products?sku=...`); có rồi thì cập nhật, chưa có mới tạo — chạy lại nhiều lần không bị trùng.
+- Dùng endpoint **batch** (`/products/batch`) để gửi nhiều sản phẩm một lần, nhanh hơn đáng kể.
+- Ảnh từ URL ngoài sẽ được WordPress tải về — tốt nhất là ảnh đã nén sẵn và nằm trên server của bạn.
+- Ghi log từng sản phẩm thành công/thất bại để chạy lại phần lỗi.
+
+## Bước 4: Chạy định kỳ
+
+Với dữ liệu thay đổi (giá, tồn kho từ nhà cung cấp), đặt lịch bằng **cron** trên server hoặc **GitHub Actions**, chỉ cập nhật các trường cần thiết thay vì ghi đè toàn bộ sản phẩm.
+
+## Sai lầm hay gặp
+
+- Nhập thẳng dữ liệu thô — shop đầy tên lỗi, mô tả chứa link sang website khác.
+- Không giữ đường dẫn cũ khi chuyển shop — mất thứ hạng Google (xem [chuyển website sang WooCommerce không mất SEO](/blog/chuyen-website-sang-woocommerce-giu-seo)).
+- Crawl quá nhanh bị chặn IP, hoặc gây tải cho website nguồn.
+
+## Kết
+
+Một công cụ crawl tốt tiết kiệm hàng chục giờ nhập liệu và giúp dữ liệu shop sạch ngay từ đầu. Nếu bạn cần thu thập, chuẩn hóa hoặc chuyển dữ liệu sản phẩm sang WooCommerce, xem [dịch vụ Crawl & nhập dữ liệu](/services) của mình.

@@ -1,0 +1,80 @@
+---
+title: "Building a WooCommerce store from A to Z for Vietnamese shops"
+description: "Every step to build a complete WooCommerce store: setup, currency and tax, products and variations, payments, shipping, emails, speed and common pitfalls."
+date: "2026-02-24T10:00:00+07:00"
+tags: ["WooCommerce", "WordPress", "E-commerce"]
+category: "WooCommerce"
+image: "./cover.webp"
+---
+
+WooCommerce turns a WordPress site into a full online store: products, cart, checkout, orders and customers. Its biggest advantage is that you **own all your data** and pay no revenue-based fees. This is the process I follow for Vietnamese shops.
+
+## 1. Install and basic settings
+
+After [installing WordPress](/en/blog/cai-wordpress-tu-a-den-z), add **WooCommerce** and run the setup wizard:
+
+- **Store address**: correct province/city for shipping rates.
+- **Currency**: Vietnamese dong (₫), **0 decimals**, dot as thousands separator.
+- **Tax**: if prices already include VAT, disable tax or choose "prices entered with tax" to avoid double counting.
+- **System pages**: make sure Shop, Cart, Checkout and My account exist.
+
+Recent WooCommerce versions use **HPOS** by default for new stores — orders live in dedicated tables for faster queries. When upgrading an older store, check plugin compatibility before switching it on.
+
+## 2. Products: keep them clean
+
+- **Categories** at most 2–3 levels deep with short slugs.
+- **Global attributes** (Colour, Size, Material) instead of typing them per product, so filters work and data stays clean.
+- **Variations** only for combinations you actually sell; each with its own SKU, price and stock.
+- **Product images** in one ratio (usually 1:1, 1000–1200px). I batch-crop them with [Image Resizer](https://hoangpham.is-a.dev/image-resizer/).
+- **Short description** with 3–5 key points; **long description** with specs, usage and return policy.
+
+For hundreds of products, import via CSV or a REST API script — see [crawling and importing data into WooCommerce](/en/blog/crawl-du-lieu-python-woocommerce).
+
+## 3. Payments
+
+| Method | Notes |
+|---|---|
+| Cash on delivery | Built in; still very popular in Vietnam |
+| Bank transfer | Built in; add a VietQR code so customers can scan and pay |
+| E-wallets and gateways (VNPay, MoMo…) | Use the gateway's official plugin; needs a business account |
+
+Always place **a real test order** with each method and check the order status updates correctly.
+
+## 4. Shipping
+
+- Create **shipping zones** (inner city, suburbs, other provinces) with flat rates or free shipping above a threshold.
+- For couriers (GHN, GHTK, Viettel Post…), use their plugins to calculate fees and create waybills automatically.
+- Show delivery times and the return policy on product pages.
+
+## 5. Emails
+
+- Use **WP Mail SMTP** with a business mailbox so emails don't land in spam.
+- Translate and tune order emails: confirmation, shipped, completed.
+- Add new-order alerts for the owner (email, or Telegram/Zalo via webhooks if needed).
+
+## 6. Store speed
+
+- Page cache on product and category pages; **exclude** cart, checkout and account.
+- An object cache (Redis) makes filtered category pages lighter.
+- Skip WooCommerce scripts on non-shop pages when the theme allows.
+- 12–24 products per category page with pagination.
+
+## 7. Product SEO
+
+- Clear product titles: *product type + brand + key feature*.
+- Product schema (price, stock, reviews) — Rank Math/Yoast generate it if the data is filled in.
+- Canonicals for filtered URLs.
+- Unique copy on category pages, not just a product grid.
+
+## Pre-launch checklist
+
+- [ ] Test orders with every payment and shipping method
+- [ ] Order emails arrive and avoid spam
+- [ ] Policy pages: returns, privacy, shipping, terms
+- [ ] Cache excludes cart/checkout; login and cart tested on mobile
+- [ ] Automatic backups and correct staff roles
+- [ ] Search Console set up and product sitemap submitted
+
+## Wrapping up
+
+A good WooCommerce store doesn't need many plugins — it needs clean product data, a smooth checkout and steady speed. If you want a new store or a migration from another platform, see my [services](/en/services).

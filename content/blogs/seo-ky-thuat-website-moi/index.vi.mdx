@@ -1,0 +1,53 @@
+---
+title: "SEO kỹ thuật cho website mới: 15 việc cần làm trước khi lên Google"
+description: "Checklist SEO kỹ thuật mình áp dụng trước khi bàn giao mỗi website: lập chỉ mục, cấu trúc URL, tốc độ và Core Web Vitals, dữ liệu có cấu trúc, đa ngôn ngữ và theo dõi bằng Search Console."
+date: "2026-04-09T09:30:00+07:00"
+tags: ["SEO", "Core Web Vitals", "Search Console", "Schema"]
+category: "Tốc độ & SEO"
+image: "./cover.webp"
+---
+
+Nội dung hay đến đâu cũng khó lên Google nếu nền tảng kỹ thuật có lỗi: trang không được lập chỉ mục, trùng lặp, tải chậm. Đây là 15 việc mình kiểm tra trước khi bàn giao bất kỳ website nào.
+
+## Nhóm 1: Google có đọc được website không?
+
+1. **Không chặn nhầm**: bỏ tùy chọn "ngăn công cụ tìm kiếm" của WordPress khi site lên thật; kiểm tra `robots.txt` không chặn CSS/JS hay thư mục quan trọng.
+2. **Sitemap XML** đầy đủ, chỉ chứa trang muốn lên Google (không có trang giỏ hàng, trang tìm kiếm nội bộ, trang cảm ơn).
+3. **Google Search Console**: xác minh theo tên miền (DNS) để bao quát cả `http`, `https`, `www`; gửi sitemap.
+4. **Một phiên bản duy nhất**: `https` và chọn có hoặc không `www`, các phiên bản còn lại chuyển hướng 301 về.
+
+## Nhóm 2: Cấu trúc và nội dung trùng lặp
+
+5. **URL ngắn, có nghĩa, không dấu**: `/dich-vu/thiet-ke-website/` thay vì `/?p=123`.
+6. **Canonical** đúng cho trang phân trang, trang có tham số lọc/sắp xếp.
+7. **Mỗi trang một H1**, cấu trúc H2/H3 theo nội dung, tiêu đề và mô tả riêng cho từng trang.
+8. **Liên kết nội bộ**: trang quan trọng được liên kết từ menu, trang chủ, bài viết liên quan; không có link hỏng.
+
+## Nhóm 3: Tốc độ và trải nghiệm
+
+9. **Core Web Vitals** đạt mức tốt trên di động: LCP ≤ 2,5 giây, INP ≤ 200 ms, CLS ≤ 0,1 (theo web.dev, đo ở phân vị 75).
+10. **Ảnh** đúng kích thước, WebP/AVIF, ảnh đầu trang không lazy-load, khai báo kích thước để tránh nhảy bố cục.
+11. **Di động trước tiên**: chữ đủ lớn, nút đủ khoảng cách, không có nội dung tràn ngang.
+
+## Nhóm 4: Hiểu nội dung tốt hơn
+
+12. **Dữ liệu có cấu trúc (schema)**: Organization/LocalBusiness cho doanh nghiệp, Article cho bài viết, Product cho sản phẩm, BreadcrumbList cho đường dẫn. Kiểm tra bằng *Rich Results Test*; chỉ để một plugin tạo schema.
+13. **Ảnh có alt mô tả** đúng nội dung, tên file rõ nghĩa.
+14. **Đa ngôn ngữ**: mỗi ngôn ngữ một URL riêng và khai báo `hreflang` qua lại giữa các bản.
+
+## Nhóm 5: Theo dõi sau khi lên
+
+15. **Theo dõi định kỳ**: báo cáo *Trang* (trang không được lập chỉ mục và lý do), *Hiệu suất* (từ khóa, số lượt nhấp) và *Core Web Vitals* trong Search Console; xử lý lỗi 404 bằng chuyển hướng hợp lý.
+
+## Bảng lỗi hay gặp
+
+| Triệu chứng | Nguyên nhân thường gặp |
+|---|---|
+| Trang "Đã thu thập dữ liệu – hiện chưa được lập chỉ mục" | Nội dung mỏng, trùng lặp, ít liên kết nội bộ |
+| Nhiều trang trùng nội dung | Thiếu canonical, tham số lọc, cả `www` và không `www` |
+| CLS kém | Ảnh/quảng cáo/banner không khai báo kích thước, font đổi kích thước |
+| LCP kém | Ảnh đầu trang nặng, server chậm, thiếu cache |
+
+## Kết
+
+SEO kỹ thuật là phần "làm một lần, hưởng lâu dài". Khi nền móng ổn, mỗi bài viết hay trang sản phẩm mới đều có cơ hội lên Google nhanh hơn. Xem thêm [WordPress 2026 toàn tập](/blog/wordpress-toan-tap-2026) cho phần tối ưu tốc độ chi tiết, hoặc [dịch vụ Tối ưu tốc độ & SEO](/services) của mình.

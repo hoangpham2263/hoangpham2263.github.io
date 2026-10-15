@@ -1,0 +1,74 @@
+---
+title: "Chuyển website sang WooCommerce mà không mất thứ hạng Google"
+description: "Quy trình chuyển shop từ Haravan, Shopee hoặc website tự code sang WooCommerce: kiểm kê URL, bảng chuyển hướng 301, nhập dữ liệu, kiểm tra trước khi đổi tên miền và theo dõi Search Console sau khi chuyển."
+date: "2026-05-14T20:30:00+07:00"
+tags: ["WooCommerce", "SEO", "Chuyển đổi website", "Redirect 301"]
+category: "WooCommerce"
+image: "./cover.webp"
+---
+
+Chuyển nền tảng là lúc website dễ **mất traffic nhất**. Nguyên nhân hầu như luôn giống nhau: đường dẫn cũ đổi mà không có chuyển hướng, nội dung bị rút gọn, hoặc tiêu đề và mô tả bị reset. Đây là quy trình mình dùng khi chuyển shop sang WooCommerce để giữ thứ hạng.
+
+## 1. Kiểm kê mọi thứ trước khi động vào
+
+- **Danh sách URL hiện tại**: lấy từ sitemap của site cũ, công cụ crawl (Screaming Frog…) và báo cáo *Trang* trong Google Search Console.
+- **Trang mang lại traffic**: xuất 3–6 tháng gần nhất từ Search Console/Analytics; đây là những trang **không được phép** mất.
+- **Backlink**: các trang được website khác trỏ tới cũng phải giữ hoặc chuyển hướng đúng.
+- **Dữ liệu SEO**: tiêu đề, mô tả, ảnh, schema của sản phẩm và danh mục.
+
+## 2. Lập bảng đối chiếu URL cũ → mới
+
+Đây là tài liệu quan trọng nhất của cả dự án:
+
+| URL cũ | URL mới | Loại |
+|---|---|---|
+| `/products/ao-thun-basic` | `/san-pham/ao-thun-basic/` | Sản phẩm |
+| `/collections/ao-nam` | `/danh-muc/ao-nam/` | Danh mục |
+| `/blogs/news/cach-chon-size` | `/cach-chon-size/` | Bài viết |
+| `/pages/lien-he` | `/lien-he/` | Trang |
+
+Nguyên tắc:
+- **Giữ slug** (phần cuối đường dẫn) giống cũ nhất có thể.
+- Mỗi URL cũ chuyển về **trang tương ứng nhất**, không dồn tất cả về trang chủ.
+- Sản phẩm đã ngừng bán: chuyển về danh mục gần nhất hoặc sản phẩm thay thế.
+
+## 3. Nhập dữ liệu giữ nguyên nội dung SEO
+
+- Nhập sản phẩm, danh mục, bài viết bằng CSV hoặc script qua REST API (mình hướng dẫn trong bài [crawl và nhập dữ liệu vào WooCommerce](/blog/crawl-du-lieu-python-woocommerce)).
+- Mang theo **tiêu đề SEO, mô tả, alt ảnh** vào trường của Rank Math/Yoast.
+- Giữ nguyên nội dung mô tả dài — đừng rút gọn trong lúc chuyển.
+- Đường dẫn ảnh mới nên có tên file rõ nghĩa, ảnh nén WebP.
+
+## 4. Cài chuyển hướng 301
+
+- Dùng plugin **Redirection** hoặc quản lý chuyển hướng của Rank Math, nhập hàng loạt từ file CSV của bảng đối chiếu.
+- Với số lượng rất lớn hoặc theo quy luật, viết quy tắc ở cấp server (Nginx/LiteSpeed) cho nhanh.
+- Tránh chuỗi chuyển hướng (A → B → C) và vòng lặp.
+
+## 5. Kiểm tra trên môi trường thử
+
+- Crawl site mới: không còn link hỏng, không trang 404 ngoài ý muốn.
+- Chạy lại danh sách URL cũ qua công cụ kiểm tra: tất cả phải trả về **301 → 200**.
+- Kiểm tra canonical, sitemap, robots, schema sản phẩm.
+- Đo tốc độ — site mới nên nhanh hơn site cũ.
+
+## 6. Ngày chuyển và sau khi chuyển
+
+1. Trỏ tên miền, bật HTTPS, kiểm tra lại chuyển hướng trên tên miền thật.
+2. Gửi **sitemap mới** lên Search Console.
+3. Theo dõi báo cáo *Trang* và *Hiệu suất* hằng ngày trong 2–4 tuần đầu: lỗi 404, trang không được lập chỉ mục, số lượt nhấp.
+4. Sửa ngay các URL cũ còn sót mà Search Console báo lỗi.
+
+Thứ hạng thường dao động trong vài tuần đầu rồi ổn định nếu chuyển hướng đầy đủ — đây là điều bình thường, không nên hoảng mà thay đổi thêm.
+
+## Checklist nhanh
+
+- [ ] Danh sách URL cũ đầy đủ (sitemap + crawl + Search Console)
+- [ ] Bảng đối chiếu cũ → mới cho mọi trang có traffic hoặc backlink
+- [ ] Tiêu đề, mô tả, alt ảnh được chuyển theo
+- [ ] Chuyển hướng 301 không chuỗi, không vòng lặp
+- [ ] Sitemap mới đã gửi, theo dõi Search Console 2–4 tuần
+
+## Kết
+
+Chuyển sang WooCommerce giúp bạn chủ động dữ liệu và chi phí, nhưng phải làm cẩn thận phần SEO. Mình đã chuyển nhiều shop từ Haravan, Shopee và website cũ sang WordPress — nếu bạn cần, xem [dịch vụ](/services) hoặc [liên hệ](/contact) nhé.

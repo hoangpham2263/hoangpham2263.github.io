@@ -1,0 +1,61 @@
+---
+title: "Using AI in a WordPress build workflow: faster without cutting corners"
+description: "How I use AI assistants (Claude, ChatGPT, Gemini) and AI coding tools at each step of building a website: requirements, code, content, SEO and testing — plus rules to avoid blind reliance."
+date: "2026-08-26T21:00:00+07:00"
+tags: ["AI", "WordPress", "Claude Code", "Productivity"]
+category: "AI"
+image: "./cover.webp"
+---
+
+AI doesn't replace understanding the client or understanding WordPress, but it has changed how **fast** websites get built. I use assistants like Claude, ChatGPT and Gemini and coding tools like Claude Code and Codex every day. Here's how, step by step, and the rules that keep AI making me faster rather than sloppier.
+
+## Step 1: Requirements and planning
+
+- Paste the client brief into an assistant and ask for **missing questions**: audience, must-have features, who supplies content, deadline.
+- Ask for a **sitemap** and page structure suited to the industry.
+- Get a rough task breakdown for quoting — the final number is always my call.
+
+## Step 2: Writing code faster
+
+- **Turn Figma sections into HTML/CSS scaffolding**, then refine it to theme standards.
+- **Repetitive WordPress code**: custom post types, taxonomies, ACF fields, shortcodes, REST endpoints.
+- **Python scripts** for crawling and importing data (see [crawling into WooCommerce](/en/blog/crawl-du-lieu-python-woocommerce)).
+- **Explaining legacy code** when taking over someone else's site.
+
+A clear prompt example:
+
+```text
+Write a PHP function for a WordPress theme (PHP 8.3) registering a custom post type
+"project" with featured image, block editor support and the /projects/ slug.
+Add a "field" taxonomy. Prefix functions with hp_ and add short comments.
+```
+
+The more you specify versions, naming conventions and constraints, the more usable the result.
+
+## Step 3: Content and SEO
+
+- Draft **outlines**, FAQs, SEO titles and descriptions — then rewrite in the brand's voice.
+- Generate **alt text** in bulk; WordPress now also has an official AI plugin from the Core AI team with features such as content summarisation.
+- Proofread content supplied by clients.
+
+Note: Google judges content by **quality and helpfulness**, not by whether AI was involved. Mass-produced content made only to rank, without helping readers, is still poor content.
+
+## Step 4: Testing and review
+
+- Ask AI to **review code** for common security issues (missing capability checks, unescaped output, missing nonces) and performance issues (queries inside loops).
+- Write **test cases** for checkout, forms and permissions.
+- Read PHP error logs and suggest causes.
+
+## Rules I always keep
+
+1. **No sensitive data**: passwords, API keys and real customer data never go into AI tools.
+2. **Understand every line** before it reaches production; AI can use outdated functions or invent ones that don't exist.
+3. **Verify facts** — numbers, versions, features — against official sources.
+4. **Test on staging** like any other code.
+5. AI is the **assistant**; I'm still responsible for the result.
+
+## The outcome
+
+Repetitive parts (layout scaffolding, WordPress functions, data scripts) are noticeably faster, leaving more time for what matters — understanding the business, polishing the experience and testing. The [tools](/en/tools) on this portfolio were also built with AI assistance.
+
+If you want a website built quickly but carefully, see my [services](/en/services).

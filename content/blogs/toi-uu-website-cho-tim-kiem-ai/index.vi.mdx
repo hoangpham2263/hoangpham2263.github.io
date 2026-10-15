@@ -1,0 +1,71 @@
+---
+title: "Tối ưu website cho thời đại tìm kiếm AI: AI Overviews, chatbot và llms.txt"
+description: "Khi người dùng hỏi Google AI Overviews, ChatGPT hay Gemini thay vì bấm vào 10 kết quả xanh, website cần gì để vẫn được nhắc đến? Những việc thực tế cho website doanh nghiệp và WordPress."
+date: "2026-09-23T20:00:00+07:00"
+tags: ["AI", "SEO", "AI Overviews", "llms.txt"]
+category: "AI"
+image: "./cover.webp"
+---
+
+Cách người dùng tìm thông tin đang thay đổi: thay vì đọc 10 kết quả, nhiều người đọc câu trả lời tổng hợp từ **AI Overviews / AI Mode** của Google, hoặc hỏi thẳng ChatGPT, Gemini, Claude, Perplexity. Câu hỏi đặt ra cho chủ website: làm sao để vẫn được **nhắc đến và được bấm vào**?
+
+## Google nói gì?
+
+Trong tài liệu *AI features and your website* của Google Search Central, Google cho biết:
+
+- AI Overviews và AI Mode hiển thị kèm **liên kết tới các website** để người dùng tìm hiểu thêm.
+- Các tính năng này có thể chạy nhiều truy vấn liên quan cùng lúc ("query fan-out") nên có thể dẫn tới nhiều trang hơn so với kết quả truyền thống.
+- **Các nguyên tắc SEO cơ bản vẫn áp dụng** — không có "mẹo" riêng nào ngoài việc làm nội dung tốt và website dễ thu thập dữ liệu.
+
+Nói cách khác: nền tảng SEO tốt chính là nền tảng để xuất hiện trong câu trả lời AI.
+
+## 7 việc nên làm ngay
+
+### 1. Trả lời thẳng và rõ ràng
+Mỗi trang dịch vụ, bài viết nên có đoạn trả lời trực tiếp câu hỏi chính ngay phần đầu, rồi mới đi vào chi tiết. Dùng tiêu đề H2/H3 dạng câu hỏi khách hay hỏi, bảng so sánh, danh sách bước — những định dạng dễ trích dẫn.
+
+### 2. Thông tin thật, cụ thể, có nguồn
+Số liệu, giá tham khảo, thời gian thực hiện, quy trình — nội dung cụ thể và có trích nguồn đáng tin hơn nội dung chung chung. Ghi rõ ngày cập nhật.
+
+### 3. Thể hiện chuyên môn và người đứng sau
+Trang giới thiệu, tác giả bài viết, dự án thực tế, đánh giá khách hàng. Với doanh nghiệp địa phương: tên, địa chỉ, số điện thoại thống nhất ở mọi nơi.
+
+### 4. Dữ liệu có cấu trúc
+Schema Organization/LocalBusiness, Service, Product, Article, FAQ (nếu nội dung thật sự là hỏi đáp), BreadcrumbList giúp máy hiểu chính xác nội dung là gì.
+
+### 5. Website nhanh và dễ đọc cho máy
+Nội dung chính nằm trong HTML (không phụ thuộc hoàn toàn vào JavaScript), tốc độ tốt, không chặn nhầm trình thu thập dữ liệu trong `robots.txt`. Xem lại [checklist SEO kỹ thuật](/blog/seo-ky-thuat-website-moi).
+
+### 6. Quyết định về các bot AI
+Ngoài Googlebot, nhiều công ty AI có trình thu thập riêng. Bạn có thể cho phép hoặc chặn chúng trong `robots.txt` tùy chiến lược: chặn thì nội dung khó xuất hiện trong câu trả lời của công cụ đó, cho phép thì được trích dẫn nhưng nội dung được dùng để tổng hợp. Hãy quyết định có chủ đích thay vì để mặc định.
+
+### 7. Cân nhắc llms.txt
+`llms.txt` là một **đề xuất** (do Jeremy Howard đưa ra năm 2024, đặc tả tại llmstxt.org): một file Markdown ở gốc website tóm tắt website là gì và liệt kê các trang quan trọng để mô hình AI dễ đọc. Đây **chưa phải tiêu chuẩn chính thức** và mức độ các công cụ AI lớn thực sự sử dụng vẫn chưa rõ — nhưng tạo nó tốn ít công:
+
+```markdown
+# Công ty ABC
+
+> Thiết kế website WordPress và WooCommerce cho doanh nghiệp tại TP.HCM.
+
+## Dịch vụ
+- [Thiết kế website](https://example.com/dich-vu/thiet-ke-website/): website doanh nghiệp, bán hàng
+- [Bảo trì website](https://example.com/dich-vu/bao-tri/): cập nhật, sao lưu, bảo mật
+
+## Liên hệ
+- [Liên hệ](https://example.com/lien-he/)
+```
+
+## Đo lường thế nào?
+
+- Theo dõi **Search Console**: số lượt hiển thị và nhấp từ Google (lượt xuất hiện trong tính năng AI của Google được tính chung trong báo cáo Hiệu suất).
+- Trong Analytics, theo dõi lượt truy cập giới thiệu từ các công cụ AI (ví dụ chatgpt.com, perplexity.ai, gemini.google.com).
+- Tự hỏi các trợ lý AI câu hỏi khách hàng hay hỏi trong ngành của bạn và xem website có được nhắc tới không.
+
+## Kết
+
+Tìm kiếm AI không xóa bỏ SEO — nó thưởng cho website có **nội dung hữu ích, cụ thể, đáng tin và kỹ thuật tốt**. Đó cũng chính là những gì mình làm trong dịch vụ [thiết kế website và tối ưu SEO](/services). Nếu bạn muốn rà soát website cho thời đại AI, [liên hệ](/contact) mình nhé.
+
+## Nguồn tham khảo
+
+- [Google Search Central — AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+- [llmstxt.org — The /llms.txt file](https://llmstxt.org/)

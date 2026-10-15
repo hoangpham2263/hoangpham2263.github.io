@@ -1,0 +1,71 @@
+---
+title: "Bảo trì WordPress hằng tháng: checklist để website luôn nhanh và an toàn"
+description: "Những việc nên làm mỗi tuần, mỗi tháng và mỗi quý để website WordPress ổn định: cập nhật an toàn, sao lưu và thử khôi phục, quét bảo mật, kiểm tra tốc độ, dọn database và báo cáo cho chủ website."
+date: "2026-07-21T19:00:00+07:00"
+tags: ["WordPress", "Bảo trì", "Bảo mật", "Backup"]
+category: "Bảo trì & Bảo mật"
+image: "./cover.webp"
+---
+
+Website không phải làm xong là xong. Plugin ra bản mới, lỗ hổng bảo mật được công bố, dữ liệu phình to dần — một website bỏ quên 6 tháng thường chậm đi rõ rệt và trở thành mục tiêu dễ bị tấn công. Đây là checklist bảo trì mình áp dụng cho các website đang chăm sóc.
+
+## Mỗi tuần
+
+- **Kiểm tra website còn chạy**: trang chủ, form liên hệ, giỏ hàng/thanh toán (nếu là shop). Nên có công cụ giám sát uptime gửi cảnh báo khi site sập.
+- **Xem cảnh báo bảo mật** từ plugin bảo mật (Wordfence/Solid Security): đăng nhập lạ, file bị thay đổi.
+- **Cập nhật bản vá bảo mật** khẩn cấp nếu có plugin công bố lỗ hổng.
+
+## Mỗi tháng
+
+### 1. Sao lưu trước, cập nhật sau
+- Tạo bản backup đầy đủ (file + database) **trước** khi cập nhật.
+- Cập nhật WordPress, theme, plugin — với site quan trọng, thử trên **staging** trước.
+- Sau khi cập nhật, kiểm tra lại các trang chính và các luồng quan trọng (form, đặt hàng).
+
+```bash
+# Ví dụ với WP-CLI
+wp db export backup-$(date +%F).sql
+wp core update
+wp plugin update --all
+wp theme update --all
+```
+
+### 2. Kiểm tra bảo mật
+- Rà danh sách người dùng: xóa tài khoản không còn dùng, đúng vai trò.
+- Đảm bảo tài khoản quản trị bật xác thực 2 lớp.
+- Gỡ hẳn plugin/theme đã tắt mà không dùng.
+- Chạy quét mã độc của plugin bảo mật.
+
+### 3. Tốc độ và lỗi
+- Đo **PageSpeed Insights** các trang chính, so với tháng trước.
+- Kiểm tra báo cáo **Core Web Vitals** và **Trang** trong Search Console: lỗi 404, trang mất lập chỉ mục.
+- Dọn database: bản sửa đổi cũ, transient hết hạn, spam bình luận.
+
+```bash
+wp transient delete --expired
+wp comment delete $(wp comment list --status=spam --format=ids) --force
+wp db optimize
+```
+
+### 4. Báo cáo cho chủ website
+Một trang tóm tắt ngắn: đã cập nhật gì, tình trạng backup, điểm tốc độ, lỗi đã xử lý và đề xuất. Chủ website thấy rõ giá trị của việc bảo trì.
+
+## Mỗi quý
+
+- **Thử khôi phục backup** lên môi trường thử — backup chưa từng khôi phục coi như chưa có.
+- Kiểm tra **phiên bản PHP** của hosting, nâng lên bản được khuyến nghị (hiện là PHP 8.3+).
+- Rà lại **plugin**: có cái nào bị bỏ rơi (lâu không cập nhật) cần thay thế không.
+- Gia hạn tên miền, SSL, license plugin trả phí.
+
+## Dấu hiệu website cần xử lý ngay
+
+| Dấu hiệu | Có thể do |
+|---|---|
+| Site tự chuyển hướng sang trang lạ | Bị chèn mã độc |
+| Google cảnh báo "Trang web này có thể đã bị tấn công" | Bị hack, nội dung spam |
+| Tốc độ giảm đột ngột | Plugin mới, database phình, hosting quá tải |
+| Không nhận được email từ form | Lỗi SMTP, email bị chặn |
+
+## Kết
+
+Bảo trì đều đặn rẻ hơn rất nhiều so với xử lý một website bị hack hay mất dữ liệu. Nếu bạn không có thời gian tự làm, mình nhận [bảo trì website](/services) hằng tháng với báo cáo rõ ràng.

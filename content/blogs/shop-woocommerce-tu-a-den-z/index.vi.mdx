@@ -1,0 +1,82 @@
+---
+title: "Dựng shop WooCommerce từ A đến Z cho cửa hàng Việt Nam"
+description: "Các bước dựng một website bán hàng WooCommerce hoàn chỉnh: cài đặt, cấu hình tiền tệ và thuế, sản phẩm và biến thể, thanh toán, vận chuyển, email, tốc độ và những lỗi hay gặp."
+date: "2026-02-24T10:00:00+07:00"
+tags: ["WooCommerce", "WordPress", "Bán hàng online"]
+category: "WooCommerce"
+image: "./cover.webp"
+---
+
+WooCommerce biến một website WordPress thành cửa hàng online đầy đủ: sản phẩm, giỏ hàng, thanh toán, đơn hàng, khách hàng. Ưu điểm lớn nhất là bạn **sở hữu toàn bộ dữ liệu** và không bị tính phí theo doanh thu. Bài này là quy trình mình dùng khi dựng shop cho khách Việt Nam.
+
+## 1. Cài đặt và cấu hình cơ bản
+
+Sau khi [cài WordPress](/blog/cai-wordpress-tu-a-den-z), vào **Plugin → Cài mới → WooCommerce** và chạy trình thiết lập:
+
+- **Địa chỉ cửa hàng**: Việt Nam, đúng tỉnh/thành để tính phí ship.
+- **Tiền tệ**: Việt Nam đồng (₫), **0 chữ số thập phân**, dấu phân cách hàng nghìn là dấu chấm.
+- **Thuế**: nếu giá đã gồm VAT thì tắt tính thuế hoặc chọn "giá đã bao gồm thuế" để tránh cộng trùng.
+- **Trang hệ thống**: kiểm tra đủ các trang Cửa hàng, Giỏ hàng, Thanh toán, Tài khoản.
+
+Với các phiên bản WooCommerce gần đây, cửa hàng mới mặc định dùng **HPOS** — đơn hàng lưu trong bảng riêng giúp truy vấn nhanh hơn. Nếu nâng cấp từ shop cũ, hãy kiểm tra plugin đang dùng có tương thích HPOS không trước khi bật.
+
+## 2. Sản phẩm: làm gọn từ đầu
+
+- **Danh mục** tối đa 2–3 cấp, tên ngắn, đường dẫn không dấu.
+- **Thuộc tính toàn cục** (Màu, Kích thước, Chất liệu) thay vì gõ tay từng sản phẩm — để bộ lọc hoạt động và dữ liệu sạch.
+- **Biến thể** chỉ tạo những tổ hợp thực sự bán; mỗi biến thể có SKU, giá, tồn kho riêng.
+- **Ảnh sản phẩm** cùng một tỉ lệ (thường 1:1, 1000–1200px), nền thống nhất. Mình dùng [Image Resizer](https://hoangpham.is-a.dev/image-resizer/) để cắt hàng loạt.
+- **Mô tả ngắn** nêu 3–5 điểm chính; **mô tả dài** có thông số, hướng dẫn, chính sách đổi trả.
+
+Shop có hàng trăm sản phẩm trở lên thì nên nhập bằng CSV hoặc script qua REST API — xem bài [crawl và nhập dữ liệu vào WooCommerce](/blog/crawl-du-lieu-python-woocommerce).
+
+## 3. Thanh toán
+
+Các lựa chọn phổ biến cho shop Việt:
+
+| Phương thức | Ghi chú |
+|---|---|
+| COD (thanh toán khi nhận hàng) | Có sẵn trong WooCommerce, vẫn được nhiều khách chọn |
+| Chuyển khoản ngân hàng | Có sẵn; nên kèm mã QR chuyển khoản (VietQR) để khách quét nhanh |
+| Ví điện tử, cổng thanh toán (VNPay, MoMo…) | Dùng plugin chính thức của cổng; cần đăng ký tài khoản doanh nghiệp |
+
+Luôn **thử một đơn thật** với mỗi phương thức trước khi mở bán, và kiểm tra trạng thái đơn tự cập nhật đúng sau khi thanh toán.
+
+## 4. Vận chuyển
+
+- Tạo **vùng giao hàng** (nội thành, ngoại thành, tỉnh khác) với mức phí cố định hoặc miễn phí theo giá trị đơn.
+- Nếu dùng hãng vận chuyển (GHN, GHTK, Viettel Post…), dùng plugin kết nối của hãng để tính phí và tạo vận đơn tự động.
+- Hiển thị rõ thời gian giao dự kiến và chính sách đổi trả ở trang sản phẩm.
+
+## 5. Email và thông báo
+
+- Cài **WP Mail SMTP** gửi qua tài khoản email doanh nghiệp, tránh rơi vào spam.
+- Việt hóa và chỉnh nội dung các email: xác nhận đơn, đang giao, hoàn thành.
+- Thêm thông báo đơn mới cho chủ shop (email hoặc tích hợp Telegram/Zalo qua webhook nếu cần).
+
+## 6. Tốc độ cho shop
+
+- Page cache bật cho trang sản phẩm, danh mục; **loại trừ** giỏ hàng, thanh toán, tài khoản.
+- Object cache (Redis) giúp trang danh mục có bộ lọc nhẹ hơn.
+- Tắt các script WooCommerce không cần ở trang không bán hàng (blog, giới thiệu) nếu theme cho phép.
+- Giới hạn số sản phẩm mỗi trang danh mục (12–24) và dùng phân trang.
+
+## 7. SEO cho trang sản phẩm
+
+- Tiêu đề sản phẩm rõ ràng: *Loại sản phẩm + thương hiệu + đặc điểm chính*.
+- Schema Product (giá, tồn kho, đánh giá) — Rank Math/Yoast làm sẵn, chỉ cần điền đủ dữ liệu.
+- Canonical cho trang có tham số lọc để tránh trùng lặp.
+- Viết nội dung riêng cho trang danh mục, không chỉ là lưới sản phẩm.
+
+## Checklist trước khi mở bán
+
+- [ ] Đặt thử đơn với mọi phương thức thanh toán và vận chuyển
+- [ ] Email đơn hàng gửi đến đúng, không vào spam
+- [ ] Trang chính sách: đổi trả, bảo mật, vận chuyển, điều khoản
+- [ ] Cache loại trừ giỏ hàng/thanh toán, test đăng nhập và giỏ hàng trên điện thoại
+- [ ] Backup tự động và tài khoản quản lý đơn có phân quyền đúng
+- [ ] Google Search Console, sitemap sản phẩm đã gửi
+
+## Kết
+
+Một shop WooCommerce tốt không cần nhiều plugin; cần dữ liệu sản phẩm sạch, luồng thanh toán mượt và tốc độ ổn định. Nếu bạn muốn dựng shop mới hoặc chuyển từ nền tảng khác sang, xem [dịch vụ](/services) của mình nhé.

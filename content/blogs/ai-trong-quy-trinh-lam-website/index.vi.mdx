@@ -1,0 +1,63 @@
+---
+title: "Dùng AI trong quy trình làm website WordPress: làm nhanh hơn mà không ẩu"
+description: "Cách mình dùng các trợ lý AI (Claude, ChatGPT, Gemini) và công cụ AI cho lập trình trong từng bước làm website: phân tích yêu cầu, viết code, nội dung, SEO, kiểm thử — cùng những nguyên tắc để không phụ thuộc mù quáng."
+date: "2026-08-26T21:00:00+07:00"
+tags: ["AI", "WordPress", "Claude Code", "Năng suất"]
+category: "AI"
+image: "./cover.webp"
+---
+
+AI không thay thế việc hiểu khách hàng và hiểu WordPress, nhưng đã thay đổi đáng kể **tốc độ** làm website. Mình dùng các trợ lý AI như Claude, ChatGPT, Gemini và công cụ lập trình như Claude Code, Codex hằng ngày. Bài này chia sẻ cách dùng cụ thể trong từng bước, kèm những nguyên tắc để AI giúp làm nhanh hơn mà không làm ẩu hơn.
+
+## Bước 1: Phân tích yêu cầu và lên kế hoạch
+
+- Dán brief của khách vào trợ lý AI, nhờ liệt kê **câu hỏi còn thiếu**: đối tượng khách hàng, tính năng bắt buộc, nội dung ai cung cấp, thời hạn.
+- Nhờ đề xuất **sơ đồ trang** (sitemap) và cấu trúc từng trang dựa trên ngành nghề.
+- Ước lượng hạng mục công việc để báo giá — nhưng con số cuối cùng luôn do mình quyết dựa trên kinh nghiệm.
+
+## Bước 2: Viết code nhanh hơn
+
+Đây là chỗ AI tiết kiệm nhiều thời gian nhất:
+
+- **Chuyển thiết kế Figma thành khung HTML/CSS** cho từng khối, sau đó mình chỉnh lại cho đúng chuẩn theme.
+- **Viết hàm WordPress lặp lại**: đăng ký custom post type, taxonomy, trường ACF, shortcode, REST API endpoint.
+- **Viết script Python** crawl và nhập dữ liệu (như trong bài [crawl dữ liệu vào WooCommerce](/blog/crawl-du-lieu-python-woocommerce)).
+- **Đọc và giải thích code cũ** khi nhận lại website từ người khác.
+
+Ví dụ một yêu cầu rõ ràng cho AI:
+
+```text
+Viết hàm PHP cho theme WordPress (PHP 8.3) đăng ký custom post type "du_an"
+có hỗ trợ ảnh đại diện, trình soạn thảo khối và đường dẫn /du-an/.
+Thêm taxonomy "linh_vuc". Dùng tiền tố hàm hp_, có comment ngắn.
+```
+
+Càng nêu rõ phiên bản, quy ước đặt tên và ràng buộc, kết quả càng dùng được ngay.
+
+## Bước 3: Nội dung và SEO
+
+- Gợi ý **dàn ý bài viết**, câu hỏi thường gặp, tiêu đề và mô tả SEO — sau đó viết lại bằng giọng của thương hiệu.
+- Tạo **alt text** cho ảnh hàng loạt; WordPress cũng đã có plugin AI chính thức do nhóm Core AI phát triển với các tính năng như tóm tắt nội dung.
+- Kiểm tra lỗi chính tả, câu lủng củng trong nội dung khách gửi.
+
+Lưu ý: Google đánh giá nội dung theo **chất lượng và mức độ hữu ích**, không theo việc có dùng AI hay không. Nội dung sản xuất hàng loạt chỉ để lấy thứ hạng mà không giúp người đọc thì vẫn là nội dung kém.
+
+## Bước 4: Kiểm thử và rà soát
+
+- Nhờ AI **review code**: lỗ hổng bảo mật thường gặp (thiếu kiểm tra quyền, thiếu escape dữ liệu đầu ra, thiếu nonce), lỗi hiệu năng (truy vấn trong vòng lặp).
+- Viết **danh sách test case** cho luồng đặt hàng, form, phân quyền.
+- Đọc log lỗi PHP và gợi ý nguyên nhân.
+
+## Nguyên tắc mình luôn giữ
+
+1. **Không dán dữ liệu nhạy cảm**: mật khẩu, khóa API, dữ liệu khách hàng thật không đưa vào công cụ AI.
+2. **Đọc hiểu mọi dòng code** trước khi đưa lên site thật; AI có thể dùng hàm cũ, sai phiên bản hoặc "bịa" ra hàm không tồn tại.
+3. **Kiểm chứng thông tin**: số liệu, phiên bản, tính năng — luôn đối chiếu nguồn chính thức.
+4. **Test trên staging** như với code tự viết.
+5. AI là **trợ lý**, người chịu trách nhiệm cuối cùng vẫn là mình.
+
+## Kết quả thực tế
+
+Với cách làm này, các phần lặp lại (khung giao diện, hàm WordPress, script dữ liệu) nhanh hơn rõ rệt, thời gian dành cho phần quan trọng — hiểu nghiệp vụ, tối ưu trải nghiệm, kiểm thử — nhiều hơn. Chính các công cụ trong mục [Công cụ](/tools) của portfolio này cũng được mình làm với sự hỗ trợ của AI.
+
+Nếu bạn muốn làm website nhanh mà vẫn chắc chắn, xem [dịch vụ](/services) của mình nhé.

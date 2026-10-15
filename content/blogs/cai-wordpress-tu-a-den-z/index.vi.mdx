@@ -1,0 +1,116 @@
+---
+title: "Cài WordPress từ A đến Z: trên máy tính, trên hosting và bằng WP-CLI"
+description: "Hướng dẫn cài WordPress đầy đủ cho người mới và dev: chuẩn bị tên miền, hosting, database, cài bằng LocalWP/Docker, cài trên hosting cPanel, cài bằng WP-CLI và 10 việc cần làm ngay sau khi cài."
+date: "2026-01-12T09:00:00+07:00"
+tags: ["WordPress", "Hosting", "WP-CLI", "Docker"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Cài WordPress chỉ mất vài phút, nhưng cài **đúng cách** ngay từ đầu sẽ giúp bạn tránh được rất nhiều rắc rối về tốc độ, bảo mật và SEO sau này. Bài này đi qua ba cách mình dùng thường xuyên — trên máy tính để làm thử, trên hosting cho site thật, và bằng dòng lệnh WP-CLI — kèm checklist sau khi cài.
+
+## Chuẩn bị trước khi cài
+
+- **Tên miền**: ngắn, dễ nhớ, ưu tiên `.com` hoặc `.vn` nếu khách hàng chủ yếu ở Việt Nam.
+- **Hosting**: hỗ trợ PHP 8.3 trở lên, MySQL 8.0+ hoặc MariaDB 10.11+, có HTTPS miễn phí (Let's Encrypt) và backup tự động.
+- **Database**: một database, một user riêng với mật khẩu mạnh — không dùng chung với site khác.
+- **Email quản trị**: dùng email bạn thực sự đọc, vì WordPress gửi cảnh báo bảo mật và khôi phục mật khẩu về đây.
+
+## Cách 1: Cài trên máy tính để làm thử
+
+Làm trên máy trước giúp bạn thử theme, plugin thoải mái mà không ảnh hưởng site thật.
+
+**LocalWP** (dễ nhất): tải về, bấm "Create a new site", đặt tên, chọn môi trường "Preferred" và tạo tài khoản quản trị. Vài phút là có site chạy ở địa chỉ dạng `tensite.local`.
+
+**Docker** (cho dev, giống môi trường server hơn): tạo file `docker-compose.yml`:
+
+```yaml
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wp
+      MARIADB_PASSWORD: doi-mat-khau-nay
+      MARIADB_ROOT_PASSWORD: doi-mat-khau-root
+    volumes:
+      - db:/var/lib/mysql
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: doi-mat-khau-nay
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+    depends_on:
+      - db
+volumes:
+  db:
+```
+
+Chạy `docker compose up -d` rồi mở `http://localhost:8080` để hoàn tất bước cài đặt. Thư mục `wp-content` được gắn ra ngoài nên bạn sửa theme/plugin trực tiếp và quản lý bằng Git.
+
+## Cách 2: Cài trên hosting (cPanel)
+
+Hầu hết hosting tại Việt Nam dùng cPanel hoặc DirectAdmin. Có hai lựa chọn:
+
+**Dùng trình cài tự động (Softaculous/Installatron)**: chọn WordPress → điền tên miền, tên site, tài khoản quản trị → Install. Nhớ đổi tiền tố bảng mặc định `wp_` thành chuỗi khác và **không** dùng tên đăng nhập `admin`.
+
+**Cài thủ công** (kiểm soát tốt hơn):
+
+1. Tạo database và user trong mục *MySQL Databases*, gán đủ quyền cho user.
+2. Tải bản WordPress mới nhất từ wordpress.org, giải nén vào thư mục `public_html` (hoặc thư mục của tên miền).
+3. Mở tên miền trên trình duyệt, chọn ngôn ngữ, nhập thông tin database.
+4. Đặt tên site, tạo tài khoản quản trị mạnh, bấm cài đặt.
+5. Bật SSL (AutoSSL/Let's Encrypt) và ép chuyển hướng sang `https`.
+
+## Cách 3: Cài bằng WP-CLI (nhanh và lặp lại được)
+
+Khi đã có SSH vào server, WP-CLI giúp cài một site chỉ trong vài lệnh — rất tiện khi làm nhiều site giống nhau:
+
+```bash
+# Tải WordPress bản tiếng Việt
+wp core download --locale=vi
+
+# Tạo file wp-config.php
+wp config create --dbname=ten_db --dbuser=ten_user --dbpass='mat-khau-manh'
+
+# Cài đặt
+wp core install --url=https://example.com --title="Tên website" \
+  --admin_user=quantri_ten --admin_email=ban@example.com
+
+# Cấu hình thường dùng
+wp rewrite structure '/%postname%/'
+wp option update timezone_string 'Asia/Ho_Chi_Minh'
+wp plugin delete hello akismet
+```
+
+## 10 việc nên làm ngay sau khi cài
+
+1. **Đường dẫn tĩnh**: Cài đặt → Đường dẫn tĩnh → chọn "Tên bài viết".
+2. **Múi giờ** Asia/Ho_Chi_Minh, định dạng ngày phù hợp.
+3. **Xóa nội dung mẫu**: bài "Hello world", trang mẫu, plugin không dùng.
+4. **Tắt chế độ ẩn với công cụ tìm kiếm** khi site sẵn sàng (Cài đặt → Đọc).
+5. **Cài theme** chính thức hoặc theme riêng; luôn dùng child theme khi tùy biến.
+6. **Plugin nền tảng**: cache, SEO, bảo mật, backup, SMTP — mỗi việc một plugin.
+7. **Bảo mật cơ bản**: xác thực 2 lớp, thêm `define( 'DISALLOW_FILE_EDIT', true );` vào `wp-config.php`.
+8. **Backup tự động** với một bản lưu ngoài server.
+9. **Google Search Console và Analytics**: xác minh tên miền, gửi sitemap.
+10. **Kiểm tra tốc độ** bằng PageSpeed Insights trước khi đổ nội dung, để có mốc so sánh.
+
+## Lỗi hay gặp khi cài
+
+| Lỗi | Nguyên nhân thường gặp | Cách xử lý |
+|---|---|---|
+| "Error establishing a database connection" | Sai tên DB, user, mật khẩu hoặc host | Kiểm tra lại `wp-config.php`; host thường là `localhost` |
+| Trang trắng | Lỗi PHP từ theme/plugin | Bật `WP_DEBUG`, đổi tên thư mục plugin vừa cài |
+| Không tải được file lên | Thư mục `uploads` sai quyền | Quyền thư mục 755, file 644 |
+| Vòng lặp chuyển hướng sau khi bật SSL | Cấu hình URL hoặc proxy/CDN | Đặt đúng `WP_HOME`, `WP_SITEURL` dạng `https` |
+
+## Kết
+
+Cài WordPress không khó; quan trọng là dựng nền móng đúng: môi trường hiện đại, tài khoản an toàn, cấu hình chuẩn SEO và có backup ngay từ ngày đầu. Bước tiếp theo bạn có thể đọc [WordPress 2026 toàn tập](/blog/wordpress-toan-tap-2026) để tối ưu tốc độ, SEO và bảo mật, hoặc [liên hệ](/contact) nếu cần mình dựng giúp.

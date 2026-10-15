@@ -1,0 +1,71 @@
+---
+title: "Optimising your website for AI search: AI Overviews, chatbots and llms.txt"
+description: "When people ask Google AI Overviews, ChatGPT or Gemini instead of clicking ten blue links, what does a website need to still be mentioned? Practical steps for business and WordPress sites."
+date: "2026-09-23T20:00:00+07:00"
+tags: ["AI", "SEO", "AI Overviews", "llms.txt"]
+category: "AI"
+image: "./cover.webp"
+---
+
+Search behaviour is changing: instead of reading ten results, many people read an AI summary from Google's **AI Overviews / AI Mode**, or ask ChatGPT, Gemini, Claude or Perplexity directly. The question for site owners: how do you still get **mentioned and clicked**?
+
+## What Google says
+
+In *AI features and your website* on Google Search Central, Google explains that:
+
+- AI Overviews and AI Mode show **links to websites** so people can dig deeper.
+- These features may run several related searches ("query fan-out"), so they can surface a wider set of pages than classic results.
+- **Core SEO best practices still apply** — there's no special trick beyond helpful content and a crawlable site.
+
+In short: a solid SEO foundation is the foundation for appearing in AI answers.
+
+## 7 things to do now
+
+### 1. Answer directly and clearly
+Open each service page or article with a direct answer to its main question, then go into detail. Use question-style H2/H3s, comparison tables and step lists — formats that are easy to cite.
+
+### 2. Real, specific, sourced information
+Numbers, price ranges, timelines, processes — specific, sourced content beats generic copy. Show when it was last updated.
+
+### 3. Show expertise and the people behind it
+About page, post authors, real projects, client reviews. For local businesses: consistent name, address and phone everywhere.
+
+### 4. Structured data
+Organization/LocalBusiness, Service, Product, Article, FAQ (only for genuine Q&A) and BreadcrumbList help machines understand exactly what a page is.
+
+### 5. Fast, machine-readable pages
+Main content in the HTML (not entirely JavaScript-dependent), good speed, and no accidental crawler blocks in `robots.txt`. See the [technical SEO checklist](/en/blog/seo-ky-thuat-website-moi).
+
+### 6. Decide on AI crawlers
+Besides Googlebot, many AI companies run their own crawlers. You can allow or block them in `robots.txt`: blocking makes it harder to appear in that tool's answers; allowing means your content can be cited but also used for summaries. Decide deliberately rather than by default.
+
+### 7. Consider llms.txt
+`llms.txt` is a **proposal** (by Jeremy Howard in 2024, spec at llmstxt.org): a Markdown file at your site root that summarises the site and lists key pages for language models. It is **not an official standard**, and how much major AI tools actually use it is unclear — but it's cheap to add:
+
+```markdown
+# ABC Company
+
+> WordPress and WooCommerce websites for businesses in Ho Chi Minh City.
+
+## Services
+- [Web design](https://example.com/services/web-design/): business sites and stores
+- [Maintenance](https://example.com/services/maintenance/): updates, backups, security
+
+## Contact
+- [Contact](https://example.com/contact/)
+```
+
+## How to measure
+
+- **Search Console**: impressions and clicks from Google (appearances in Google's AI features are included in the Performance report).
+- In Analytics, track referrals from AI tools (e.g. chatgpt.com, perplexity.ai, gemini.google.com).
+- Ask AI assistants the questions your customers ask and see whether your site is mentioned.
+
+## Wrapping up
+
+AI search doesn't kill SEO — it rewards sites with **helpful, specific, trustworthy content and solid technical foundations**. That's exactly what my [web design and SEO services](/en/services) focus on. Want your site reviewed for the AI era? [Get in touch](/en/contact).
+
+## Sources
+
+- [Google Search Central — AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+- [llmstxt.org — The /llms.txt file](https://llmstxt.org/)

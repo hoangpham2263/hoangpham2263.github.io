@@ -1,0 +1,71 @@
+---
+title: "Migrating a website to WooCommerce without losing Google rankings"
+description: "How I move shops from Haravan, Shopee or hand-coded sites to WooCommerce: URL inventory, 301 redirect map, data import, pre-launch checks and Search Console monitoring after the switch."
+date: "2026-05-14T20:30:00+07:00"
+tags: ["WooCommerce", "SEO", "Migration", "301 redirects"]
+category: "WooCommerce"
+image: "./cover.webp"
+---
+
+A platform migration is when a site is **most likely to lose traffic**. The cause is almost always the same: old URLs change without redirects, content gets trimmed, or titles and descriptions are reset. This is the process I use to keep rankings when moving a shop to WooCommerce.
+
+## 1. Inventory everything first
+
+- **Every current URL**: from the old sitemap, a crawler (Screaming Frog…) and the *Pages* report in Search Console.
+- **Pages that bring traffic**: export the last 3–6 months — these **must not** be lost.
+- **Backlinked pages**: keep or redirect them correctly.
+- **SEO data**: titles, descriptions, images and schema for products and categories.
+
+## 2. Build an old → new URL map
+
+| Old URL | New URL | Type |
+|---|---|---|
+| `/products/basic-tee` | `/product/basic-tee/` | Product |
+| `/collections/men` | `/product-category/men/` | Category |
+| `/blogs/news/size-guide` | `/size-guide/` | Post |
+| `/pages/contact` | `/contact/` | Page |
+
+Rules:
+- **Keep slugs** as close to the old ones as possible.
+- Redirect each old URL to its **closest equivalent**, never everything to the home page.
+- Discontinued products go to the nearest category or a replacement.
+
+## 3. Import data with SEO content intact
+
+- Import products, categories and posts via CSV or the REST API (see [crawling and importing into WooCommerce](/en/blog/crawl-du-lieu-python-woocommerce)).
+- Carry over **SEO titles, descriptions and image alt text** into Rank Math/Yoast.
+- Keep long descriptions — don't shorten them during the move.
+
+## 4. Set up 301 redirects
+
+- Use **Redirection** or Rank Math's redirect manager and bulk-import the map as CSV.
+- For very large or pattern-based sets, write server rules (Nginx/LiteSpeed).
+- Avoid redirect chains (A → B → C) and loops.
+
+## 5. Test on staging
+
+- Crawl the new site: no broken links, no unexpected 404s.
+- Run the old URL list through a checker: everything should return **301 → 200**.
+- Check canonicals, sitemap, robots and product schema.
+- Measure speed — the new site should be faster.
+
+## 6. Launch day and after
+
+1. Point the domain, enable HTTPS, re-test redirects on the real domain.
+2. Submit the **new sitemap** in Search Console.
+3. Watch the *Pages* and *Performance* reports daily for 2–4 weeks.
+4. Fix any leftover old URLs Search Console reports.
+
+Rankings usually wobble for a few weeks and then settle if redirects are complete — that's normal, so don't panic and change more things.
+
+## Quick checklist
+
+- [ ] Complete old URL list (sitemap + crawl + Search Console)
+- [ ] Old → new map for every page with traffic or backlinks
+- [ ] Titles, descriptions and alt text carried over
+- [ ] 301s without chains or loops
+- [ ] New sitemap submitted, Search Console watched for 2–4 weeks
+
+## Wrapping up
+
+Moving to WooCommerce gives you control of your data and costs, but the SEO side needs care. I've moved shops from Haravan, Shopee and old sites to WordPress — see my [services](/en/services) or [get in touch](/en/contact).

@@ -1,0 +1,70 @@
+---
+title: "Monthly WordPress maintenance: a checklist to keep sites fast and safe"
+description: "What to do every week, month and quarter to keep a WordPress site stable: safe updates, backups and test restores, security scans, speed checks, database cleanup and reporting to the owner."
+date: "2026-07-21T19:00:00+07:00"
+tags: ["WordPress", "Maintenance", "Security", "Backup"]
+category: "Bảo trì & Bảo mật"
+image: "./cover.webp"
+---
+
+A website isn't done when it launches. Plugins release updates, vulnerabilities are disclosed and data grows — a site left alone for six months is usually noticeably slower and an easy target. This is the maintenance checklist I use for the sites I look after.
+
+## Every week
+
+- **Check the site is up**: home page, contact form, cart/checkout for shops. Use uptime monitoring with alerts.
+- **Review security alerts** (Wordfence/Solid Security): odd logins, changed files.
+- **Apply urgent security patches** when a plugin vulnerability is announced.
+
+## Every month
+
+### 1. Back up first, then update
+- Take a full backup (files + database) **before** updating.
+- Update core, themes and plugins — test on **staging** first for important sites.
+- Re-check key pages and flows (forms, checkout) afterwards.
+
+```bash
+wp db export backup-$(date +%F).sql
+wp core update
+wp plugin update --all
+wp theme update --all
+```
+
+### 2. Security review
+- Audit users: remove unused accounts, check roles.
+- Make sure admins have two-factor auth.
+- Delete deactivated plugins/themes you don't use.
+- Run the security plugin's malware scan.
+
+### 3. Speed and errors
+- Run **PageSpeed Insights** on key pages and compare with last month.
+- Check **Core Web Vitals** and **Pages** in Search Console: 404s, de-indexed pages.
+- Clean the database: old revisions, expired transients, spam comments.
+
+```bash
+wp transient delete --expired
+wp comment delete $(wp comment list --status=spam --format=ids) --force
+wp db optimize
+```
+
+### 4. Report to the owner
+A one-page summary: what was updated, backup status, speed scores, issues fixed and suggestions.
+
+## Every quarter
+
+- **Test a restore** on staging — a backup that has never been restored doesn't count.
+- Check the host's **PHP version** and move to the recommended one (currently PHP 8.3+).
+- Review **plugins** for abandoned ones that need replacing.
+- Renew domains, SSL and paid plugin licences.
+
+## Signs a site needs attention now
+
+| Sign | Likely cause |
+|---|---|
+| Redirects to strange sites | Injected malware |
+| Google warns "This site may be hacked" | Hacked, spam content |
+| Sudden slowdown | New plugin, bloated database, overloaded host |
+| Form emails stop arriving | SMTP problems, blocked mail |
+
+## Wrapping up
+
+Regular maintenance costs far less than cleaning up a hacked site or lost data. If you don't have time to do it yourself, I offer monthly [website maintenance](/en/services) with clear reports.

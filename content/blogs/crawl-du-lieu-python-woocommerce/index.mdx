@@ -1,0 +1,108 @@
+---
+title: "Crawling product data with Python and importing it into WooCommerce via the REST API"
+description: "My process for collecting product data from another site, cleaning it and bulk-importing into WooCommerce: permissions, requests + BeautifulSoup, normalising data, the REST API and scheduled runs."
+date: "2026-03-18T21:00:00+07:00"
+tags: ["Python", "Crawler", "WooCommerce", "REST API"]
+category: "Crawl dữ liệu"
+image: "./cover.webp"
+---
+
+Typing in hundreds of products by hand is slow and error-prone. On many projects I write Python tools that **collect data, clean it and import it straight into WooCommerce** — from migrating a shop off an old platform to syncing supplier prices on a schedule.
+
+## Before crawling: check permission
+
+- Only take data **you're allowed to use**: the client's own old site, supplier data shared with consent, or clearly licensed content.
+- Read the source site's terms and `robots.txt`.
+- If the source offers an API or export (CSV, feed), **always prefer it** over scraping HTML.
+- Crawl politely: rate limits, a clear `User-Agent`, off-peak hours.
+
+## A simple pipeline
+
+```
+Source (HTML/API) → Crawler → Raw data (JSON) → Cleaning → Clean CSV/JSON → WooCommerce REST API
+```
+
+## Step 1: Collect
+
+```python
+import time, json, requests
+from bs4 import BeautifulSoup
+
+session = requests.Session()
+session.headers["User-Agent"] = "ProductSync/1.0 (contact@example.com)"
+
+def get_product(url):
+    html = session.get(url, timeout=20).text
+    soup = BeautifulSoup(html, "html.parser")
+    return {
+        "url": url,
+        "name": soup.select_one("h1").get_text(strip=True),
+        "price": soup.select_one(".price").get_text(strip=True),
+        "images": [img["src"] for img in soup.select(".gallery img")],
+        "description": str(soup.select_one(".description")),
+    }
+
+products = []
+for url in open("urls.txt").read().split():
+    products.append(get_product(url))
+    time.sleep(1)  # be gentle with the source server
+
+json.dump(products, open("raw.json", "w"), ensure_ascii=False, indent=2)
+```
+
+For JavaScript-rendered sites use **Playwright**, or find the JSON API the page calls in the Network tab.
+
+## Step 2: Clean and normalise
+
+- **Prices**: strip `₫` and separators → integers.
+- **Names**: trim, remove odd characters, consistent casing.
+- **Descriptions**: drop scripts, styles and links back to the source.
+- **Images**: download, rename by product slug, compress to WebP, same ratio.
+- **Variations**: group rows of the same product, split attributes (Colour, Size).
+- **Categories**: map source categories onto the new tree.
+
+## Step 3: Import with the WooCommerce REST API
+
+Create keys under **WooCommerce → Settings → Advanced → REST API** (Read/Write) and call `/wp-json/wc/v3/products`:
+
+```python
+from requests.auth import HTTPBasicAuth
+
+API = "https://example.com/wp-json/wc/v3"
+auth = HTTPBasicAuth("ck_xxx", "cs_xxx")
+
+def create_product(p):
+    data = {
+        "name": p["name"],
+        "type": "simple",
+        "regular_price": str(p["price"]),
+        "description": p["description"],
+        "sku": p["sku"],
+        "categories": [{"id": cid} for cid in p["category_ids"]],
+        "images": [{"src": src} for src in p["images"]],
+    }
+    r = requests.post(f"{API}/products", json=data, auth=auth, timeout=60)
+    r.raise_for_status()
+    return r.json()["id"]
+```
+
+Practical tips:
+
+- **Use SKU as the key**: look it up first (`GET /products?sku=...`) and update if it exists — re-runs never create duplicates.
+- Use the **batch** endpoint (`/products/batch`) to send many products per request.
+- Host compressed images yourself before importing.
+- Log every success/failure so you can retry only the failures.
+
+## Step 4: Run on a schedule
+
+For changing data (supplier prices, stock), schedule with **cron** or **GitHub Actions** and update only the fields that change.
+
+## Common mistakes
+
+- Importing raw data — product names full of junk and descriptions linking to other sites.
+- Not keeping old URLs during a migration — lost Google rankings (see [migrating to WooCommerce without losing SEO](/en/blog/chuyen-website-sang-woocommerce-giu-seo)).
+- Crawling too fast and getting blocked, or overloading the source.
+
+## Wrapping up
+
+A good crawler saves dozens of hours of data entry and gives you clean shop data from day one. If you need product data collected, cleaned or moved into WooCommerce, see my [services](/en/services).

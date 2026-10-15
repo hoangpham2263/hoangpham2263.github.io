@@ -1,0 +1,53 @@
+---
+title: "Technical SEO for a new website: 15 things to do before it hits Google"
+description: "The technical SEO checklist I run before handing over every site: indexing, URL structure, speed and Core Web Vitals, structured data, multilingual setup and Search Console monitoring."
+date: "2026-04-09T09:30:00+07:00"
+tags: ["SEO", "Core Web Vitals", "Search Console", "Schema"]
+category: "Tốc độ & SEO"
+image: "./cover.webp"
+---
+
+Great content struggles on Google if the technical base is broken: pages not indexed, duplicates, slow loads. These are the 15 things I check before handing over any website.
+
+## Group 1: Can Google read the site?
+
+1. **Nothing blocked by mistake**: untick WordPress's "discourage search engines" at launch; make sure `robots.txt` doesn't block CSS/JS or key folders.
+2. **A clean XML sitemap** with only pages you want indexed (no cart, internal search or thank-you pages).
+3. **Google Search Console** verified as a domain property (DNS) to cover `http`, `https` and `www`; submit the sitemap.
+4. **One canonical version**: `https`, with or without `www`, everything else 301-redirected.
+
+## Group 2: Structure and duplicates
+
+5. **Short, meaningful URLs**: `/services/web-design/` rather than `/?p=123`.
+6. **Correct canonicals** for paginated, filtered and sorted pages.
+7. **One H1 per page**, logical H2/H3, unique titles and descriptions.
+8. **Internal links**: key pages linked from the menu, home page and related posts; no broken links.
+
+## Group 3: Speed and experience
+
+9. **Core Web Vitals** good on mobile: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1 (per web.dev, at the 75th percentile).
+10. **Images** at display size, WebP/AVIF, hero image not lazy-loaded, dimensions declared.
+11. **Mobile first**: readable text, tappable buttons, no horizontal overflow.
+
+## Group 4: Help Google understand content
+
+12. **Structured data**: Organization/LocalBusiness, Article, Product, BreadcrumbList. Validate with the *Rich Results Test*; let one plugin own schema.
+13. **Descriptive alt text** and meaningful image file names.
+14. **Multilingual**: one URL per language with reciprocal `hreflang`.
+
+## Group 5: Monitor after launch
+
+15. **Check regularly**: the *Pages* report (what isn't indexed and why), *Performance* (queries, clicks) and *Core Web Vitals* in Search Console; fix 404s with sensible redirects.
+
+## Common problems
+
+| Symptom | Usual cause |
+|---|---|
+| "Crawled – currently not indexed" | Thin or duplicate content, few internal links |
+| Many duplicate pages | Missing canonicals, filter parameters, both `www` and non-`www` |
+| Poor CLS | Images/ads/banners without dimensions, font swaps |
+| Poor LCP | Heavy hero image, slow server, no caching |
+
+## Wrapping up
+
+Technical SEO is "do it once, benefit for a long time". With a solid base, every new post or product page has a better chance on Google. See [the complete WordPress guide](/en/blog/wordpress-toan-tap-2026) for speed details, or my [Speed & SEO service](/en/services).

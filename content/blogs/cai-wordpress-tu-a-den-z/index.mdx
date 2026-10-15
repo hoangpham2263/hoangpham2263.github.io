@@ -1,0 +1,104 @@
+---
+title: "Installing WordPress from A to Z: locally, on hosting and with WP-CLI"
+description: "A complete WordPress install guide for beginners and developers: domain, hosting and database prep, LocalWP/Docker, cPanel hosting, WP-CLI, and 10 things to do right after installing."
+date: "2026-01-12T09:00:00+07:00"
+tags: ["WordPress", "Hosting", "WP-CLI", "Docker"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Installing WordPress takes minutes, but installing it **properly** from day one saves a lot of trouble with speed, security and SEO later. This post covers the three ways I use regularly — locally for testing, on hosting for live sites, and from the command line with WP-CLI — plus a post-install checklist.
+
+## Before you install
+
+- **Domain**: short and memorable.
+- **Hosting**: PHP 8.3+, MySQL 8.0+ or MariaDB 10.11+, free HTTPS (Let's Encrypt) and automatic backups.
+- **Database**: its own database and user with a strong password — never shared with another site.
+- **Admin email**: one you actually read; security alerts and password resets go there.
+
+## Option 1: Install locally for testing
+
+**LocalWP** (easiest): download it, click "Create a new site", choose the "Preferred" environment and create an admin account. In minutes you have a site at `yoursite.local`.
+
+**Docker** (closer to a real server): create `docker-compose.yml`:
+
+```yaml
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wp
+      MARIADB_PASSWORD: change-me
+      MARIADB_ROOT_PASSWORD: change-me-root
+    volumes:
+      - db:/var/lib/mysql
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: change-me
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+    depends_on:
+      - db
+volumes:
+  db:
+```
+
+Run `docker compose up -d` and open `http://localhost:8080`. The mounted `wp-content` folder lets you edit themes/plugins directly and keep them in Git.
+
+## Option 2: Install on hosting (cPanel)
+
+**One-click installer (Softaculous/Installatron)**: pick WordPress, fill in domain, site name and admin account, then Install. Change the default `wp_` table prefix and **don't** use `admin` as the username.
+
+**Manual install** (more control):
+
+1. Create a database and user under *MySQL Databases* and grant all privileges.
+2. Download the latest WordPress from wordpress.org and extract it into `public_html`.
+3. Open your domain, choose a language and enter the database details.
+4. Set the site title and a strong admin account, then install.
+5. Enable SSL (AutoSSL/Let's Encrypt) and force `https`.
+
+## Option 3: Install with WP-CLI
+
+```bash
+wp core download
+wp config create --dbname=db_name --dbuser=db_user --dbpass='strong-password'
+wp core install --url=https://example.com --title="Site name" \
+  --admin_user=yourname_admin --admin_email=you@example.com
+
+wp rewrite structure '/%postname%/'
+wp option update timezone_string 'Asia/Ho_Chi_Minh'
+wp plugin delete hello akismet
+```
+
+## 10 things to do right after installing
+
+1. **Permalinks**: Settings → Permalinks → "Post name".
+2. **Timezone** and date format.
+3. **Delete sample content** and unused plugins.
+4. **Allow search engines** once the site is ready (Settings → Reading).
+5. **Install your theme**; use a child theme for customisations.
+6. **Core plugins**: cache, SEO, security, backup, SMTP — one plugin per job.
+7. **Basic security**: two-factor auth, `define( 'DISALLOW_FILE_EDIT', true );` in `wp-config.php`.
+8. **Automatic backups** with an off-site copy.
+9. **Search Console and Analytics**: verify the domain, submit the sitemap.
+10. **Benchmark speed** with PageSpeed Insights before adding content.
+
+## Common install errors
+
+| Error | Usual cause | Fix |
+|---|---|---|
+| "Error establishing a database connection" | Wrong DB name, user, password or host | Check `wp-config.php`; host is usually `localhost` |
+| White screen | PHP error from a theme/plugin | Enable `WP_DEBUG`, rename the new plugin's folder |
+| Uploads fail | Wrong permissions on `uploads` | Folders 755, files 644 |
+| Redirect loop after SSL | URL or proxy/CDN settings | Set `WP_HOME` and `WP_SITEURL` to `https` |
+
+## Wrapping up
+
+Installing WordPress is easy; what matters is the foundation: a modern stack, safe accounts, SEO-friendly settings and backups from day one. Next, read [the complete WordPress guide for 2026](/en/blog/wordpress-toan-tap-2026) or [get in touch](/en/contact) if you'd like me to set it up for you.
