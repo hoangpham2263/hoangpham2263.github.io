@@ -80,14 +80,14 @@ export default function MobileNav() {
               transition={{ duration: 0.18, ease: "easeOut" }}
               style={{ willChange: "transform, opacity" }}
             >
-              <ul className="p-2">
+              <ul className="p-2 space-y-1">
                 <li>
                   <Link
                     href={localePath(locale, "/")}
                     onClick={() => setOpen(false)}
                     className={cn(
                       "flex items-center justify-between rounded-md px-3 py-3 text-base",
-                      path === "/" || path === "" ? "bg-primary/10 font-semibold text-primary" : "text-foreground/80 hover:bg-muted"
+                      path === "/" || path === "" ? "bg-primary/10 font-semibold text-primary" : "text-foreground/80 hover:bg-muted/60 hover:text-foreground"
                     )}
                   >
                     {t.cv.home}
@@ -100,7 +100,7 @@ export default function MobileNav() {
                       onClick={() => setOpen(false)}
                       className={cn(
                         "flex items-center justify-between rounded-md px-3 py-3 text-base",
-                        isActive(item.url) ? "bg-primary/10 font-semibold text-primary" : "text-foreground/80 hover:bg-muted"
+                        isActive(item.url) ? "bg-primary/10 font-semibold text-primary" : "text-foreground/80 hover:bg-muted/60 hover:text-foreground"
                       )}
                     >
                       {labels[item.url] ?? item.title}
