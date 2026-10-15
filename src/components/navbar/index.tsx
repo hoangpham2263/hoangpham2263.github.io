@@ -14,7 +14,7 @@ export default function Navbar() {
   const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/services": t.nav.services, "/blog": t.nav.blog, "/tools": t.nav.tools, "/contact": t.nav.contact };
   return (
     // Full-width backdrop so scrolled content does not show beside the sticky menu
-    <div className="sticky top-0 z-50 w-full bg-background">
+    <div className="hidden md:block sticky top-0 z-50 w-full bg-background">
       <div className="inline-flex max-w-full overflow-x-auto scrollbar-hide items-center gap-0.5 sm:gap-1 rounded-lg border bg-muted p-1 text-[13px] sm:text-sm">
         {navbarConfig.map((item, index) => (
           <NavItem key={index} url={item.url} href={localePath(locale, item.url)}>

@@ -13,12 +13,12 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
   const t = getDictionary(locale);
   return (
     <section className="w-full flex flex-col lg:min-h-[calc(100vh-7rem)]">
-      <Link href={localePath(locale, "/")}>
+      <Link href={localePath(locale, "/")} className="hidden md:inline">
         <span className="font-mono text-sm underline">{siteConfig.name}</span>
       </Link>
-      <div className="flex justify-between items-center mt-3">
+      <div className="flex justify-between items-center mt-0 md:mt-3">
         <h1 className="head-text-sm">{locale === "vi" ? "Phạm Quốc Hoàng (Will)" : portfolioConfig.name}</h1>
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <LanguageSwitcher />
           <Button size="icon" variant="ghost" className="rounded-full" asChild>
             <Link href="/rss.xml">
