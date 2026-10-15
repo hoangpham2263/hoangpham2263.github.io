@@ -1,0 +1,80 @@
+---
+title: "Tùy biến WooCommerce bằng hook thay vì sửa template"
+description: "Những tùy biến WooCommerce mình hay làm cho khách — đổi chữ nút, thêm thông tin dưới giá, sửa trường thanh toán, ẩn tab sản phẩm — bằng hook để không bị mất khi cập nhật."
+date: "2025-06-17T20:30:00+07:00"
+tags: ["WooCommerce", "PHP", "Hooks"]
+category: "WooCommerce"
+image: "./cover.webp"
+---
+
+WooCommerce cho phép ghi đè template bằng cách chép file vào theme, nhưng mỗi lần WooCommerce cập nhật template, bản chép của bạn lại cũ đi và có thể gây lỗi. Với phần lớn yêu cầu của khách, mình dùng **hooks** — gọn hơn và bền hơn. (Nếu chưa quen hooks, xem bài [action và filter](/blog/hooks-action-filter-wordpress).)
+
+Tất cả đoạn code dưới đây đặt trong `functions.php` của child theme hoặc một plugin nhỏ riêng.
+
+## Đổi chữ nút "Thêm vào giỏ hàng"
+
+```php
+add_filter( 'woocommerce_product_single_add_to_cart_text', fn() => 'Mua ngay' );
+add_filter( 'woocommerce_product_add_to_cart_text', fn() => 'Chọn mua' );
+```
+
+## Thêm dòng thông tin dưới giá
+
+```php
+add_action( 'woocommerce_single_product_summary', function () {
+    echo '<p class="ship-note">Miễn phí giao hàng nội thành cho đơn từ 500.000₫</p>';
+}, 11 ); // giá ở priority 10, nên 11 sẽ hiện ngay bên dưới
+```
+
+## Bớt trường ở trang thanh toán
+
+Khách Việt thường không cần mã bưu chính hay tên công ty:
+
+```php
+add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
+    unset( $fields['billing']['billing_postcode'] );
+    unset( $fields['billing']['billing_company'] );
+    unset( $fields['billing']['billing_address_2'] );
+    $fields['billing']['billing_phone']['required'] = true;
+    return $fields;
+} );
+```
+
+## Ẩn hoặc đổi tên tab sản phẩm
+
+```php
+add_filter( 'woocommerce_product_tabs', function ( $tabs ) {
+    unset( $tabs['additional_information'] );
+    if ( isset( $tabs['description'] ) ) {
+        $tabs['description']['title'] = 'Mô tả chi tiết';
+    }
+    return $tabs;
+} );
+```
+
+## Số sản phẩm mỗi trang danh mục
+
+```php
+add_filter( 'loop_shop_per_page', fn() => 24 );
+```
+
+## Hiện "Liên hệ" khi sản phẩm chưa có giá
+
+```php
+add_filter( 'woocommerce_empty_price_html', function () {
+    return '<span class="price-contact">Liên hệ</span>';
+} );
+```
+
+## Khi nào mới ghi đè template?
+
+Chỉ khi cần thay đổi cấu trúc HTML lớn mà hook không làm được. Khi đó:
+
+- Chép file vào `ten-theme/woocommerce/...` đúng đường dẫn.
+- Theo dõi trang **WooCommerce → Trạng thái** — mục template sẽ báo bản nào đã cũ sau mỗi lần cập nhật để bạn đối chiếu.
+
+## Kinh nghiệm rút ra
+
+- Mỗi tùy biến một hàm, có comment ghi lý do và tên yêu cầu của khách — sau vài tháng đọc lại vẫn hiểu.
+- Test lại giỏ hàng, thanh toán, email sau mỗi lần cập nhật WooCommerce.
+- Đừng chỉnh sửa trong file plugin WooCommerce — mất ngay ở lần cập nhật sau.

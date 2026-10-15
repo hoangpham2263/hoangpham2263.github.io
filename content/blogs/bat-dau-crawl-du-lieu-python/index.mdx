@@ -1,0 +1,65 @@
+---
+title: "Getting started with web scraping in Python: requests, BeautifulSoup and first mistakes"
+description: "My first scraper for moving an old site's content into WordPress: setup, parsing HTML, CSS selectors, saving to CSV and the mistakes beginners make."
+date: "2025-09-09T21:00:00+07:00"
+tags: ["Python", "Crawler", "BeautifulSoup"]
+category: "Crawl dữ liệu"
+image: "./cover.webp"
+---
+
+My first scraping job at Puramu was moving a few hundred posts and products from a client's old site (which they owned but could no longer administer) into WordPress. Typing it in would have taken a week, so I learned to write a small Python tool.
+
+## Setup
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install requests beautifulsoup4
+```
+
+## Read a page
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+res = requests.get("https://old-site.example.com/news/post-1", timeout=20)
+res.raise_for_status()
+soup = BeautifulSoup(res.text, "html.parser")
+
+title = soup.select_one("h1").get_text(strip=True)
+content = soup.select_one(".post-content")
+```
+
+Tip: right-click → **Inspect** in the browser to find the class or tag holding the data, then use `select_one`/`select` with ordinary CSS selectors.
+
+## Walk a list of pages
+
+```python
+import csv, time
+
+links = [a["href"] for a in soup.select(".post-list a.title")]
+
+with open("posts.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f)
+    w.writerow(["title", "url", "content"])
+    for url in links:
+        page = BeautifulSoup(requests.get(url, timeout=20).text, "html.parser")
+        w.writerow([page.select_one("h1").get_text(strip=True), url, str(page.select_one(".post-content"))])
+        time.sleep(1)
+```
+
+## My first mistakes
+
+1. **`'NoneType' object...`** — a selector didn't match on some pages → check `if element:` first.
+2. **Relative links** → `urllib.parse.urljoin(base, href)`.
+3. **Broken Vietnamese in Excel** → write with `encoding="utf-8-sig"`.
+4. **Empty pages** because content loads via JavaScript → find the API in the Network tab or use Playwright.
+5. **Getting blocked** for going too fast → `time.sleep` and a clear `User-Agent`.
+
+## Ground rules
+
+- Only scrape data you **may** use; respect `robots.txt`.
+- Save raw data first, clean later.
+
+This small tool later grew into a full pipeline into WooCommerce — see [crawling and importing into WooCommerce](/en/blog/crawl-du-lieu-python-woocommerce).

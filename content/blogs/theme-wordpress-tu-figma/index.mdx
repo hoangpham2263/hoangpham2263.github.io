@@ -1,0 +1,64 @@
+---
+title: "Turning a Figma design into a WordPress theme: my process"
+description: "From Figma file to finished WordPress theme: reading the design, colour and type tokens, theme structure, ACF blocks, responsive work, optimisation and handover."
+date: "2025-10-21T21:00:00+07:00"
+tags: ["WordPress", "Figma", "Theme", "ACF"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+A few months into Puramu, most of my projects were Figma designs built into custom WordPress themes. Over time I settled on a process that's faithful to the design, light, and easy for clients to manage.
+
+## 1. Read the design before coding
+
+- List **repeating sections**: header, footer, hero, card grids, CTAs — they become shared components.
+- Note **colours, type sizes, spacing and radii** (many files already have Styles/Variables).
+- Check the **mobile design** exists; ask the designer rather than guess.
+- Mark what the **client must edit** — those become ACF fields.
+
+## 2. CSS foundations
+
+```css
+:root {
+  --color-primary: #2563eb;
+  --color-text: #0f172a;
+  --font-heading: "Be Vietnam Pro", sans-serif;
+  --radius: 12px;
+  --space-section: clamp(48px, 8vw, 96px);
+}
+```
+
+Self-host fonts and load only the weights you use.
+
+## 3. Theme structure
+
+```
+your-theme/
+├── style.css
+├── functions.php
+├── header.php / footer.php
+├── front-page.php
+├── page.php / single.php / archive.php
+├── template-parts/
+├── inc/
+├── assets/css, assets/js
+└── acf-json/
+```
+
+Features like a "Projects" content type live in a separate plugin.
+
+## 4. Blocks with ACF
+
+Each editable section is an ACF field group (see [ACF](/en/blog/acf-truong-tuy-bien)) rendered by a file in `template-parts/`.
+
+## 5. Responsive details
+
+Mobile first, test on real phones, proper hover/focus states and tap targets.
+
+## 6. Optimise before handover
+
+Sized WebP images with a non-lazy hero ([image optimisation](/en/blog/toi-uu-anh-cho-website)), page-specific CSS/JS, good Core Web Vitals on mobile, basic SEO.
+
+## 7. Handover
+
+A short illustrated guide, the right role for the client, automatic backups switched on.

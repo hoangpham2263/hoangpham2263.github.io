@@ -1,0 +1,54 @@
+---
+title: "Optimising images for the web: formats, sizes and lazy loading"
+description: "Images are usually most of a page's weight. Choosing JPG, PNG, WebP or AVIF, exporting the right size, srcset, lazy loading in the right places and my workflow for WordPress sites."
+date: "2025-05-20T21:00:00+07:00"
+tags: ["Speed", "Images", "WebP", "Core Web Vitals"]
+category: "Tốc độ & SEO"
+image: "./cover.webp"
+---
+
+The first time I ran PageSpeed on a client site, the home page weighed over 8 MB — almost all camera photos uploaded straight in. Optimising images alone made it several times lighter. Since then, images are always my first step.
+
+## Choosing a format
+
+| Format | Use for | Notes |
+|---|---|---|
+| JPG | Photos | No transparency |
+| PNG | Logos, transparency, text-heavy screenshots | Heavy for photos |
+| WebP | Most things on the web | Much lighter, supports transparency |
+| AVIF | When you need the smallest files | Better compression, slower to encode |
+| SVG | Icons, vector logos | Sharp at any size |
+
+I default to **WebP** for content images and **SVG** for icons and logos.
+
+## Export the right size
+
+- Full-width images: about 1600–1920px wide.
+- In-article images: 1200px.
+- Product images: 1000–1200px, fixed ratio (often 1:1).
+- Thumbnails: the display size, ×2 for sharp screens.
+
+Quality around **75–85%** is the sweet spot.
+
+## srcset
+
+WordPress generates multiple sizes and adds `srcset`/`sizes` when you insert images with the editor or `wp_get_attachment_image()` — as long as you **don't hard-code `<img>` tags to the original file**.
+
+## Lazy load — in the right places
+
+- Images **below the fold**: lazy load (WordPress adds `loading="lazy"`).
+- The **hero image** (usually the LCP element): **don't** lazy load; add `fetchpriority="high"`.
+
+## Avoid layout shift
+
+Always set `width` and `height` (or CSS `aspect-ratio`) so the browser reserves space — good for CLS.
+
+## My workflow
+
+1. Batch crop and resize originals (now with my own [Image Resizer](https://hoangpham.is-a.dev/image-resizer/)).
+2. Convert to WebP at ~80 quality ([File Converter](https://hoangpham.is-a.dev/file-converter/)).
+3. Meaningful file names: `white-mens-tee.webp`, not `IMG_2034.jpg`.
+4. Descriptive **alt** text.
+5. An image optimisation plugin for future uploads.
+
+Images are the cheapest, most effective speed win.

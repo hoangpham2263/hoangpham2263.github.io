@@ -1,0 +1,59 @@
+---
+title: "Setting up Rank Math on a new website: the settings that matter"
+description: "How I configure Rank Math on every WordPress site: Search Console, sitemaps, title templates, schema, redirects, breadcrumbs and what to turn off."
+date: "2025-08-12T20:00:00+07:00"
+tags: ["SEO", "Rank Math", "WordPress"]
+category: "Tốc độ & SEO"
+image: "./cover.webp"
+---
+
+Rank Math is the SEO plugin I use on most sites at Puramu. Installing it is easy, but many sites keep the defaults and miss a lot. These are my steps for every new site.
+
+## 1. Setup wizard
+
+- Choose **Advanced** mode.
+- Set the site type, name and logo (used for Organization schema).
+- Connect **Google Search Console**.
+
+## 2. Only the modules you need
+
+Usually: **Sitemap, Schema, Redirections, 404 Monitor (when needed), Image SEO, Breadcrumbs**.
+
+## 3. Sitemap
+
+- Include posts, pages, products and main categories.
+- **Exclude** tags, author archives on single-author sites and minor content types.
+- Submit `/sitemap_index.xml` to Search Console.
+
+## 4. Title and description templates
+
+```text
+Posts:     %title% %sep% %sitename%
+Products:  %title% - Best price %sep% %sitename%
+```
+
+Templates are a fallback — key pages still deserve hand-written titles and descriptions.
+
+## 5. Noindex what shouldn't rank
+
+Tag archives, author archives (single author), internal search; cart, checkout and account for shops.
+
+## 6. Schema
+
+Article/BlogPosting for posts, Product for WooCommerce, full LocalBusiness details for local businesses. Validate with Google's *Rich Results Test*.
+
+## 7. Redirects and 404s
+
+Use the Redirections module for 301s; 404 Monitor finds broken links — clear its log regularly.
+
+## 8. Breadcrumbs
+
+Enable and add them to the theme — good for users and for Google's understanding of structure.
+
+## Mistakes I've seen
+
+- Rank Math and Yoast together → duplicate meta and schema.
+- Forgetting WordPress's "discourage search engines" option at launch.
+- Themes printing their own schema/breadcrumbs → duplicates.
+
+See also [15 technical SEO tasks for a new site](/en/blog/seo-ky-thuat-website-moi).

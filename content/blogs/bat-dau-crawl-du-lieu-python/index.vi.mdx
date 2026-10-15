@@ -1,0 +1,70 @@
+---
+title: "Bắt đầu crawl dữ liệu với Python: requests, BeautifulSoup và những lỗi đầu tiên"
+description: "Lần đầu mình viết công cụ crawl để chuyển dữ liệu một website cũ sang WordPress: cài đặt, đọc HTML, chọn phần tử bằng CSS selector, lưu CSV và các lỗi người mới hay gặp."
+date: "2025-09-09T21:00:00+07:00"
+tags: ["Python", "Crawler", "BeautifulSoup"]
+category: "Crawl dữ liệu"
+image: "./cover.webp"
+---
+
+Dự án đầu tiên cần crawl của mình ở Puramu là chuyển vài trăm bài viết và sản phẩm từ website cũ (khách hàng sở hữu nhưng không còn quyền quản trị) sang WordPress. Nhập tay thì mất cả tuần, nên mình học viết một công cụ Python nhỏ. Đây là những gì mình rút ra cho người mới bắt đầu.
+
+## Cài đặt
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install requests beautifulsoup4
+```
+
+## Đọc một trang
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+res = requests.get("https://site-cu.example.com/tin-tuc/bai-1", timeout=20)
+res.raise_for_status()
+soup = BeautifulSoup(res.text, "html.parser")
+
+title = soup.select_one("h1").get_text(strip=True)
+content = soup.select_one(".post-content")
+print(title)
+```
+
+Mẹo: mở trang trong trình duyệt, chuột phải → **Kiểm tra (Inspect)** để tìm class/thẻ chứa dữ liệu, rồi dùng `select_one` / `select` với CSS selector giống hệt khi viết CSS.
+
+## Lấy danh sách và đi qua từng trang
+
+```python
+import csv, time
+
+links = [a["href"] for a in soup.select(".post-list a.title")]
+
+with open("bai-viet.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f)
+    w.writerow(["title", "url", "content"])
+    for url in links:
+        page = BeautifulSoup(requests.get(url, timeout=20).text, "html.parser")
+        w.writerow([
+            page.select_one("h1").get_text(strip=True),
+            url,
+            str(page.select_one(".post-content")),
+        ])
+        time.sleep(1)
+```
+
+## Những lỗi đầu tiên của mình
+
+1. **`AttributeError: 'NoneType' object...`**: selector không khớp ở một vài trang có cấu trúc khác. → Luôn kiểm tra `if element:` trước khi lấy dữ liệu.
+2. **Link tương đối** như `/tin-tuc/bai-2` → dùng `urllib.parse.urljoin(base, href)`.
+3. **Lỗi font tiếng Việt** khi mở CSV bằng Excel → ghi file với `encoding="utf-8-sig"`.
+4. **Trang trả về trống** vì nội dung tải bằng JavaScript → tìm API trong tab Network hoặc dùng Playwright.
+5. **Bị chặn** vì gửi yêu cầu quá nhanh → thêm `time.sleep`, đặt `User-Agent` rõ ràng.
+
+## Nguyên tắc
+
+- Chỉ crawl dữ liệu bạn **có quyền** dùng và tôn trọng `robots.txt`.
+- Lưu dữ liệu thô trước, làm sạch sau — đừng gộp mọi thứ vào một vòng lặp.
+
+Từ công cụ nhỏ này, sau đó mình phát triển thành quy trình đầy đủ để nhập thẳng vào WooCommerce qua REST API — xem bài [crawl dữ liệu và nhập vào WooCommerce](/blog/crawl-du-lieu-python-woocommerce).

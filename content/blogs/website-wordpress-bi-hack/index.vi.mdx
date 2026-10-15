@@ -1,0 +1,56 @@
+---
+title: "Website WordPress bị hack: các bước xử lý và phòng tránh"
+description: "Dấu hiệu website bị tấn công, các bước khoanh vùng, làm sạch, đổi mật khẩu, khôi phục và gửi Google xem xét lại — rút ra từ lần đầu mình xử lý một website khách bị chèn mã độc."
+date: "2025-07-15T21:00:00+07:00"
+tags: ["WordPress", "Bảo mật", "Mã độc"]
+category: "Bảo trì & Bảo mật"
+image: "./cover.webp"
+---
+
+Lần đầu mình xử lý một website bị hack là khi khách báo: "Vào web từ Google thì bị chuyển sang trang cờ bạc". Nguyên nhân sau đó tìm ra là một theme "crack" cài từ lâu. Đây là quy trình mình đã dùng — và giờ áp dụng mỗi khi gặp trường hợp tương tự.
+
+## Dấu hiệu thường gặp
+
+- Truy cập từ Google bị chuyển hướng sang trang lạ (thường chỉ trên điện thoại hoặc chỉ khi đến từ Google, nên chủ website tự vào lại thấy bình thường).
+- Google hiển thị "Trang web này có thể đã bị tấn công" hoặc kết quả tìm kiếm chứa tiêu đề spam.
+- Xuất hiện tài khoản quản trị lạ, plugin lạ, file PHP lạ trong thư mục `uploads`.
+- Hosting báo tài nguyên tăng đột biến hoặc gửi email spam.
+
+## Bước 1: Khoanh vùng, đừng vội xóa
+
+1. **Backup toàn bộ hiện trạng** (file + database) — kể cả đang nhiễm, để còn đối chiếu.
+2. Bật chế độ bảo trì nếu website đang chuyển hướng khách sang trang độc hại.
+3. Ghi lại thời điểm phát hiện, những gì bất thường.
+
+## Bước 2: Đổi toàn bộ thông tin đăng nhập
+
+- Mật khẩu hosting/cPanel, FTP/SFTP, database, mọi tài khoản quản trị WordPress.
+- Đổi **salt keys** trong `wp-config.php` (lấy bộ mới tại api.wordpress.org/secret-key/1.1/salt/) để đăng xuất mọi phiên.
+- Xóa tài khoản quản trị lạ.
+
+## Bước 3: Làm sạch
+
+- **Thay lõi WordPress** bằng bản sạch tải từ wordpress.org (không động vào `wp-content` và `wp-config.php`). Với WP-CLI: `wp core verify-checksums` để biết file lõi nào bị sửa, rồi `wp core download --force --skip-content`.
+- **Cài lại plugin, theme** từ nguồn chính thức; **xóa hẳn** mọi bản nulled/crack.
+- Kiểm tra `uploads` — thư mục này không nên chứa file `.php`.
+- Rà `wp-config.php`, `.htaccess`, `functions.php` của theme tìm đoạn mã lạ (thường bị mã hóa base64, `eval`, `gzinflate`).
+- Kiểm tra database: bảng `wp_options` (siteurl, home, các tùy chọn tự nạp lạ), nội dung bài viết bị chèn script.
+- Chạy quét bằng plugin bảo mật để tìm sót.
+
+## Bước 4: Khôi phục nếu không chắc sạch
+
+Nếu có bản backup **từ trước thời điểm nhiễm**, khôi phục về bản đó thường nhanh và chắc hơn — sau đó cập nhật mọi thứ và đổi mật khẩu như bước 2.
+
+## Bước 5: Báo Google
+
+Trong **Search Console → Bảo mật và thao tác thủ công**, xem vấn đề Google phát hiện, xử lý xong thì gửi **yêu cầu xem xét lại**. Đồng thời kiểm tra sitemap và gỡ các URL spam bị lập chỉ mục.
+
+## Phòng tránh
+
+- Không bao giờ dùng theme/plugin nulled.
+- Cập nhật đều đặn, gỡ plugin không dùng.
+- Xác thực 2 lớp cho tài khoản quản trị, mật khẩu mạnh.
+- Tắt sửa file trong quản trị: `define( 'DISALLOW_FILE_EDIT', true );`
+- Backup tự động có bản ngoài server, và **thử khôi phục** định kỳ.
+
+Xem thêm [checklist bảo trì WordPress hằng tháng](/blog/bao-tri-wordpress-hang-thang) để giữ website an toàn lâu dài.

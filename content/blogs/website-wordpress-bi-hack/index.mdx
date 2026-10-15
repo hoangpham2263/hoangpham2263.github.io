@@ -1,0 +1,56 @@
+---
+title: "My WordPress site was hacked: how to clean it up and prevent it"
+description: "Signs of a compromise, containment, cleanup, credential resets, restores and asking Google for a review — from the first infected client site I handled."
+date: "2025-07-15T21:00:00+07:00"
+tags: ["WordPress", "Security", "Malware"]
+category: "Bảo trì & Bảo mật"
+image: "./cover.webp"
+---
+
+The first hacked site I handled started with a client saying: "Visitors from Google get sent to a gambling site." The cause turned out to be a cracked theme installed long before. This is the process I used — and still use.
+
+## Common signs
+
+- Visitors from Google redirected elsewhere (often only on mobile or only from search, so the owner sees nothing wrong).
+- Google shows "This site may be hacked" or spam titles in results.
+- Unknown admin accounts, plugins or PHP files in `uploads`.
+- The host reports resource spikes or outgoing spam.
+
+## 1. Contain, don't rush to delete
+
+1. **Back up the current state** (files + database), infected or not.
+2. Enable maintenance mode if visitors are being redirected.
+3. Note when it was found and what looked wrong.
+
+## 2. Reset every credential
+
+- Hosting/cPanel, FTP/SFTP, database and all WordPress admins.
+- Replace the **salt keys** in `wp-config.php` to log out every session.
+- Delete unknown admins.
+
+## 3. Clean
+
+- **Replace core** with a fresh copy (`wp core verify-checksums`, then `wp core download --force --skip-content`).
+- **Reinstall plugins and themes** from official sources; **delete** anything nulled.
+- `uploads` should contain no `.php` files.
+- Check `wp-config.php`, `.htaccess` and theme `functions.php` for odd code (base64, `eval`, `gzinflate`).
+- Check the database: `wp_options` and injected scripts in content.
+- Run a security plugin scan.
+
+## 4. Restore if unsure
+
+A backup from **before the infection** is often faster and safer — then update everything and reset credentials.
+
+## 5. Tell Google
+
+In **Search Console → Security & Manual Actions**, fix the issues and **request a review**; remove indexed spam URLs.
+
+## Prevention
+
+- Never use nulled themes/plugins.
+- Update regularly; remove unused plugins.
+- Two-factor auth and strong passwords.
+- `define( 'DISALLOW_FILE_EDIT', true );`
+- Off-site automatic backups and regular test restores.
+
+See also the [monthly maintenance checklist](/en/blog/bao-tri-wordpress-hang-thang).

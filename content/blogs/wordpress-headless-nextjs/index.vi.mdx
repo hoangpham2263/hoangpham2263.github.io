@@ -1,0 +1,73 @@
+---
+title: "WordPress headless với Next.js: khi nào nên dùng, khi nào không"
+description: "Headless WordPress tách phần quản trị nội dung khỏi giao diện Next.js. Ưu điểm, đánh đổi, cách lấy dữ liệu qua REST API, xử lý preview và SEO — cùng lời khuyên chọn kiến trúc cho từng loại dự án."
+date: "2025-12-02T20:30:00+07:00"
+tags: ["WordPress", "Next.js", "Headless", "REST API"]
+category: "Next.js"
+image: "./cover.webp"
+---
+
+Làm WordPress một thời gian và học thêm Next.js, mình tò mò với mô hình **headless**: WordPress chỉ lo quản lý nội dung, còn giao diện là một ứng dụng Next.js riêng. Nghe rất hiện đại, nhưng không phải dự án nào cũng nên làm vậy.
+
+## Headless là gì?
+
+```
+Người quản trị → WordPress (soạn nội dung) → REST API / GraphQL → Next.js (giao diện) → Người dùng
+```
+
+Người dùng không truy cập WordPress trực tiếp; họ thấy website Next.js, được tạo sẵn thành HTML tĩnh hoặc render trên server.
+
+## Lấy dữ liệu qua REST API
+
+WordPress có sẵn REST API:
+
+```ts
+// app/blog/page.tsx (Next.js App Router)
+type Post = { id: number; slug: string; title: { rendered: string } };
+
+export const revalidate = 300; // làm mới dữ liệu mỗi 5 phút
+
+export default async function Blog() {
+  const res = await fetch("https://cms.example.com/wp-json/wp/v2/posts?per_page=10");
+  const posts: Post[] = await res.json();
+  return (
+    <ul>
+      {posts.map((p) => (
+        <li key={p.id}>
+          <a href={`/blog/${p.slug}`} dangerouslySetInnerHTML={{ __html: p.title.rendered }} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+Với dữ liệu phức tạp hơn (trường ACF lồng nhau), nhiều người dùng plugin WPGraphQL để truy vấn đúng những gì cần.
+
+## Ưu điểm
+
+- **Tốc độ**: trang tạo sẵn thành HTML, phục vụ qua CDN — rất nhanh.
+- **Tự do giao diện**: dùng React, component, hiệu ứng tùy ý.
+- **Bảo mật**: WordPress có thể đặt ở tên miền riêng, hạn chế truy cập công khai.
+- **Một nguồn nội dung cho nhiều nơi**: website, ứng dụng di động…
+
+## Đánh đổi (thường bị đánh giá thấp)
+
+- **Hai hệ thống phải vận hành**: hosting WordPress + hosting Next.js.
+- **Mất nhiều tính năng "có sẵn"**: plugin form, SEO, page builder, WooCommerce không tự hiện ra ở giao diện — phải làm lại phía Next.js.
+- **Xem trước bài viết** (preview) và chỉnh sửa trực quan cần cấu hình thêm.
+- **SEO**: tiêu đề, mô tả, sitemap, schema phải lấy từ API (ví dụ từ Rank Math/Yoast) và tự xuất ra ở Next.js.
+- **Chi phí phát triển và bảo trì** cao hơn rõ rệt.
+
+## Khi nào nên dùng?
+
+| Tình huống | Gợi ý |
+|---|---|
+| Website doanh nghiệp, blog, shop vừa và nhỏ | WordPress truyền thống — nhanh, rẻ, đủ dùng |
+| Site nội dung lớn cần tốc độ cực cao, có đội dev | Headless đáng cân nhắc |
+| Ứng dụng có nghiệp vụ riêng (đăng nhập, ví, đối soát) | Next.js + database riêng, không cần WordPress |
+| Cần cùng nội dung cho web và app | Headless phù hợp |
+
+## Kết luận của mình
+
+Với phần lớn khách hàng doanh nghiệp, một website WordPress được tối ưu tốt đã đủ nhanh và dễ quản lý hơn nhiều. Headless phù hợp khi có lý do rõ ràng và có người duy trì. Còn với sản phẩm có nghiệp vụ phức tạp, mình chọn hẳn Next.js với database riêng — đó cũng là hướng mình dùng cho các sản phẩm cá nhân sau này.

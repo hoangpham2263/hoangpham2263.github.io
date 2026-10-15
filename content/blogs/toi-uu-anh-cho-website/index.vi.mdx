@@ -1,0 +1,60 @@
+---
+title: "Tối ưu ảnh cho website: định dạng, kích thước và lazy load"
+description: "Ảnh thường chiếm phần lớn dung lượng trang. Cách chọn định dạng (JPG, PNG, WebP, AVIF), xuất đúng kích thước, srcset, lazy load đúng chỗ và quy trình mình áp dụng cho website WordPress."
+date: "2025-05-20T21:00:00+07:00"
+tags: ["Tốc độ", "Ảnh", "WebP", "Core Web Vitals"]
+category: "Tốc độ & SEO"
+image: "./cover.webp"
+---
+
+Lần đầu đo PageSpeed cho một website khách, mình thấy trang chủ nặng hơn 8 MB — gần như toàn bộ là ảnh chụp từ máy ảnh tải thẳng lên. Chỉ tối ưu ảnh thôi, trang đã nhẹ đi nhiều lần. Từ đó tối ưu ảnh luôn là bước đầu tiên mình làm.
+
+## Chọn định dạng
+
+| Định dạng | Dùng khi | Ghi chú |
+|---|---|---|
+| JPG | Ảnh chụp | Phổ biến, không có nền trong suốt |
+| PNG | Logo, ảnh cần nền trong suốt, ảnh chụp màn hình nhiều chữ | Nặng nếu là ảnh chụp |
+| WebP | Hầu hết mọi trường hợp trên web | Nhẹ hơn JPG/PNG đáng kể, có nền trong suốt |
+| AVIF | Khi cần nhẹ nhất | Nén tốt hơn nữa, mã hóa chậm hơn |
+| SVG | Icon, logo dạng vector | Sắc nét ở mọi kích thước |
+
+Mình mặc định dùng **WebP** cho ảnh nội dung, **SVG** cho icon/logo.
+
+## Xuất đúng kích thước
+
+Khung hiển thị rộng 800px thì không cần ảnh 4000px. Quy tắc mình dùng:
+
+- Ảnh full màn hình: rộng khoảng 1600–1920px.
+- Ảnh trong bài viết: 1200px.
+- Ảnh sản phẩm: 1000–1200px, tỉ lệ cố định (thường 1:1).
+- Thumbnail: theo đúng khung hiển thị, nhân 2 cho màn hình nét.
+
+Chất lượng nén khoảng **75–85%** là điểm cân bằng: khó thấy khác biệt bằng mắt nhưng dung lượng giảm mạnh.
+
+## srcset: để trình duyệt tự chọn
+
+WordPress tự tạo nhiều kích thước khi tải ảnh lên và thêm `srcset`, `sizes` khi bạn chèn ảnh bằng trình soạn thảo hoặc `wp_get_attachment_image()`. Điện thoại tải ảnh nhỏ, màn hình lớn tải ảnh lớn — bạn không phải làm gì thêm, miễn là **không tự viết cứng thẻ `<img>` trỏ tới ảnh gốc**.
+
+## Lazy load — đúng chỗ
+
+- Ảnh **bên dưới màn hình đầu tiên**: lazy load (`loading="lazy"`, WordPress tự thêm).
+- Ảnh **đầu trang** (banner, ảnh chính — thường là phần tử LCP): **không** lazy load, nên thêm `fetchpriority="high"`.
+
+Lazy load nhầm ảnh banner là một lỗi rất hay gặp làm điểm LCP kém đi.
+
+## Tránh nhảy bố cục
+
+Luôn có `width` và `height` (hoặc tỉ lệ khung bằng CSS `aspect-ratio`) để trình duyệt giữ chỗ trước khi ảnh tải xong — giúp CLS tốt.
+
+## Quy trình của mình
+
+1. Khách gửi ảnh gốc → mình cắt và đổi kích thước hàng loạt (giờ mình dùng tool [Image Resizer](https://hoangpham.is-a.dev/image-resizer/) tự làm).
+2. Chuyển sang WebP chất lượng ~80 ([File Converter](https://hoangpham.is-a.dev/file-converter/)).
+3. Đặt tên file có nghĩa: `ao-thun-trang-nam.webp` thay vì `IMG_2034.jpg`.
+4. Điền **alt** mô tả đúng nội dung ảnh.
+5. Với ảnh tải lên sau này, dùng plugin tối ưu ảnh để tự nén và tạo WebP.
+
+## Kết quả thường thấy
+
+Chỉ riêng bước ảnh, trang thường nhẹ đi vài lần và LCP cải thiện rõ — đây là việc "rẻ nhất mà hiệu quả nhất" khi tối ưu tốc độ.

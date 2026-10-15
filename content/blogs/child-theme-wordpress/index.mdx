@@ -1,0 +1,63 @@
+---
+title: "What is a child theme, and how to create one properly"
+description: "Why you shouldn't edit a parent theme, creating a child theme with two files, overriding templates, adding CSS/JS and notes for block themes."
+date: "2025-03-31T21:30:00+07:00"
+tags: ["WordPress", "Theme", "PHP"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+The first time I fixed an existing site, I edited the theme's `header.php` directly. A week later the client updated the theme — every change was gone. That's how I learned about **child themes**.
+
+## What is a child theme?
+
+A theme that inherits everything from a parent theme. You only put what you change into the child; the rest comes from the parent, which can update safely.
+
+## Two files
+
+Create `wp-content/themes/your-theme-child/` with:
+
+**style.css**
+
+```css
+/*
+Theme Name: Your Theme Child
+Template: your-theme
+Version: 1.0.0
+*/
+```
+
+`Template` must match the parent theme's **folder name**.
+
+**functions.php**
+
+```php
+<?php
+add_action( 'wp_enqueue_scripts', function () {
+    wp_enqueue_style(
+        'child-style',
+        get_stylesheet_uri(),
+        [],
+        wp_get_theme()->get( 'Version' )
+    );
+} );
+```
+
+Activate it under **Appearance → Themes**. If the parent's CSS isn't loaded automatically, enqueue `get_template_directory_uri() . '/style.css'` first.
+
+## Overriding templates
+
+Copy a file such as `footer.php` into the child theme (same relative path) and edit it; WordPress prefers the child's copy. Your copy won't receive the parent's future updates — override only when needed and prefer hooks.
+
+## functions.php is different
+
+The child's `functions.php` doesn't replace the parent's — it loads **before** it and both run. Don't redeclare functions the parent defines.
+
+## Block themes
+
+Block themes support child themes too: templates are `.html` files in `templates/` and `parts/`, configured by `theme.json`. Changes made in the Site Editor live in the database; export them if you want them in code.
+
+## When you don't need one
+
+- When you build a custom theme for the project — it's already yours.
+- When you only need a few CSS lines — *Additional CSS* is enough.

@@ -1,0 +1,66 @@
+---
+title: "Cấu hình Rank Math cho website mới: những thiết lập quan trọng"
+description: "Các bước mình cấu hình Rank Math cho mọi website WordPress: kết nối Search Console, sitemap, tiêu đề và mô tả mẫu, schema, chuyển hướng, breadcrumb và những tùy chọn nên tắt."
+date: "2025-08-12T20:00:00+07:00"
+tags: ["SEO", "Rank Math", "WordPress"]
+category: "Tốc độ & SEO"
+image: "./cover.webp"
+---
+
+Rank Math là plugin SEO mình dùng cho hầu hết website ở Puramu. Cài thì dễ, nhưng nhiều website để nguyên cấu hình mặc định và bỏ lỡ khá nhiều thứ. Đây là các bước mình làm cho mỗi website mới.
+
+## 1. Trình thiết lập ban đầu
+
+- Chọn chế độ **Nâng cao** (Advanced) để thấy đủ tùy chọn.
+- Khai báo loại website (doanh nghiệp, cửa hàng, blog cá nhân), tên, logo — dùng cho schema Organization.
+- Kết nối **Google Search Console** để xem dữ liệu ngay trong trang quản trị.
+
+## 2. Chỉ bật module cần thiết
+
+Rank Math có nhiều module. Mình thường bật: **Sitemap, Schema, Redirections, 404 Monitor (bật khi cần theo dõi), Image SEO, Breadcrumbs**; tắt các module không dùng để giảm tải.
+
+## 3. Sitemap
+
+- Chỉ đưa vào sitemap: bài viết, trang, sản phẩm, chuyên mục chính.
+- **Bỏ** thẻ (tag), trang tác giả nếu website chỉ có một người viết, các loại nội dung phụ.
+- Gửi địa chỉ `/sitemap_index.xml` lên Search Console.
+
+## 4. Tiêu đề và mô tả mẫu
+
+Trong *Tiêu đề & Meta*, đặt mẫu cho từng loại nội dung, ví dụ:
+
+```text
+Bài viết:  %title% %sep% %sitename%
+Sản phẩm:  %title% - Giá tốt %sep% %sitename%
+```
+
+Mẫu chỉ là phương án dự phòng — trang quan trọng vẫn nên viết tiêu đề và mô tả riêng.
+
+## 5. Noindex những trang không cần lên Google
+
+- Trang lưu trữ thẻ, trang tác giả (website một người viết), kết quả tìm kiếm nội bộ.
+- Với shop: giỏ hàng, thanh toán, tài khoản (thường đã được loại sẵn).
+
+## 6. Schema
+
+- Bài viết: loại **Article/BlogPosting**.
+- Sản phẩm WooCommerce: schema **Product** tự lấy giá, tồn kho, đánh giá.
+- Doanh nghiệp địa phương: điền đủ tên, địa chỉ, số điện thoại, giờ mở cửa.
+- Kiểm tra bằng *Rich Results Test* của Google.
+
+## 7. Chuyển hướng và 404
+
+- Module Redirections để tạo chuyển hướng 301 khi đổi đường dẫn — không cần thêm plugin khác.
+- 404 Monitor giúp phát hiện link hỏng; nhớ tắt hoặc dọn log định kỳ để không làm phình database.
+
+## 8. Breadcrumb
+
+Bật breadcrumb và chèn vào theme — vừa giúp người dùng định hướng vừa giúp Google hiểu cấu trúc website.
+
+## Những lỗi mình từng gặp
+
+- Cài cùng lúc Rank Math và Yoast → trùng thẻ meta, trùng schema.
+- Quên bỏ chọn "Ngăn công cụ tìm kiếm lập chỉ mục" của WordPress khi lên site thật.
+- Theme cũng tự in schema/breadcrumb → trùng lặp với Rank Math.
+
+Rank Math lo phần "kỹ thuật" của SEO khá tốt; phần còn lại vẫn là nội dung hữu ích và tốc độ. Xem thêm [15 việc SEO kỹ thuật cho website mới](/blog/seo-ky-thuat-website-moi).

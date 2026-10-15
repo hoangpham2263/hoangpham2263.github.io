@@ -1,0 +1,75 @@
+---
+title: "Làm theme WordPress từ thiết kế Figma: quy trình của mình"
+description: "Từ file Figma đến theme WordPress hoàn chỉnh: đọc thiết kế, dựng hệ thống màu và chữ, cấu trúc theme, chia khối với ACF, responsive, tối ưu và bàn giao cho khách."
+date: "2025-10-21T21:00:00+07:00"
+tags: ["WordPress", "Figma", "Theme", "ACF"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Sau vài tháng ở Puramu, phần lớn dự án của mình là nhận thiết kế Figma và dựng thành theme WordPress riêng. Làm nhiều rồi mình đúc kết được một quy trình giúp vừa đúng thiết kế, vừa nhẹ, vừa dễ cho khách tự quản lý.
+
+## 1. Đọc thiết kế trước khi code
+
+- Liệt kê **các khối lặp lại**: header, footer, banner, lưới thẻ, khối kêu gọi hành động… — đây sẽ là các thành phần dùng chung.
+- Ghi lại **màu, cỡ chữ, khoảng cách, bo góc** dùng trong thiết kế (nhiều file Figma đã có sẵn Styles/Variables).
+- Kiểm tra **bản mobile** có đủ chưa; nếu thiếu, hỏi designer trước thay vì tự đoán.
+- Đánh dấu phần nào **khách cần tự sửa** (banner, dịch vụ, đối tác) để làm trường ACF.
+
+## 2. Dựng nền tảng CSS
+
+Mình chuyển các giá trị từ Figma thành biến CSS ngay từ đầu:
+
+```css
+:root {
+  --color-primary: #2563eb;
+  --color-text: #0f172a;
+  --font-heading: "Be Vietnam Pro", sans-serif;
+  --radius: 12px;
+  --space-section: clamp(48px, 8vw, 96px);
+}
+```
+
+Đổi màu thương hiệu sau này chỉ cần sửa một chỗ. Font **tự host** và chỉ tải những độ đậm cần dùng.
+
+## 3. Cấu trúc theme
+
+```
+ten-theme/
+├── style.css
+├── functions.php
+├── header.php / footer.php
+├── front-page.php
+├── page.php / single.php / archive.php
+├── template-parts/      (các khối dùng chung)
+├── inc/                 (đăng ký menu, ảnh, ACF, hooks)
+├── assets/css, assets/js
+└── acf-json/            (cấu hình trường ACF, quản lý bằng Git)
+```
+
+Chức năng như loại nội dung "Dự án" hay "Dịch vụ" mình để trong plugin riêng, không để trong theme.
+
+## 4. Chia khối với ACF
+
+Mỗi phần khách cần sửa là một nhóm trường ACF (xem bài [ACF](/blog/acf-truong-tuy-bien)). Mỗi khối là một file trong `template-parts/`, nhận dữ liệu và in ra — trang chủ chỉ là tập hợp các khối.
+
+## 5. Responsive và chi tiết
+
+- Dựng **mobile trước**, rồi mở rộng cho màn hình lớn.
+- Kiểm tra trên điện thoại thật, không chỉ thu nhỏ trình duyệt.
+- Trạng thái hover/focus cho nút và link, khoảng cách đủ để bấm trên điện thoại.
+
+## 6. Tối ưu trước khi bàn giao
+
+- Ảnh đúng kích thước, WebP, ảnh đầu trang không lazy load ([bài tối ưu ảnh](/blog/toi-uu-anh-cho-website)).
+- Chỉ nạp CSS/JS ở trang cần dùng.
+- Đo PageSpeed trên mobile, sửa đến khi Core Web Vitals đạt mức tốt.
+- Cài SEO cơ bản: tiêu đề, mô tả, sitemap, schema.
+
+## 7. Bàn giao
+
+- Tài liệu ngắn có ảnh chụp: sửa banner, thêm dịch vụ, đăng bài.
+- Tài khoản khách ở quyền phù hợp; mình giữ một tài khoản quản trị để hỗ trợ.
+- Backup tự động đã bật.
+
+Quy trình này giúp website giống thiết kế đến từng chi tiết nhưng vẫn nhẹ — vì theme chỉ chứa đúng những gì thiết kế cần.

@@ -1,0 +1,81 @@
+---
+title: "Hooks trong WordPress: action và filter giải thích dễ hiểu"
+description: "Hiểu hooks là chìa khóa để tùy biến WordPress mà không sửa code lõi. Giải thích action và filter bằng ví dụ thực tế, độ ưu tiên, gỡ hook và những lỗi mình từng mắc."
+date: "2025-03-11T20:30:00+07:00"
+tags: ["WordPress", "PHP", "Hooks"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Khi bắt đầu viết code cho WordPress, khái niệm khiến mình "à ra thế" nhiều nhất là **hooks**. Gần như mọi tùy biến — thêm script, đổi nội dung, thêm trường vào form — đều đi qua hooks, và nhờ đó bạn không bao giờ cần sửa code lõi.
+
+## Hooks là gì?
+
+Hãy tưởng tượng WordPress chạy qua một loạt "điểm dừng". Tại mỗi điểm, nó hỏi: *có ai muốn làm gì ở đây không?* Bạn đăng ký một hàm vào điểm dừng đó. Có hai loại:
+
+- **Action**: *làm thêm một việc* tại thời điểm đó (in ra HTML, gửi email, đăng ký script).
+- **Filter**: *nhận một giá trị, sửa rồi trả lại* (đổi tiêu đề, độ dài tóm tắt, nội dung).
+
+## Action: làm thêm việc
+
+```php
+// Thêm file CSS/JS của theme
+add_action( 'wp_enqueue_scripts', function () {
+    wp_enqueue_style( 'hp-main', get_stylesheet_directory_uri() . '/assets/main.css', [], '1.0' );
+} );
+
+// Thêm đoạn mã vào cuối trang
+add_action( 'wp_footer', function () {
+    echo '<!-- Made by HoangPham -->';
+} );
+```
+
+## Filter: sửa một giá trị
+
+Filter **bắt buộc trả về giá trị** — quên `return` là lỗi mình mắc nhiều nhất lúc đầu, kết quả là nội dung biến mất.
+
+```php
+// Đổi độ dài đoạn tóm tắt
+add_filter( 'excerpt_length', function ( $length ) {
+    return 30;
+} );
+
+// Thêm dòng ghi chú vào cuối nội dung bài viết
+add_filter( 'the_content', function ( $content ) {
+    if ( is_single() ) {
+        $content .= '<p class="note">Cảm ơn bạn đã đọc!</p>';
+    }
+    return $content;
+} );
+```
+
+## Độ ưu tiên và số tham số
+
+```php
+add_filter( 'the_title', 'hp_title', 20, 2 );
+
+function hp_title( $title, $post_id ) {
+    return $title;
+}
+```
+
+- Số thứ ba (**priority**, mặc định 10): số nhỏ chạy trước. Muốn chạy sau plugin khác thì tăng lên.
+- Số thứ tư: số tham số hàm nhận vào (mặc định 1).
+
+## Gỡ một hook
+
+Muốn tắt một thứ plugin/theme thêm vào, dùng `remove_action`/`remove_filter` với **đúng tên hàm và đúng priority** — và phải gọi sau khi hook đó được đăng ký (thường trong `init` hoặc `after_setup_theme`).
+
+## Tìm hook ở đâu?
+
+- Tài liệu **developer.wordpress.org** (Code Reference) liệt kê các hook của lõi.
+- Tìm `do_action(` và `apply_filters(` trong code của theme/plugin để biết họ cho phép can thiệp ở đâu.
+- Plugin hỗ trợ debug như Query Monitor hiển thị các hook chạy trên trang.
+
+## Lỗi mình từng mắc
+
+1. Filter quên `return` → nội dung trống trơn.
+2. Gỡ hook sai priority → không gỡ được, mất cả buổi tìm lỗi.
+3. Viết logic nặng trong hook chạy trên mọi trang (`init`) → website chậm.
+
+Hiểu hooks rồi, bạn sẽ thấy WordPress linh hoạt hơn rất nhiều — và không còn phải "sửa tạm" vào file của người khác.

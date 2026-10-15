@@ -1,0 +1,71 @@
+---
+title: "WordPress hooks explained: actions and filters"
+description: "Hooks are the key to customising WordPress without touching core. Actions and filters with real examples, priorities, removing hooks and the mistakes I made early on."
+date: "2025-03-11T20:30:00+07:00"
+tags: ["WordPress", "PHP", "Hooks"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+When I started writing WordPress code, **hooks** were my biggest "aha" moment. Almost every customisation — adding scripts, changing content, extending forms — goes through hooks, so you never need to edit core.
+
+## What are hooks?
+
+WordPress runs through a series of "stops". At each one it asks: *does anyone want to do something here?* You register a function at that stop. Two kinds:
+
+- **Actions**: *do something extra* at that moment (print HTML, send email, enqueue scripts).
+- **Filters**: *receive a value, change it, return it* (titles, excerpt length, content).
+
+## Actions
+
+```php
+add_action( 'wp_enqueue_scripts', function () {
+    wp_enqueue_style( 'hp-main', get_stylesheet_directory_uri() . '/assets/main.css', [], '1.0' );
+} );
+
+add_action( 'wp_footer', function () {
+    echo '<!-- Made by HoangPham -->';
+} );
+```
+
+## Filters
+
+Filters **must return a value** — forgetting `return` was my most common early mistake, and the content simply vanished.
+
+```php
+add_filter( 'excerpt_length', function ( $length ) {
+    return 30;
+} );
+
+add_filter( 'the_content', function ( $content ) {
+    if ( is_single() ) {
+        $content .= '<p class="note">Thanks for reading!</p>';
+    }
+    return $content;
+} );
+```
+
+## Priority and arguments
+
+```php
+add_filter( 'the_title', 'hp_title', 20, 2 );
+```
+
+- Third argument (**priority**, default 10): lower runs first.
+- Fourth: how many arguments your function accepts (default 1).
+
+## Removing a hook
+
+Use `remove_action`/`remove_filter` with the **exact function name and priority**, after the hook has been added (usually on `init` or `after_setup_theme`).
+
+## Where to find hooks
+
+- The Code Reference at developer.wordpress.org.
+- Search a theme/plugin for `do_action(` and `apply_filters(`.
+- Debug plugins like Query Monitor show hooks fired on a page.
+
+## Mistakes I made
+
+1. A filter without `return` → empty content.
+2. Removing a hook with the wrong priority → hours of debugging.
+3. Heavy logic on hooks that run everywhere (`init`) → a slow site.

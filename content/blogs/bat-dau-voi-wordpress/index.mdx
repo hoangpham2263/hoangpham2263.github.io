@@ -1,0 +1,58 @@
+---
+title: "Getting started with WordPress: concepts I wish I'd learned sooner"
+description: "Notes from my first days with WordPress: posts vs pages, themes vs plugins, categories vs tags, permalinks and user roles — the basics that save a lot of confusion when you start."
+date: "2025-02-18T21:00:00+07:00"
+tags: ["WordPress", "Beginners"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+When I started working with WordPress at Puramu, I once spent an afternoon working out why something should be a "page" rather than a "post", or why my theme edits vanished after an update. These are the concepts I wish I'd understood from the start.
+
+## Posts and pages
+
+- **Posts**: dated content in categories, shown in time order — news, blog.
+- **Pages**: "static" content — About, Contact, Services. No categories; can have parent/child pages.
+
+Simple rule: regularly published, topic-filtered content → post; fixed menu pages → page.
+
+## Categories and tags
+
+- **Categories** are the main table of contents, can be nested; each post should have one main category.
+- **Tags** are secondary keywords. Don't create hundreds of one-off tags — each makes a thin archive page.
+
+## Themes and plugins
+
+- **Themes** control appearance.
+- **Plugins** add features: forms, SEO, caching, e-commerce.
+
+A lesson learned after "losing code" a few times: **features don't belong in the theme**. Change themes and the look changes, but features (like a "Projects" content type) should remain — put them in a plugin.
+
+## Never edit the parent theme
+
+Edits to a bought or official theme are overwritten by the next update. Use a **child theme** (I wrote a separate post about it).
+
+## Permalinks
+
+Go to **Settings → Permalinks** and choose "Post name" for URLs like `/choosing-hosting/`. Do it **on day one** — changing later means mass redirects.
+
+## User roles
+
+| Role | Can do |
+|---|---|
+| Administrator | Everything, including plugins |
+| Editor | Publish and edit everyone's posts |
+| Author | Publish and edit own posts |
+| Contributor | Write but not publish |
+
+Clients who only write content need Editor — far less risky than Administrator.
+
+## The block editor
+
+Gutenberg builds content from blocks: paragraphs, images, columns, buttons. It felt overwhelming at first, but it's much faster and cleaner than pasting HTML.
+
+## Advice for beginners
+
+1. Install a local test site (LocalWP) and **break it freely** to learn.
+2. Read the official docs at developer.wordpress.org, not just short videos.
+3. Before every plugin, ask: do I really need it?

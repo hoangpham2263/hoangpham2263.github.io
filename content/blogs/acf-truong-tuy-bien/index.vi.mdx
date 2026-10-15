@@ -1,0 +1,72 @@
+---
+title: "ACF: tạo trường tùy biến để khách tự sửa nội dung mà không vỡ giao diện"
+description: "Cách mình dùng Advanced Custom Fields để làm trang chủ, trang dịch vụ cho khách tự cập nhật: nhóm trường, các loại trường hay dùng, hiển thị trong theme và mẹo giữ dữ liệu gọn."
+date: "2025-04-22T20:00:00+07:00"
+tags: ["WordPress", "ACF", "Theme"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Khách hàng thường muốn tự đổi banner, số điện thoại, danh sách dịch vụ — nhưng nếu để họ sửa trong trình soạn thảo tự do, bố cục rất dễ "vỡ". **ACF (Advanced Custom Fields)** giải quyết đúng vấn đề này: mình thiết kế sẵn ô nhập, khách chỉ điền nội dung.
+
+## Ý tưởng chính
+
+1. Tạo **nhóm trường** (Field Group) với các ô cần thiết: tiêu đề, ảnh, nút…
+2. Gán nhóm trường cho trang/loại nội dung phù hợp (ví dụ: chỉ trang Trang chủ).
+3. Trong template, lấy giá trị và in ra đúng chỗ trong thiết kế.
+
+## Các loại trường mình dùng nhiều nhất
+
+| Loại trường | Dùng cho |
+|---|---|
+| Text / Textarea | Tiêu đề, mô tả ngắn |
+| Image | Ảnh banner, logo đối tác |
+| Link | Nút kêu gọi hành động (có chữ, URL, mở tab mới) |
+| WYSIWYG | Đoạn nội dung có định dạng |
+| Repeater* | Danh sách lặp: dịch vụ, câu hỏi thường gặp, đánh giá |
+| Options page* | Thông tin dùng chung: hotline, địa chỉ, mạng xã hội |
+
+\*Repeater và Options page thuộc bản ACF PRO.
+
+## Hiển thị trong theme
+
+```php
+<?php $hero = get_field( 'hero' ); // nhóm trường kiểu Group ?>
+<section class="hero">
+  <h1><?php echo esc_html( $hero['title'] ); ?></h1>
+  <?php if ( $hero['image'] ) : ?>
+    <?php echo wp_get_attachment_image( $hero['image']['ID'], 'large' ); ?>
+  <?php endif; ?>
+  <?php if ( $link = $hero['button'] ) : ?>
+    <a class="btn" href="<?php echo esc_url( $link['url'] ); ?>"
+       target="<?php echo esc_attr( $link['target'] ?: '_self' ); ?>">
+      <?php echo esc_html( $link['title'] ); ?>
+    </a>
+  <?php endif; ?>
+</section>
+```
+
+Danh sách lặp:
+
+```php
+<?php if ( have_rows( 'services' ) ) : ?>
+  <ul class="services">
+    <?php while ( have_rows( 'services' ) ) : the_row(); ?>
+      <li>
+        <h3><?php echo esc_html( get_sub_field( 'name' ) ); ?></h3>
+        <p><?php echo esc_html( get_sub_field( 'summary' ) ); ?></p>
+      </li>
+    <?php endwhile; ?>
+  </ul>
+<?php endif; ?>
+```
+
+## Mẹo từ kinh nghiệm
+
+- **Luôn escape** khi in ra (`esc_html`, `esc_url`, `esc_attr`) — dữ liệu do người dùng nhập.
+- Dùng `wp_get_attachment_image()` thay vì tự viết thẻ `<img>` để WordPress tự thêm `srcset`, kích thước và lazy load.
+- Bật **Local JSON** (tạo thư mục `acf-json` trong theme) để cấu hình trường được lưu thành file, quản lý bằng Git và đồng bộ giữa máy local và server.
+- Đặt tên trường rõ ràng, có hướng dẫn ngắn (Instructions) cho khách — họ sẽ ít hỏi lại hơn.
+- Đặt giới hạn: số ký tự tiêu đề, kích thước ảnh tối thiểu, số mục tối đa — giữ thiết kế luôn đẹp.
+
+Từ khi dùng ACF cho các trang quan trọng, khách tự cập nhật nội dung thoải mái mà mình gần như không phải sửa lại bố cục.

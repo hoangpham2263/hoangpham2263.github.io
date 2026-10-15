@@ -1,0 +1,68 @@
+---
+title: "Headless WordPress with Next.js: when it's worth it and when it isn't"
+description: "Headless WordPress splits content management from a Next.js front end. Benefits, trade-offs, fetching via the REST API, previews and SEO — and how to choose an architecture per project."
+date: "2025-12-02T20:30:00+07:00"
+tags: ["WordPress", "Next.js", "Headless", "REST API"]
+category: "Next.js"
+image: "./cover.webp"
+---
+
+After a while with WordPress and learning Next.js, I got curious about **headless**: WordPress only manages content, and the front end is a separate Next.js app. It sounds modern, but it isn't right for every project.
+
+## What is headless?
+
+```
+Editors → WordPress (content) → REST API / GraphQL → Next.js (front end) → Visitors
+```
+
+## Fetching via the REST API
+
+```ts
+type Post = { id: number; slug: string; title: { rendered: string } };
+
+export const revalidate = 300;
+
+export default async function Blog() {
+  const res = await fetch("https://cms.example.com/wp-json/wp/v2/posts?per_page=10");
+  const posts: Post[] = await res.json();
+  return (
+    <ul>
+      {posts.map((p) => (
+        <li key={p.id}>
+          <a href={`/blog/${p.slug}`} dangerouslySetInnerHTML={{ __html: p.title.rendered }} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+For nested ACF data, many teams use WPGraphQL to query exactly what they need.
+
+## Benefits
+
+- **Speed**: prebuilt HTML served from a CDN.
+- **Front-end freedom**: React components and interactions.
+- **Security**: WordPress can live on its own, restricted domain.
+- **One content source** for web and apps.
+
+## Trade-offs (often underestimated)
+
+- **Two systems** to host and maintain.
+- **Lost "free" features**: form, SEO, builder and WooCommerce output must be rebuilt in Next.js.
+- **Previews** and visual editing need extra setup.
+- **SEO** metadata, sitemaps and schema must be pulled from the API and rendered yourself.
+- **Higher build and maintenance cost**.
+
+## When to use it
+
+| Situation | Suggestion |
+|---|---|
+| Business sites, blogs, small/medium shops | Traditional WordPress |
+| Large content sites needing top speed, with a dev team | Consider headless |
+| Apps with custom logic (auth, wallets, reconciliation) | Next.js + its own database |
+| Same content for web and mobile apps | Headless fits |
+
+## My take
+
+For most business clients, a well-optimised WordPress site is fast enough and far easier to manage. Headless makes sense with a clear reason and someone to maintain it. For products with complex logic I go straight to Next.js with its own database.

@@ -1,0 +1,60 @@
+---
+title: "Bắt đầu với WordPress: những khái niệm mình ước đã biết sớm hơn"
+description: "Ghi chép từ những ngày đầu làm WordPress: bài viết và trang, theme và plugin, chuyên mục và thẻ, permalink, quyền người dùng — những khái niệm nền tảng giúp đỡ bối rối khi mới vào nghề."
+date: "2025-02-18T21:00:00+07:00"
+tags: ["WordPress", "Người mới"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Khi mới vào làm WordPress ở Puramu, mình từng mất cả buổi chỉ để hiểu vì sao một nội dung nên là "trang" thay vì "bài viết", hay vì sao sửa theme xong cập nhật lại mất hết. Đây là những khái niệm mình ước đã nắm từ đầu.
+
+## Bài viết (Post) và Trang (Page)
+
+- **Bài viết**: nội dung có ngày đăng, thuộc chuyên mục, hiện theo dòng thời gian — tin tức, blog.
+- **Trang**: nội dung "đứng yên" — Giới thiệu, Liên hệ, Dịch vụ. Không có chuyên mục, có thể có trang cha/con.
+
+Quy tắc đơn giản: nếu nội dung sẽ được đăng thêm đều đặn và cần lọc theo chủ đề → bài viết; nếu là trang cố định trong menu → trang.
+
+## Chuyên mục (Category) và Thẻ (Tag)
+
+- **Chuyên mục** là mục lục chính, có thể phân cấp, mỗi bài nên thuộc 1 chuyên mục chính.
+- **Thẻ** là từ khóa phụ, không phân cấp. Đừng tạo hàng trăm thẻ chỉ dùng một lần — mỗi thẻ sinh ra một trang lưu trữ mỏng nội dung.
+
+## Theme và Plugin
+
+- **Theme** quyết định giao diện: bố cục, màu sắc, cách hiển thị.
+- **Plugin** thêm chức năng: form liên hệ, SEO, cache, bán hàng.
+
+Một nguyên tắc mình học được sau vài lần "mất code": **chức năng không nên nằm trong theme**. Đổi theme thì giao diện đổi, nhưng chức năng (ví dụ loại nội dung "Dự án") vẫn phải còn — nên đặt nó trong plugin riêng.
+
+## Không sửa thẳng theme gốc
+
+Sửa file của theme mua hoặc theme chính thức thì lần cập nhật sau sẽ ghi đè mất. Hãy dùng **child theme** (mình viết riêng một bài về cách tạo child theme).
+
+## Permalink (đường dẫn tĩnh)
+
+Mặc định WordPress có thể dùng dạng `?p=123`. Vào **Cài đặt → Đường dẫn tĩnh** chọn "Tên bài viết" để có đường dẫn đẹp như `/cach-chon-hosting/`. Làm việc này **ngay từ đầu** — đổi sau khi đã có traffic sẽ phải chuyển hướng hàng loạt.
+
+## Vai trò người dùng
+
+| Vai trò | Làm được gì |
+|---|---|
+| Quản trị viên | Mọi thứ, kể cả cài plugin |
+| Biên tập viên | Đăng và sửa bài của mọi người |
+| Tác giả | Đăng và sửa bài của mình |
+| Cộng tác viên | Viết bài nhưng không tự đăng |
+
+Khách hàng chỉ cần viết bài thì cho quyền Biên tập viên — ít rủi ro hơn nhiều so với Quản trị viên.
+
+## Khối (Block editor)
+
+Trình soạn thảo khối (Gutenberg) cho phép dựng nội dung bằng các khối: đoạn văn, ảnh, cột, nút… Lúc đầu mình hơi ngợp, nhưng quen rồi thì nhanh và gọn hơn nhiều so với dán HTML.
+
+## Lời khuyên cho người mới
+
+1. Cài một site thử trên máy (LocalWP) và **phá thoải mái** để học.
+2. Đọc tài liệu chính thức trên developer.wordpress.org thay vì chỉ xem video ngắn.
+3. Mỗi khi cài plugin, tự hỏi: mình có thực sự cần nó không?
+
+Những thứ nhỏ này giúp mình tránh được rất nhiều lỗi khi bắt đầu nhận dự án thật.

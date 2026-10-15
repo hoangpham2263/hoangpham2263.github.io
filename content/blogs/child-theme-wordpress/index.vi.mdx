@@ -1,0 +1,67 @@
+---
+title: "Child theme là gì và tạo child theme đúng cách"
+description: "Vì sao không nên sửa trực tiếp theme gốc, cách tạo child theme chỉ với hai file, ghi đè template, thêm CSS/JS và những lưu ý khi dùng với block theme."
+date: "2025-03-31T21:30:00+07:00"
+tags: ["WordPress", "Theme", "PHP"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Lần đầu nhận sửa một website có sẵn, mình sửa thẳng vào file `header.php` của theme. Một tuần sau khách bấm cập nhật theme — mọi thay đổi biến mất. Đó là lúc mình học về **child theme**.
+
+## Child theme là gì?
+
+Là một theme "con" kế thừa toàn bộ theme "cha". Bạn chỉ đặt vào child theme những gì muốn thay đổi; phần còn lại vẫn lấy từ theme cha. Theme cha cập nhật thoải mái mà không ảnh hưởng tùy biến của bạn.
+
+## Tạo child theme với 2 file
+
+Tạo thư mục `wp-content/themes/ten-theme-child/` gồm:
+
+**style.css**
+
+```css
+/*
+Theme Name: Tên Theme Child
+Template: ten-theme
+Version: 1.0.0
+*/
+```
+
+Dòng `Template` phải đúng **tên thư mục** của theme cha.
+
+**functions.php**
+
+```php
+<?php
+add_action( 'wp_enqueue_scripts', function () {
+    wp_enqueue_style(
+        'child-style',
+        get_stylesheet_uri(),
+        [],
+        wp_get_theme()->get( 'Version' )
+    );
+} );
+```
+
+Vào **Giao diện → Giao diện** và kích hoạt child theme. Nhiều theme cổ điển tự nạp CSS của theme cha; nếu không, thêm `wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );` trước dòng trên.
+
+## Ghi đè template
+
+Muốn sửa `footer.php`: chép file đó từ theme cha sang child theme (giữ nguyên đường dẫn tương đối) rồi sửa. WordPress sẽ ưu tiên file trong child theme.
+
+Lưu ý: khi theme cha cập nhật file đó, bản sao của bạn **không** tự cập nhật theo. Chỉ ghi đè khi thật sự cần; ưu tiên dùng hooks.
+
+## `functions.php` hoạt động khác
+
+`functions.php` của child theme **không ghi đè** mà được nạp **trước** `functions.php` của theme cha — cả hai cùng chạy. Vì vậy đừng khai báo lại hàm trùng tên với theme cha.
+
+## Với block theme
+
+Block theme (Full Site Editing) vẫn dùng child theme được. Template là file `.html` trong thư mục `templates/` và `parts/`, cấu hình trong `theme.json`. Lưu ý thay đổi bạn làm trong *Trình chỉnh sửa giao diện* được lưu trong database — muốn đưa vào code thì xuất ra file.
+
+## Khi nào không cần child theme?
+
+- Khi bạn tự viết theme riêng cho dự án (như mình thường làm từ thiết kế Figma) — theme đó đã là của bạn.
+- Khi chỉ thêm vài dòng CSS — mục *CSS bổ sung* trong Tùy biến là đủ.
+
+Từ sau lần "mất code" đó, mọi website có dùng theme bên ngoài mình đều tạo child theme ngay từ đầu.

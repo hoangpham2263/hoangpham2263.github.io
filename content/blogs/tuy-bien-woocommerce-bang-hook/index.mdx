@@ -1,0 +1,73 @@
+---
+title: "Customising WooCommerce with hooks instead of template overrides"
+description: "WooCommerce tweaks I often make for clients — button text, notes under the price, checkout fields, product tabs — with hooks so they survive updates."
+date: "2025-06-17T20:30:00+07:00"
+tags: ["WooCommerce", "PHP", "Hooks"]
+category: "WooCommerce"
+image: "./cover.webp"
+---
+
+WooCommerce lets you override templates by copying files into your theme, but every WooCommerce template update leaves your copy behind. For most client requests I use **hooks** — cleaner and more durable. (New to hooks? See [actions and filters](/en/blog/hooks-action-filter-wordpress).)
+
+Put the snippets in a child theme's `functions.php` or a small plugin.
+
+## Change the add-to-cart text
+
+```php
+add_filter( 'woocommerce_product_single_add_to_cart_text', fn() => 'Buy now' );
+add_filter( 'woocommerce_product_add_to_cart_text', fn() => 'Choose' );
+```
+
+## A note under the price
+
+```php
+add_action( 'woocommerce_single_product_summary', function () {
+    echo '<p class="ship-note">Free inner-city delivery on orders over 500,000₫</p>';
+}, 11 ); // price is at priority 10
+```
+
+## Fewer checkout fields
+
+```php
+add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
+    unset( $fields['billing']['billing_postcode'] );
+    unset( $fields['billing']['billing_company'] );
+    unset( $fields['billing']['billing_address_2'] );
+    $fields['billing']['billing_phone']['required'] = true;
+    return $fields;
+} );
+```
+
+## Hide or rename product tabs
+
+```php
+add_filter( 'woocommerce_product_tabs', function ( $tabs ) {
+    unset( $tabs['additional_information'] );
+    if ( isset( $tabs['description'] ) ) {
+        $tabs['description']['title'] = 'Details';
+    }
+    return $tabs;
+} );
+```
+
+## Products per category page
+
+```php
+add_filter( 'loop_shop_per_page', fn() => 24 );
+```
+
+## "Contact us" when there's no price
+
+```php
+add_filter( 'woocommerce_empty_price_html', fn() => '<span class="price-contact">Contact us</span>' );
+```
+
+## When to override templates
+
+Only for big HTML structure changes hooks can't handle. Copy into `your-theme/woocommerce/...` and watch **WooCommerce → Status**, which flags outdated template copies after updates.
+
+## Lessons
+
+- One function per tweak with a comment explaining why.
+- Re-test cart, checkout and emails after each WooCommerce update.
+- Never edit WooCommerce plugin files.

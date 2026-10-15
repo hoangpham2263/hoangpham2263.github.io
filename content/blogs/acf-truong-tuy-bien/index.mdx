@@ -1,0 +1,55 @@
+---
+title: "ACF: custom fields that let clients edit content without breaking the design"
+description: "How I use Advanced Custom Fields for client-editable home and service pages: field groups, the field types I use most, rendering in the theme and tips for clean data."
+date: "2025-04-22T20:00:00+07:00"
+tags: ["WordPress", "ACF", "Theme"]
+category: "WordPress"
+image: "./cover.webp"
+---
+
+Clients want to change banners, phone numbers and service lists themselves — but free-form editing breaks layouts easily. **ACF (Advanced Custom Fields)** solves exactly that: I design the inputs, clients just fill them in.
+
+## The idea
+
+1. Create a **field group** with the inputs you need.
+2. Assign it to the right page or content type.
+3. Read the values in the template and output them in the design.
+
+## Field types I use most
+
+| Field type | Used for |
+|---|---|
+| Text / Textarea | Titles, short descriptions |
+| Image | Banners, partner logos |
+| Link | Call-to-action buttons |
+| WYSIWYG | Formatted content |
+| Repeater* | Lists: services, FAQs, testimonials |
+| Options page* | Shared info: hotline, address, socials |
+
+\*Repeater and Options pages are ACF PRO features.
+
+## Rendering in the theme
+
+```php
+<?php $hero = get_field( 'hero' ); ?>
+<section class="hero">
+  <h1><?php echo esc_html( $hero['title'] ); ?></h1>
+  <?php if ( $hero['image'] ) : ?>
+    <?php echo wp_get_attachment_image( $hero['image']['ID'], 'large' ); ?>
+  <?php endif; ?>
+</section>
+```
+
+```php
+<?php while ( have_rows( 'services' ) ) : the_row(); ?>
+  <h3><?php echo esc_html( get_sub_field( 'name' ) ); ?></h3>
+<?php endwhile; ?>
+```
+
+## Tips
+
+- **Always escape** output (`esc_html`, `esc_url`, `esc_attr`).
+- Use `wp_get_attachment_image()` for automatic `srcset`, dimensions and lazy loading.
+- Enable **Local JSON** (an `acf-json` folder in the theme) so field settings live in Git and sync between local and server.
+- Clear labels and short instructions for clients.
+- Set limits — title length, minimum image size, maximum rows — to keep the design intact.
