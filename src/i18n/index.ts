@@ -116,7 +116,7 @@ const en = {
 };
 
 const vi: typeof en = {
-  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Tool", contact: "Liên hệ" },
+  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", contact: "Liên hệ" },
   hero: {
     bio: "Xin chào 👋 Chào mừng bạn đến với portfolio của mình! Mình thích biến ý tưởng thành những website nhanh, dễ dùng và dễ tìm thấy trên Google. Phần lớn công việc của mình là xây dựng website cho doanh nghiệp, còn thời gian rảnh mình tìm hiểu công nghệ mới và dùng chúng để làm sản phẩm của riêng mình. Mời bạn xem các dự án bên dưới, và cứ liên hệ nếu muốn cùng hợp tác nhé.",
     contact: "Liên hệ",
@@ -164,7 +164,7 @@ const vi: typeof en = {
     allPosts: "Tất cả bài viết",
   },
   tools: {
-    title: "Tool",
+    title: "Công cụ",
     description: "Các tool và automation mình tự làm cho WordPress, thương mại điện tử và công việc hằng ngày.",
     intro: "Các tool và automation nhỏ mình tự viết để tiết kiệm thời gian — mã nguồn trên GitHub.",
     empty: "Các tool đang được phát triển — bạn quay lại sau nhé.",
