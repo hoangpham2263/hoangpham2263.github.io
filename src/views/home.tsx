@@ -138,7 +138,7 @@ export default function HomeView({ locale = "en" }: { locale?: Locale }) {
   return (
     <section className="w-full space-y-3 mt-3 md:space-y-6 md:mt-5">
       <Form {...form}>
-        <form className="w-full flex items-center sticky top-[54px] z-20 rounded-lg border bg-background shadow-sm before:absolute before:inset-x-0 before:-top-[13px] before:h-3 before:bg-background before:content-['']">
+        <form className="w-full flex items-center rounded-lg border bg-background shadow-sm">
           <FormField
             control={form.control}
             name="query"

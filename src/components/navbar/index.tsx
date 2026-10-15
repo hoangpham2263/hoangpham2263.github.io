@@ -13,8 +13,8 @@ export default function Navbar() {
   const t = getDictionary(locale);
   const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/services": t.nav.services, "/blog": t.nav.blog, "/tools": t.nav.tools, "/contact": t.nav.contact };
   return (
-    // Full-width backdrop so scrolled content does not show beside the sticky menu
-    <div className="hidden md:block sticky top-0 z-50 w-full bg-background">
+    // Covers the column padding too, so scrolled content never shows above or beside the menu
+    <div className="hidden md:block sticky -top-8 z-50 -mx-8 -mt-8 px-8 pt-8 pb-4 bg-background border-b border-border/60">
       <div className="inline-flex max-w-full overflow-x-auto scrollbar-hide items-center gap-0.5 sm:gap-1 rounded-lg border bg-muted p-1 text-[13px] sm:text-sm">
         {navbarConfig.map((item, index) => (
           <NavItem key={index} url={item.url} href={localePath(locale, item.url)}>
