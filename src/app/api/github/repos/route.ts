@@ -19,7 +19,8 @@ export async function GET() {
       headers: { "x-build-time": String(Date.now()) },
     });
 
-    const filteredRepos = repos.data.filter(repo => !repo.fork && !repo.private);
+    // Skip forks, private repos and the profile README repo
+    const filteredRepos = repos.data.filter(repo => !repo.fork && !repo.private && repo.name !== "hoangpham2263");
     
     return NextResponse.json(filteredRepos);
   } catch (error) {
