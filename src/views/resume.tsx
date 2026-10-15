@@ -33,8 +33,8 @@ const icons = {
 
 // Canva-style section: navy uppercase heading over a full-width rule
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <section className="mt-5">
-    <h2 className="text-[16px] font-bold uppercase tracking-wide text-[#1F3A5F] border-b border-[#1F3A5F]/70 pb-1 mb-2.5 break-after-avoid">
+  <section className="mt-6">
+    <h2 className="text-[16px] font-bold uppercase tracking-wide text-[#1F3A5F] border-b border-[#1F3A5F]/70 pb-1 mb-3 break-after-avoid">
       {title}
     </h2>
     {children}
@@ -62,8 +62,8 @@ const Entry = ({
       <span className="text-[#1a1a1a] text-[13px] sm:text-[14px]">{period}</span>
     </div>
     <p className="italic text-[#1a1a1a]">{role}</p>
-    {summary && <p className="mt-0.5">{summary}</p>}
-    <ul className="mt-1 list-disc pl-5 space-y-0.5">
+    {summary && <p className="mt-1">{summary}</p>}
+    <ul className="mt-1 list-disc pl-5 space-y-1">
       {items.map((r) => (
         <li key={r}>{r}</li>
       ))}
@@ -137,7 +137,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </Section>
 
           <Section title={t.experience}>
-            <div className="space-y-3">
+            <div className="divide-y divide-black/10 [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
               {resumeConfig.work.map((w) => (
                 <Entry
                   key={w.company}
@@ -148,7 +148,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                   items={w.responsibilities}
                 >
                   {w.selected.length > 0 && (
-                    <p className="mt-1">
+                    <p className="mt-2">
                       <b>{t.selectedSites}:</b> {w.selected.join(", ")} — {t.seeFullList}{" "}
                       <a href={`${siteConfig.siteUrl}${home === "/" ? "" : home}`} className="underline underline-offset-2">
                         {t.portfolio}
@@ -162,7 +162,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </Section>
 
           <Section title={t.projects}>
-            <div className="space-y-3">
+            <div className="divide-y divide-black/10 [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
               {resumeConfig.projects.map((p) => (
                 <Entry
                   key={p.name}
@@ -187,7 +187,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </Section>
 
           <Section title={t.skills}>
-            <ul className="list-disc pl-5 space-y-0.5">
+            <ul className="list-disc pl-5 space-y-1">
               {resumeConfig.skills.map((s) => (
                 <li key={s.group}>
                   <b>{s.group}:</b> {s.items}
@@ -211,7 +211,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </Section>
 
           <Section title={t.links}>
-            <ul className="space-y-0.5">
+            <ul className="space-y-1">
               {resumeConfig.links.map((l) => (
                 <li key={l.href} className="flex items-center gap-2">
                   {icons[l.icon as keyof typeof icons]}
