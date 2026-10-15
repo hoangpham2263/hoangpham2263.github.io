@@ -1,5 +1,7 @@
 import { blogs } from "#site/content";
 import { MDXContentRenderer } from "@/components/mdx/mdx-content-renderer";
+import Picture from "@/components/picture";
+import ContentCard from "@/components/content-card";
 import { siteConfig } from "@/config/site.config";
 import { getDictionary, languageAlternates, localePath, ogLocale, type Locale } from "@/i18n";
 import { ArrowLeft } from "lucide-react";
@@ -37,24 +39,18 @@ export function BlogListView({ locale }: { locale: Locale }) {
       {posts.length === 0 ? (
         <p className="mt-8 text-sm text-muted-foreground">{t.empty}</p>
       ) : (
-        <div className="mt-6 divide-y divide-border">
+        <div className="mt-6 space-y-3 md:space-y-6">
           {posts.map((post) => (
-            <Link
+            <ContentCard
               key={post.slugAsParams}
+              title={post.title}
+              description={post.description}
               href={localePath(locale, `/blog/${post.slugAsParams}`)}
-              className="block py-5 first:pt-0 group/post"
-            >
-              <p className="text-xs text-muted-foreground">{formatDate(post.date, locale)}</p>
-              <h2 className="mt-1 font-heading text-lg font-semibold group-hover/post:underline">{post.title}</h2>
-              <p className="mt-1 text-sm text-foreground/85 leading-6">{post.description}</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="px-2 py-0.5 rounded bg-muted text-foreground/85 text-xs">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </Link>
+              image={post.image}
+              tags={post.tags}
+              meta={formatDate(post.date, locale)}
+              locale={locale}
+            />
           ))}
         </div>
       )}
@@ -87,6 +83,7 @@ export async function blogPostMetadata(params: BlogPostProps["params"], locale: 
       type: "article",
       url: `${siteConfig.siteUrl}${localePath(locale, path)}`,
       locale: ogLocale(locale),
+      images: post.image ? [{ url: `${siteConfig.siteUrl}${post.image.src}`, width: post.image.width, height: post.image.height, alt: post.title }] : undefined,
     },
   };
 }
@@ -113,6 +110,9 @@ export async function BlogPostView({ params, locale }: BlogPostProps & { locale:
         <h1 className="font-heading text-2xl font-bold leading-tight sm:text-3xl">{post.title}</h1>
         <p className="text-sm text-foreground/85 leading-6">{post.description}</p>
       </header>
+      {post.image && (
+        <Picture image={post.image} width={1200} height={630} alt={post.title} className="w-full border rounded-2xl" />
+      )}
       <div className="border-t pt-6 text-[15px] leading-7 [&_h2]:mt-8 [&_h2]:mb-2 [&_h2]:pb-0 [&_h2]:text-xl [&_h2:first-child]:mt-0 [&_h3]:mt-6 [&_h3]:text-lg [&_p:not(:first-child)]:mt-3 [&_ul]:my-2 [&_ol]:my-2">
         <MDXContentRenderer code={post.body} />
       </div>

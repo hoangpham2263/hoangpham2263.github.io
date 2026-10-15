@@ -1,4 +1,4 @@
-import LinksSection from "@/components/links-section";
+import ContentCard from "@/components/content-card";
 import { siteConfig } from "@/config/site.config";
 import { toolsConfig } from "@/config/tools.config";
 import { getDictionary, languageAlternates, type Locale } from "@/i18n";
@@ -22,34 +22,27 @@ export function ToolsView({ locale }: { locale: Locale }) {
       {toolsConfig.length === 0 ? (
         <p className="mt-8 rounded-xl border border-dashed p-6 text-sm text-muted-foreground">{t.empty}</p>
       ) : (
-        <div className="mt-6 grid gap-3 md:grid-cols-2">
+        <div className="mt-6 space-y-3 md:space-y-6">
           {toolsConfig.map((tool) => (
-            <div key={tool.name} className="rounded-xl border p-4 flex flex-col gap-2">
-              <div className="flex items-center justify-between gap-2">
-                <h2 className="font-heading font-semibold text-lg">{tool.name}</h2>
+            <ContentCard
+              key={tool.name}
+              title={tool.name}
+              description={tool.description[locale]}
+              image={tool.image ? { src: tool.image, width: 1200, height: 675 } : undefined}
+              tags={tool.tags}
+              links={tool.links}
+              locale={locale}
+              badge={
                 <span
                   className={cn(
-                    "text-xs px-2 py-0.5 rounded",
+                    "text-xs px-2 py-0.5 rounded font-medium",
                     tool.status === "done" ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
                   )}
                 >
                   {tool.status === "done" ? t.done : t.building}
                 </span>
-              </div>
-              <p className="text-sm text-foreground/85 leading-6 flex-1">{tool.description[locale]}</p>
-              <div className="flex flex-wrap gap-2">
-                {tool.tags.map((tag) => (
-                  <span key={tag} className="px-2 py-0.5 rounded bg-muted text-foreground/85 text-xs">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              {tool.links.length > 0 && (
-                <div className="pt-1">
-                  <LinksSection links={tool.links} locale={locale} />
-                </div>
-              )}
-            </div>
+              }
+            />
           ))}
         </div>
       )}

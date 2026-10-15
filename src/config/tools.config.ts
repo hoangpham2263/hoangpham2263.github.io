@@ -6,6 +6,7 @@ export type Tool = {
   status: "done" | "building";
   tags: string[];
   links: { name: string; url: string }[]; // e.g. { name: "GitHub", url: "https://github.com/..." }
+  image?: string; // optional screenshot in /public, e.g. "/tools/wp-auto-poster.webp"
 };
 
 export const toolsConfig: Tool[] = [];

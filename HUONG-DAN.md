@@ -25,7 +25,7 @@ Site là Next.js xuất tĩnh (`output: "export"`), đẩy lên GitHub là **t�
 
 ## Blog & Tool
 
-- **Viết bài blog:** tạo thư mục `content/blogs/<ten-bai>/` gồm `index.vi.mdx` (tiếng Việt) và `index.mdx` (tiếng Anh, có thể bỏ qua nếu không cần). Phần đầu cần `title`, `description`, `date`, `tags`; thêm `published: false` nếu muốn ẩn bài nháp. Xem mẫu ở `content/blogs/portfolio-song-ngu/`.
+- **Viết bài blog:** tạo thư mục `content/blogs/<ten-bai>/` gồm `index.vi.mdx` (tiếng Việt) và `index.mdx` (tiếng Anh, có thể bỏ qua nếu không cần). Phần đầu cần `title`, `description`, `date`, `tags`; thêm `published: false` nếu muốn ẩn bài nháp. **Ảnh bìa:** bỏ ảnh `cover.webp` (nên 1200×630) vào cùng thư mục bài và thêm dòng `image: "./cover.webp"` ở phần đầu — ảnh hiện ở danh sách blog, đầu bài viết và khi chia sẻ link. Ảnh trong nội dung bài: đặt file cùng thư mục rồi viết `![mô tả](./ten-anh.webp)`. Xem mẫu ở `content/blogs/portfolio-song-ngu/`.
 - **Thêm tool:** sửa `src/config/tools.config.ts`, thêm một object vào `toolsConfig`:
 
 ```ts
