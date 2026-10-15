@@ -73,6 +73,18 @@ export default function MobileNav() {
               transition={{ duration: 0.15 }}
             >
               <ul className="p-2">
+                <li>
+                  <Link
+                    href={localePath(locale, "/")}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      "flex items-center justify-between rounded-md px-3 py-3 text-base",
+                      path === "/" || path === "" ? "bg-muted font-semibold text-primary" : "text-foreground/80 hover:bg-muted"
+                    )}
+                  >
+                    {t.cv.home}
+                  </Link>
+                </li>
                 {navbarConfig.map((item) => (
                   <li key={item.url}>
                     <Link
