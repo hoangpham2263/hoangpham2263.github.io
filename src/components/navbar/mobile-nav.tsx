@@ -34,7 +34,7 @@ export default function MobileNav() {
 
   return (
     <div className="md:hidden sticky top-0 z-[60]">
-      <header className="flex items-center justify-between h-14 px-3 border-b bg-background/90 backdrop-blur">
+      <header className="flex items-center justify-between h-14 pl-4 pr-2 border-b bg-background/90 backdrop-blur">
         <Link href={localePath(locale, "/")} className="flex items-center gap-2 font-semibold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/hp-icon.svg" alt="" width={30} height={30} />

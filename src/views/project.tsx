@@ -82,7 +82,7 @@ export default async function ProjectView({ params, locale = "en" }: ProjectPage
   }
 
   return (
-    <article className="w-full mt-6 space-y-6">
+    <article className="w-full mt-0 md:mt-6 space-y-6">
       <div>
         <Link
           href={localePath(locale, "/")}

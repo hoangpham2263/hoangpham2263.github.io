@@ -34,7 +34,7 @@ export function BlogListView({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).blog;
   const posts = postsFor(locale);
   return (
-    <div className="w-full max-w-5xl mt-6">
+    <div className="w-full max-w-5xl mt-0 md:mt-6">
       <p className="text-sm text-muted-foreground max-w-2xl">{t.description}</p>
       {posts.length === 0 ? (
         <p className="mt-8 text-sm text-muted-foreground">{t.empty}</p>
@@ -97,7 +97,7 @@ export async function BlogPostView({ params, locale }: BlogPostProps & { locale:
   if (!post) notFound();
   const t = getDictionary(locale).blog;
   return (
-    <article className="w-full mt-6 space-y-6">
+    <article className="w-full mt-0 md:mt-6 space-y-6">
       <Link
         href={localePath(locale, "/blog")}
         className="group/back inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"

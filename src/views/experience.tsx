@@ -6,7 +6,7 @@ export default function ExperienceView({ locale = "en" }: { locale?: Locale }) {
   const t = getDictionary(locale);
   const edu = getEducation(locale);
   return (
-    <div className="w-full max-w-5xl mt-6 divide-y divide-border">
+    <div className="w-full max-w-5xl mt-0 md:mt-6 divide-y divide-border">
       {getExperiences(locale).map((exp, i) => (
         <div key={i} className="py-7 first:pt-4">
           <Experience experience={exp} t={t.experience} />

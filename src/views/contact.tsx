@@ -24,7 +24,7 @@ export default function ContactView({ locale = "en" }: { locale?: Locale }) {
   const t = getDictionary(locale).contact;
   const contacts = getContacts(t);
   return (
-    <div className="w-full max-w-5xl mt-10">
+    <div className="w-full max-w-5xl mt-0 md:mt-10">
       <p className="text-sm text-muted-foreground max-w-2xl">
         {t.intro}
       </p>

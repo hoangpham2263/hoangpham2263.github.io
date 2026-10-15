@@ -18,7 +18,7 @@ export function servicesMetadata(locale: Locale): Metadata {
 export function ServicesView({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).services;
   return (
-    <div className="w-full max-w-5xl mt-6">
+    <div className="w-full max-w-5xl mt-0 md:mt-6">
       <p className="text-sm text-muted-foreground max-w-2xl">{t.intro}</p>
       <div className="mt-6 grid gap-3 md:gap-4 md:grid-cols-2">
         {servicesConfig.map((s) => (
