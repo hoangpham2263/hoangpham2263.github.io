@@ -17,7 +17,7 @@ export const toolsConfig: Tool[] = [
       en: "Convert images to WebP, JPG or PNG and compress with five quality levels, in batches with ZIP download — runs in the browser, nothing is uploaded.",
     },
     status: "done",
-    tags: ["JavaScript", "Canvas API", "WebP", "No build"],
+    tags: ["JPG", "PNG", "WEBP", "AVIF", "GIF", "BMP"],
     links: [
       { name: "Website", url: "https://hoangpham.is-a.dev/image-converter/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/image-converter" },
@@ -31,7 +31,7 @@ export const toolsConfig: Tool[] = [
       en: "Shrink PDF, Word, PowerPoint, Excel, LibreOffice, EPUB and JPG/PNG/WEBP files in the browser — PDFs via Ghostscript, other files by re-compressing their images; nothing is uploaded.",
     },
     status: "done",
-    tags: ["JavaScript", "WebAssembly", "Ghostscript", "PDF", "Office"],
+    tags: ["PDF", "DOCX", "PPTX", "XLSX", "ODT", "ODS", "ODP", "EPUB", "JPG", "PNG", "WEBP"],
     links: [
       { name: "Website", url: "https://hoangpham.is-a.dev/file-compressor/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/file-compressor" },
@@ -45,7 +45,7 @@ export const toolsConfig: Tool[] = [
       en: "Cut PDFs in the browser: preview every page, pick the ones to keep (or type 1-3, 5), download one file or one file per page — nothing is uploaded.",
     },
     status: "done",
-    tags: ["JavaScript", "PDF.js", "pdf-lib", "PDF"],
+    tags: ["PDF"],
     links: [
       { name: "Website", url: "https://hoangpham.is-a.dev/pdf-cutter/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/pdf-cutter" },
