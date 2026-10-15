@@ -66,4 +66,18 @@ export const toolsConfig: Tool[] = [
     ],
     image: "/tools/qr-generator.webp",
   },
+  {
+    name: "Image Resizer",
+    description: {
+      vi: "Đổi kích thước và cắt ảnh hàng loạt theo tỉ lệ 1:1, 4:3, 16:9 hoặc chiều rộng cố định, cắt vừa khung hoặc thêm nền trắng — hợp ảnh sản phẩm Shopee, WooCommerce. Chạy ngay trên trình duyệt.",
+      en: "Batch resize and crop images to 1:1, 4:3, 16:9 or a fixed width, crop to fill or pad with white — great for Shopee and WooCommerce product photos. Runs in the browser.",
+    },
+    status: "done",
+    tags: ["JPG", "PNG", "WEBP", "AVIF", "GIF", "BMP"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/image-resizer/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/image-resizer" },
+    ],
+    image: "/tools/image-resizer.webp",
+  },
 ];
