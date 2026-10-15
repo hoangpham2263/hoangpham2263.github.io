@@ -47,7 +47,7 @@ export default function BlogFilter({
       onClick={() => choose(value)}
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors",
-        active === value ? "border-primary bg-primary text-primary-foreground" : "hover:bg-muted"
+        active === value ? "border-transparent bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/25" : "hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
       )}
     >
       {label}

@@ -9,14 +9,14 @@ export const Socials = ({ locale = "en" }: { locale?: Locale }) => {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <Button
-        className="shadow-none hover:bg-background hover:text-primary border-[0.3px] border-transparent hover:border-b-4 hover:border-primary/30 active:border-b transition-all"
+        className="active:scale-[0.97] transition-all"
         asChild
       >
         <Link href={localePath(locale, "/contact")}>{t.hero.contact}</Link>
       </Button>
       <Button
         variant="outline"
-        className="active:border-b active:scale-[0.97] hover:border-b-4 hover:border-primary/30 hover:bg-background shadow-none transition-all duration-100"
+        className="active:scale-[0.97] hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary shadow-none transition-all duration-100"
         asChild
       >
         <Link href={localePath(locale, portfolioConfig.resume)}>
@@ -31,7 +31,7 @@ export const Socials = ({ locale = "en" }: { locale?: Locale }) => {
             key={key}
             size="icon"
             variant="outline"
-            className="active:border-b active:scale-[0.97] hover:border-[0.2px] hover:border-b-4 hover:border-primary/30 hover:bg-background shadow-none transition-all duration-100"
+            className="active:scale-[0.97] hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary shadow-none transition-all duration-100"
             asChild
           >
             <a href={link} target="_blank" rel="noopener noreferrer">

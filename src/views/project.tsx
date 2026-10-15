@@ -112,7 +112,7 @@ export default async function ProjectView({ params, locale = "en" }: ProjectPage
           <p className="text-sm text-foreground/85 leading-6">{project.description}</p>
           <div className="flex flex-wrap items-center gap-2">
             {project.tags.map((tag) => (
-              <p key={tag} className="px-2 py-1 rounded bg-muted text-foreground/85 text-xs">
+              <p key={tag} className="px-2 py-1 rounded-md bg-primary/[0.08] text-primary/90 text-xs">
                 {tag}
               </p>
             ))}

@@ -21,7 +21,7 @@ type ContentCardProps = {
 export default function ContentCard({ title, description, href, image, tags = [], links = [], meta, badge, locale = "vi" }: ContentCardProps) {
 
   return (
-    <div className={`group/card relative flex flex-col-reverse md:flex-row p-3 justify-between gap-3 md:gap-2 rounded-xl border overflow-hidden transition-colors ${href ? "hover:border-primary/40 hover:bg-muted/30" : ""}`}>
+    <div className={`group/card relative flex flex-col-reverse md:flex-row p-3 justify-between gap-3 md:gap-2 rounded-xl border overflow-hidden transition-colors ${href ? "hover:border-primary/40 hover:bg-primary/[0.03] hover:shadow-lg hover:shadow-blue-500/5" : ""}`}>
       <div className={image ? "space-y-2 w-full md:w-3/5" : "space-y-2 w-full"}>
         <div className="space-y-2">
           {meta && <p className="text-xs text-muted-foreground">{meta}</p>}
@@ -56,7 +56,7 @@ export default function ContentCard({ title, description, href, image, tags = []
         {tags.length > 0 && (
           <div className="flex items-center gap-2 flex-wrap">
             {tags.map((tag) => (
-              <p key={tag} className="px-2 py-1 rounded bg-muted text-foreground/85 text-xs">
+              <p key={tag} className="px-2 py-1 rounded-md bg-primary/[0.08] text-primary/90 text-xs">
                 {tag}
               </p>
             ))}

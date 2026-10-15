@@ -15,7 +15,7 @@ export default function LandingLayoutView({
     <main className="relative w-full lg:h-screen lg:overflow-hidden p-0 sm:p-5">
       <MobileNav />
       <div className="w-full h-full rounded-2xl sm:border flex flex-wrap lg:flex-nowrap justify-between lg:divide-x">
-        <HeroColumn className="w-full lg:w-2/5 px-4 pt-5 pb-2 md:p-8 lg:h-full lg:min-h-0 lg:overflow-y-auto scrollbar-thin">
+        <HeroColumn className="w-full lg:w-2/5 bg-gradient-to-b from-primary/[0.07] via-primary/[0.02] to-transparent lg:rounded-l-2xl px-4 pt-5 pb-2 md:p-8 lg:h-full lg:min-h-0 lg:overflow-y-auto scrollbar-thin">
           <Hero locale={locale} />
         </HeroColumn>
         <ContentColumn
