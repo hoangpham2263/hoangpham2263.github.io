@@ -112,7 +112,7 @@ export async function BlogPostView({ params, locale }: BlogPostProps & { locale:
       </header>
       {post.image && (
         <ZoomImage src={post.image.src} alt={post.title}>
-          <Picture image={post.image} width={1200} height={630} alt={post.title} className="w-full border rounded-2xl" />
+          <Picture image={post.image} width={1200} height={630} alt={post.title} className="w-full aspect-[16/9] max-h-[380px] object-cover object-top border rounded-xl" />
         </ZoomImage>
       )}
       <div className="border-t pt-6 text-[15px] leading-7 [&_h2]:mt-8 [&_h2]:mb-2 [&_h2]:pb-0 [&_h2]:text-xl [&_h2:first-child]:mt-0 [&_h3]:mt-6 [&_h3]:text-lg [&_p:not(:first-child)]:mt-3 [&_ul]:my-2 [&_ol]:my-2">

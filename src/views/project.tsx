@@ -96,15 +96,6 @@ export default async function ProjectView({ params, locale = "en" }: ProjectPage
           {t.allProjects}
         </Link>
       </div>
-      <ZoomImage src={project.image.src} alt={project.title}>
-        <Picture
-          image={project.image}
-          width={1200}
-          height={800}
-          alt={project.title}
-          className="w-full border rounded-2xl"
-        />
-      </ZoomImage>
       <header className="space-y-3">
         <h1 className="font-heading text-2xl font-bold leading-tight sm:text-3xl">{project.title}</h1>
         <p className="text-sm text-foreground/85 leading-6">{project.description}</p>
@@ -119,6 +110,15 @@ export default async function ProjectView({ params, locale = "en" }: ProjectPage
           <LinksSection links={project.links} locale={locale} />
         </div>
       </header>
+      <ZoomImage src={project.image.src} alt={project.title}>
+        <Picture
+          image={project.image}
+          width={1200}
+          height={800}
+          alt={project.title}
+          className="w-full aspect-[16/9] max-h-[380px] object-cover object-top border rounded-xl"
+        />
+      </ZoomImage>
       {/* Compact typography for short project write-ups */}
       <div className="border-t pt-6 text-[15px] leading-7 [&_h2]:mt-8 [&_h2]:mb-2 [&_h2]:pb-0 [&_h2]:text-xl [&_h2:first-child]:mt-0 [&_h3]:mt-6 [&_h3]:text-lg [&_p:not(:first-child)]:mt-3 [&_ul]:my-2 [&_ol]:my-2">
         <MDXContentRenderer code={project.body} />
