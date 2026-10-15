@@ -27,8 +27,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "File Compressor",
     description: {
-      vi: "Giảm dung lượng file PDF, Word, PowerPoint, Excel ngay trên trình duyệt — PDF nén bằng Ghostscript, file Office nén lại ảnh bên trong; file không được tải lên đâu cả.",
-      en: "Shrink PDF, Word, PowerPoint and Excel files in the browser — PDFs via Ghostscript, Office files by re-compressing embedded images; nothing is uploaded.",
+      vi: "Giảm dung lượng PDF, Word, PowerPoint, Excel, LibreOffice, EPUB và ảnh JPG/PNG/WEBP ngay trên trình duyệt — PDF nén bằng Ghostscript, các file khác nén lại ảnh bên trong; file không được tải lên đâu cả.",
+      en: "Shrink PDF, Word, PowerPoint, Excel, LibreOffice, EPUB and JPG/PNG/WEBP files in the browser — PDFs via Ghostscript, other files by re-compressing their images; nothing is uploaded.",
     },
     status: "done",
     tags: ["JavaScript", "WebAssembly", "Ghostscript", "PDF", "Office"],
