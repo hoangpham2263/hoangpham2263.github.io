@@ -23,10 +23,10 @@ export function resumeMetadata(locale: Locale = "en"): Metadata {
 }
 
 const icons = {
-  address: <MapPin size={14} className="shrink-0 translate-y-[1px]" />,
-  phone: <Phone size={14} className="shrink-0 translate-y-[1px]" />,
-  mail: <Mail size={14} className="shrink-0 translate-y-[1px]" />,
-  globe: <Globe size={14} className="shrink-0 translate-y-[1px]" />,
+  address: <MapPin size={14} className="shrink-0" />,
+  phone: <Phone size={14} className="shrink-0" />,
+  mail: <Mail size={14} className="shrink-0" />,
+  globe: <Globe size={14} className="shrink-0" />,
   github: <GitHubLogoIcon width={13} height={13} />,
   linkedin: <LinkedInLogoIcon width={13} height={13} />,
 };
