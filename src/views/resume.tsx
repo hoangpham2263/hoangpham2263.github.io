@@ -33,8 +33,8 @@ const icons = {
 
 // Canva-style section: navy uppercase heading over a full-width rule
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <section className="mt-6">
-    <h2 className="text-[16px] font-bold uppercase tracking-wide text-[#1F3A5F] border-b border-[#1F3A5F]/70 pb-1 mb-3 break-after-avoid">
+  <section className="mt-6 lg:mt-8">
+    <h2 className="text-[16px] lg:text-[17px] font-bold uppercase tracking-wide text-[#1F3A5F] border-b border-[#1F3A5F]/70 pb-1 mb-3 break-after-avoid">
       {title}
     </h2>
     {children}
@@ -59,7 +59,7 @@ const Entry = ({
   <article className="break-inside-avoid">
     <div className="flex flex-wrap justify-between items-baseline gap-x-4">
       <h3 className="font-bold">{title}</h3>
-      <span className="text-[#1a1a1a] text-[13px] sm:text-[14px]">{period}</span>
+      <span className="text-[#1a1a1a] text-[13px] sm:text-[14px] lg:text-[15px]">{period}</span>
     </div>
     <p className="italic text-[#1a1a1a]">{role}</p>
     {summary && <p className="mt-1">{summary}</p>}
@@ -80,7 +80,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <div className="w-full min-h-screen bg-muted/40 lg:h-screen lg:overflow-y-auto print:bg-white print:h-auto print:min-h-0 print:overflow-visible">
-      <main className="w-full max-w-[860px] mx-auto px-4 py-4 md:py-10 print:p-0 print:max-w-none">
+      <main className="w-full max-w-[860px] lg:max-w-[920px] mx-auto px-4 py-4 md:py-10 print:p-0 print:max-w-none">
         {/* Toolbar */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4 md:mb-5 print:hidden">
           <Link href={home} className="group/back flex items-center gap-1 text-sm">
@@ -103,14 +103,14 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
         {/* Paper: always light, like a printed A4 page */}
         <div
           id="cv-paper"
-          className="bg-white text-black shadow-sm ring-1 ring-black/5 rounded-sm px-5 py-6 sm:px-8 sm:py-8 font-['Times_New_Roman',Times,serif] text-[14px] leading-[1.55] print:shadow-none print:ring-0 print:rounded-none print:px-0 print:py-0"
+          className="bg-white text-black shadow-sm ring-1 ring-black/5 rounded-sm px-5 py-6 sm:px-8 sm:py-8 lg:px-14 lg:py-12 font-['Times_New_Roman',Times,serif] text-[14px] lg:text-[15px] leading-[1.55] lg:leading-[1.6] print:shadow-none print:ring-0 print:rounded-none print:px-0 print:py-0"
         >
           <header className="text-center">
-            <h1 className="text-[24px] sm:text-[26px] font-bold uppercase tracking-wide font-[Arial,Helvetica,sans-serif] leading-tight">
+            <h1 className="text-[24px] sm:text-[26px] lg:text-[30px] font-bold uppercase tracking-wide font-[Arial,Helvetica,sans-serif] leading-tight">
               {resumeConfig.name}
             </h1>
-            <p className="mt-1 text-[16px] font-[Arial,Helvetica,sans-serif]">{resumeConfig.title}</p>
-            <p className="mt-2 flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 gap-y-1 text-[13px] sm:text-[14px]">
+            <p className="mt-1 text-[16px] lg:text-[17px] font-[Arial,Helvetica,sans-serif]">{resumeConfig.title}</p>
+            <p className="mt-2 flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 gap-y-1 text-[13px] sm:text-[14px] lg:text-[15px]">
               {resumeConfig.contacts.map((c) => (
                 <span key={c.value} className="inline-flex items-center gap-1.5 leading-none">
                   {icons[c.icon as keyof typeof icons]}
@@ -137,7 +137,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </Section>
 
           <Section title={t.experience}>
-            <div className="divide-y divide-black/10 [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
+            <div className="divide-y divide-black/10 [&>*]:py-3 lg:[&>*]:py-4 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
               {resumeConfig.work.map((w) => (
                 <Entry
                   key={w.company}
@@ -162,7 +162,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </Section>
 
           <Section title={t.projects}>
-            <div className="divide-y divide-black/10 [&>*]:py-3 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
+            <div className="divide-y divide-black/10 [&>*]:py-3 lg:[&>*]:py-4 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
               {resumeConfig.projects.map((p) => (
                 <Entry
                   key={p.name}
@@ -202,7 +202,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                 <p>
                   <b>{e.school}</b> — <i>{e.degree}</i>
                 </p>
-                <span className="text-[#1a1a1a] text-[13px] sm:text-[14px]">{e.period}</span>
+                <span className="text-[#1a1a1a] text-[13px] sm:text-[14px] lg:text-[15px]">{e.period}</span>
               </div>
             ))}
             <p className="mt-0.5">
