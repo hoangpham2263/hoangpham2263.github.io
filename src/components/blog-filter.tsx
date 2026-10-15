@@ -17,6 +17,22 @@ export default function BlogFilter({
   const listRef = useRef<HTMLDivElement>(null);
   const total = categories.reduce((s, c) => s + c.count, 0);
 
+  // Remember the chosen category between visits
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("hp-blog-category");
+      if (saved && categories.some((c) => c.name === saved)) setActive(saved);
+    } catch {}
+  }, [categories]);
+
+  const choose = (value: string | null) => {
+    setActive(value);
+    try {
+      if (value) localStorage.setItem("hp-blog-category", value);
+      else localStorage.removeItem("hp-blog-category");
+    } catch {}
+  };
+
   useEffect(() => {
     listRef.current?.querySelectorAll<HTMLElement>("[data-category]").forEach((el) => {
       el.hidden = active !== null && el.dataset.category !== active;
@@ -27,7 +43,7 @@ export default function BlogFilter({
     <button
       key={label}
       type="button"
-      onClick={() => setActive(value)}
+      onClick={() => choose(value)}
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors",
         active === value ? "border-primary bg-primary text-primary-foreground" : "hover:bg-muted"

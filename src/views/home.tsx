@@ -41,6 +41,19 @@ export default function HomeView({ locale = "en" }: { locale?: Locale }) {
 
   const { query, type, sort } = form.watch();
 
+  // Remember the chosen list (Featured / Github) between visits
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("hp-projects-type");
+      if (saved === "Featured" || saved === "Github") form.setValue("type", saved);
+    } catch {}
+  }, [form]);
+  useEffect(() => {
+    try {
+      localStorage.setItem("hp-projects-type", type);
+    } catch {}
+  }, [type]);
+
   const fetchGithubRepos = useCallback(async () => {
     setLoading(true);
     try {
