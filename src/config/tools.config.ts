@@ -11,18 +11,18 @@ export type Tool = {
 
 export const toolsConfig: Tool[] = [
   {
-    name: "Image Converter",
+    name: "File Converter",
     description: {
-      vi: "Đổi ảnh sang WebP, JPG, PNG và nén với 5 mức chất lượng, nhiều ảnh cùng lúc, tải ZIP — chạy ngay trên trình duyệt, ảnh không được tải lên đâu cả.",
-      en: "Convert images to WebP, JPG or PNG and compress with five quality levels, in batches with ZIP download — runs in the browser, nothing is uploaded.",
+      vi: "Tự nhận loại file rồi chọn loại muốn đổi sang: ảnh ↔ ảnh (WebP, JPG, PNG, AVIF), gộp ảnh thành PDF, tách PDF thành ảnh, 5 mức chất lượng, tải ZIP — chạy ngay trên trình duyệt, file không được tải lên đâu cả.",
+      en: "Detects each file's type, then converts: image ↔ image (WebP, JPG, PNG, AVIF), images into one PDF, PDF pages into images, five quality levels, ZIP download — runs in the browser, nothing is uploaded.",
     },
     status: "done",
-    tags: ["JPG", "PNG", "WEBP", "AVIF", "GIF", "BMP"],
+    tags: ["JPG", "PNG", "WEBP", "AVIF", "GIF", "BMP", "SVG", "PDF"],
     links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/image-converter/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/image-converter" },
+      { name: "Website", url: "https://hoangpham.is-a.dev/file-converter/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/file-converter" },
     ],
-    image: "/tools/image-converter.webp",
+    image: "/tools/file-converter.webp",
   },
   {
     name: "File Compressor",
@@ -51,5 +51,19 @@ export const toolsConfig: Tool[] = [
       { name: "GitHub", url: "https://github.com/hoangpham2263/pdf-cutter" },
     ],
     image: "/tools/pdf-cutter.webp",
+  },
+  {
+    name: "QR Generator",
+    description: {
+      vi: "Tạo mã QR cho link, văn bản, WiFi, chuyển khoản ngân hàng (VietQR) và danh thiếp; đổi màu, chèn logo, tải PNG hoặc SVG — chạy ngay trên trình duyệt.",
+      en: "QR codes for links, text, WiFi, Vietnamese bank transfers (VietQR) and contact cards; custom colors, logo, PNG or SVG download — runs in the browser.",
+    },
+    status: "done",
+    tags: ["PNG", "SVG"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/qr-generator/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/qr-generator" },
+    ],
+    image: "/tools/qr-generator.webp",
   },
 ];
