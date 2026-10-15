@@ -26,15 +26,21 @@ export default function MobileNav() {
   // Close on navigation, lock page scroll while open
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+    // Keep the page from shifting when the scrollbar disappears
+    const gap = window.innerWidth - document.documentElement.clientWidth;
+    const { overflow, paddingRight } = document.body.style;
+    document.body.style.overflow = "hidden";
+    if (gap > 0) document.body.style.paddingRight = `${gap}px`;
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = overflow;
+      document.body.style.paddingRight = paddingRight;
     };
   }, [open]);
 
   return (
     <div className="md:hidden sticky top-0 z-[60]">
-      <header className="flex items-center justify-between h-14 pl-4 pr-2 border-b bg-background/90 backdrop-blur">
+      <header className="flex items-center justify-between h-14 pl-4 pr-2 border-b bg-background">
         <Link href={localePath(locale, "/")} className="flex items-center gap-2 font-semibold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/hp-icon.svg" alt="" width={30} height={30} />
@@ -63,14 +69,16 @@ export default function MobileNav() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.18 }}
               onClick={() => setOpen(false)}
             />
             <motion.nav
               className="absolute left-0 right-0 top-14 border-b bg-background shadow-lg"
-              initial={{ opacity: 0, y: -8 }}
+              initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.15 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
+              style={{ willChange: "transform, opacity" }}
             >
               <ul className="p-2">
                 <li>
