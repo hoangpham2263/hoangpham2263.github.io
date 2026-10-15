@@ -32,12 +32,12 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
       <h3 className="mt-1 text-lg">
         {portfolioConfig.tagline} <span className="sr-only">tagline</span>
       </h3>
-      <p className="mt-3 mb-5 max-w-2xl text-foreground/85">
+      <p className="mt-4 mb-4 max-w-2xl text-foreground/85">
         {t.hero.bio}
         <span className="sr-only">bio</span>
       </p>
       <Socials locale={locale} />
-      <div className="flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/85 mt-6 mb-2 lg:my-6">
+      <div className="flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/85 mt-4 mb-2 lg:mb-4">
         {getSkills(locale).map((skill) => (
           <p key={skill.category}>
             <span className="font-semibold text-primary/90">{skill.category}:</span> {skill.technologies.join(", ")}
