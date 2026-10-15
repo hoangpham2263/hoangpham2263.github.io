@@ -23,10 +23,10 @@ export function resumeMetadata(locale: Locale = "en"): Metadata {
 }
 
 const icons = {
-  address: <MapPin size={13} />,
-  phone: <Phone size={13} />,
-  mail: <Mail size={13} />,
-  globe: <Globe size={13} />,
+  address: <MapPin size={14} className="shrink-0 translate-y-[1px]" />,
+  phone: <Phone size={14} className="shrink-0 translate-y-[1px]" />,
+  mail: <Mail size={14} className="shrink-0 translate-y-[1px]" />,
+  globe: <Globe size={14} className="shrink-0 translate-y-[1px]" />,
   github: <GitHubLogoIcon width={13} height={13} />,
   linkedin: <LinkedInLogoIcon width={13} height={13} />,
 };
@@ -112,7 +112,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
             <p className="mt-1 text-[16px] font-[Arial,Helvetica,sans-serif]">{resumeConfig.title}</p>
             <p className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[14px]">
               {resumeConfig.contacts.map((c) => (
-                <span key={c.value} className="inline-flex items-center gap-1.5">
+                <span key={c.value} className="inline-flex items-center gap-1.5 leading-none">
                   {icons[c.icon as keyof typeof icons]}
                   {c.href ? (
                     <a href={c.href} className="hover:underline">
@@ -123,7 +123,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                   )}
                 </span>
               ))}
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 leading-none">
                 {icons.globe}
                 <a href={siteConfig.siteUrl} className="hover:underline">
                   hoangpham.is-a.dev
