@@ -8,28 +8,16 @@ export type Service = {
 
 export const servicesConfig: Service[] = [
   {
-    title: { vi: "Thiết kế website WordPress", en: "WordPress websites" },
+    title: { vi: "Thiết kế & phát triển website", en: "Website design & development" },
     description: {
-      vi: "Website doanh nghiệp làm từ thiết kế Figma thành theme WordPress riêng — nhanh, chuẩn SEO, dễ tự cập nhật nội dung.",
-      en: "Business websites built from a Figma design into a custom WordPress theme — fast, SEO-friendly and easy to update yourself.",
+      vi: "Website doanh nghiệp, website bán hàng hoặc web app riêng — làm từ thiết kế Figma, nhanh, chuẩn SEO và dễ tự quản lý nội dung.",
+      en: "Business sites, online stores or custom web apps — built from your Figma design, fast, SEO-friendly and easy to manage yourself.",
     },
     includes: {
-      vi: ["Theme riêng theo thiết kế, responsive trên mọi thiết bị", "Trang quản trị dễ dùng (ACF, Elementor khi cần)", "Cài Rank Math, sitemap, schema cơ bản", "Hướng dẫn sử dụng sau bàn giao"],
-      en: ["Custom theme from your design, responsive on every device", "Easy-to-use admin (ACF, Elementor when needed)", "Rank Math, sitemap and basic schema set up", "Handover guide after launch"],
+      vi: ["WordPress theme riêng theo thiết kế, responsive mọi thiết bị", "Shop WooCommerce: danh mục, biến thể, giỏ hàng, đặt hàng", "Web app / trang quản trị riêng bằng Next.js khi cần nghiệp vụ đặc thù", "Chuyển dữ liệu từ Haravan, Shopee hoặc site cũ; hướng dẫn sau bàn giao"],
+      en: ["Custom WordPress theme from your design, responsive on every device", "WooCommerce stores: catalogue, variations, cart and checkout", "Custom web apps / admin panels in Next.js for special workflows", "Data migration from Haravan, Shopee or an old site; handover guide"],
     },
-    tags: ["WordPress", "PHP", "ACF", "Figma"],
-  },
-  {
-    title: { vi: "Website bán hàng WooCommerce", en: "WooCommerce stores" },
-    description: {
-      vi: "Shop online với danh mục sản phẩm, tìm kiếm, giỏ hàng và đặt hàng — kèm chuyển dữ liệu từ nền tảng cũ nếu có.",
-      en: "Online stores with product catalogues, search, cart and checkout — including data migration from your old platform.",
-    },
-    includes: {
-      vi: ["Danh mục, biến thể, bộ lọc và tìm kiếm sản phẩm", "Giỏ hàng, đặt hàng, thông báo đơn", "Chuyển sản phẩm từ Haravan, Shopee hoặc site cũ sang WooCommerce", "Tối ưu trang sản phẩm cho SEO"],
-      en: ["Categories, variations, filters and product search", "Cart, checkout and order notifications", "Product migration from Haravan, Shopee or an old site to WooCommerce", "Product pages optimised for SEO"],
-    },
-    tags: ["WooCommerce", "PHP", "Python", "REST API"],
+    tags: ["WordPress", "WooCommerce", "Next.js", "Figma"],
   },
   {
     title: { vi: "Tối ưu tốc độ & SEO kỹ thuật", en: "Speed & technical SEO" },
@@ -54,18 +42,6 @@ export const servicesConfig: Service[] = [
       en: ["Collect product names, prices, images, descriptions and variations", "Clean and normalise the data", "Import into WooCommerce via REST API or CSV", "Re-run on a schedule when data changes"],
     },
     tags: ["Python", "Crawler", "WooCommerce", "REST API"],
-  },
-  {
-    title: { vi: "Web app & hệ thống quản trị", en: "Web apps & admin systems" },
-    description: {
-      vi: "Ứng dụng web và trang quản trị riêng bằng Next.js cho nghiệp vụ đặc thù — như cách mình xây Hoàn Hời.",
-      en: "Custom Next.js web apps and admin dashboards for specific workflows — the way I built Hoàn Hời.",
-    },
-    includes: {
-      vi: ["Next.js, TypeScript, PostgreSQL / MySQL", "Tích hợp API bên thứ ba (sàn TMĐT, affiliate, thanh toán)", "Phân quyền người dùng, báo cáo", "Deploy lên VPS, CI/CD với GitHub Actions"],
-      en: ["Next.js, TypeScript, PostgreSQL / MySQL", "Third-party API integration (marketplaces, affiliate, payments)", "User roles and reporting", "VPS deployment and CI/CD with GitHub Actions"],
-    },
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Docker"],
   },
   {
     title: { vi: "Bảo trì website", en: "Website maintenance" },
