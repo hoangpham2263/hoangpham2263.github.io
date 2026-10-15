@@ -3,7 +3,7 @@ export const resumeConfig = {
   name: "Pham Quoc Hoang",
   title: "Full-Stack Developer",
   summary:
-    "I'm a web developer currently focused on WordPress. I enjoy turning designs into fast, SEO-friendly websites, automating repetitive work, and building features that help businesses grow online. I keep learning and improving every day.",
+    "Web developer with 2+ years of experience, focused on WordPress and WooCommerce, with Next.js for my own products. I turn Figma designs into fast, SEO-friendly websites and build custom features, data crawlers and admin systems for e-commerce, education and service businesses.",
   contacts: [
     { icon: "address", value: "Ho Chi Minh City, Vietnam" },
     { icon: "phone", value: "0971 955 144", href: "tel:+84971955144" },

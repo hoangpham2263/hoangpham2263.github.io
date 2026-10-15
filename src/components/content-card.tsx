@@ -19,33 +19,34 @@ type ContentCardProps = {
 };
 
 export default function ContentCard({ title, description, href, image, tags = [], links = [], meta, badge, locale = "vi" }: ContentCardProps) {
-  const Wrap = ({ children, className }: { children: React.ReactNode; className?: string }) =>
-    href ? (
-      <Link href={href} className={className}>
-        {children}
-      </Link>
-    ) : (
-      <div className={className}>{children}</div>
-    );
 
   return (
-    <div className="flex flex-col-reverse md:flex-row p-3 justify-between gap-3 md:gap-2 rounded-xl border overflow-hidden">
+    <div className={`group/card relative flex flex-col-reverse md:flex-row p-3 justify-between gap-3 md:gap-2 rounded-xl border overflow-hidden transition-colors ${href ? "hover:border-primary/40 hover:bg-muted/30" : ""}`}>
       <div className={image ? "space-y-2 w-full md:w-3/5" : "space-y-2 w-full"}>
-        <Wrap className="block space-y-2 group/link">
+        <div className="space-y-2">
           {meta && <p className="text-xs text-muted-foreground">{meta}</p>}
           <div className="inline-flex items-center gap-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <h2 className="text-xl font-semibold font-heading">{title}</h2>
+              <h2 className="text-xl font-semibold font-heading">
+                {href ? (
+                  // Stretched link: the whole card opens the detail page
+                  <Link href={href} className="after:absolute after:inset-0 after:z-0 group-hover/card:underline underline-offset-4">
+                    {title}
+                  </Link>
+                ) : (
+                  title
+                )}
+              </h2>
               {badge}
             </div>
             {href && (
-              <span className="-translate-x-1 opacity-0 group-hover/link:translate-x-0 group-hover/link:opacity-100 transition-all duration-100 ease-in-out">
+              <span className="-translate-x-1 opacity-0 group-hover/card:translate-x-0 group-hover/card:opacity-100 transition-all duration-100 ease-in-out">
                 <StepForward size={12} />
               </span>
             )}
           </div>
           <p className="text-sm text-foreground/85 leading-6 max-w-2xl">{description}</p>
-        </Wrap>
+        </div>
         {tags.length > 0 && (
           <div className="flex items-center gap-2 flex-wrap">
             {tags.map((tag) => (
@@ -56,23 +57,21 @@ export default function ContentCard({ title, description, href, image, tags = []
           </div>
         )}
         {links.length > 0 && (
-          <div className="pt-2 md:mb-4">
+          <div className="relative z-10 pt-2 md:mb-4">
             <LinksSection links={links} locale={locale} />
           </div>
         )}
       </div>
       {image && (
-        <div className="w-full md:w-2/5 aspect-video overflow-hidden hover:border duration-100 transition-all transform-gpu ease-in-out rounded-xl">
-          <Wrap>
+        <div className="w-full md:w-2/5 aspect-video overflow-hidden rounded-xl border">
             <Picture
               image={image as ImageType}
               width={600}
               height={338}
               quality={100}
               alt={title}
-              className="w-full h-full object-cover scale-100 hover:scale-105 transition-all transform-gpu ease-in-out"
+              className="w-full h-full object-cover scale-100 group-hover/card:scale-105 transition-all transform-gpu ease-in-out"
             />
-          </Wrap>
         </div>
       )}
     </div>

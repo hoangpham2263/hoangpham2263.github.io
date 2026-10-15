@@ -13,8 +13,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "Image Converter",
     description: {
-      vi: "Chuyển ảnh sang WebP, JPEG, PNG, nén và resize hàng loạt ngay trên trình duyệt — ảnh không được tải lên đâu cả.",
-      en: "Convert images to WebP, JPEG or PNG, compress and resize in batches right in the browser — nothing is uploaded.",
+      vi: "Đổi ảnh sang WebP, JPG, PNG và nén với 6 mức chất lượng, nhiều ảnh cùng lúc, tải ZIP — chạy ngay trên trình duyệt, ảnh không được tải lên đâu cả.",
+      en: "Convert images to WebP, JPG or PNG and compress with six quality levels, in batches with ZIP download — runs in the browser, nothing is uploaded.",
     },
     status: "done",
     tags: ["JavaScript", "Canvas API", "WebP", "No build"],

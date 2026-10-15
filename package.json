@@ -7,7 +7,8 @@
     "dev": "velite && next dev --turbopack",
     "build": "velite && next build && cp out/en.html out/en/index.html",
     "start": "velite && next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cv:pdf": "node scripts/cv-pdf.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

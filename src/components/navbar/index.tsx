@@ -11,11 +11,11 @@ export default function Navbar() {
   const pathname = usePathname() || "/";
   const locale = localeFromPath(pathname);
   const t = getDictionary(locale);
-  const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/blog": t.nav.blog, "/tools": t.nav.tools, "/contact": t.nav.contact };
+  const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/services": t.nav.services, "/blog": t.nav.blog, "/tools": t.nav.tools, "/contact": t.nav.contact };
   return (
     // Full-width backdrop so scrolled content does not show beside the sticky menu
     <div className="sticky top-0 z-50 w-full bg-background">
-      <div className="inline-flex items-center gap-1 rounded-lg border bg-muted p-1 text-sm">
+      <div className="inline-flex max-w-full overflow-x-auto scrollbar-hide items-center gap-0.5 sm:gap-1 rounded-lg border bg-muted p-1 text-[13px] sm:text-sm">
         {navbarConfig.map((item, index) => (
           <NavItem key={index} url={item.url} href={localePath(locale, item.url)}>
             {labels[item.url] ?? item.title}
@@ -44,7 +44,7 @@ const NavItem = ({ children, url, href, className }: NavItemProps) => {
     <Link href={href}>
       <motion.div
         className={cn(
-          "px-2.5 sm:px-4 py-1.5 min-w-0 sm:min-w-16 lg:min-w-20 text-center rounded-md cursor-pointer transition-colors",
+          "px-1.5 sm:px-3.5 py-1.5 min-w-0 sm:min-w-14 whitespace-nowrap text-center rounded-md cursor-pointer transition-colors",
           active
             ? "bg-background text-foreground font-medium shadow-sm"
             : "text-foreground/70 hover:text-foreground hover:bg-background/60",

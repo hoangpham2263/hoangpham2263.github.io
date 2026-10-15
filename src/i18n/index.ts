@@ -40,7 +40,7 @@ export const languageAlternates = (path: string, locale: Locale) => {
 export const ogLocale = (locale: Locale) => (locale === "vi" ? "vi_VN" : "en_US");
 
 const en = {
-  nav: { projects: "Projects", experience: "Experience", blog: "Blog", tools: "Tools", contact: "Contact" },
+  nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", contact: "Contact" },
   hero: {
     bio: "Hey there 👋 Welcome to my portfolio! I love turning ideas into websites that are fast, easy to use and easy to find on Google. Most of my work is building websites for businesses, and in my free time I explore new technologies and use them to build my own products. Take a look at the projects below, and feel free to reach out if you'd like to work together.",
     contact: "Contact",
@@ -74,6 +74,13 @@ const en = {
     location: "Location",
     locationValue: "Ho Chi Minh City, Vietnam",
   },
+  services: {
+    title: "Services",
+    description: "WordPress and WooCommerce websites, speed and technical SEO, data crawling, web apps and maintenance.",
+    intro: "What I can build for your business. Tell me what you need and I'll get back to you with a plan and a quote.",
+    includes: "Includes",
+    cta: "Discuss your project",
+  },
   blog: {
     title: "Blog",
     description: "Notes on WordPress, Next.js, automation and things I learn while building.",
@@ -93,6 +100,8 @@ const en = {
     home: "Home",
     viewPortfolio: "View Portfolio",
     viewCv: "View CV",
+    webNote: "Web version of my CV — always up to date",
+    downloadPdf: "Download PDF",
     summary: "Summary",
     links: "Links",
     experience: "Experience",
@@ -107,7 +116,7 @@ const en = {
 };
 
 const vi: typeof en = {
-  nav: { projects: "Dự án", experience: "Kinh nghiệm", blog: "Blog", tools: "Tool", contact: "Liên hệ" },
+  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Tool", contact: "Liên hệ" },
   hero: {
     bio: "Xin chào 👋 Chào mừng bạn đến với portfolio của mình! Mình thích biến ý tưởng thành những website nhanh, dễ dùng và dễ tìm thấy trên Google. Phần lớn công việc của mình là xây dựng website cho doanh nghiệp, còn thời gian rảnh mình tìm hiểu công nghệ mới và dùng chúng để làm sản phẩm của riêng mình. Mời bạn xem các dự án bên dưới, và cứ liên hệ nếu muốn cùng hợp tác nhé.",
     contact: "Liên hệ",
@@ -141,6 +150,13 @@ const vi: typeof en = {
     location: "Địa chỉ",
     locationValue: "TP. Hồ Chí Minh, Việt Nam",
   },
+  services: {
+    title: "Dịch vụ",
+    description: "Thiết kế website WordPress, WooCommerce, tối ưu tốc độ & SEO kỹ thuật, crawl dữ liệu, web app và bảo trì website.",
+    intro: "Những gì mình có thể làm cho doanh nghiệp của bạn. Cho mình biết nhu cầu, mình sẽ gửi lại phương án và báo giá.",
+    includes: "Bao gồm",
+    cta: "Trao đổi dự án",
+  },
   blog: {
     title: "Blog",
     description: "Ghi chép về WordPress, Next.js, automation và những gì mình học được khi làm sản phẩm.",
@@ -160,6 +176,8 @@ const vi: typeof en = {
     home: "Trang chủ",
     viewPortfolio: "Xem portfolio",
     viewCv: "Xem CV",
+    webNote: "Bản web của CV — luôn cập nhật mới nhất",
+    downloadPdf: "Tải PDF",
     summary: "Giới thiệu",
     links: "Liên kết",
     experience: "Kinh nghiệm",
