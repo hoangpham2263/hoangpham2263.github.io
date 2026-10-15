@@ -21,7 +21,7 @@ import { getDictionary, type Locale } from "@/i18n";
 const schema = z.object({
   query: z.string(),
   type: z.enum(["Featured", "Github"]).default("Featured"),
-  sort: z.enum(["Last updated", "Stars"]).default("Stars"),
+  sort: z.enum(["Last updated", "Stars"]).default("Last updated"),
 });
 
 export default function HomeView({ locale = "en" }: { locale?: Locale }) {
@@ -35,7 +35,7 @@ export default function HomeView({ locale = "en" }: { locale?: Locale }) {
     defaultValues: {
       query: "",
       type: "Featured",
-      sort: "Stars",
+      sort: "Last updated",
     },
   });
 
@@ -168,30 +168,12 @@ export default function HomeView({ locale = "en" }: { locale?: Locale }) {
                       {...field}
                       options={["Featured", "Github"]}
                       labels={{ Featured: t.home.featured, Github: t.home.github }}
-                      className={cn(type === "Featured" && "rounded-r-lg")}
+                      className="rounded-r-lg"
                     />
                   </FormControl>
                 </FormItem>
               )}
             />
-            {type === "Github" && (
-              <FormField
-                control={form.control}
-                name="sort"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <FilterSelect
-                        {...field}
-                        options={["Stars", "Last updated"]}
-                        labels={{ Stars: t.home.stars, "Last updated": t.home.lastUpdated }}
-                        className="rounded-r-lg"
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-            )}
           </div>
         </form>
       </Form>
