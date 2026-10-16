@@ -5,7 +5,7 @@ export const resumeConfigVi: typeof resumeConfig = {
   name: "Phạm Quốc Hoàng",
   title: "Full-Stack Developer",
   summary:
-    "Với hơn 2 năm kinh nghiệm trong lĩnh vực phát triển website và thương mại điện tử, tôi đã tham gia nhiều dự án cho doanh nghiệp ở các ngành bán lẻ, giáo dục và dịch vụ, luôn chú trọng hiệu năng, chuẩn SEO và trải nghiệm người dùng. Định hướng phát triển chuyên sâu ở mảng thương mại điện tử, đồng hành cùng doanh nghiệp vận hành hiệu quả và tăng trưởng bền vững.",
+    "Với hơn 2 năm kinh nghiệm phát triển website cùng kiến thức về thương mại điện tử, tôi đã tham gia nhiều dự án cho doanh nghiệp ở các ngành bán lẻ, giáo dục và dịch vụ, luôn chú trọng hiệu năng, chuẩn SEO và trải nghiệm người dùng. Định hướng phát triển chuyên sâu ở mảng thương mại điện tử, đồng hành cùng doanh nghiệp vận hành hiệu quả và tăng trưởng bền vững.",
   contacts: [
     { icon: "address", value: "TP. Hồ Chí Minh, Việt Nam" },
     { icon: "phone", value: "0971 955 144", href: "tel:+84971955144" },
