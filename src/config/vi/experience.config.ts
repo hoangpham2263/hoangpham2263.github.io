@@ -20,7 +20,7 @@ export const experiencesConfigVi: Experience[] = [
   },
   {
     title: "Web Developer",
-    employmentType: "Toàn thời gian",
+    employmentType: "Full-time",
     company: {
       name: "Puramu",
       url: "https://www.puramu.com/",
@@ -41,7 +41,7 @@ export const experiencesConfigVi: Experience[] = [
   },
   {
     title: "Backend Developer",
-    employmentType: "Bán thời gian",
+    employmentType: "Part-time",
     company: {
       name: "Meta Technology",
       url: "",
@@ -59,7 +59,7 @@ export const experiencesConfigVi: Experience[] = [
   },
   {
     title: "Backend Developer",
-    employmentType: "Bán thời gian",
+    employmentType: "Part-time",
     company: {
       name: "LiftSoft",
       url: "",
