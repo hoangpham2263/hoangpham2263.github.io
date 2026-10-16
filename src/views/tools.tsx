@@ -79,7 +79,7 @@ export function ToolsView({ locale }: { locale: Locale }) {
                   {list.map((tool) => (
                     <div key={tool.name} className="rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-sm font-medium">{tool.name}</span>
+                        <span className="font-medium">{tool.name}</span>
                         <span className="text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>
                       </div>
                       <p className="text-sm text-muted-foreground flex-1">{tool.description[locale]}</p>
