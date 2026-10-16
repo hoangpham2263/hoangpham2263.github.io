@@ -29,7 +29,7 @@ export const resumeConfigVi: typeof resumeConfig = {
     {
       company: "Puramu",
       role: "Web Developer",
-      stack: "WordPress, WooCommerce",
+      stack: "",
       period: "02/2025 – 06/2026",
       location: "TP. Hồ Chí Minh",
       summary: "",
@@ -45,7 +45,7 @@ export const resumeConfigVi: typeof resumeConfig = {
     {
       company: "Meta Technology",
       role: "Backend Developer, part-time",
-      stack: "Next.js APIs",
+      stack: "",
       period: "04/2024 – 07/2024",
       location: "Đà Nẵng",
       summary: "",
@@ -59,7 +59,7 @@ export const resumeConfigVi: typeof resumeConfig = {
     {
       company: "Lift Software Vietnam",
       role: "Backend Developer, part-time",
-      stack: "Django APIs, unit test",
+      stack: "",
       period: "03/2022 – 06/2022",
       location: "Đà Nẵng",
       summary: "",
@@ -76,7 +76,7 @@ export const resumeConfigVi: typeof resumeConfig = {
       name: "Hoàn Hời",
       link: { label: "hoanhoi.com", href: "https://hoanhoi.com" },
       role: "Người sáng lập & phát triển",
-      stack: "Next.js, PostgreSQL, Redis",
+      stack: "",
       period: "08/2026 – nay",
       summary: "Nền tảng hoàn tiền khi mua sắm online, đang vận hành thực tế.",
       responsibilities: [

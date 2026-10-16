@@ -30,7 +30,7 @@ export const resumeConfig = {
     {
       company: "Puramu",
       role: "Web Developer",
-      stack: "WordPress, WooCommerce",
+      stack: "",
       period: "Feb 2025 – Jun 2026",
       location: "Ho Chi Minh City",
       summary: "",
@@ -46,7 +46,7 @@ export const resumeConfig = {
     {
       company: "Meta Technology",
       role: "Backend Developer, part-time",
-      stack: "Next.js APIs",
+      stack: "",
       period: "Apr 2024 – Jul 2024",
       location: "Da Nang",
       summary: "",
@@ -60,7 +60,7 @@ export const resumeConfig = {
     {
       company: "Lift Software Vietnam",
       role: "Backend Developer, part-time",
-      stack: "Django APIs, unit tests",
+      stack: "",
       period: "Mar 2022 – Jun 2022",
       location: "Da Nang",
       summary: "",
@@ -77,7 +77,7 @@ export const resumeConfig = {
       name: "Hoàn Hời",
       link: { label: "hoanhoi.com", href: "https://hoanhoi.com" },
       role: "Creator & Developer",
-      stack: "Next.js, PostgreSQL, Redis",
+      stack: "",
       period: "Aug 2026 – Present",
       summary: "A cashback platform for online shopping, live in production.",
       responsibilities: [
