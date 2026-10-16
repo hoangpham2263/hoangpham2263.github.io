@@ -35,7 +35,7 @@ export const experiencesConfig: Experience[] = [
       "Built WooCommerce stores",
       "Developed custom WordPress plugins and features",
       "Wrote Python crawlers and migrated stores to WooCommerce",
-      "Improved page speed and Core Web Vitals",
+      "Optimised PageSpeed and Core Web Vitals",
       "Maintained and secured client websites",
     ],
   },
