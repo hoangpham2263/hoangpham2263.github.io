@@ -34,13 +34,6 @@ export function ServicesView({ locale }: { locale: Locale }) {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-2">
-              {s.tags.map((tag) => (
-                <span key={tag} className="px-2 py-1 rounded-md bg-primary/[0.08] text-primary/90 text-xs">
-                  {tag}
-                </span>
-              ))}
-            </div>
           </div>
         ))}
       </div>
