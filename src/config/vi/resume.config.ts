@@ -19,7 +19,7 @@ export const resumeConfigVi: typeof resumeConfig = {
       stack: "Freelance, Remote",
       period: "07/2026 – nay",
       location: "",
-      summary: "Làm freelance các bộ benchmark toán và lập trình dùng để đánh giá mô hình AI.",
+      summary: "Xây dựng bộ benchmark toán và lập trình để đánh giá mô hình AI.",
       responsibilities: [
         "Soạn và review bài toán nâng cao kèm lời giải.",
         "Xây dựng benchmark lập trình với Docker và test tự động.",
@@ -29,13 +29,12 @@ export const resumeConfigVi: typeof resumeConfig = {
     {
       company: "Puramu",
       role: "Web Developer",
-      stack: "WordPress, WooCommerce, PHP, JavaScript, MySQL, Python, Next.js",
+      stack: "WordPress, WooCommerce",
       period: "02/2025 – 06/2026",
       location: "TP. Hồ Chí Minh",
       summary: "",
       responsibilities: [
-        "Xây dựng theme WordPress chuẩn SEO từ thiết kế Figma.",
-        "Xây dựng shop WooCommerce.",
+        "Xây dựng theme WordPress và shop WooCommerce chuẩn SEO từ thiết kế Figma.",
         "Phát triển plugin và tính năng WordPress tùy biến.",
         "Viết công cụ crawl Python, chuyển dữ liệu sang WordPress và WooCommerce.",
         "Tối ưu PageSpeed và Core Web Vitals.",
@@ -67,7 +66,6 @@ export const resumeConfigVi: typeof resumeConfig = {
       responsibilities: [
         "Xây dựng API bằng Django.",
         "Viết unit test.",
-        "Làm việc với cơ sở dữ liệu.",
         "Sửa lỗi và bảo trì hệ thống.",
       ],
       selected: [] as string[],
