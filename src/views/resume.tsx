@@ -133,7 +133,14 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </header>
 
           <Section title={t.summary}>
-            <p>{resumeConfig.summary}</p>
+            <p>
+              {resumeConfig.summary}{" "}
+              {locale === "vi" ? "Dự án, công cụ và blog của mình có tại " : "My projects, tools and blog are at "}
+              <a href={siteConfig.siteUrl} className="underline underline-offset-2">
+                hoangpham.is-a.dev
+              </a>
+              .
+            </p>
           </Section>
 
           <Section title={t.experience}>
