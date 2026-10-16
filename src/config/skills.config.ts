@@ -1,27 +1,27 @@
 export const skillsConfig = [
   {
     category: "WordPress",
-    technologies: ["Custom Themes", "Plugin Development", "WooCommerce", "Elementor", "ACF", "WP REST API", "Hooks & Filters"],
+    technologies: ["Custom Themes", "Plugin Development", "WooCommerce", "Elementor", "ACF", "WP REST API"],
   },
   {
     category: "Frontend",
-    technologies: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Responsive Design"],
+    technologies: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     category: "Backend",
-    technologies: ["PHP", "Node.js", "Python", "REST API", "API Integration"],
+    technologies: ["PHP", "Node.js", "Python", "REST API"],
   },
   {
     category: "Database",
-    technologies: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
+    technologies: ["MySQL", "PostgreSQL", "Redis"],
   },
   {
     category: "Crawl Data",
-    technologies: ["Python", "Import to WordPress & WooCommerce"],
+    technologies: ["Import to WordPress & WooCommerce"],
   },
   {
-    category: "Performance & SEO",
-    technologies: ["Technical SEO", "Rank Math", "PageSpeed", "Core Web Vitals", "LiteSpeed Cache", "Security Hardening"],
+    category: "Performance & Optimisation",
+    technologies: ["PageSpeed", "Core Web Vitals", "LiteSpeed Cache", "Rank Math", "Security Hardening"],
   },
   {
     category: "Tools",

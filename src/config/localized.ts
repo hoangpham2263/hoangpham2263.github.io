@@ -9,7 +9,7 @@ import { resumeConfigVi } from "@/config/vi/resume.config";
 const skillCategoryVi: Record<string, string> = {
   Database: "Cơ sở dữ liệu",
   "Crawl Data": "Crawl dữ liệu",
-  "Performance & SEO": "Tốc độ & SEO",
+  "Performance & Optimisation": "Tốc độ & tối ưu website",
   "Tools": "Công cụ",
   "AI": "AI",
 };
@@ -17,7 +17,6 @@ const skillCategoryVi: Record<string, string> = {
 const skillItemVi: Record<string, string> = {
   "Plugin Development": "Phát triển Plugin",
   "Import to WordPress & WooCommerce": "Nhập dữ liệu vào WordPress & WooCommerce",
-  "API Integration": "Tích hợp API",
   "Security Hardening": "Bảo mật website",
 };
 
