@@ -150,7 +150,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                   key={w.company}
                   title={w.company}
                   period={[w.period, w.location].filter(Boolean).join(" · ")}
-                  role={`${w.role} — ${w.stack}`}
+                  role={w.stack ? `${w.role} — ${w.stack}` : w.role}
                   summary={w.summary}
                   items={w.responsibilities}
                 >
@@ -176,7 +176,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                     </>
                   }
                   period={p.period}
-                  role={`${p.role} — ${p.stack}`}
+                  role={p.role}
                   summary={p.summary}
                   items={p.responsibilities}
                 />
