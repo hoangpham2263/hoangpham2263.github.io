@@ -34,7 +34,7 @@ export const experiencesConfigVi: Experience[] = [
       "Xây dựng theme WordPress chuẩn SEO từ thiết kế Figma",
       "Xây dựng shop WooCommerce",
       "Phát triển plugin và tính năng WordPress tùy biến",
-      "Viết công cụ crawl Python, chuyển shop sang WooCommerce",
+      "Viết công cụ crawl Python, chuyển dữ liệu sang WordPress và WooCommerce",
       "Tối ưu PageSpeed và Core Web Vitals",
       "Bảo trì và bảo mật website khách hàng",
     ],
