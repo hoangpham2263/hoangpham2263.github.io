@@ -10,7 +10,6 @@ export const resumeConfig = {
     { icon: "mail", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
   ],
   links: [
-    { icon: "globe", label: "Portfolio", value: "hoangpham.is-a.dev", href: "https://hoangpham.is-a.dev" },
     { icon: "linkedin", label: "LinkedIn", value: "linkedin.com/in/hoangpham2263", href: "https://www.linkedin.com/in/hoangpham2263/" },
     { icon: "github", label: "GitHub", value: "github.com/hoangpham2263", href: "https://github.com/hoangpham2263" },
   ],
@@ -21,7 +20,7 @@ export const resumeConfig = {
       stack: "Freelance, Remote",
       period: "Jul 2026 – Present",
       location: "",
-      summary: "Freelance work on math and coding benchmarks used to evaluate AI models.",
+      summary: "Build math and coding benchmarks to evaluate AI models.",
       responsibilities: [
         "Write and review advanced math problems with solutions.",
         "Build coding benchmarks with Docker and automated tests.",
@@ -31,13 +30,12 @@ export const resumeConfig = {
     {
       company: "Puramu",
       role: "Web Developer",
-      stack: "WordPress, WooCommerce, PHP, JavaScript, MySQL, Python, Next.js",
+      stack: "WordPress, WooCommerce",
       period: "Feb 2025 – Jun 2026",
       location: "Ho Chi Minh City",
       summary: "",
       responsibilities: [
-        "Built SEO-friendly WordPress themes from Figma.",
-        "Built WooCommerce stores.",
+        "Built SEO-friendly WordPress themes and WooCommerce stores from Figma.",
         "Developed custom WordPress plugins and features.",
         "Wrote Python crawlers to migrate data to WordPress and WooCommerce.",
         "Optimised PageSpeed and Core Web Vitals.",
@@ -69,7 +67,6 @@ export const resumeConfig = {
       responsibilities: [
         "Built APIs with Django.",
         "Wrote unit tests.",
-        "Worked with databases.",
         "Fixed bugs and maintained the system.",
       ],
       selected: [] as string[],

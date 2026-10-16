@@ -31,8 +31,7 @@ export const experiencesConfigVi: Experience[] = [
     start: "02/2025",
     end: "06/2026",
     description: [
-      "Xây dựng theme WordPress chuẩn SEO từ thiết kế Figma",
-      "Xây dựng shop WooCommerce",
+      "Xây dựng theme WordPress và shop WooCommerce chuẩn SEO từ thiết kế Figma",
       "Phát triển plugin và tính năng WordPress tùy biến",
       "Viết công cụ crawl Python, chuyển dữ liệu sang WordPress và WooCommerce",
       "Tối ưu PageSpeed và Core Web Vitals",
@@ -72,7 +71,6 @@ export const experiencesConfigVi: Experience[] = [
     description: [
       "Xây dựng API bằng Django",
       "Viết unit test",
-      "Làm việc với cơ sở dữ liệu",
       "Sửa lỗi và bảo trì hệ thống",
     ],
   },

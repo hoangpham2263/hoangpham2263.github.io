@@ -31,8 +31,7 @@ export const experiencesConfig: Experience[] = [
     start: "February 2025",
     end: "June 2026",
     description: [
-      "Built SEO-friendly WordPress themes from Figma",
-      "Built WooCommerce stores",
+      "Built SEO-friendly WordPress themes and WooCommerce stores from Figma",
       "Developed custom WordPress plugins and features",
       "Wrote Python crawlers to migrate data to WordPress and WooCommerce",
       "Optimised PageSpeed and Core Web Vitals",
@@ -72,7 +71,6 @@ export const experiencesConfig: Experience[] = [
     description: [
       "Built APIs with Django",
       "Wrote unit tests",
-      "Worked with databases",
       "Fixed bugs and maintained the system",
     ],
   },
