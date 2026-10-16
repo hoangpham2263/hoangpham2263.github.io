@@ -5,7 +5,7 @@ export const resumeConfigVi: typeof resumeConfig = {
   name: "Phạm Quốc Hoàng",
   title: "Full-Stack Developer",
   summary:
-    "Full-Stack Developer với hơn 2 năm kinh nghiệm phát triển website và giải pháp thương mại điện tử trên WordPress, WooCommerce và Next.js. Tập trung vào hiệu năng, chuẩn SEO và trải nghiệm người dùng, xây dựng sản phẩm ổn định, dễ quản trị và mở rộng cho doanh nghiệp.",
+    "Full-Stack Developer với hơn 2 năm kinh nghiệm xây dựng website và giải pháp thương mại điện tử trên WordPress, WooCommerce và Next.js, chú trọng hiệu năng, chuẩn SEO và trải nghiệm người dùng. Định hướng phát triển chuyên sâu ở mảng thương mại điện tử, kết hợp công nghệ, dữ liệu và AI để giúp doanh nghiệp vận hành hiệu quả và tăng trưởng bền vững.",
   contacts: [
     { icon: "address", value: "TP. Hồ Chí Minh, Việt Nam" },
     { icon: "phone", value: "0971 955 144", href: "tel:+84971955144" },
