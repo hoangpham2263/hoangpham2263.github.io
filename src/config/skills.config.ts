@@ -9,7 +9,7 @@ export const skillsConfig = [
   },
   {
     category: "Backend",
-    technologies: ["PHP", "Node.js", "Python", "Django", "REST API", "API Integration"],
+    technologies: ["PHP", "Node.js", "Python", "REST API", "API Integration"],
   },
   {
     category: "Database",

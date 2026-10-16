@@ -92,7 +92,7 @@ export const resumeConfigVi: typeof resumeConfig = {
   skills: [
     { group: "WordPress", items: "Custom Theme, phát triển Plugin, WooCommerce, Elementor, ACF, WP REST API, Hooks & Filters" },
     { group: "Frontend", items: "HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Responsive Design" },
-    { group: "Backend", items: "PHP, Node.js, Python, Django, REST API, tích hợp API" },
+    { group: "Backend", items: "PHP, Node.js, Python, REST API, tích hợp API" },
     { group: "Cơ sở dữ liệu", items: "MySQL, PostgreSQL, MongoDB, Redis" },
     { group: "Crawl dữ liệu", items: "Python, nhập dữ liệu vào WordPress & WooCommerce" },
     { group: "Tốc độ & SEO", items: "Technical SEO, Rank Math, PageSpeed, Core Web Vitals, LiteSpeed Cache, bảo mật website" },

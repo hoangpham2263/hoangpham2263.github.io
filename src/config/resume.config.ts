@@ -94,7 +94,7 @@ export const resumeConfig = {
   skills: [
     { group: "WordPress", items: "Custom Themes, Plugin Development, WooCommerce, Elementor, ACF, WP REST API, Hooks & Filters" },
     { group: "Frontend", items: "HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Responsive Design" },
-    { group: "Backend", items: "PHP, Node.js, Python, Django, REST API, API Integration" },
+    { group: "Backend", items: "PHP, Node.js, Python, REST API, API Integration" },
     { group: "Database", items: "MySQL, PostgreSQL, MongoDB, Redis" },
     { group: "Crawl Data", items: "Python, import to WordPress & WooCommerce" },
     { group: "Performance & SEO", items: "Technical SEO, Rank Math, PageSpeed, Core Web Vitals, LiteSpeed Cache, Security Hardening" },
