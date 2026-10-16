@@ -70,7 +70,7 @@ export const experiencesConfigVi: Experience[] = [
     start: "03/2022",
     end: "06/2022",
     description: [
-      "Xây dựng API bằng Django",
+      "Xây dựng REST API bằng Python",
       "Viết unit test để kiểm tra chức năng",
       "Làm việc với cơ sở dữ liệu để lưu trữ và truy vấn dữ liệu",
       "Sửa lỗi và hỗ trợ bảo trì hệ thống",
