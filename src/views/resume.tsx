@@ -147,15 +147,6 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                   summary={w.summary}
                   items={w.responsibilities}
                 >
-                  {w.selected.length > 0 && (
-                    <p className="mt-2">
-                      <b>{t.selectedSites}:</b> {w.selected.join(", ")} — {t.seeFullList}{" "}
-                      <a href={`${siteConfig.siteUrl}${home === "/" ? "" : home}`} className="underline underline-offset-2">
-                        {t.portfolio}
-                      </a>
-                      .
-                    </p>
-                  )}
                 </Entry>
               ))}
             </div>
