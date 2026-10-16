@@ -81,7 +81,7 @@ export const resumeConfig = {
       period: "Aug 2026 – Present",
       summary: "A cashback platform for online shopping, live with real users; I build, run and reconcile it day to day.",
       responsibilities: [
-        "Built the full product with Next.js.",
+        "Built the whole project with Next.js.",
         "Integrated Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
         "Built the wallet system: cashback credits, withdrawals and cancelled orders.",
       ],
