@@ -94,6 +94,11 @@ const en = {
     intro: "Small tools and automations I build to save time — source code on GitHub.",
     empty: "Tools are being built — check back soon.",
     done: "Ready",
+    guide: "Guide",
+    appsHeading: "Web tools",
+    appsNote: "Run right in the browser — nothing is uploaded.",
+    guidesHeading: "Guides & standards",
+    guidesNote: "Processes and templates I use to build tools — on GitHub.",
     building: "In progress",
   },
   cv: {
@@ -171,6 +176,11 @@ const vi: typeof en = {
     intro: "Các tool và automation nhỏ mình tự viết để tiết kiệm thời gian — mã nguồn trên GitHub.",
     empty: "Các tool đang được phát triển — bạn quay lại sau nhé.",
     done: "Dùng được",
+    guide: "Tài liệu",
+    appsHeading: "Công cụ chạy trên web",
+    appsNote: "Dùng ngay trên trình duyệt, file không được tải lên đâu cả.",
+    guidesHeading: "Tài liệu & quy chuẩn",
+    guidesNote: "Quy trình và mẫu mình dùng để dựng tool — xem trên GitHub.",
     building: "Đang làm",
   },
   cv: {

@@ -4,6 +4,7 @@ export type Tool = {
   name: string;
   description: { vi: string; en: string };
   status: "done" | "building";
+  kind?: "app" | "guide"; // app = runs in the browser (default), guide = docs / standard on GitHub
   tags: string[];
   links: { name: string; url: string }[]; // e.g. { name: "GitHub", url: "https://github.com/..." }
   image?: string; // optional screenshot in /public, e.g. "/tools/wp-auto-poster.webp"
@@ -82,6 +83,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "WP Crawl Standard",
+    kind: "guide",
     description: {
       vi: "Quy chuẩn dựng tool crawl dữ liệu → nhập vào WordPress / WooCommerce: 10 quy tắc bắt buộc, quy trình 13 bước, cấu trúc thư mục, mẫu cấu hình và code — đưa cho AI đọc là dựng được tool mới đúng chuẩn.",
       en: "A standard for building crawl → WordPress / WooCommerce import tools: 10 rules, a 13-step process, folder layout, config and code templates — hand it to an AI to build new tools the same way.",
