@@ -7,7 +7,7 @@ import { experiencesConfigVi } from "@/config/vi/experience.config";
 import { resumeConfigVi } from "@/config/vi/resume.config";
 
 const skillCategoryVi: Record<string, string> = {
-  "Backend & Data": "Backend & Dữ liệu",
+  Database: "Cơ sở dữ liệu",
   "Performance & Security": "Tối ưu & Bảo mật",
   Tools: "Công cụ",
   AI: "AI",
