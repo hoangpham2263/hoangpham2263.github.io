@@ -98,7 +98,7 @@ export const resumeConfig = {
     { group: "Database", items: "MySQL, PostgreSQL, MongoDB, Redis" },
     { group: "Crawl Data", items: "Python, import to WordPress & WooCommerce" },
     { group: "Performance & SEO", items: "Technical SEO, Rank Math, PageSpeed, Core Web Vitals, LiteSpeed Cache, Security Hardening" },
-    { group: "Tools & AI", items: "Git, Docker, GitHub Actions (CI/CD), Figma, Claude Code, Codex, Gemini" },
+    { group: "Tools & AI", items: "Git, Docker, Figma, Claude Code, Codex, Gemini" },
   ],
   education: [
     { school: "Duy Tan University", degree: "Bachelor in Software Engineering", period: "2021 – 2025" },

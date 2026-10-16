@@ -25,6 +25,6 @@ export const skillsConfig = [
   },
   {
     category: "Tools & AI",
-    technologies: ["Git", "Docker", "GitHub Actions (CI/CD)", "Figma", "Claude Code", "Codex", "Gemini"],
+    technologies: ["Git", "Docker", "Figma", "Claude Code", "Codex", "Gemini"],
   },
 ];

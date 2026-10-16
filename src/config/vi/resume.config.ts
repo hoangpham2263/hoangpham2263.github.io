@@ -96,7 +96,7 @@ export const resumeConfigVi: typeof resumeConfig = {
     { group: "Cơ sở dữ liệu", items: "MySQL, PostgreSQL, MongoDB, Redis" },
     { group: "Crawl dữ liệu", items: "Python, nhập dữ liệu vào WordPress & WooCommerce" },
     { group: "Tốc độ & SEO", items: "Technical SEO, Rank Math, PageSpeed, Core Web Vitals, LiteSpeed Cache, bảo mật website" },
-    { group: "Công cụ & AI", items: "Git, Docker, GitHub Actions (CI/CD), Figma, Claude Code, Codex, Gemini" },
+    { group: "Công cụ & AI", items: "Git, Docker, Figma, Claude Code, Codex, Gemini" },
   ],
   education: [
     { school: "Đại học Duy Tân", degree: "Cử nhân Kỹ thuật phần mềm", period: "2021 – 2025" },
