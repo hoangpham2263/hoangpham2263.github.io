@@ -90,7 +90,7 @@ export const resumeConfigVi: typeof resumeConfig = {
     },
   ],
   skills: [
-    { group: "WordPress", items: "Custom Theme, phát triển Plugin, WooCommerce, ACF, Elementor, Flatsome" },
+    { group: "WordPress", items: "WooCommerce, phát triển Plugin, Custom Theme, Elementor, Flatsome" },
     { group: "Frontend", items: "JavaScript, TypeScript, React, Next.js, Tailwind CSS, HTML/CSS" },
     { group: "Backend", items: "PHP, Node.js, Python" },
     { group: "Cơ sở dữ liệu", items: "MySQL, PostgreSQL, Redis" },

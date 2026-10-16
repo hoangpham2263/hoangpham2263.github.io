@@ -92,7 +92,7 @@ export const resumeConfig = {
     },
   ],
   skills: [
-    { group: "WordPress", items: "Custom Themes, Plugin Development, WooCommerce, ACF, Elementor, Flatsome" },
+    { group: "WordPress", items: "WooCommerce, Plugin Development, Custom Themes, Elementor, Flatsome" },
     { group: "Frontend", items: "JavaScript, TypeScript, React, Next.js, Tailwind CSS, HTML/CSS" },
     { group: "Backend", items: "PHP, Node.js, Python" },
     { group: "Database", items: "MySQL, PostgreSQL, Redis" },
