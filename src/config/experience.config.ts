@@ -14,8 +14,8 @@ export const experiencesConfig: Experience[] = [
     start: "July 2026",
     end: "Present",
     description: [
-      "Write and review advanced math problems with verified reference solutions",
-      "Build coding benchmark tasks with Docker environments and automated tests",
+      "Write and review advanced math problems with solutions",
+      "Build coding benchmarks with Docker and automated tests",
     ],
   },
   {
@@ -31,12 +31,12 @@ export const experiencesConfig: Experience[] = [
     start: "February 2025",
     end: "June 2026",
     description: [
-      "Built custom, SEO-friendly WordPress themes from Figma for e-commerce, education and service sites",
-      "Built WooCommerce stores with product catalogues, search and online ordering",
-      "Built custom WordPress features with PHP, JavaScript, the WP REST API, Next.js and third-party APIs",
-      "Wrote Python crawlers to import data and migrated stores from third-party platforms to WooCommerce",
-      "Set up technical SEO with Rank Math and improved page speed and Core Web Vitals",
-      "Maintained and secured client websites, working with designers, QA and PMs to deliver on time",
+      "Built SEO-friendly WordPress themes from Figma",
+      "Built WooCommerce stores",
+      "Developed custom WordPress plugins and features",
+      "Wrote Python crawlers and migrated stores to WooCommerce",
+      "Improved page speed and Core Web Vitals",
+      "Maintained and secured client websites",
     ],
   },
   {
@@ -52,9 +52,9 @@ export const experiencesConfig: Experience[] = [
     start: "April 2024",
     end: "July 2024",
     description: [
-      "Built APIs with Next.js to connect the frontend and backend",
-      "Maintained data flow between frontend and backend services",
-      "Improved API response times and fixed system issues",
+      "Built APIs with Next.js",
+      "Maintained data flow between services",
+      "Improved API speed and fixed bugs",
     ],
   },
   {
@@ -71,9 +71,9 @@ export const experiencesConfig: Experience[] = [
     end: "June 2022",
     description: [
       "Built APIs with Django",
-      "Wrote unit tests to verify functionality",
-      "Worked with databases to store and query data",
-      "Fixed bugs and supported system maintenance",
+      "Wrote unit tests",
+      "Worked with databases",
+      "Fixed bugs and maintained the system",
     ],
   },
 ];
