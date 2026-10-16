@@ -75,7 +75,7 @@ export const resumeConfigVi: typeof resumeConfig = {
     {
       name: "Hoàn Hời",
       link: { label: "hoanhoi.com", href: "https://hoanhoi.com" },
-      role: "Người sáng lập — trực tiếp phát triển và vận hành",
+      role: "Người sáng lập & phát triển",
       stack: "",
       period: "08/2026 – nay",
       summary: "Nền tảng hoàn tiền khi mua sắm online, đang vận hành.",
