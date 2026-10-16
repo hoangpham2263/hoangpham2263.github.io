@@ -20,7 +20,7 @@ export const experiencesConfig: Experience[] = [
   },
   {
     title: "Web Developer",
-    employmentType: "Full time",
+    employmentType: "Full-time",
     company: {
       name: "Puramu",
       url: "https://www.puramu.com/",
@@ -41,7 +41,7 @@ export const experiencesConfig: Experience[] = [
   },
   {
     title: "Backend Developer",
-    employmentType: "Part time",
+    employmentType: "Part-time",
     company: {
       name: "Meta Technology",
       url: "",
@@ -59,7 +59,7 @@ export const experiencesConfig: Experience[] = [
   },
   {
     title: "Backend Developer",
-    employmentType: "Part time",
+    employmentType: "Part-time",
     company: {
       name: "LiftSoft",
       url: "",
