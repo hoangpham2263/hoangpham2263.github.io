@@ -7,16 +7,14 @@ import { experiencesConfigVi } from "@/config/vi/experience.config";
 import { resumeConfigVi } from "@/config/vi/resume.config";
 
 const skillCategoryVi: Record<string, string> = {
-  Database: "Cơ sở dữ liệu",
-  "Crawl Data": "Crawl dữ liệu",
-  "Performance & Optimisation": "Tốc độ & tối ưu website",
-  "Tools": "Công cụ",
-  "AI": "AI",
+  "Backend & Data": "Backend & Dữ liệu",
+  "Performance & Security": "Tối ưu & Bảo mật",
+  Tools: "Công cụ",
+  AI: "AI",
 };
 
 const skillItemVi: Record<string, string> = {
   "Plugin Development": "Phát triển Plugin",
-  "Import to WordPress & WooCommerce": "Nhập dữ liệu vào WordPress & WooCommerce",
   "Security Hardening": "Bảo mật website",
 };
 

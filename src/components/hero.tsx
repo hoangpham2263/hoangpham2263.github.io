@@ -37,11 +37,18 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
         <span className="sr-only">bio</span>
       </p>
       <Socials locale={locale} />
-      <div className="flex flex-col text-sm space-y-2 rounded max-w-2xl text-foreground/85 mt-4 mb-2 lg:mb-4">
+      <div className="flex flex-col text-sm space-y-3 rounded max-w-2xl text-foreground/85 mt-4 mb-2 lg:mb-4">
         {getSkills(locale).map((skill) => (
-          <p key={skill.category}>
-            <span className="font-semibold text-primary/90">{skill.category}:</span> {skill.technologies.join(", ")}
-          </p>
+          <div key={skill.category} className="grid gap-1.5 sm:grid-cols-[150px_1fr] sm:items-start">
+            <span className="font-semibold text-primary/90 sm:pt-1">{skill.category}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {skill.technologies.map((tech) => (
+                <span key={tech} className="px-2 py-1 rounded-md bg-primary/[0.08] text-primary/90 text-xs">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>
