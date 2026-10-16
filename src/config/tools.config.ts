@@ -80,4 +80,15 @@ export const toolsConfig: Tool[] = [
     ],
     image: "/tools/image-resizer.webp",
   },
+  {
+    name: "WP Crawl Standard",
+    description: {
+      vi: "Quy chuẩn dựng tool crawl dữ liệu → nhập vào WordPress / WooCommerce: 10 quy tắc bắt buộc, quy trình 13 bước, cấu trúc thư mục, mẫu cấu hình và code — đưa cho AI đọc là dựng được tool mới đúng chuẩn.",
+      en: "A standard for building crawl → WordPress / WooCommerce import tools: 10 rules, a 13-step process, folder layout, config and code templates — hand it to an AI to build new tools the same way.",
+    },
+    status: "done",
+    tags: ["Python", "WordPress", "WooCommerce"],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-crawl-standard" }],
+    image: "/tools/wp-crawl-standard.webp",
+  },
 ];
