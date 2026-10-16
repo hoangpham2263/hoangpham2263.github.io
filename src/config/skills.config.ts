@@ -8,8 +8,12 @@ export const skillsConfig = [
     technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "HTML/CSS"],
   },
   {
-    category: "Backend & Data",
-    technologies: ["PHP", "Node.js", "Python", "REST API", "MySQL", "PostgreSQL", "Redis"],
+    category: "Backend",
+    technologies: ["PHP", "Node.js", "Python"],
+  },
+  {
+    category: "Database",
+    technologies: ["MySQL", "PostgreSQL", "Redis"],
   },
   {
     category: "Performance & Security",

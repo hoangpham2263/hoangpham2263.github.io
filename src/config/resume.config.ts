@@ -94,7 +94,8 @@ export const resumeConfig = {
   skills: [
     { group: "WordPress", items: "Custom Themes, Plugin Development, WooCommerce, ACF, Elementor, Rank Math" },
     { group: "Frontend", items: "JavaScript, TypeScript, React, Next.js, Tailwind CSS, HTML/CSS" },
-    { group: "Backend & Data", items: "PHP, Node.js, Python, REST API, MySQL, PostgreSQL, Redis" },
+    { group: "Backend", items: "PHP, Node.js, Python" },
+    { group: "Database", items: "MySQL, PostgreSQL, Redis" },
     { group: "Performance & Security", items: "PageSpeed / Core Web Vitals, LiteSpeed Cache, Security Hardening" },
     { group: "Tools", items: "Git, Docker, Figma" },
     { group: "AI", items: "Claude Code, Codex, Gemini" },
