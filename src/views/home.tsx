@@ -202,12 +202,12 @@ const GithubRepo = React.memo(({ repo, forksLabel }: { repo: any; forksLabel: st
     href={repo.html_url}
     target="_blank"
     rel="noopener noreferrer"
-    className="w-full h-full min-h-[90px] flex flex-col rounded-lg p-2 border text-sm hover:bg-muted/50 duration-100 transition-all ease-in-out"
+    className="group/repo w-full h-full min-h-[90px] flex flex-col gap-1 rounded-xl p-3 border text-sm transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]"
   >
-    <h1>{repo.name}</h1>
+    <h3 className="font-medium transition-colors duration-200 group-hover/repo:text-primary">{repo.name}</h3>
     <p className="flex-1 text-xs text-muted-foreground">{repo.description}</p>
     <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
-      <p>{repo.language}</p>
+      {repo.language && <p className="px-2 py-0.5 rounded-md bg-primary/[0.08] text-primary/90">{repo.language}</p>}
       {repo.stargazers_count > 0 && (
         <p className="flex items-center gap-px text-foreground">
           <Star size={12} />
