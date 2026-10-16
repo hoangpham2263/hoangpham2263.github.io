@@ -36,7 +36,7 @@ export const resumeConfigVi: typeof resumeConfig = {
       responsibilities: [
         "Xây dựng theme WordPress và shop WooCommerce chuẩn SEO từ thiết kế Figma.",
         "Phát triển plugin và tính năng WordPress tùy biến.",
-        "Viết công cụ crawl Python, chuyển dữ liệu sang WordPress và WooCommerce.",
+        "Viết công cụ Python crawl dữ liệu và chuyển sang WordPress, WooCommerce.",
         "Tối ưu PageSpeed và Core Web Vitals.",
         "Bảo trì và bảo mật website khách hàng.",
       ],
@@ -78,7 +78,7 @@ export const resumeConfigVi: typeof resumeConfig = {
       role: "Người sáng lập — trực tiếp phát triển và vận hành",
       stack: "",
       period: "08/2026 – nay",
-      summary: "Nền tảng hoàn tiền khi mua sắm online, đang hoạt động với người dùng thật; tôi trực tiếp phát triển, vận hành và đối soát hằng ngày.",
+      summary: "Nền tảng hoàn tiền khi mua sắm online, đang vận hành.",
       responsibilities: [
         "Xây dựng toàn bộ dự án bằng Next.js.",
         "Tích hợp Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
