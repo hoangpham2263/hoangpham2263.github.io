@@ -40,7 +40,7 @@ export const languageAlternates = (path: string, locale: Locale) => {
 export const ogLocale = (locale: Locale) => (locale === "vi" ? "vi_VN" : "en_US");
 
 const en = {
-  nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", contact: "Contact" },
+  nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", wordpress: "WordPress", contact: "Contact" },
   hero: {
     bio: "Hey there 👋 Welcome to my portfolio! I love turning ideas into websites that are fast, easy to use and easy to find on Google. Most of my work is building websites for businesses, and in my free time I explore new technologies and use them to build my own products. Take a look at the projects below, and feel free to reach out if you'd like to work together.",
     contact: "Contact",
@@ -96,7 +96,7 @@ const en = {
     done: "Ready",
     guide: "Guide",
     private: "Private",
-    privateHeading: "WordPress kit (private)",
+    privateHeading: "WordPress kit",
     privateNote: "My themes, plugins and snippets for building sites — private repos, only my account can open them.",
     appsHeading: "Web tools",
     appsNote: "Run right in the browser — nothing is uploaded.",
@@ -125,7 +125,7 @@ const en = {
 };
 
 const vi: typeof en = {
-  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", contact: "Liên hệ" },
+  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", wordpress: "WordPress", contact: "Liên hệ" },
   hero: {
     bio: "Xin chào 👋 Chào mừng bạn đến với portfolio của mình! Mình thích biến ý tưởng thành những website nhanh, dễ dùng và dễ tìm thấy trên Google. Phần lớn công việc của mình là xây dựng website cho doanh nghiệp, còn thời gian rảnh mình tìm hiểu công nghệ mới và dùng chúng để làm sản phẩm của riêng mình. Mời bạn xem các dự án bên dưới, và cứ liên hệ nếu muốn cùng hợp tác nhé.",
     contact: "Liên hệ",
@@ -181,7 +181,7 @@ const vi: typeof en = {
     done: "Dùng được",
     guide: "Tài liệu",
     private: "Riêng tư",
-    privateHeading: "Bộ WordPress (riêng tư)",
+    privateHeading: "Bộ WordPress",
     privateNote: "Theme, plugin và đoạn code mình dùng để dựng site — repo riêng tư, chỉ tài khoản của mình mới mở được.",
     appsHeading: "Công cụ chạy trên web",
     appsNote: "Dùng ngay trên trình duyệt, file không được tải lên đâu cả.",
