@@ -96,7 +96,7 @@ export const resumeConfigVi: typeof resumeConfig = {
     { group: "AI", items: "Claude Code, Codex, Gemini" },
   ],
   education: [
-    { school: "Đại học Duy Tân", degree: "Cử nhân Kỹ thuật phần mềm", period: "2021 – 2025" },
+    { school: "Đại học Duy Tân", degree: "Cử nhân Công nghệ phần mềm", period: "2021 – 2025" },
   ],
   languages: ["Tiếng Anh (đọc hiểu tài liệu)"],
 };
