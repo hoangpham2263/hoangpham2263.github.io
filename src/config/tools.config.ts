@@ -4,7 +4,7 @@ export type Tool = {
   name: string;
   description: { vi: string; en: string };
   status: "done" | "building";
-  kind?: "app" | "guide"; // app = runs in the browser (default), guide = docs / standard on GitHub
+  kind?: "app" | "guide" | "private"; // app = runs in the browser (default), guide = docs on GitHub, private = private repo (only my account can open)
   tags: string[];
   links: { name: string; url: string }[]; // e.g. { name: "GitHub", url: "https://github.com/..." }
   image?: string; // optional screenshot in /public, e.g. "/tools/wp-auto-poster.webp"
@@ -92,5 +92,109 @@ export const toolsConfig: Tool[] = [
     tags: ["Python", "WordPress", "WooCommerce"],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-crawl-standard" }],
     image: "/tools/wp-crawl-standard.webp",
+  },
+  {
+    name: "wp-theme-starter",
+    kind: "private",
+    description: { vi: "Theme khởi đầu cho custom theme (Vite, template-parts, WooCommerce).", en: "Starter theme for custom WordPress themes (Vite, template parts, WooCommerce)." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-theme-starter" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-theme-starter/releases/latest" }],
+  },
+  {
+    name: "wp-plugin-boilerplate",
+    kind: "private",
+    description: { vi: "Khung plugin chuẩn để nhân bản khi làm plugin mới.", en: "Plugin boilerplate to clone for new plugins." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-boilerplate" }],
+  },
+  {
+    name: "wp-dev-docker",
+    kind: "private",
+    description: { vi: "Môi trường dev WordPress bằng Docker.", en: "Docker WordPress development environment." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-dev-docker" }],
+  },
+  {
+    name: "wp-snippets",
+    kind: "private",
+    description: { vi: "Kho đoạn code: tìm kiếm, header, bộ lọc sản phẩm, nút liên hệ nổi…", en: "Reusable snippets: search, header icons, product filters, floating buttons…" },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-snippets" }],
+  },
+  {
+    name: "wp-theme-flatsome-child",
+    kind: "private",
+    description: { vi: "Child theme cho Flatsome.", en: "Flatsome child theme." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-theme-flatsome-child" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-theme-flatsome-child/releases/latest" }],
+  },
+  {
+    name: "wp-theme-flatsome",
+    kind: "private",
+    description: { vi: "Theme Flatsome (bản quyền của mình).", en: "Flatsome theme (my licensed copy)." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-theme-flatsome" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-theme-flatsome/releases/latest" }],
+  },
+  {
+    name: "wp-plugin-woo-flash-sale",
+    kind: "private",
+    description: { vi: "Flash sale cho WooCommerce.", en: "Flash sales for WooCommerce." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-woo-flash-sale" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-woo-flash-sale/releases/latest" }],
+  },
+  {
+    name: "wp-plugin-woo-quick-buy",
+    kind: "private",
+    description: { vi: "Nút mua nhanh cho WooCommerce.", en: "Quick Buy button for WooCommerce." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-woo-quick-buy" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-woo-quick-buy/releases/latest" }],
+  },
+  {
+    name: "wp-plugin-woo-product-review",
+    kind: "private",
+    description: { vi: "Đánh giá sản phẩm WooCommerce.", en: "WooCommerce product reviews." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-woo-product-review" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-woo-product-review/releases/latest" }],
+  },
+  {
+    name: "wp-plugin-post-rating",
+    kind: "private",
+    description: { vi: "Chấm sao bài viết.", en: "Post star ratings." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-post-rating" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-post-rating/releases/latest" }],
+  },
+  {
+    name: "wp-plugin-branch-finder",
+    kind: "private",
+    description: { vi: "Tìm chi nhánh / cửa hàng.", en: "Branch / store finder." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-branch-finder" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-branch-finder/releases/latest" }],
+  },
+  {
+    name: "wp-plugin-woo-viettelpost-shipping",
+    kind: "private",
+    description: { vi: "Phí ship Viettel Post cho WooCommerce (đang phát triển).", en: "Viettel Post shipping rates for WooCommerce (in progress)." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-woo-viettelpost-shipping" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-woo-viettelpost-shipping/releases/latest" }],
+  },
+  {
+    name: "wp-premium-plugins",
+    kind: "private",
+    description: { vi: "Plugin trả phí có bản quyền (Elementor Pro, ACF Pro, Polylang Pro, WP Rocket…).", en: "Licensed premium plugins (Elementor Pro, ACF Pro, Polylang Pro, WP Rocket…)." },
+    status: "done",
+    tags: [],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-premium-plugins" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-premium-plugins/releases/latest" }],
   },
 ];

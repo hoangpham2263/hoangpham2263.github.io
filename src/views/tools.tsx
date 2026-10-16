@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site.config";
 import { toolsConfig } from "@/config/tools.config";
 import { getDictionary, languageAlternates, type Locale } from "@/i18n";
 import { cn } from "@/lib/utils";
+import { Download, Github, Lock } from "lucide-react";
 import type { Metadata } from "next";
 
 export function toolsMetadata(locale: Locale): Metadata {
@@ -62,6 +63,40 @@ export function ToolsView({ locale }: { locale: Locale }) {
               </section>
             );
           })}
+          {(() => {
+            const list = toolsConfig.filter((tool) => tool.kind === "private");
+            if (!list.length) return null;
+            return (
+              <section className="space-y-3 md:space-y-4">
+                <div>
+                  <h2 className="text-lg font-semibold font-heading flex items-center gap-2">
+                    <Lock size={16} className="text-muted-foreground" />
+                    {t.privateHeading}
+                  </h2>
+                  <p className="text-sm text-muted-foreground">{t.privateNote}</p>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {list.map((tool) => (
+                    <div key={tool.name} className="rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-sm font-medium">{tool.name}</span>
+                        <span className="text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground flex-1">{tool.description[locale]}</p>
+                      <div className="flex gap-3 text-xs">
+                        {tool.links.map((l) => (
+                          <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+                            {l.name === "Download" ? <Download size={13} /> : <Github size={13} />}
+                            {l.name === "Download" ? (locale === "vi" ? "Tải bản mới nhất" : "Latest release") : "GitHub"}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })()}
         </div>
       )}
     </div>
