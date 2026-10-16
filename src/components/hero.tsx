@@ -42,7 +42,6 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
           <p key={skill.category}>
             <span className="font-semibold text-primary/90">{skill.category}:</span> {skill.technologies.join(", ")}
           </p>
-          </div>
         ))}
       </div>
     </section>
