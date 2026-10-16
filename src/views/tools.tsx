@@ -96,11 +96,12 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                 </div>
                 {([
                   ["theme", locale === "vi" ? "Theme" : "Themes"],
-                  ["plugin", "Plugin"],
+                  ["plugin", locale === "vi" ? "Plugin tự viết" : "My plugins"],
+                  ["premium", locale === "vi" ? "Plugin trả phí" : "Premium plugins"],
                   ["other", locale === "vi" ? "Dev & tiện ích" : "Dev & utilities"],
                 ] as const).map(([group, label]) => {
-                  const groupOf = (n: string) => (n.startsWith("wp-theme-") ? "theme" : n.startsWith("wp-plugin-") || n === "wp-premium-plugins" ? "plugin" : "other");
-                  const items = list.filter((tool) => groupOf(tool.name) === group);
+                  const groupOf = (n: string, tool: (typeof list)[number]) => (n.startsWith("wp-theme-") ? "theme" : (tool.description.en.includes("licensed copy") && n.startsWith("wp-plugin-")) ? "premium" : n.startsWith("wp-plugin-") ? "plugin" : "other");
+                  const items = list.filter((tool) => groupOf(tool.name, tool) === group);
                   if (!items.length) return null;
                   return (
                   <div key={group} className="space-y-2">
