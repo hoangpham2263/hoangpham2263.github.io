@@ -75,8 +75,19 @@ export function ToolsView({ locale }: { locale: Locale }) {
                   </h2>
                   <p className="text-sm text-muted-foreground">{t.privateNote}</p>
                 </div>
+                {([
+                  ["theme", locale === "vi" ? "Theme" : "Themes"],
+                  ["plugin", "Plugin"],
+                  ["other", locale === "vi" ? "Dev & tiện ích" : "Dev & utilities"],
+                ] as const).map(([group, label]) => {
+                  const groupOf = (n: string) => (n.startsWith("wp-theme-") ? "theme" : n.startsWith("wp-plugin-") || n === "wp-premium-plugins" ? "plugin" : "other");
+                  const items = list.filter((tool) => groupOf(tool.name) === group);
+                  if (!items.length) return null;
+                  return (
+                  <div key={group} className="space-y-2">
+                    <h3 className="text-sm font-semibold text-muted-foreground">{label} <span className="font-normal">({items.length})</span></h3>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {list.map((tool) => (
+                  {items.map((tool) => (
                     <div key={tool.name} className="rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
                       <div className="flex items-center gap-2">
                         <span className="font-medium">{tool.name}</span>
@@ -94,6 +105,9 @@ export function ToolsView({ locale }: { locale: Locale }) {
                     </div>
                   ))}
                 </div>
+                  </div>
+                  );
+                })}
               </section>
             );
           })()}
