@@ -42,5 +42,5 @@ export const getSiteText = (locale: Locale) =>
 
 export const getEducation = (locale: Locale) =>
   locale === "vi"
-    ? { school: "Đại học Duy Tân", degree: "Cử nhân Kỹ thuật phần mềm", period: "2021 - 2025" }
+    ? { school: "Đại học Duy Tân", degree: "Cử nhân Công nghệ phần mềm", period: "2021 - 2025" }
     : { school: "Duy Tan University", degree: "Bachelor in Software Engineering", period: "2021 - 2025" };
