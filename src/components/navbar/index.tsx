@@ -11,7 +11,7 @@ export default function Navbar() {
   const pathname = usePathname() || "/";
   const locale = localeFromPath(pathname);
   const t = getDictionary(locale);
-  const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/services": t.nav.services, "/blog": t.nav.blog, "/tools": t.nav.tools, "/contact": t.nav.contact };
+  const labels: Record<string, string> = { "/": t.nav.projects, "/experience": t.nav.experience, "/services": t.nav.services, "/blog": t.nav.blog, "/tools": t.nav.tools, "/wordpress": t.nav.wordpress, "/contact": t.nav.contact };
   return (
     // Covers the column padding too, so scrolled content never shows above or beside the menu
     <div className="hidden md:block sticky -top-8 z-50 -mx-8 -mt-8 px-8 pt-8 pb-4 bg-background border-b border-border/60">

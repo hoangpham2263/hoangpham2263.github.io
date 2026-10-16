@@ -63,7 +63,26 @@ export function ToolsView({ locale }: { locale: Locale }) {
               </section>
             );
           })}
-          {(() => {
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function wordpressMetadata(locale: Locale): Metadata {
+  const t = getDictionary(locale).tools;
+  return {
+    title: `${t.privateHeading} | ${siteConfig.creator.name}`,
+    description: t.privateNote,
+    alternates: languageAlternates("/wordpress", locale),
+  };
+}
+
+export function WordPressKitView({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale).tools;
+  return (
+    <div className="w-full max-w-5xl mt-0 md:mt-6">
+      {(() => {
             const list = toolsConfig.filter((tool) => tool.kind === "private");
             if (!list.length) return null;
             return (
@@ -111,8 +130,6 @@ export function ToolsView({ locale }: { locale: Locale }) {
               </section>
             );
           })()}
-        </div>
-      )}
     </div>
   );
 }
