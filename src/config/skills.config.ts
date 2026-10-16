@@ -1,7 +1,7 @@
 export const skillsConfig = [
   {
     category: "WordPress",
-    technologies: ["Custom Themes", "Plugin Development", "WooCommerce", "ACF", "Elementor", "Rank Math"],
+    technologies: ["Custom Themes", "Plugin Development", "WooCommerce", "ACF", "Elementor", "Flatsome"],
   },
   {
     category: "Frontend",
