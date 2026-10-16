@@ -33,7 +33,7 @@ export const experiencesConfig: Experience[] = [
     description: [
       "Built SEO-friendly WordPress themes and WooCommerce stores from Figma",
       "Developed custom WordPress plugins and features",
-      "Wrote Python crawlers to migrate data to WordPress and WooCommerce",
+      "Wrote Python tools to crawl data and move it into WordPress and WooCommerce",
       "Optimised PageSpeed and Core Web Vitals",
       "Maintained and secured client websites",
     ],

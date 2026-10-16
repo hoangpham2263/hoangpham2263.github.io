@@ -37,7 +37,7 @@ export const resumeConfig = {
       responsibilities: [
         "Built SEO-friendly WordPress themes and WooCommerce stores from Figma.",
         "Developed custom WordPress plugins and features.",
-        "Wrote Python crawlers to migrate data to WordPress and WooCommerce.",
+        "Wrote Python tools to crawl data and move it into WordPress and WooCommerce.",
         "Optimised PageSpeed and Core Web Vitals.",
         "Maintained and secured client websites.",
       ],
@@ -79,7 +79,7 @@ export const resumeConfig = {
       role: "Founder — building and running it",
       stack: "",
       period: "Aug 2026 – Present",
-      summary: "A cashback platform for online shopping, live with real users; I build, run and reconcile it day to day.",
+      summary: "A cashback platform for online shopping, currently running.",
       responsibilities: [
         "Built the whole project with Next.js.",
         "Integrated Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
