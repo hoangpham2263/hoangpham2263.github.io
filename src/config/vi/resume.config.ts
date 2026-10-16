@@ -80,7 +80,7 @@ export const resumeConfigVi: typeof resumeConfig = {
       period: "08/2026 – nay",
       summary: "Nền tảng hoàn tiền khi mua sắm online, đang hoạt động với người dùng thật; tôi trực tiếp phát triển, vận hành và đối soát hằng ngày.",
       responsibilities: [
-        "Xây dựng toàn bộ sản phẩm bằng Next.js, PostgreSQL, Redis.",
+        "Xây dựng toàn bộ sản phẩm bằng Next.js.",
         "Tích hợp Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
         "Thiết kế ví và sổ cái (ledger) hoàn tiền.",
         "Deploy VPS, sao lưu dữ liệu tự động.",
