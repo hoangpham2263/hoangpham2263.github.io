@@ -10,7 +10,8 @@ const skillCategoryVi: Record<string, string> = {
   Database: "Cơ sở dữ liệu",
   "Crawl Data": "Crawl dữ liệu",
   "Performance & SEO": "Tốc độ & SEO",
-  "Tools & AI": "Công cụ & AI",
+  "Tools": "Công cụ",
+  "AI": "AI",
 };
 
 const skillItemVi: Record<string, string> = {
