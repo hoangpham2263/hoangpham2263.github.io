@@ -25,7 +25,7 @@ Site là Next.js xuất tĩnh (`output: "export"`), đẩy lên GitHub là **t�
 
 ## Blog & Tool
 
-- **Viết bài blog:** tạo thư mục `content/blogs/<ten-bai>/` gồm `index.vi.mdx` (tiếng Việt) và `index.mdx` (tiếng Anh, có thể bỏ qua nếu không cần). Phần đầu cần `title`, `description`, `date`, `tags`; thêm `published: false` nếu muốn ẩn bài nháp. **Ảnh bìa:** bỏ ảnh `cover.webp` (nên 1200×630) vào cùng thư mục bài và thêm dòng `image: "./cover.webp"` ở phần đầu — ảnh hiện ở danh sách blog, đầu bài viết và khi chia sẻ link. Ảnh trong nội dung bài: đặt file cùng thư mục rồi viết `![mô tả](./ten-anh.webp)`. Xem mẫu ở `content/blogs/portfolio-song-ngu/`.
+- **Viết bài blog:** xem mục "Viết bài blog mới" ngay bên dưới.
 - **Thêm tool:** sửa `src/config/tools.config.ts`, thêm một object vào `toolsConfig`:
 
 ```ts
@@ -37,6 +37,41 @@ Site là Next.js xuất tĩnh (`output: "export"`), đẩy lên GitHub là **t�
   links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-auto-poster" }],
 },
 ```
+
+## Viết bài blog mới
+
+1. Tạo thư mục `content/blogs/<duong-dan-bai>/` (không dấu, nối bằng gạch ngang — đây cũng là đường dẫn của bài).
+2. Tạo `index.vi.mdx` (tiếng Việt) và `index.mdx` (tiếng Anh, có thể bỏ nếu không cần). Phần đầu file:
+
+```md
+---
+title: "Tiêu đề bài"
+description: "Mô tả 1–2 câu, hiện ở danh sách blog và trên Google."
+date: "2026-10-16T21:00:00+07:00"
+tags: ["WordPress", "SEO"]
+category: "WordPress"
+image: "./cover.webp"
+---
+```
+
+3. **Danh mục (`category`)** — dùng đúng tên đã có để gom nhóm: `WordPress`, `WooCommerce`, `Tốc độ & SEO`, `Crawl dữ liệu`, `Bảo trì & Bảo mật`, `AI`, `Next.js`. Gõ tên mới thì nút lọc danh mục mới tự xuất hiện. Bản tiếng Anh dùng **cùng tên danh mục** với bản tiếng Việt.
+4. **Ngày (`date`)** quyết định thứ tự: bài mới nhất lên đầu. Thêm giờ (như trên) nếu có 2 bài cùng ngày.
+5. **Ảnh bìa:** `cover.webp` 1600×900 (16:9) đặt cùng thư mục bài. Tất cả bài đang dùng chung một kiểu ảnh bìa (nhãn danh mục màu, tiêu đề ngắn, icon) — giữ kiểu này cho đồng bộ.
+6. **Ảnh trong bài:** đặt file cùng thư mục rồi viết `![mô tả](./ten-anh.webp)`. Bấm vào ảnh bìa sẽ xem lớn.
+7. Nội dung hỗ trợ bảng, khối code (```php, ```bash…), checklist (`- [ ] việc cần làm`).
+8. Ẩn bài nháp: thêm `published: false`.
+
+## Logo & thương hiệu
+
+- Logo dùng ở mọi sản phẩm: `public/brand/hp-icon.svg` (icon vuông xanh "HP" có `</>` vàng), bản favicon đơn giản `public/brand/hp-favicon.svg`, chữ `hoangpham-wordmark.svg` / `hoangpham-wordmark-light.svg` (nền tối), PNG lớn `icon-512.png`.
+- Favicon của site: `public/favicon.ico`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png` — khai báo trong `src/app/layout.tsx`.
+- Các tool (File Converter, File Compressor, PDF Cutter, QR Generator, Image Resizer) chép thư mục `brand/` này vào repo riêng của từng tool.
+- Màu chính: xanh `#2563eb`; nút chính dùng nền chuyển màu `#3b82f6 → #2563eb`.
+
+## Trang 404 & RSS
+
+- Trang 404: `src/app/not-found.tsx` (xuất thành `404.html`, GitHub Pages tự dùng khi không tìm thấy trang).
+- RSS: `/rss.xml` — nút RSS ở phần giới thiệu (máy tính) và cuối menu ☰ (điện thoại).
 
 ## 2. Chạy thử trên máy (lần đầu)
 

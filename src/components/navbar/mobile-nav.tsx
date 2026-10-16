@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, Rss, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site.config";
@@ -108,6 +108,14 @@ export default function MobileNav() {
                   </li>
                 ))}
               </ul>
+              <div className="border-t mx-2 mb-2 pt-2">
+                <a
+                  href="/rss.xml"
+                  className="flex items-center gap-2 rounded-md px-3 py-3 text-sm text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+                >
+                  <Rss size={16} /> RSS
+                </a>
+              </div>
             </motion.nav>
           </>
         )}
