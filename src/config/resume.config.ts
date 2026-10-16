@@ -62,12 +62,12 @@ export const resumeConfig = {
     {
       company: "Lift Software Vietnam",
       role: "Backend Developer, part-time",
-      stack: "Django APIs, unit tests",
+      stack: "Python APIs, unit tests",
       period: "Mar 2022 – Jun 2022",
       location: "Da Nang",
       summary: "",
       responsibilities: [
-        "Built APIs with Django.",
+        "Built REST APIs with Python.",
         "Wrote unit tests to verify functionality.",
         "Worked with databases to store and query data.",
         "Fixed bugs and supported system maintenance.",

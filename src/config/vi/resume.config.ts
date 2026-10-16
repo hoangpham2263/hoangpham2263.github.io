@@ -60,12 +60,12 @@ export const resumeConfigVi: typeof resumeConfig = {
     {
       company: "Lift Software Vietnam",
       role: "Backend Developer, part-time",
-      stack: "Django APIs, unit test",
+      stack: "Python API, unit test",
       period: "03/2022 – 06/2022",
       location: "Đà Nẵng",
       summary: "",
       responsibilities: [
-        "Xây dựng API bằng Django.",
+        "Xây dựng REST API bằng Python.",
         "Viết unit test để kiểm tra chức năng.",
         "Làm việc với cơ sở dữ liệu để lưu trữ và truy vấn dữ liệu.",
         "Sửa lỗi và hỗ trợ bảo trì hệ thống.",
