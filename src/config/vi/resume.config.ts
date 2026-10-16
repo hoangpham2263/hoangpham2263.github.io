@@ -83,7 +83,6 @@ export const resumeConfigVi: typeof resumeConfig = {
         "Xây dựng toàn bộ sản phẩm bằng Next.js.",
         "Tích hợp Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
         "Xây dựng hệ thống ví: ghi nhận tiền hoàn, rút tiền và xử lý đơn hủy.",
-        "Deploy VPS, sao lưu dữ liệu tự động.",
       ],
     },
   ],

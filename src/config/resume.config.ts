@@ -84,7 +84,6 @@ export const resumeConfig = {
         "Built the full product with Next.js.",
         "Integrated Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
         "Built the wallet system: cashback credits, withdrawals and cancelled orders.",
-        "Deployed to a VPS with automatic backups.",
       ],
     },
   ],
