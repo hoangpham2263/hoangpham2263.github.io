@@ -76,10 +76,10 @@ export const resumeConfig = {
     {
       name: "Hoàn Hời",
       link: { label: "hoanhoi.com", href: "https://hoanhoi.com" },
-      role: "Creator & Developer",
+      role: "Founder — building and running it",
       stack: "",
       period: "Aug 2026 – Present",
-      summary: "A cashback platform for online shopping, live in production.",
+      summary: "A cashback platform for online shopping, live with real users; I build, run and reconcile it day to day.",
       responsibilities: [
         "Built the full product with Next.js, PostgreSQL, Redis.",
         "Integrated Shopee, Lazada, TikTok Shop, ACCESSTRADE.",

@@ -75,10 +75,10 @@ export const resumeConfigVi: typeof resumeConfig = {
     {
       name: "Hoàn Hời",
       link: { label: "hoanhoi.com", href: "https://hoanhoi.com" },
-      role: "Người sáng lập & phát triển",
+      role: "Người sáng lập — trực tiếp phát triển và vận hành",
       stack: "",
       period: "08/2026 – nay",
-      summary: "Nền tảng hoàn tiền khi mua sắm online, đang vận hành thực tế.",
+      summary: "Nền tảng hoàn tiền khi mua sắm online, đang hoạt động với người dùng thật; tôi trực tiếp phát triển, vận hành và đối soát hằng ngày.",
       responsibilities: [
         "Xây dựng toàn bộ sản phẩm bằng Next.js, PostgreSQL, Redis.",
         "Tích hợp Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
