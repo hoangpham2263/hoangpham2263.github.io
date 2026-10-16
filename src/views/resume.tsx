@@ -187,13 +187,14 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           </Section>
 
           <Section title={t.skills}>
-            <ul className="list-disc pl-5 space-y-1">
+            <dl className="grid grid-cols-[minmax(0,9.5rem)_1fr] gap-x-4 gap-y-1">
               {resumeConfig.skills.map((s) => (
-                <li key={s.group}>
-                  <b>{s.group}:</b> {s.items}
-                </li>
+                <div key={s.group} className="contents">
+                  <dt className="font-bold">{s.group}</dt>
+                  <dd>{s.items}</dd>
+                </div>
               ))}
-            </ul>
+            </dl>
           </Section>
 
           <Section title={t.education}>
