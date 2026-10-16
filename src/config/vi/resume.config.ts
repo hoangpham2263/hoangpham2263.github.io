@@ -38,7 +38,7 @@ export const resumeConfigVi: typeof resumeConfig = {
         "Xây dựng shop WooCommerce.",
         "Phát triển plugin và tính năng WordPress tùy biến.",
         "Viết công cụ crawl Python, chuyển shop sang WooCommerce.",
-        "Tối ưu tốc độ trang và Core Web Vitals.",
+        "Tối ưu PageSpeed và Core Web Vitals.",
         "Bảo trì và bảo mật website khách hàng.",
       ],
       selected: resumeConfig.work[1].selected,

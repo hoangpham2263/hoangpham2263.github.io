@@ -40,7 +40,7 @@ export const resumeConfig = {
         "Built WooCommerce stores.",
         "Developed custom WordPress plugins and features.",
         "Wrote Python crawlers and migrated stores to WooCommerce.",
-        "Improved page speed and Core Web Vitals.",
+        "Optimised PageSpeed and Core Web Vitals.",
         "Maintained and secured client websites.",
       ],
       selected: ["Kim Quốc Tiến", "Nhật Nam Home", "GFC Security", "Đức Trí Piano Boutique", "Melody Preschool", "EuroLife"],
