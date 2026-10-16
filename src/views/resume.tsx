@@ -135,7 +135,7 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
           <Section title={t.summary}>
             <p>
               {resumeConfig.summary}{" "}
-              {locale === "vi" ? "Dự án, công cụ và blog của mình có trên " : "See my projects, tools and blog on my "}
+              {locale === "vi" ? "Xem thêm thông tin tại " : "More details on my "}
               <a href={siteConfig.siteUrl} className="underline underline-offset-2">
                 portfolio
               </a>
