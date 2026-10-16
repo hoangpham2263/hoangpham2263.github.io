@@ -39,18 +39,18 @@ export const toolsConfig: Tool[] = [
     image: "/tools/file-compressor.webp",
   },
   {
-    name: "PDF Cutter",
+    name: "PDF Tools",
     description: {
-      vi: "Cắt file PDF ngay trên trình duyệt: xem trước từng trang, chọn trang cần giữ (hoặc gõ 1-3, 5), tải 1 file hoặc tách mỗi trang 1 file — file không được tải lên đâu cả.",
-      en: "Cut PDFs in the browser: preview every page, pick the ones to keep (or type 1-3, 5), download one file or one file per page — nothing is uploaded.",
+      vi: "Cắt và gộp PDF ngay trên trình duyệt: xem trước từng trang, chọn trang cần giữ hoặc tách mỗi trang 1 file; gộp nhiều file và sắp xếp thứ tự bằng kéo thả — file không được tải lên đâu cả.",
+      en: "Cut and merge PDFs in the browser: preview pages, keep the ones you need or split each page; merge several files and reorder by drag and drop — nothing is uploaded.",
     },
     status: "done",
     tags: ["PDF"],
     links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/pdf-cutter/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/pdf-cutter" },
+      { name: "Website", url: "https://hoangpham.is-a.dev/pdf-tools/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/pdf-tools" },
     ],
-    image: "/tools/pdf-cutter.webp",
+    image: "/tools/pdf-tools.webp",
   },
   {
     name: "QR Generator",
