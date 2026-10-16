@@ -143,22 +143,6 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
             </p>
           </Section>
 
-          <Section title={t.experience}>
-            <div className="divide-y divide-black/10 [&>*]:py-3 lg:[&>*]:py-4 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
-              {resumeConfig.work.map((w) => (
-                <Entry
-                  key={w.company}
-                  title={w.company}
-                  period={[w.period, w.location].filter(Boolean).join(" · ")}
-                  role={w.stack ? `${w.role} — ${w.stack}` : w.role}
-                  summary={w.summary}
-                  items={w.responsibilities}
-                >
-                </Entry>
-              ))}
-            </div>
-          </Section>
-
           <Section title={t.projects}>
             <div className="divide-y divide-black/10 [&>*]:py-3 lg:[&>*]:py-4 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
               {resumeConfig.projects.map((p) => (
@@ -180,6 +164,22 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
                   summary={p.summary}
                   items={p.responsibilities}
                 />
+              ))}
+            </div>
+          </Section>
+
+          <Section title={t.experience}>
+            <div className="divide-y divide-black/10 [&>*]:py-3 lg:[&>*]:py-4 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
+              {resumeConfig.work.map((w) => (
+                <Entry
+                  key={w.company}
+                  title={w.company}
+                  period={[w.period, w.location].filter(Boolean).join(" · ")}
+                  role={w.stack ? `${w.role} — ${w.stack}` : w.role}
+                  summary={w.summary}
+                  items={w.responsibilities}
+                >
+                </Entry>
               ))}
             </div>
           </Section>
