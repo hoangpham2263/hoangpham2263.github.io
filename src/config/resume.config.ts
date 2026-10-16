@@ -3,7 +3,7 @@ export const resumeConfig = {
   name: "Pham Quoc Hoang",
   title: "Full-Stack Developer",
   summary:
-    "With over 2 years of experience building websites and e-commerce solutions, I focus on performance, SEO and user experience. Aiming to grow deeper in e-commerce, combining technology, data and AI to help businesses run efficiently and grow sustainably.",
+    "With over 2 years of experience building websites and e-commerce solutions, I focus on performance, SEO and user experience. Aiming to grow deeper in e-commerce, helping businesses run efficiently and grow sustainably.",
   contacts: [
     { icon: "address", value: "Ho Chi Minh City, Vietnam" },
     { icon: "phone", value: "0971 955 144", href: "tel:+84971955144" },
