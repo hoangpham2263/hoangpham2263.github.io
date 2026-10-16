@@ -83,7 +83,7 @@ export const resumeConfig = {
       responsibilities: [
         "Built the full product with Next.js.",
         "Integrated Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
-        "Designed the cashback wallet and ledger.",
+        "Built the wallet system: cashback credits, withdrawals and cancelled orders.",
         "Deployed to a VPS with automatic backups.",
       ],
     },

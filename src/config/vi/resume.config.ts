@@ -82,7 +82,7 @@ export const resumeConfigVi: typeof resumeConfig = {
       responsibilities: [
         "Xây dựng toàn bộ sản phẩm bằng Next.js.",
         "Tích hợp Shopee, Lazada, TikTok Shop, ACCESSTRADE.",
-        "Thiết kế ví và sổ cái (ledger) hoàn tiền.",
+        "Xây dựng hệ thống ví: ghi nhận tiền hoàn, rút tiền và xử lý đơn hủy.",
         "Deploy VPS, sao lưu dữ liệu tự động.",
       ],
     },
