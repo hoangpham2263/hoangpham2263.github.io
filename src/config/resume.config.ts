@@ -76,7 +76,7 @@ export const resumeConfig = {
     {
       name: "Hoàn Hời",
       link: { label: "hoanhoi.com", href: "https://hoanhoi.com" },
-      role: "Founder — building and running it",
+      role: "Founder & Developer",
       stack: "",
       period: "Aug 2026 – Present",
       summary: "A cashback platform for online shopping, currently running.",
