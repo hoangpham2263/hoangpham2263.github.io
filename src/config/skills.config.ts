@@ -24,7 +24,11 @@ export const skillsConfig = [
     technologies: ["Technical SEO", "Rank Math", "PageSpeed", "Core Web Vitals", "LiteSpeed Cache", "Security Hardening"],
   },
   {
-    category: "Tools & AI",
-    technologies: ["Git", "Docker", "Figma", "Claude Code", "Codex", "Gemini"],
+    category: "Tools",
+    technologies: ["Git", "Docker", "Figma"],
+  },
+  {
+    category: "AI",
+    technologies: ["Claude Code", "Codex", "Gemini"],
   },
 ];

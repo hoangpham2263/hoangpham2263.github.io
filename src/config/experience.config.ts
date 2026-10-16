@@ -70,7 +70,7 @@ export const experiencesConfig: Experience[] = [
     start: "March 2022",
     end: "June 2022",
     description: [
-      "Built REST APIs with Python",
+      "Built APIs with Django",
       "Wrote unit tests to verify functionality",
       "Worked with databases to store and query data",
       "Fixed bugs and supported system maintenance",
