@@ -14,8 +14,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "File Converter",
     description: {
-      vi: "Tự nhận loại file rồi chọn loại muốn đổi sang: ảnh ↔ ảnh (WebP, JPG, PNG, AVIF), gộp ảnh thành PDF, tách PDF thành ảnh, 5 mức chất lượng, tải ZIP — chạy ngay trên trình duyệt, file không được tải lên đâu cả.",
-      en: "Detects each file's type, then converts: image ↔ image (WebP, JPG, PNG, AVIF), images into one PDF, PDF pages into images, five quality levels, ZIP download — runs in the browser, nothing is uploaded.",
+      vi: "Đổi định dạng ảnh (WebP, JPG, PNG, AVIF), gộp ảnh thành PDF, tách PDF thành ảnh.",
+      en: "Convert images (WebP, JPG, PNG, AVIF), combine images into a PDF, split a PDF into images.",
     },
     status: "done",
     tags: ["JPG", "PNG", "WEBP", "AVIF", "GIF", "BMP", "SVG", "PDF"],
@@ -27,8 +27,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "File Compressor",
     description: {
-      vi: "Giảm dung lượng PDF, Word, PowerPoint, Excel, LibreOffice, EPUB và ảnh JPG/PNG/WEBP ngay trên trình duyệt — PDF nén bằng Ghostscript, các file khác nén lại ảnh bên trong; file không được tải lên đâu cả.",
-      en: "Shrink PDF, Word, PowerPoint, Excel, LibreOffice, EPUB and JPG/PNG/WEBP files in the browser — PDFs via Ghostscript, other files by re-compressing their images; nothing is uploaded.",
+      vi: "Giảm dung lượng PDF, Word, PowerPoint, Excel, EPUB và ảnh.",
+      en: "Shrink PDF, Word, PowerPoint, Excel, EPUB and image files.",
     },
     status: "done",
     tags: ["PDF", "DOCX", "PPTX", "XLSX", "ODT", "ODS", "ODP", "EPUB", "JPG", "PNG", "WEBP"],
@@ -40,8 +40,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "PDF Tools",
     description: {
-      vi: "Cắt và gộp PDF ngay trên trình duyệt: xem trước từng trang, chọn trang cần giữ hoặc tách mỗi trang 1 file; gộp nhiều file và sắp xếp thứ tự bằng kéo thả — file không được tải lên đâu cả.",
-      en: "Cut and merge PDFs in the browser: preview pages, keep the ones you need or split each page; merge several files and reorder by drag and drop — nothing is uploaded.",
+      vi: "Cắt, tách và gộp PDF, sắp xếp trang bằng kéo thả.",
+      en: "Cut, split and merge PDFs, reorder by drag and drop.",
     },
     status: "done",
     tags: ["PDF"],
@@ -53,8 +53,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "QR Generator",
     description: {
-      vi: "Tạo mã QR cho link, văn bản, WiFi, chuyển khoản ngân hàng (VietQR) và danh thiếp; đổi màu, chèn logo, tải PNG hoặc SVG — chạy ngay trên trình duyệt.",
-      en: "QR codes for links, text, WiFi, Vietnamese bank transfers (VietQR) and contact cards; custom colors, logo, PNG or SVG download — runs in the browser.",
+      vi: "Tạo mã QR cho link, WiFi, chuyển khoản VietQR, danh thiếp; chèn logo, tải PNG/SVG.",
+      en: "QR codes for links, WiFi, VietQR transfers and contact cards; add a logo, PNG/SVG download.",
     },
     status: "done",
     tags: ["PNG", "SVG"],
@@ -66,8 +66,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "Image Resizer",
     description: {
-      vi: "Đổi kích thước và cắt ảnh hàng loạt theo tỉ lệ 1:1, 4:3, 16:9 hoặc chiều rộng cố định, cắt vừa khung hoặc thêm nền trắng — hợp ảnh sản phẩm Shopee, WooCommerce. Chạy ngay trên trình duyệt.",
-      en: "Batch resize and crop images to 1:1, 4:3, 16:9 or a fixed width, crop to fill or pad with white — great for Shopee and WooCommerce product photos. Runs in the browser.",
+      vi: "Đổi kích thước và cắt ảnh hàng loạt theo tỉ lệ (1:1, 4:3, 16:9) — hợp ảnh sản phẩm.",
+      en: "Batch resize and crop images to 1:1, 4:3 or 16:9 — made for product photos.",
     },
     status: "done",
     tags: ["JPG", "PNG", "WEBP", "AVIF", "GIF", "BMP"],
@@ -79,8 +79,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "Link Converter",
     description: {
-      vi: "Đổi link Shopee thành link affiliate theo từng tài khoản: mỗi tài khoản có một link riêng để gửi bạn bè tự đổi; tự gỡ link affiliate cũ, bỏ tham số theo dõi, giữ đúng phân loại sản phẩm.",
-      en: "Turns Shopee links into affiliate links per account: each account gets its own page to share with friends; strips old affiliate wrappers and tracking parameters while keeping the product variant.",
+      vi: "Đổi link Shopee thành link affiliate, mỗi tài khoản một link riêng để gửi bạn bè.",
+      en: "Turn Shopee links into affiliate links, with one shareable page per account.",
     },
     status: "done",
     tags: ["Shopee", "Affiliate"],
@@ -93,44 +93,47 @@ export const toolsConfig: Tool[] = [
     name: "WP Crawl Standard",
     kind: "guide",
     description: {
-      vi: "Quy chuẩn dựng tool crawl dữ liệu → nhập vào WordPress / WooCommerce: 10 quy tắc bắt buộc, quy trình 13 bước, cấu trúc thư mục, mẫu cấu hình và code — đưa cho AI đọc là dựng được tool mới đúng chuẩn.",
-      en: "A standard for building crawl → WordPress / WooCommerce import tools: 10 rules, a 13-step process, folder layout, config and code templates — hand it to an AI to build new tools the same way.",
+      vi: "Quy chuẩn dựng tool crawl dữ liệu → WordPress / WooCommerce.",
+      en: "A standard for building crawl → WordPress / WooCommerce import tools.",
     },
     status: "done",
     tags: ["Python", "WordPress", "WooCommerce"],
-    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-crawl-standard" }],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/wp-crawl-standard/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/wp-crawl-standard" },
+    ],
   },
   {
     name: "wp-theme-starter",
-    kind: "private",
-    description: { vi: "Theme khởi đầu cho custom theme (Vite, template-parts, WooCommerce).", en: "Starter theme for custom WordPress themes (Vite, template parts, WooCommerce)." },
+    kind: "guide",
+    description: { vi: "Theme khởi đầu cho custom theme WordPress.", en: "Starter for custom WordPress themes." },
     status: "done",
     tags: [],
-    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-theme-starter" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-theme-starter/releases/latest" }],
+    links: [{ name: "Website", url: "https://hoangpham.is-a.dev/wp-theme-starter/" }, { name: "GitHub", url: "https://github.com/hoangpham2263/wp-theme-starter" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-theme-starter/releases/latest" }],
   },
   {
     name: "wp-plugin-boilerplate",
-    kind: "private",
-    description: { vi: "Khung plugin chuẩn để nhân bản khi làm plugin mới.", en: "Plugin boilerplate to clone for new plugins." },
+    kind: "guide",
+    description: { vi: "Khung plugin chuẩn cho plugin mới.", en: "Boilerplate for new plugins." },
     status: "done",
     tags: [],
-    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-boilerplate" }],
+    links: [{ name: "Website", url: "https://hoangpham.is-a.dev/wp-plugin-boilerplate/" }, { name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-boilerplate" }],
   },
   {
     name: "wp-dev-docker",
-    kind: "private",
+    kind: "guide",
     description: { vi: "Môi trường dev WordPress bằng Docker.", en: "Docker WordPress development environment." },
     status: "done",
     tags: [],
-    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-dev-docker" }],
+    links: [{ name: "Website", url: "https://hoangpham.is-a.dev/wp-dev-docker/" }, { name: "GitHub", url: "https://github.com/hoangpham2263/wp-dev-docker" }],
   },
   {
     name: "wp-snippets",
-    kind: "private",
-    description: { vi: "Kho đoạn code: tìm kiếm, header, bộ lọc sản phẩm, nút liên hệ nổi…", en: "Reusable snippets: search, header icons, product filters, floating buttons…" },
+    kind: "guide",
+    description: { vi: "Đoạn code WordPress / WooCommerce dùng lại được.", en: "Reusable WordPress / WooCommerce snippets." },
     status: "done",
     tags: [],
-    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-snippets" }],
+    links: [{ name: "Website", url: "https://hoangpham.is-a.dev/wp-snippets/" }, { name: "GitHub", url: "https://github.com/hoangpham2263/wp-snippets" }],
   },
   {
     name: "wp-theme-flatsome-child",

@@ -99,9 +99,9 @@ const en = {
     privateHeading: "WordPress kit",
     privateNote: "Source code of the themes, plugins and snippets I use to build sites — private repos, only my account can open them.",
     appsHeading: "Web tools",
-    appsNote: "Run right in the browser — nothing is uploaded.",
+    appsNote: "Runs in the browser, nothing is uploaded.",
     guidesHeading: "Guides & standards",
-    guidesNote: "Processes and templates I use to build tools — on GitHub.",
+    guidesNote: "Browse the code online and copy it fast.",
     building: "In progress",
   },
   cv: {
@@ -184,9 +184,9 @@ const vi: typeof en = {
     privateHeading: "Bộ WordPress",
     privateNote: "Source code theme, plugin và snippet mình dùng để dựng site — repo riêng tư, chỉ tài khoản của mình mới mở được.",
     appsHeading: "Công cụ chạy trên web",
-    appsNote: "Dùng ngay trên trình duyệt, file không được tải lên đâu cả.",
+    appsNote: "Chạy trên trình duyệt, không tải file lên đâu cả.",
     guidesHeading: "Tài liệu & quy chuẩn",
-    guidesNote: "Quy trình và mẫu mình dùng để dựng tool — xem trên GitHub.",
+    guidesNote: "Xem code online, sao chép nhanh.",
     building: "Đang làm",
   },
   cv: {
