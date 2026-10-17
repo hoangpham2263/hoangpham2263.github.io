@@ -42,7 +42,7 @@ export const ogLocale = (locale: Locale) => (locale === "vi" ? "vi_VN" : "en_US"
 const en = {
   nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", wordpress: "WordPress", contact: "Contact" },
   hero: {
-    bio: "Hey there 👋 Welcome to my portfolio! I love turning ideas into websites that are fast, easy to use and easy to find on Google. Most of my work is building websites for businesses, and in my free time I explore new technologies and use them to build my own products. Take a look at the projects below, and feel free to reach out if you'd like to work together.",
+    bio: "Hey there 👋 I'm Hoang, a web developer with over 2 years of experience building websites for businesses. I like things that are fast, clean and easy to use. Take a look at my projects below, and feel free to reach out if you'd like to work together.",
     contact: "Contact",
     resume: "Resume",
     switchLabel: "Tiếng Việt",
@@ -125,7 +125,7 @@ const en = {
 const vi: typeof en = {
   nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", wordpress: "WordPress", contact: "Liên hệ" },
   hero: {
-    bio: "Xin chào 👋 Chào mừng bạn đến với portfolio của mình! Mình thích biến ý tưởng thành những website nhanh, dễ dùng và dễ tìm thấy trên Google. Phần lớn công việc của mình là xây dựng website cho doanh nghiệp, còn thời gian rảnh mình tìm hiểu công nghệ mới và dùng chúng để làm sản phẩm của riêng mình. Mời bạn xem các dự án bên dưới, và cứ liên hệ nếu muốn cùng hợp tác nhé.",
+    bio: "Xin chào 👋 Mình là Hoàng, lập trình viên web với hơn 2 năm kinh nghiệm làm website cho doanh nghiệp. Mình thích những sản phẩm nhanh, gọn và dễ dùng. Mời bạn xem các dự án bên dưới, và cứ liên hệ nếu muốn cùng hợp tác nhé.",
     contact: "Liên hệ",
     resume: "Xem CV",
     switchLabel: "English",
