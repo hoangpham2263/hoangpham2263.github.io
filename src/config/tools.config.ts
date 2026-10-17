@@ -66,8 +66,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "Image Resizer",
     description: {
-      vi: "Đổi kích thước và cắt ảnh hàng loạt theo tỉ lệ (1:1, 4:3, 16:9) — hợp ảnh sản phẩm.",
-      en: "Batch resize and crop images to 1:1, 4:3 or 16:9 — made for product photos.",
+      vi: "Đổi kích thước và cắt ảnh hàng loạt theo tỉ lệ (1:1, 4:3, 16:9).",
+      en: "Batch resize and crop images to 1:1, 4:3 or 16:9.",
     },
     status: "done",
     tags: ["JPG", "PNG", "WEBP", "AVIF", "GIF", "BMP"],
