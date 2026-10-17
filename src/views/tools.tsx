@@ -121,7 +121,7 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                         {tool.links.map((l) => (
                           <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center gap-1 text-primary hover:underline">
                             {l.name === "Download" ? <Download size={13} /> : l.name === "Website" ? <Code size={13} /> : <Github size={13} />}
-                            {l.name === "Download" ? (locale === "vi" ? "Tải bản mới nhất" : "Latest release") : l.name === "Website" ? (locale === "vi" ? "Xem code" : "View code") : "GitHub"}
+                            {l.name === "Download" ? "Download" : l.name === "Website" ? "Code" : "GitHub"}
                           </a>
                         ))}
                       </div>
