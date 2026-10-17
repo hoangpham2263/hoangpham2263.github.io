@@ -70,14 +70,12 @@ const en = {
   contact: {
     title: "Contact",
     description: "Get in touch with Pham Quoc Hoang via email or LinkedIn.",
-    intro: "Want to talk about WordPress, web performance, or one of my projects? Feel free to reach out — I'm happy to connect with fellow developers.",
     location: "Location",
     locationValue: "Ho Chi Minh City, Vietnam",
   },
   services: {
     title: "Services",
     description: "WordPress and WooCommerce websites, speed and technical SEO, data crawling, web apps and maintenance.",
-    intro: "What I can build for your business. Tell me what you need and I'll get back to you with a plan and a quote.",
     includes: "Includes",
     cta: "Discuss your project",
   },
@@ -91,7 +89,6 @@ const en = {
   tools: {
     title: "Tools",
     description: "Tools and automations I build for WordPress, e-commerce and everyday work.",
-    intro: "Small tools and automations I build to save time — source code on GitHub.",
     empty: "Tools are being built — check back soon.",
     done: "Live",
     guide: "Docs",
@@ -153,14 +150,12 @@ const vi: typeof en = {
   contact: {
     title: "Liên hệ",
     description: "Liên hệ với Phạm Quốc Hoàng qua email hoặc LinkedIn.",
-    intro: "Bạn muốn trao đổi về WordPress, tốc độ website hay một dự án của mình? Cứ thoải mái liên hệ — mình luôn sẵn lòng kết nối.",
     location: "Địa chỉ",
     locationValue: "TP. Hồ Chí Minh, Việt Nam",
   },
   services: {
     title: "Dịch vụ",
     description: "Thiết kế website WordPress, WooCommerce, tối ưu tốc độ & SEO kỹ thuật, crawl dữ liệu, web app và bảo trì website.",
-    intro: "Những gì mình có thể làm cho doanh nghiệp của bạn. Cho mình biết nhu cầu, mình sẽ gửi lại phương án và báo giá.",
     includes: "Bao gồm",
     cta: "Trao đổi dự án",
   },
@@ -174,7 +169,6 @@ const vi: typeof en = {
   tools: {
     title: "Công cụ",
     description: "Các tool và automation mình tự làm cho WordPress, thương mại điện tử và công việc hằng ngày.",
-    intro: "Các tool và automation nhỏ mình tự viết để tiết kiệm thời gian — mã nguồn trên GitHub.",
     empty: "Các tool đang được phát triển — bạn quay lại sau nhé.",
     done: "Live",
     guide: "Docs",

@@ -7,6 +7,7 @@ export type Tool = {
   kind?: "app" | "guide" | "wp" | "private"; // app = runs in the browser (default), guide = docs, wp = public WordPress kit repo, private = private WordPress kit repo
   tags: string[];
   links: { name: string; url: string }[]; // e.g. { name: "GitHub", url: "https://github.com/..." }
+  premium?: boolean; // paid plugin (WordPress tab groups it separately)
   image?: string; // optional screenshot in /public, e.g. "/tools/wp-auto-poster.webp"
 };
 
@@ -106,7 +107,7 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-theme-starter",
     kind: "wp",
-    description: { vi: "Theme khởi đầu cho custom theme WordPress.", en: "Starter for custom WordPress themes." },
+    description: { vi: "Theme khởi đầu cho custom theme.", en: "Starter theme for custom themes." },
     status: "done",
     tags: [],
     links: [{ name: "Website", url: "https://hoangpham.is-a.dev/wp-theme-starter/" }, { name: "GitHub", url: "https://github.com/hoangpham2263/wp-theme-starter" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-theme-starter/releases/latest" }],
@@ -114,7 +115,7 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-boilerplate",
     kind: "wp",
-    description: { vi: "Khung plugin chuẩn cho plugin mới.", en: "Boilerplate for new plugins." },
+    description: { vi: "Khung plugin chuẩn.", en: "Plugin boilerplate." },
     status: "done",
     tags: [],
     links: [{ name: "Website", url: "https://hoangpham.is-a.dev/wp-plugin-boilerplate/" }, { name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-boilerplate" }],
@@ -130,7 +131,7 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-snippets",
     kind: "wp",
-    description: { vi: "Đoạn code WordPress / WooCommerce dùng lại được.", en: "Reusable WordPress / WooCommerce snippets." },
+    description: { vi: "Snippet WordPress / WooCommerce.", en: "WordPress / WooCommerce snippets." },
     status: "done",
     tags: [],
     links: [{ name: "Website", url: "https://hoangpham.is-a.dev/wp-snippets/" }, { name: "GitHub", url: "https://github.com/hoangpham2263/wp-snippets" }],
@@ -146,7 +147,7 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-theme-flatsome",
     kind: "private",
-    description: { vi: "Theme Flatsome (bản quyền của mình).", en: "Flatsome theme (my licensed copy)." },
+    description: { vi: "Theme Flatsome.", en: "Flatsome theme." },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-theme-flatsome" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-theme-flatsome/releases/latest" }],
@@ -194,7 +195,7 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-woo-viettelpost-shipping",
     kind: "private",
-    description: { vi: "Phí ship Viettel Post cho WooCommerce (đang phát triển).", en: "Viettel Post shipping rates for WooCommerce (in progress)." },
+    description: { vi: "Phí ship Viettel Post cho WooCommerce.", en: "Viettel Post shipping rates for WooCommerce." },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-woo-viettelpost-shipping" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-woo-viettelpost-shipping/releases/latest" }],
@@ -202,7 +203,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-elementor-pro",
     kind: "private",
-    description: { vi: "Elementor Pro 4.0.1 — bản có bản quyền của mình.", en: "Elementor Pro 4.0.1 — my licensed copy." },
+    premium: true,
+    description: { vi: "Elementor Pro 4.0.1", en: "Elementor Pro 4.0.1" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-elementor-pro" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-elementor-pro/releases/latest" }],
@@ -210,7 +212,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-acf-pro",
     kind: "private",
-    description: { vi: "ACF Pro 6.1.7 — bản có bản quyền của mình.", en: "ACF Pro 6.1.7 — my licensed copy." },
+    premium: true,
+    description: { vi: "ACF Pro 6.1.7", en: "ACF Pro 6.1.7" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-acf-pro" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-acf-pro/releases/latest" }],
@@ -218,7 +221,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-polylang-pro",
     kind: "private",
-    description: { vi: "Polylang Pro 3.6.3 — bản có bản quyền của mình.", en: "Polylang Pro 3.6.3 — my licensed copy." },
+    premium: true,
+    description: { vi: "Polylang Pro 3.6.3", en: "Polylang Pro 3.6.3" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-polylang-pro" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-polylang-pro/releases/latest" }],
@@ -226,7 +230,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-rank-math-pro",
     kind: "private",
-    description: { vi: "Rank Math Pro 3.0.40 — bản có bản quyền của mình.", en: "Rank Math Pro 3.0.40 — my licensed copy." },
+    premium: true,
+    description: { vi: "Rank Math Pro 3.0.40", en: "Rank Math Pro 3.0.40" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-rank-math-pro" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-rank-math-pro/releases/latest" }],
@@ -234,7 +239,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-wp-rocket",
     kind: "private",
-    description: { vi: "WP Rocket 3.14.2.1 — bản có bản quyền của mình.", en: "WP Rocket 3.14.2.1 — my licensed copy." },
+    premium: true,
+    description: { vi: "WP Rocket 3.14.2.1", en: "WP Rocket 3.14.2.1" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-wp-rocket" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-wp-rocket/releases/latest" }],
@@ -242,7 +248,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-wp-mail-smtp-pro",
     kind: "private",
-    description: { vi: "WP Mail SMTP Pro 3.8.0 — bản có bản quyền của mình.", en: "WP Mail SMTP Pro 3.8.0 — my licensed copy." },
+    premium: true,
+    description: { vi: "WP Mail SMTP Pro 3.8.0", en: "WP Mail SMTP Pro 3.8.0" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-wp-mail-smtp-pro" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-wp-mail-smtp-pro/releases/latest" }],
@@ -250,7 +257,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-all-in-one-wp-migration",
     kind: "private",
-    description: { vi: "All-in-One WP Migration 7.93 — bản có bản quyền của mình.", en: "All-in-One WP Migration 7.93 — my licensed copy." },
+    premium: true,
+    description: { vi: "All-in-One WP Migration 7.93", en: "All-in-One WP Migration 7.93" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-all-in-one-wp-migration" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-all-in-one-wp-migration/releases/latest" }],
@@ -258,7 +266,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-all-in-one-wp-migration-unlimited",
     kind: "private",
-    description: { vi: "All-in-One WP Migration Unlimited 2.83 — bản có bản quyền của mình.", en: "All-in-One WP Migration Unlimited 2.83 — my licensed copy." },
+    premium: true,
+    description: { vi: "All-in-One WP Migration Unlimited 2.83", en: "All-in-One WP Migration Unlimited 2.83" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-all-in-one-wp-migration-unlimited" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-all-in-one-wp-migration-unlimited/releases/latest" }],
@@ -266,7 +275,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-cf7-conditional-fields-pro",
     kind: "private",
-    description: { vi: "Contact Form 7 Conditional Fields Pro 2.3.3 — bản có bản quyền của mình.", en: "Contact Form 7 Conditional Fields Pro 2.3.3 — my licensed copy." },
+    premium: true,
+    description: { vi: "Contact Form 7 Conditional Fields Pro 2.3.3", en: "Contact Form 7 Conditional Fields Pro 2.3.3" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-cf7-conditional-fields-pro" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-cf7-conditional-fields-pro/releases/latest" }],
@@ -274,7 +284,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "wp-plugin-cf7-multistep-pro",
     kind: "private",
-    description: { vi: "Contact Form 7 Multistep Pro 6.5.1 — bản có bản quyền của mình.", en: "Contact Form 7 Multistep Pro 6.5.1 — my licensed copy." },
+    premium: true,
+    description: { vi: "Contact Form 7 Multistep Pro 6.5.1", en: "Contact Form 7 Multistep Pro 6.5.1" },
     status: "done",
     tags: [],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-plugin-cf7-multistep-pro" }, { name: "Download", url: "https://github.com/hoangpham2263/wp-plugin-cf7-multistep-pro/releases/latest" }],
