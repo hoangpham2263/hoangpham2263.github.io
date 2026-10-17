@@ -101,7 +101,7 @@ const en = {
     appsHeading: "Web tools",
     appsNote: "Run right in the browser — nothing is uploaded.",
     guidesHeading: "Guides & standards",
-    guidesNote: "Processes and templates I use to build tools — on GitHub.",
+    guidesNote: "Processes, starter code and snippets I use — browse the code online and copy it fast.",
     building: "In progress",
   },
   cv: {
@@ -186,7 +186,7 @@ const vi: typeof en = {
     appsHeading: "Công cụ chạy trên web",
     appsNote: "Dùng ngay trên trình duyệt, file không được tải lên đâu cả.",
     guidesHeading: "Tài liệu & quy chuẩn",
-    guidesNote: "Quy trình và mẫu mình dùng để dựng tool — xem trên GitHub.",
+    guidesNote: "Quy trình, khung code và snippet mình dùng — xem code online, sao chép nhanh.",
     building: "Đang làm",
   },
   cv: {
