@@ -90,10 +90,10 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                   <h2 className="text-lg font-semibold font-heading">{t.privateHeading}</h2>
                 </div>
                 {([
-                  ["theme", locale === "vi" ? "Theme" : "Themes"],
-                  ["plugin", locale === "vi" ? "Plugin tự viết" : "My plugins"],
-                  ["premium", locale === "vi" ? "Plugin trả phí" : "Premium plugins"],
-                  ["other", locale === "vi" ? "Dev & tiện ích" : "Dev & utilities"],
+                  ["theme", "Themes"],
+                  ["plugin", "Plugins"],
+                  ["premium", "Premium plugins"],
+                  ["other", "Dev tools"],
                 ] as const).map(([group, label]) => {
                   const groupOf = (n: string, tool: (typeof list)[number]) => (n.startsWith("wp-theme-") ? "theme" : (tool.description.en.includes("licensed copy") && n.startsWith("wp-plugin-")) ? "premium" : n.startsWith("wp-plugin-") ? "plugin" : "other");
                   const items = list.filter((tool) => groupOf(tool.name, tool) === group);
@@ -104,24 +104,24 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                 <div className="grid gap-3 sm:grid-cols-2">
                   {items.map((tool) => (
                     <div key={tool.name} className="relative rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-start gap-2">
                         {/* Whole card opens the code viewer (or GitHub); the links below stay clickable on top */}
                         <a
                           href={(tool.links.find((l) => l.name === "Website") ?? tool.links[0])?.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-medium hover:text-primary after:absolute after:inset-0 after:rounded-xl"
+                          className="min-w-0 break-words font-medium hover:text-primary after:absolute after:inset-0 after:rounded-xl"
                         >
                           {tool.name}
                         </a>
-                        {tool.kind === "private" && <span className="text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>}
+                        {tool.kind === "private" && <span className="mt-0.5 shrink-0 whitespace-nowrap text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>}
                       </div>
                       <p className="text-sm text-muted-foreground flex-1">{tool.description[locale]}</p>
                       <div className="flex gap-3 text-xs">
                         {tool.links.map((l) => (
                           <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center gap-1 text-primary hover:underline">
                             {l.name === "Download" ? <Download size={13} /> : l.name === "Website" ? <Code size={13} /> : <Github size={13} />}
-                            {l.name === "Download" ? (locale === "vi" ? "Tải bản mới nhất" : "Latest release") : l.name === "Website" ? (locale === "vi" ? "Xem code" : "View code") : "GitHub"}
+                            {l.name === "Download" ? "Download" : l.name === "Website" ? "Code" : "GitHub"}
                           </a>
                         ))}
                       </div>
