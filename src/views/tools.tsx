@@ -30,7 +30,6 @@ export function ToolsView({ locale }: { locale: Locale }) {
               <section key={kind} className="space-y-3 md:space-y-4">
                 <div>
                   <h2 className="text-lg font-semibold font-heading">{kind === "app" ? t.appsHeading : t.guidesHeading}</h2>
-                  <p className="text-sm text-muted-foreground">{kind === "app" ? t.appsNote : t.guidesNote}</p>
                 </div>
                 <div className="space-y-3 md:space-y-6">
                   {list.map((tool) => (
