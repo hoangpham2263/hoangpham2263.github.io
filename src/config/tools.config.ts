@@ -82,6 +82,19 @@ export const toolsConfig: Tool[] = [
     image: "/tools/image-resizer.webp",
   },
   {
+    name: "Link Converter",
+    description: {
+      vi: "Đổi link Shopee thành link affiliate theo từng tài khoản: mỗi tài khoản có một link riêng để gửi bạn bè tự đổi; tự gỡ link affiliate cũ, bỏ tham số theo dõi, giữ đúng phân loại sản phẩm.",
+      en: "Turns Shopee links into affiliate links per account: each account gets its own page to share with friends; strips old affiliate wrappers and tracking parameters while keeping the product variant.",
+    },
+    status: "done",
+    tags: ["Shopee", "Affiliate"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/link-converter/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/link-converter" },
+    ],
+  },
+  {
     name: "WP Crawl Standard",
     kind: "guide",
     description: {
