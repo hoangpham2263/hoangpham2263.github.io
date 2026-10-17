@@ -104,17 +104,17 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                 <div className="grid gap-3 sm:grid-cols-2">
                   {items.map((tool) => (
                     <div key={tool.name} className="relative rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-start gap-2">
                         {/* Whole card opens the code viewer (or GitHub); the links below stay clickable on top */}
                         <a
                           href={(tool.links.find((l) => l.name === "Website") ?? tool.links[0])?.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-medium hover:text-primary after:absolute after:inset-0 after:rounded-xl"
+                          className="min-w-0 break-words font-medium hover:text-primary after:absolute after:inset-0 after:rounded-xl"
                         >
                           {tool.name}
                         </a>
-                        {tool.kind === "private" && <span className="text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>}
+                        {tool.kind === "private" && <span className="mt-0.5 shrink-0 whitespace-nowrap text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>}
                       </div>
                       <p className="text-sm text-muted-foreground flex-1">{tool.description[locale]}</p>
                       <div className="flex gap-3 text-xs">
