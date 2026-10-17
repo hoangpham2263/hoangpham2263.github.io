@@ -96,10 +96,10 @@ const en = {
     done: "Live",
     guide: "Docs",
     private: "Private",
-    privateHeading: "WordPress kit",
+    privateHeading: "WordPress Kit",
     privateNote: "Themes, plugins and snippets I use to build WordPress sites.",
     appsHeading: "Web tools",
-    guidesHeading: "Guides & standards",
+    guidesHeading: "Docs",
     building: "In progress",
   },
   cv: {
