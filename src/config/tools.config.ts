@@ -79,8 +79,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "Link Converter",
     description: {
-      vi: "Chuyển link sản phẩm Shopee thành link affiliate theo nhiều tài khoản.",
-      en: "Turns Shopee product links into affiliate links for multiple accounts.",
+      vi: "Chuyển link sản phẩm Shopee thành link affiliate.",
+      en: "Turns Shopee product links into affiliate links.",
     },
     status: "done",
     tags: ["Shopee", "Affiliate"],
