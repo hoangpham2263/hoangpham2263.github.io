@@ -90,10 +90,10 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                   <h2 className="text-lg font-semibold font-heading">{t.privateHeading}</h2>
                 </div>
                 {([
-                  ["theme", locale === "vi" ? "Theme" : "Themes"],
-                  ["plugin", locale === "vi" ? "Plugin tự viết" : "My plugins"],
-                  ["premium", locale === "vi" ? "Plugin trả phí" : "Premium plugins"],
-                  ["other", locale === "vi" ? "Dev & tiện ích" : "Dev & utilities"],
+                  ["theme", "Themes"],
+                  ["plugin", "Plugins"],
+                  ["premium", "Premium plugins"],
+                  ["other", "Dev tools"],
                 ] as const).map(([group, label]) => {
                   const groupOf = (n: string, tool: (typeof list)[number]) => (n.startsWith("wp-theme-") ? "theme" : (tool.description.en.includes("licensed copy") && n.startsWith("wp-plugin-")) ? "premium" : n.startsWith("wp-plugin-") ? "plugin" : "other");
                   const items = list.filter((tool) => groupOf(tool.name, tool) === group);
