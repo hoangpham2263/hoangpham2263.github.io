@@ -104,7 +104,7 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                 <div className="grid gap-3 sm:grid-cols-2">
                   {items.map((tool) => (
                     <div key={tool.name} className="relative rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
-                      <div className="flex items-start gap-2">
+                      <div className="flex items-start justify-between gap-2">
                         {/* Whole card opens the code viewer (or GitHub); the links below stay clickable on top */}
                         <a
                           href={(tool.links.find((l) => l.name === "Website") ?? tool.links[0])?.url}
