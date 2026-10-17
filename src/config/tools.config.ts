@@ -23,7 +23,6 @@ export const toolsConfig: Tool[] = [
       { name: "Website", url: "https://hoangpham.is-a.dev/file-converter/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/file-converter" },
     ],
-    image: "/tools/file-converter.webp",
   },
   {
     name: "File Compressor",
@@ -37,7 +36,6 @@ export const toolsConfig: Tool[] = [
       { name: "Website", url: "https://hoangpham.is-a.dev/file-compressor/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/file-compressor" },
     ],
-    image: "/tools/file-compressor.webp",
   },
   {
     name: "PDF Tools",
@@ -51,7 +49,6 @@ export const toolsConfig: Tool[] = [
       { name: "Website", url: "https://hoangpham.is-a.dev/pdf-tools/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/pdf-tools" },
     ],
-    image: "/tools/pdf-tools.webp",
   },
   {
     name: "QR Generator",
@@ -65,7 +62,6 @@ export const toolsConfig: Tool[] = [
       { name: "Website", url: "https://hoangpham.is-a.dev/qr-generator/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/qr-generator" },
     ],
-    image: "/tools/qr-generator.webp",
   },
   {
     name: "Image Resizer",
@@ -79,7 +75,6 @@ export const toolsConfig: Tool[] = [
       { name: "Website", url: "https://hoangpham.is-a.dev/image-resizer/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/image-resizer" },
     ],
-    image: "/tools/image-resizer.webp",
   },
   {
     name: "Link Converter",
@@ -104,7 +99,6 @@ export const toolsConfig: Tool[] = [
     status: "done",
     tags: ["Python", "WordPress", "WooCommerce"],
     links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/wp-crawl-standard" }],
-    image: "/tools/wp-crawl-standard.webp",
   },
   {
     name: "wp-theme-starter",
