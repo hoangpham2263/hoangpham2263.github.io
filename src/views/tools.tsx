@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site.config";
 import { toolsConfig } from "@/config/tools.config";
 import { getDictionary, languageAlternates, type Locale } from "@/i18n";
 import { cn } from "@/lib/utils";
-import { Download, Github, Lock } from "lucide-react";
+import { Code, Download, Github } from "lucide-react";
 import type { Metadata } from "next";
 
 export function toolsMetadata(locale: Locale): Metadata {
@@ -30,7 +30,6 @@ export function ToolsView({ locale }: { locale: Locale }) {
               <section key={kind} className="space-y-3 md:space-y-4">
                 <div>
                   <h2 className="text-lg font-semibold font-heading">{kind === "app" ? t.appsHeading : t.guidesHeading}</h2>
-                  <p className="text-sm text-muted-foreground">{kind === "app" ? t.appsNote : t.guidesNote}</p>
                 </div>
                 <div className="space-y-3 md:space-y-6">
                   {list.map((tool) => (
@@ -83,16 +82,12 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
   return (
     <div className="w-full max-w-5xl mt-0 md:mt-6">
       {(() => {
-            const list = toolsConfig.filter((tool) => tool.kind === "private");
+            const list = toolsConfig.filter((tool) => tool.kind === "wp" || tool.kind === "private");
             if (!list.length) return null;
             return (
               <section className="space-y-3 md:space-y-4">
                 <div>
-                  <h2 className="text-lg font-semibold font-heading flex items-center gap-2">
-                    <Lock size={16} className="text-muted-foreground" />
-                    {t.privateHeading}
-                  </h2>
-                  <p className="text-sm text-muted-foreground">{t.privateNote}</p>
+                  <h2 className="text-lg font-semibold font-heading">{t.privateHeading}</h2>
                 </div>
                 {([
                   ["theme", locale === "vi" ? "Theme" : "Themes"],
@@ -111,14 +106,14 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                     <div key={tool.name} className="rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
                       <div className="flex items-center gap-2">
                         <span className="font-medium">{tool.name}</span>
-                        <span className="text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>
+                        {tool.kind === "private" && <span className="text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>}
                       </div>
                       <p className="text-sm text-muted-foreground flex-1">{tool.description[locale]}</p>
                       <div className="flex gap-3 text-xs">
                         {tool.links.map((l) => (
                           <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
-                            {l.name === "Download" ? <Download size={13} /> : <Github size={13} />}
-                            {l.name === "Download" ? (locale === "vi" ? "Tải bản mới nhất" : "Latest release") : "GitHub"}
+                            {l.name === "Download" ? <Download size={13} /> : l.name === "Website" ? <Code size={13} /> : <Github size={13} />}
+                            {l.name === "Download" ? (locale === "vi" ? "Tải bản mới nhất" : "Latest release") : l.name === "Website" ? (locale === "vi" ? "Xem code" : "View code") : "GitHub"}
                           </a>
                         ))}
                       </div>

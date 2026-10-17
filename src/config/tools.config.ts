@@ -4,7 +4,7 @@ export type Tool = {
   name: string;
   description: { vi: string; en: string };
   status: "done" | "building";
-  kind?: "app" | "guide" | "private"; // app = runs in the browser (default), guide = docs on GitHub, private = private repo (only my account can open)
+  kind?: "app" | "guide" | "wp" | "private"; // app = runs in the browser (default), guide = docs, wp = public WordPress kit repo, private = private WordPress kit repo
   tags: string[];
   links: { name: string; url: string }[]; // e.g. { name: "GitHub", url: "https://github.com/..." }
   image?: string; // optional screenshot in /public, e.g. "/tools/wp-auto-poster.webp"
@@ -105,7 +105,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "wp-theme-starter",
-    kind: "guide",
+    kind: "wp",
     description: { vi: "Theme khởi đầu cho custom theme WordPress.", en: "Starter for custom WordPress themes." },
     status: "done",
     tags: [],
@@ -113,7 +113,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "wp-plugin-boilerplate",
-    kind: "guide",
+    kind: "wp",
     description: { vi: "Khung plugin chuẩn cho plugin mới.", en: "Boilerplate for new plugins." },
     status: "done",
     tags: [],
@@ -121,7 +121,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "wp-dev-docker",
-    kind: "guide",
+    kind: "wp",
     description: { vi: "Môi trường dev WordPress bằng Docker.", en: "Docker WordPress development environment." },
     status: "done",
     tags: [],
@@ -129,7 +129,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "wp-snippets",
-    kind: "guide",
+    kind: "wp",
     description: { vi: "Đoạn code WordPress / WooCommerce dùng lại được.", en: "Reusable WordPress / WooCommerce snippets." },
     status: "done",
     tags: [],
