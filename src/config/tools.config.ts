@@ -40,8 +40,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "PDF Tools",
     description: {
-      vi: "Cắt, tách và gộp PDF, sắp xếp trang bằng kéo thả.",
-      en: "Cut, split and merge PDFs, reorder by drag and drop.",
+      vi: "Cắt, tách và gộp PDF.",
+      en: "Cut, split and merge PDFs.",
     },
     status: "done",
     tags: ["PDF"],
@@ -53,8 +53,8 @@ export const toolsConfig: Tool[] = [
   {
     name: "QR Generator",
     description: {
-      vi: "Tạo mã QR cho link, WiFi, chuyển khoản VietQR, danh thiếp; chèn logo, tải PNG/SVG.",
-      en: "QR codes for links, WiFi, VietQR transfers and contact cards; add a logo, PNG/SVG download.",
+      vi: "Tạo mã QR cho link, WiFi, chuyển khoản VietQR và danh thiếp.",
+      en: "QR codes for links, WiFi, VietQR transfers and contact cards.",
     },
     status: "done",
     tags: ["PNG", "SVG"],
