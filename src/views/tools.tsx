@@ -95,7 +95,7 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                   ["premium", "Premium plugins"],
                   ["other", "Dev tools"],
                 ] as const).map(([group, label]) => {
-                  const groupOf = (n: string, tool: (typeof list)[number]) => (n.startsWith("wp-theme-") ? "theme" : (tool.description.en.includes("licensed copy") && n.startsWith("wp-plugin-")) ? "premium" : n.startsWith("wp-plugin-") ? "plugin" : "other");
+                  const groupOf = (n: string, tool: (typeof list)[number]) => (n.startsWith("wp-theme-") ? "theme" : tool.premium ? "premium" : n.startsWith("wp-plugin-") ? "plugin" : "other");
                   const items = list.filter((tool) => groupOf(tool.name, tool) === group);
                   if (!items.length) return null;
                   return (
