@@ -103,15 +103,23 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
                     <h3 className="text-sm font-semibold text-muted-foreground">{label} <span className="font-normal">({items.length})</span></h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {items.map((tool) => (
-                    <div key={tool.name} className="rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
+                    <div key={tool.name} className="relative rounded-xl border p-3 flex flex-col gap-2 transition-[border-color,box-shadow] duration-200 hover:border-primary/30 hover:shadow-[0_8px_24px_-12px_rgba(37,99,235,0.25)]">
                       <div className="flex items-center gap-2">
-                        <span className="font-medium">{tool.name}</span>
+                        {/* Whole card opens the code viewer (or GitHub); the links below stay clickable on top */}
+                        <a
+                          href={(tool.links.find((l) => l.name === "Website") ?? tool.links[0])?.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium hover:text-primary after:absolute after:inset-0 after:rounded-xl"
+                        >
+                          {tool.name}
+                        </a>
                         {tool.kind === "private" && <span className="text-[11px] px-1.5 py-0.5 rounded border text-muted-foreground">{t.private}</span>}
                       </div>
                       <p className="text-sm text-muted-foreground flex-1">{tool.description[locale]}</p>
                       <div className="flex gap-3 text-xs">
                         {tool.links.map((l) => (
-                          <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline">
+                          <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center gap-1 text-primary hover:underline">
                             {l.name === "Download" ? <Download size={13} /> : l.name === "Website" ? <Code size={13} /> : <Github size={13} />}
                             {l.name === "Download" ? (locale === "vi" ? "Tải bản mới nhất" : "Latest release") : l.name === "Website" ? (locale === "vi" ? "Xem code" : "View code") : "GitHub"}
                           </a>
