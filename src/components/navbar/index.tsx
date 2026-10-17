@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { navbarConfig } from "@/config/navbar.config";
 import { getDictionary, localeFromPath, localePath, stripLocale } from "@/i18n";
-import { motion } from "framer-motion";
 
 export default function Navbar() {
   const pathname = usePathname() || "/";
@@ -42,7 +41,7 @@ const NavItem = ({ children, url, href, className }: NavItemProps) => {
 
   return (
     <Link href={href}>
-      <motion.div
+      <div
         className={cn(
           "px-1.5 sm:px-3.5 py-1.5 min-w-0 sm:min-w-14 whitespace-nowrap text-center rounded-md cursor-pointer transition-colors",
           active
@@ -50,16 +49,9 @@ const NavItem = ({ children, url, href, className }: NavItemProps) => {
             : "text-foreground/70 hover:text-foreground hover:bg-muted",
           className
         )}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        transition={{ 
-          type: "spring",
-          stiffness: 400,
-          damping: 17
-        }}
       >
         {children}
-      </motion.div>
+      </div>
     </Link>
   );
 };
