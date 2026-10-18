@@ -42,7 +42,7 @@ export const ogLocale = (locale: Locale) => (locale === "vi" ? "vi_VN" : "en_US"
 const en = {
   nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", wordpress: "WordPress", contact: "Contact" },
   hero: {
-    bio: "Hey there 👋 I'm Hoang, a web developer with over 2 years of experience building websites for businesses. I like things that are fast, clean and easy to use. Take a look at my projects below, and feel free to reach out if you'd like to work together.",
+    bio: "Hi there 👋 I'm Hoang, a web developer. I love exploring new technology, building my own products, and automating the repetitive parts of my work so I can focus on what matters. Take a look around the portfolio to get to know me better.",
     contact: "Contact",
     resume: "Resume",
     switchLabel: "Tiếng Việt",
@@ -122,7 +122,7 @@ const en = {
 const vi: typeof en = {
   nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", wordpress: "WordPress", contact: "Liên hệ" },
   hero: {
-    bio: "Xin chào 👋 Mình là Hoàng, lập trình viên web với hơn 2 năm kinh nghiệm làm website cho doanh nghiệp. Mình thích những sản phẩm nhanh, gọn và dễ dùng. Mời bạn xem các dự án bên dưới, và cứ liên hệ nếu muốn cùng hợp tác nhé.",
+    bio: "Xin chào 👋 Mình là Hoàng, một lập trình viên web. Mình thích tìm hiểu công nghệ mới, tự làm những sản phẩm của riêng mình và tự động hóa những việc lặp lại trong công việc. Mời bạn dạo một vòng portfolio để hiểu thêm về mình nhé.",
     contact: "Liên hệ",
     resume: "Xem CV",
     switchLabel: "English",
