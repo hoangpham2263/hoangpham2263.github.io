@@ -84,7 +84,7 @@ export const toolsConfig: Tool[] = [
       en: "Turns Shopee product links into affiliate links.",
     },
     status: "done",
-    tags: ["Shopee", "Affiliate"],
+    tags: ["Shopee", "Affiliate", "Cloudflare Workers"],
     links: [
       { name: "Website", url: "https://hoangpham.is-a.dev/link-converter/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/link-converter" },
