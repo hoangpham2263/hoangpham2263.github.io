@@ -39,21 +39,17 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
       </p>
       <Socials locale={locale} />
       {/* A few numbers counted from the site's own content, so they stay current */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-2xl mt-5 mb-2 lg:mb-4">
+      <div className="flex flex-col text-sm space-y-2 max-w-2xl text-foreground/85 mt-4 mb-2 lg:mb-4">
         {[
           { value: projects.filter((p) => p.lang === locale).length, label: locale === "vi" ? "Dự án" : "Projects", href: "/" },
           { value: toolsConfig.filter((x) => (x.kind ?? "app") === "app").length, label: locale === "vi" ? "Công cụ" : "Tools", href: "/tools" },
           { value: toolsConfig.filter((x) => x.kind === "wp" || x.kind === "private").length, label: "WordPress Kit", href: "/wordpress" },
           { value: blogs.filter((b) => b.published && b.lang === locale).length, label: "Blog", href: "/blog" },
         ].map((stat) => (
-          <Link
-            key={stat.label}
-            href={localePath(locale, stat.href)}
-            className="rounded-xl border px-3 py-2.5 transition-colors hover:border-primary/40 hover:bg-primary/[0.04]"
-          >
-            <span className="block text-2xl font-semibold font-heading leading-none">{stat.value}</span>
-            <span className="block mt-1 text-xs text-muted-foreground">{stat.label}</span>
-          </Link>
+          <p key={stat.label}>
+            <span className="font-semibold text-primary/90">{stat.label}:</span>{" "}
+            <Link href={localePath(locale, stat.href)} className="hover:text-primary hover:underline">{stat.value}</Link>
+          </p>
         ))}
       </div>
     </section>
