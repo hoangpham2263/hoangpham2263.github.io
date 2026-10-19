@@ -2,7 +2,7 @@ import type { Portfolio } from "@/types";
 
 export const portfolioConfig: Portfolio = {
   name: "Pham Quoc Hoang (Will)",
-  tagline: "Full-Stack Developer",
+  tagline: "Developer · Builder · Automation",
   resume: "/cv",
   links: {
     github: "https://github.com/hoangpham2263",

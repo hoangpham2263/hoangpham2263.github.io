@@ -34,7 +34,7 @@ export const getResume = (locale: Locale) => (locale === "vi" ? resumeConfigVi :
 export const getSiteText = (locale: Locale) =>
   locale === "vi"
     ? {
-        title: "HoangPham | Full-Stack Developer",
+        title: "HoangPham | Developer · Builder · Automation",
         description:
           "Phạm Quốc Hoàng — Full-Stack Developer tập trung vào WordPress. Mình xây dựng website WordPress và Next.js nhanh, chuẩn SEO, từ giao diện người dùng đến hệ thống quản trị cho doanh nghiệp thương mại điện tử, giáo dục, bất động sản và dịch vụ.",
       }
