@@ -408,22 +408,22 @@
         scrollWheelZoom: true
       });
 
-      // 1. Google Maps Vietnam (Standard Street - Crystal clear, official Vietnamese labels & full borders)
-      googleStreetLayer = L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&hl=vi&x={x}&y={y}&z={z}', {
+      // 1. Google Maps Vietnam (Standard Street - Ultra-sharp @2x Retina, official Vietnamese labels)
+      googleStreetLayer = L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&hl=vi&x={x}&y={y}&z={z}&scale=2', {
         subdomains: ['0', '1', '2', '3'],
         attribution: '&copy; Google Maps',
         maxZoom: 20
       });
 
-      // 2. Google Hybrid (Real Satellite + Sharp Vietnamese roads & place names)
-      googleHybridLayer = L.tileLayer('https://mt{s}.google.com/vt/lyrs=y&hl=vi&x={x}&y={y}&z={z}', {
+      // 2. Google Hybrid (Real Satellite + Sharp @2x Retina Vietnamese roads & place names)
+      googleHybridLayer = L.tileLayer('https://mt{s}.google.com/vt/lyrs=y&hl=vi&x={x}&y={y}&z={z}&scale=2', {
         subdomains: ['0', '1', '2', '3'],
         attribution: '&copy; Google Maps Vệ tinh',
         maxZoom: 20
       });
 
-      // 3. Google Terrain (Elevation & mountains + Vietnamese labels)
-      googleTerrainLayer = L.tileLayer('https://mt{s}.google.com/vt/lyrs=p&hl=vi&x={x}&y={y}&z={z}', {
+      // 3. Google Terrain (Elevation & mountains + @2x Retina Vietnamese labels)
+      googleTerrainLayer = L.tileLayer('https://mt{s}.google.com/vt/lyrs=p&hl=vi&x={x}&y={y}&z={z}&scale=2', {
         subdomains: ['0', '1', '2', '3'],
         attribution: '&copy; Google Maps Địa hình',
         maxZoom: 20
@@ -439,15 +439,14 @@
       // Default layer: Google Maps Vietnam (Crystal clear)
       googleStreetLayer.addTo(travelMap);
 
-      // Vietnam S-Shape Glowing Border Layer
+      // Vietnam S-Shape Boundary Layer (Crisp solid glowing border)
       vietnamBorderLayer = L.geoJSON(VIETNAM_GEOJSON, {
         style: {
-          color: '#ff4d4f',
-          weight: 2.2,
-          opacity: 0.85,
-          dashArray: '5, 5',
-          fillColor: '#ff4d4f',
-          fillOpacity: 0.035,
+          color: '#e63946',
+          weight: 2.5,
+          opacity: 0.95,
+          fillColor: '#e63946',
+          fillOpacity: 0.04,
           className: 'vietnam-border-glow'
         },
         interactive: false
@@ -566,7 +565,7 @@
       } else if (bounds.length > 1) {
         travelMap.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
       } else {
-        travelMap.fitBounds(VIETNAM_BOUNDS, { padding: [25, 25] });
+        travelMap.setView([16.1, 107.5], 6);
       }
     } else {
       // Global

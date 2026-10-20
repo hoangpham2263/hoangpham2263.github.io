@@ -750,6 +750,11 @@ button, select, .ghost, .primary, .outline, .btn-sm {
   z-index: 1;
 }
 
+/* Sharp and crisp map tiles (Retina & High DPI) */
+.travel-map .leaflet-tile {
+  image-rendering: -webkit-optimize-contrast;
+}
+
 /* Midnight Dark OpenStreetMap Tiles with CSS Filter */
 .map-tiles-midnight .leaflet-tile {
   filter: invert(100%) hue-rotate(195deg) brightness(88%) contrast(125%) saturate(70%) !important;
@@ -827,22 +832,11 @@ button, select, .ghost, .primary, .outline, .btn-sm {
   pointer-events: none;
 }
 
-/* Glowing S-Curve border on Leaflet vector path */
+/* Crisp boundary line on Leaflet vector path */
 .vietnam-border-glow {
-  filter: drop-shadow(0 0 8px rgba(255, 77, 79, 0.75));
   stroke-linecap: round;
   stroke-linejoin: round;
-  animation: sCurvePulse 3s ease-in-out infinite alternate;
-}
-@keyframes sCurvePulse {
-  0% {
-    stroke-opacity: 0.7;
-    filter: drop-shadow(0 0 5px rgba(255, 77, 79, 0.5));
-  }
-  100% {
-    stroke-opacity: 1;
-    filter: drop-shadow(0 0 10px rgba(255, 77, 79, 0.85));
-  }
+  filter: drop-shadow(0 0 2px rgba(230, 57, 70, 0.4));
 }
 
 /* Map Overlay Controls (Top Right) */
