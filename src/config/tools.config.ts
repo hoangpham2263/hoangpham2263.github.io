@@ -15,11 +15,11 @@ export const toolsConfig: Tool[] = [
   {
     name: "Hoang's Memories",
     description: {
-      vi: "Bản đồ hành trình & kho lưu trữ kỷ niệm du lịch qua ảnh. Tự động ghim toạ độ GPS, nhóm theo điểm đến và ngày tháng, đồng bộ Google Drive.",
-      en: "Interactive travel photo map and memory journal. Auto-pins GPS coordinates, groups by destination & dates, Google Drive cloud sync.",
+      vi: "Bản đồ hành trình 34 tỉnh, thành phố, lưu lại những nơi đã đến bằng ảnh.",
+      en: "A travel map of Vietnam's 34 provinces, keeping the places I've been in photos.",
     },
     status: "done",
-    tags: ["Map", "Travel", "GPS", "EXIF", "Google Drive", "Memories"],
+    tags: ["Leaflet", "Google Drive", "Cloudflare Workers"],
     links: [
       { name: "Website", url: "https://hoangpham.is-a.dev/memories/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/memories" },
