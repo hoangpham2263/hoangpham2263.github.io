@@ -13,16 +13,16 @@ export type Tool = {
 
 export const toolsConfig: Tool[] = [
   {
-    name: "Drive Gallery",
+    name: "Hoang's Memories",
     description: {
-      vi: "Quản lý và lưu trữ ảnh trên Google Drive. Tự động đọc thông số máy ảnh & vị trí chụp (GPS / Địa danh thực tế), tạo link nhúng nhanh.",
-      en: "Host and manage photos on Google Drive. Auto-extract camera specs & GPS location names, instant embed links.",
+      vi: "Bản đồ hành trình & kho lưu trữ kỷ niệm du lịch qua ảnh. Tự động ghim toạ độ GPS, nhóm theo điểm đến và ngày tháng, đồng bộ Google Drive.",
+      en: "Interactive travel photo map and memory journal. Auto-pins GPS coordinates, groups by destination & dates, Google Drive cloud sync.",
     },
     status: "done",
-    tags: ["Google Drive", "EXIF", "GPS", "Photo Management", "Direct Link", "Cloud"],
+    tags: ["Map", "Travel", "GPS", "EXIF", "Google Drive", "Memories"],
     links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/drive-gallery/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/drive-gallery" },
+      { name: "Website", url: "https://hoangpham.is-a.dev/memories/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/memories" },
     ],
   },
   {
