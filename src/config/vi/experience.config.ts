@@ -2,6 +2,23 @@ import type { Experience } from "@/types";
 
 export const experiencesConfigVi: Experience[] = [
   {
+    title: "Digital Marketing – Ecommerce/POD",
+    employmentType: "Full-time",
+    company: {
+      name: "Vani Ecom",
+      url: "https://vaniecom.com/",
+    },
+    location: {
+      name: "TP. Hồ Chí Minh",
+    },
+    start: "10/2026",
+    end: "Present",
+    description: [
+      "Xây dựng công cụ tạo ảnh sản phẩm hàng loạt bằng AI (Codex CLI), có giao diện desktop và chạy song song nhiều luồng",
+      "Tự động hóa khâu chuẩn bị ảnh và xuất dữ liệu CSV để nhập lên cửa hàng",
+    ],
+  },
+  {
     title: "Software Engineer (AI Evaluation)",
     employmentType: "Freelance",
     company: {
