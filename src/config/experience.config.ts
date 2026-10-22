@@ -2,6 +2,23 @@ import type { Experience } from "@/types";
 
 export const experiencesConfig: Experience[] = [
   {
+    title: "Digital Marketing – Ecommerce/POD",
+    employmentType: "Full-time",
+    company: {
+      name: "Vani Ecom",
+      url: "https://vaniecom.com/",
+    },
+    location: {
+      name: "Ho Chi Minh City",
+    },
+    start: "October 2026",
+    end: "Present",
+    description: [
+      "Built a batch product-image tool powered by AI (Codex CLI), with a desktop GUI and parallel processing",
+      "Automated image preparation and CSV export for store import",
+    ],
+  },
+  {
     title: "Software Engineer (AI Evaluation)",
     employmentType: "Freelance",
     company: {

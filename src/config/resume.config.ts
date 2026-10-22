@@ -15,6 +15,19 @@ export const resumeConfig = {
   ],
   work: [
     {
+      company: "Vani Ecom",
+      role: "Digital Marketing – Ecommerce/POD",
+      stack: "",
+      period: "Oct 2026 – Present",
+      location: "Ho Chi Minh City",
+      summary: "",
+      responsibilities: [
+        "Built a batch product-image tool powered by AI (Codex CLI), with a desktop GUI and parallel processing.",
+        "Automated image preparation and CSV export for store import.",
+      ],
+      selected: [] as string[],
+    },
+    {
       company: "HD TechLabs Solution",
       role: "Software Engineer (AI Evaluation)",
       stack: "Freelance, Remote",

@@ -14,6 +14,19 @@ export const resumeConfigVi: typeof resumeConfig = {
   links: resumeConfig.links,
   work: [
     {
+      company: "Vani Ecom",
+      role: "Digital Marketing – Ecommerce/POD",
+      stack: "",
+      period: "10/2026 – nay",
+      location: "TP. Hồ Chí Minh",
+      summary: "",
+      responsibilities: [
+        "Xây dựng công cụ tạo ảnh sản phẩm hàng loạt bằng AI (Codex CLI), có giao diện desktop và chạy song song nhiều luồng.",
+        "Tự động hóa khâu chuẩn bị ảnh và xuất dữ liệu CSV để nhập lên cửa hàng.",
+      ],
+      selected: [] as string[],
+    },
+    {
       company: "HD TechLabs Solution",
       role: "Software Engineer (AI Evaluation)",
       stack: "Freelance, Remote",
