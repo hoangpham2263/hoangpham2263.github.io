@@ -16,6 +16,8 @@ export const experiencesConfig: Experience[] = [
     description: [
       "Built a batch product-image tool powered by AI (Codex CLI), with a desktop GUI and parallel processing",
       "Automated image preparation and CSV export for store import",
+      "Ran the Shopify store: listed and updated products and edited store content",
+      "Researched POD designs and products to pick new designs for the store",
     ],
   },
   {
