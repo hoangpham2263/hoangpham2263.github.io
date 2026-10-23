@@ -24,6 +24,8 @@ export const resumeConfig = {
       responsibilities: [
         "Built a batch product-image tool powered by AI (Codex CLI), with a desktop GUI and parallel processing.",
         "Automated image preparation and CSV export for store import.",
+        "Ran the Shopify store: listed and updated products and edited store content.",
+        "Researched POD designs and products to pick new designs for the store.",
       ],
       selected: [] as string[],
     },
@@ -102,6 +104,7 @@ export const resumeConfig = {
   ],
   skills: [
     { group: "WordPress", items: "WooCommerce, Plugin Development, Custom Themes, Elementor, Flatsome" },
+    { group: "Ecommerce", items: "Shopify, WooCommerce, POD, Product Research" },
     { group: "Frontend", items: "JavaScript, TypeScript, React, Next.js, Tailwind CSS, HTML/CSS" },
     { group: "Backend", items: "PHP, Node.js, Python" },
     { group: "Database", items: "MySQL, PostgreSQL, Redis" },

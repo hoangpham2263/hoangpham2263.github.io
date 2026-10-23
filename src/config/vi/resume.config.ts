@@ -23,6 +23,8 @@ export const resumeConfigVi: typeof resumeConfig = {
       responsibilities: [
         "Xây dựng công cụ tạo ảnh sản phẩm hàng loạt bằng AI (Codex CLI), có giao diện desktop và chạy song song nhiều luồng.",
         "Tự động hóa khâu chuẩn bị ảnh và xuất dữ liệu CSV để nhập lên cửa hàng.",
+        "Vận hành cửa hàng trên Shopify: đăng, cập nhật sản phẩm và chỉnh sửa nội dung cửa hàng.",
+        "Nghiên cứu mẫu thiết kế và sản phẩm POD để chọn mẫu mới cho cửa hàng.",
       ],
       selected: [] as string[],
     },
@@ -101,6 +103,7 @@ export const resumeConfigVi: typeof resumeConfig = {
   ],
   skills: [
     { group: "WordPress", items: "WooCommerce, phát triển Plugin, Custom Theme, Elementor, Flatsome" },
+    { group: "Ecommerce", items: "Shopify, WooCommerce, POD, nghiên cứu sản phẩm" },
     { group: "Frontend", items: "JavaScript, TypeScript, React, Next.js, Tailwind CSS, HTML/CSS" },
     { group: "Backend", items: "PHP, Node.js, Python" },
     { group: "Cơ sở dữ liệu", items: "MySQL, PostgreSQL, Redis" },
