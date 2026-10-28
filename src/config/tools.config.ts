@@ -104,6 +104,46 @@ export const toolsConfig: Tool[] = [
     ],
   },
   {
+    name: "Go Links",
+    description: {
+      vi: "Đường dẫn ngắn hoangpham.is-a.dev/go/tên trỏ về hosting, chuyển hướng hoặc nhúng.",
+      en: "Short hoangpham.is-a.dev/go/name paths to hosting servers, redirected or embedded.",
+    },
+    status: "done",
+    tags: ["GitHub API", "GitHub Pages"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/domain/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/domain" },
+    ],
+  },
+  {
+    name: "Zing MP3 Clone",
+    description: {
+      vi: "Trình phát nhạc trên web, viết bằng HTML, CSS và JavaScript thuần.",
+      en: "A web music player in plain HTML, CSS and JavaScript.",
+    },
+    status: "done",
+    tags: ["HTML", "CSS", "JavaScript"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/zing-mp3-clone/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/zing-mp3-clone" },
+    ],
+  },
+  {
+    name: "Product Image Batch",
+    kind: "guide",
+    description: {
+      vi: "Xử lý ảnh sản phẩm hàng loạt bằng Codex CLI, có giao diện desktop.",
+      en: "Batch product image processing with Codex CLI and a desktop GUI.",
+    },
+    status: "done",
+    tags: ["PowerShell", "Codex CLI"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/product-image-batch/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/product-image-batch" },
+    ],
+  },
+  {
     name: "WP Crawl Standard",
     kind: "guide",
     description: {
