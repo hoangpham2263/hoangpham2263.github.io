@@ -105,7 +105,6 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "Product Review Batch",
-    kind: "guide",
     description: {
       vi: "Xử lý ảnh sản phẩm hàng loạt bằng Codex CLI, có giao diện desktop.",
       en: "Batch product image processing with Codex CLI and a desktop GUI.",
