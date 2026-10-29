@@ -122,7 +122,7 @@ export async function BlogPostView({ params, locale }: BlogPostProps & { locale:
         )}
         <div className="space-y-2">
           <p className="text-xs text-muted-foreground">{formatDate(post.date, locale)} · {post.category}</p>
-          <h1 className="font-heading text-2xl font-bold leading-tight sm:text-3xl">{post.title}</h1>
+          <h1 className="font-heading text-[22px] font-semibold leading-snug sm:text-2xl">{post.title}</h1>
           <p className="text-sm text-foreground/85 leading-6">{post.description}</p>
         </div>
       </header>
