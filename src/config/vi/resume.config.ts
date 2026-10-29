@@ -25,6 +25,7 @@ export const resumeConfigVi: typeof resumeConfig = {
         "Tự động hóa khâu chuẩn bị ảnh và xuất dữ liệu CSV để nhập lên cửa hàng.",
         "Vận hành cửa hàng trên Shopify: đăng, cập nhật sản phẩm và chỉnh sửa nội dung cửa hàng.",
         "Nghiên cứu mẫu thiết kế và sản phẩm POD để chọn mẫu mới cho cửa hàng.",
+        "Quản lý fanpage Facebook: đăng bài, trả lời bình luận và tin nhắn.",
       ],
       selected: [] as string[],
     },
