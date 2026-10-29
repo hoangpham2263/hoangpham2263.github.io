@@ -26,6 +26,7 @@ export const resumeConfig = {
         "Automated image preparation and CSV export for store import.",
         "Ran the Shopify store: listed and updated products and edited store content.",
         "Researched POD designs and products to pick new designs for the store.",
+        "Managed the Facebook fanpage: posted content and replied to comments and messages.",
       ],
       selected: [] as string[],
     },
