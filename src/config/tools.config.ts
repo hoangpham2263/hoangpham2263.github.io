@@ -13,19 +13,6 @@ export type Tool = {
 
 export const toolsConfig: Tool[] = [
   {
-    name: "Hoang's Memories",
-    description: {
-      vi: "Bản đồ hành trình 34 tỉnh, thành phố, lưu lại những nơi đã đến bằng ảnh.",
-      en: "A travel map of Vietnam's 34 provinces, keeping the places I've been in photos.",
-    },
-    status: "done",
-    tags: ["Leaflet", "Google Drive", "Cloudflare Workers"],
-    links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/memories/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/memories" },
-    ],
-  },
-  {
     name: "File Converter",
     description: {
       vi: "Đổi định dạng ảnh (WebP, JPG, PNG, AVIF), gộp ảnh thành PDF, tách PDF thành ảnh.",
@@ -114,19 +101,6 @@ export const toolsConfig: Tool[] = [
     links: [
       { name: "Website", url: "https://hoangpham.is-a.dev/domain/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/domain" },
-    ],
-  },
-  {
-    name: "Zing MP3 Clone",
-    description: {
-      vi: "Trình phát nhạc trên web, viết bằng HTML, CSS và JavaScript thuần.",
-      en: "A web music player in plain HTML, CSS and JavaScript.",
-    },
-    status: "done",
-    tags: ["HTML", "CSS", "JavaScript"],
-    links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/zing-mp3-clone/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/zing-mp3-clone" },
     ],
   },
   {
