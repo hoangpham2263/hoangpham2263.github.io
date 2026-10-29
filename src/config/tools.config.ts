@@ -104,7 +104,7 @@ export const toolsConfig: Tool[] = [
     ],
   },
   {
-    name: "Product Image Batch",
+    name: "Product Review Batch",
     kind: "guide",
     description: {
       vi: "Xử lý ảnh sản phẩm hàng loạt bằng Codex CLI, có giao diện desktop.",
@@ -113,8 +113,8 @@ export const toolsConfig: Tool[] = [
     status: "done",
     tags: ["PowerShell", "Codex CLI"],
     links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/product-image-batch/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/product-image-batch" },
+      { name: "Website", url: "https://hoangpham.is-a.dev/product-review-batch/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/product-review-batch" },
     ],
   },
   {
