@@ -143,31 +143,6 @@ export default function ResumeView({ locale = "en" }: { locale?: Locale }) {
             </p>
           </Section>
 
-          <Section title={t.projects}>
-            <div className="divide-y divide-black/10 [&>*]:py-3 lg:[&>*]:py-4 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
-              {resumeConfig.projects.map((p) => (
-                <Entry
-                  key={p.name}
-                  title={
-                    <>
-                      {p.name}{" "}
-                      <span className="font-normal">
-                        ·{" "}
-                        <a href={p.link.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-                          {p.link.label}
-                        </a>
-                      </span>
-                    </>
-                  }
-                  period={p.period}
-                  role={p.role}
-                  summary={p.summary}
-                  items={p.responsibilities}
-                />
-              ))}
-            </div>
-          </Section>
-
           <Section title={t.experience}>
             <div className="divide-y divide-black/10 [&>*]:py-3 lg:[&>*]:py-4 [&>*:first-child]:pt-0 [&>*:last-child]:pb-0">
               {resumeConfig.work.map((w) => (
