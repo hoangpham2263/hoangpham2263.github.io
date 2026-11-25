@@ -4,6 +4,10 @@ export const skillsConfig = [
     technologies: ["WooCommerce", "Plugin Development", "Custom Themes", "Elementor", "Flatsome"],
   },
   {
+    category: "Ecommerce",
+    technologies: ["Shopify", "Shopify Liquid", "WooCommerce", "POD"],
+  },
+  {
     category: "Frontend",
     technologies: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "HTML/CSS"],
   },
@@ -21,10 +25,10 @@ export const skillsConfig = [
   },
   {
     category: "Tools",
-    technologies: ["Git", "Docker", "Figma"],
+    technologies: ["Git", "Docker", "Figma", "Playwright", "FFmpeg"],
   },
   {
     category: "AI",
-    technologies: ["Claude Code", "Codex", "Gemini"],
+    technologies: ["Claude Code", "Codex", "Antigravity", "Gemini", "MCP"],
   },
 ];

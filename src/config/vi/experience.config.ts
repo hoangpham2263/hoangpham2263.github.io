@@ -14,11 +14,12 @@ export const experiencesConfigVi: Experience[] = [
     start: "10/2026",
     end: "Present",
     description: [
-      "Xây dựng công cụ tạo ảnh sản phẩm hàng loạt bằng AI (Codex CLI), có giao diện desktop và chạy song song nhiều luồng",
-      "Tự động hóa khâu chuẩn bị ảnh và xuất dữ liệu CSV để nhập lên cửa hàng",
-      "Vận hành cửa hàng trên Shopify: đăng, cập nhật sản phẩm và chỉnh sửa nội dung cửa hàng",
-      "Nghiên cứu mẫu thiết kế và sản phẩm POD để chọn mẫu mới cho cửa hàng",
-      "Quản lý fanpage Facebook: đăng bài, trả lời bình luận và tin nhắn",
+      "Xây dựng Vaniecom Hub (Next.js, TypeScript, PostgreSQL, Playwright MCP): nền tảng nội bộ quản lý dự án đa thương hiệu Shopify, AI tự động phân loại công việc, thư viện skill và nhiều hồ sơ trình duyệt dùng chung",
+      "Phát triển bộ công cụ desktop AI chạy song song: tạo ảnh sản phẩm/review mẫu xuất CSV Loox (Product Review), dựng video sản phẩm ngắn bằng FFmpeg + Grok AI (Product Video) và quản lý đa store Shopify CLI (Shopify Switch)",
+      "Xây dựng hệ thống Social Autopilot và bộ AI skill đa thương hiệu: tự động nghiên cứu nội dung đa nền tảng, tạo bài đăng/album ảnh, duyệt bài và lên lịch đăng Facebook, Instagram qua Metricool MCP",
+      "Tùy biến và reskin giao diện Shopify (Liquid, CSS/JS): tối ưu tốc độ tải trang, làm mới layout/banner responsive cho nhiều cửa hàng thị trường Mỹ với quy trình kiểm tra tự động và bảo vệ phần lõi",
+      "Nghiên cứu thị trường, từ khóa và tự động hóa lên sản phẩm: phân tích niche/từ khóa (Google Keyword Planner, Etsy), chuẩn bị bộ ảnh sản phẩm, đẩy sản phẩm nháp hàng loạt qua Shopify Admin GraphQL và xây dựng trang tra cứu chất liệu cho 214 sản phẩm",
+      "Quản lý kênh mạng xã hội Facebook và Instagram: lập kế hoạch nội dung, sản xuất hình ảnh/video, đăng bài, trả lời bình luận và tin nhắn khách hàng",
     ],
   },
   {

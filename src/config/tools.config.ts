@@ -104,16 +104,55 @@ export const toolsConfig: Tool[] = [
     ],
   },
   {
-    name: "Product Review Batch",
+    name: "Product Review",
     description: {
-      vi: "Xử lý ảnh sản phẩm hàng loạt bằng Codex CLI, có giao diện desktop.",
-      en: "Batch product image processing with Codex CLI and a desktop GUI.",
+      vi: "Ứng dụng desktop đa phiên tạo ảnh sản phẩm/review mẫu hàng loạt bằng AI (Codex, Claude Code, Antigravity, Google Flow) và xuất CSV Loox.",
+      en: "Multi-session desktop app for batch AI product/review image generation (Codex, Claude Code, Antigravity, Google Flow) with Loox CSV export.",
     },
     status: "done",
-    tags: ["PowerShell", "Codex CLI"],
+    tags: ["PowerShell", "Node.js", "Playwright", "Codex CLI", "Claude Code"],
     links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/product-review-batch/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/product-review-batch" },
+      { name: "Website", url: "https://hoangpham.is-a.dev/product-review/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/product-review" },
+    ],
+  },
+  {
+    name: "Product Video",
+    description: {
+      vi: "Ứng dụng desktop dựng video ngắn giới thiệu sản phẩm tự động với FFmpeg, Codex CLI và Grok AI (phân tích video mẫu, chuyển cảnh, phụ đề, nhạc nền).",
+      en: "Desktop app for automated short-form product video creation with FFmpeg, Codex CLI and Grok AI (reference analysis, transitions, subtitles and music).",
+    },
+    status: "done",
+    tags: ["PowerShell", "Node.js", "FFmpeg", "Codex CLI", "Grok"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/product-video/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/product-video" },
+    ],
+  },
+  {
+    name: "Social Autopilot",
+    description: {
+      vi: "Công cụ tự động nghiên cứu nội dung đa nền tảng, tạo bài đăng/album ảnh AI theo skill thương hiệu và lên lịch đăng Facebook, Instagram qua Metricool MCP.",
+      en: "Automated cross-platform content research, brand-guided AI post/album generation and scheduled publishing to Facebook & Instagram via Metricool MCP.",
+    },
+    status: "done",
+    tags: ["Node.js", "Playwright MCP", "Metricool MCP", "Claude Code", "Codex CLI"],
+    links: [
+      { name: "GitHub", url: "https://github.com/hoangpham2263/social-autopilot" },
+    ],
+  },
+  {
+    name: "Fortera Materials Guide",
+    kind: "guide",
+    description: {
+      vi: "Trang tra cứu chất liệu vải, định lượng GSM và kỹ thuật in cho toàn bộ 214 sản phẩm Fortera Apparel.",
+      en: "Searchable fabric, GSM weight and print-method reference covering all 214 Fortera Apparel products.",
+    },
+    status: "done",
+    tags: ["HTML", "JSON", "CSV", "GitHub Pages"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/fortera-materials-guide/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/fortera-materials-guide" },
     ],
   },
   {
