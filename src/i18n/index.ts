@@ -40,7 +40,7 @@ export const languageAlternates = (path: string, locale: Locale) => {
 export const ogLocale = (locale: Locale) => (locale === "vi" ? "vi_VN" : "en_US");
 
 const en = {
-  nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", wordpress: "WordPress", contact: "Contact" },
+  nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", games: "Games", wordpress: "WordPress", contact: "Contact" },
   hero: {
     bio: "Hi there 👋 I'm Hoang, a developer who enjoys turning ideas into real products. I like exploring new technology, building my own tools and automating repetitive work to get more done. Take a look around to get to know me better — and if you'd like to work together, feel free to reach out.",
     contact: "Contact",
@@ -99,6 +99,19 @@ const en = {
     guidesHeading: "Docs",
     building: "In progress",
   },
+  games: {
+    title: "TikTok LIVE Games",
+    description: "Personal collection of 69 interactive TikTok LIVE games built with Node.js, WebSocket, HTML5 Canvas and Edge TTS for 9:16 OBS overlays.",
+    heading: "TikTok LIVE Interactive Games",
+    personalBadge: "Personal project",
+    gamesUnit: "games",
+    intro: "An independent personal side project (unrelated to my company work) — 69 interactive games built on a shared Node.js, WebSocket and HTML5 Canvas core for vertical 9:16 OBS and TikTok LIVE Studio overlays, with live chat/gift interaction and Vietnamese Edge TTS narration.",
+    compliance: "Free interactive entertainment games — No betting or cash prizes.",
+    searchPlaceholder: "Search 69 games...",
+    all: "All",
+    emptySearch: "No matching games found.",
+    showing: "Showing {count} of {total} games",
+  },
   cv: {
     pageTitle: "Resume",
     home: "Home",
@@ -120,7 +133,7 @@ const en = {
 };
 
 const vi: typeof en = {
-  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", wordpress: "WordPress", contact: "Liên hệ" },
+  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", games: "Games", wordpress: "WordPress", contact: "Liên hệ" },
   hero: {
     bio: "Xin chào 👋 Mình là Hoàng, một lập trình viên thích biến ý tưởng thành sản phẩm thật. Mình hay tìm hiểu công nghệ mới, tự làm những công cụ của riêng mình và tự động hóa các việc lặp lại để làm việc hiệu quả hơn. Mời bạn dạo một vòng portfolio để hiểu thêm về mình — nếu muốn cùng hợp tác, cứ liên hệ nhé.",
     contact: "Liên hệ",
@@ -178,6 +191,19 @@ const vi: typeof en = {
     appsHeading: "Web tools",
     guidesHeading: "Docs",
     building: "In progress",
+  },
+  games: {
+    title: "TikTok LIVE Games",
+    description: "Dự án cá nhân gồm 69 game tương tác TikTok LIVE xây dựng bằng Node.js, WebSocket, HTML5 Canvas và Edge TTS cho OBS tỉ lệ dọc 9:16.",
+    heading: "TikTok LIVE Interactive Games",
+    personalBadge: "Dự án cá nhân",
+    gamesUnit: "game",
+    intro: "Dự án cá nhân độc lập (không liên quan đến công việc tại công ty) — bộ sưu tập 69 game tương tác cho TikTok LIVE xây dựng trên cùng kiến trúc lõi Node.js, WebSocket và HTML5 Canvas dành cho OBS / TikTok LIVE Studio tỉ lệ dọc 9:16, hỗ trợ tương tác comment/quà tặng thời gian thực và giọng đọc MC Edge TTS tiếng Việt.",
+    compliance: "Game giải trí tương tác miễn phí — Không cá cược, không đổi thưởng tiền mặt.",
+    searchPlaceholder: "Tìm trong 69 game...",
+    all: "Tất cả",
+    emptySearch: "Không tìm thấy game phù hợp.",
+    showing: "Hiển thị {count}/{total} game",
   },
   cv: {
     pageTitle: "CV",

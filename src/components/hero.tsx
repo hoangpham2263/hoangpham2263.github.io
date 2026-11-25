@@ -6,6 +6,7 @@ import ThemeToggler from "@/components/theme/toggler";
 import { Rss } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { blogs, projects } from "#site/content";
+import { gamesConfig } from "@/config/games.config";
 import { toolsConfig } from "@/config/tools.config";
 import LanguageSwitcher from "@/components/language-switcher";
 import { getDictionary, localePath, type Locale } from "@/i18n";
@@ -43,6 +44,7 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
         {[
           { value: projects.filter((p) => p.lang === locale).length, label: locale === "vi" ? "Dự án" : "Projects", href: "/" },
           { value: toolsConfig.filter((x) => (x.kind ?? "app") === "app").length, label: locale === "vi" ? "Công cụ" : "Tools", href: "/tools" },
+          { value: gamesConfig.length, label: "TikTok Games", href: "/games" },
           { value: toolsConfig.filter((x) => x.kind === "wp" || x.kind === "private").length, label: "WordPress Kit", href: "/wordpress" },
           { value: blogs.filter((b) => b.published && b.lang === locale).length, label: "Blog", href: "/blog" },
         ].map((stat) => (

@@ -22,6 +22,10 @@ export const navbarConfig: NavItem[] = [
     url: "/tools",
   },
   {
+    title: "Games",
+    url: "/games",
+  },
+  {
     title: "WordPress",
     url: "/wordpress",
   },
