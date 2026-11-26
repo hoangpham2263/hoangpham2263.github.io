@@ -1,18 +1,9 @@
-import type { Metadata } from "next";
 import { Mail, MapPin } from "lucide-react";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import TelegramIcon from "@/components/icons/telegram";
-import { siteConfig } from "@/config/site.config";
-import { getDictionary, languageAlternates, type Locale } from "@/i18n";
+import { getDictionary, type Locale } from "@/i18n";
 
-export function contactMetadata(locale: Locale = "en"): Metadata {
-  const t = getDictionary(locale).contact;
-  return {
-    title: `${t.title} | ${siteConfig.creator.name}`,
-    description: t.description,
-    alternates: languageAlternates("/contact", locale),
-  };
-}
+// Contact cards, shown at the end of the Services page (#contact)
 
 const getContacts = (t: ReturnType<typeof getDictionary>["contact"]) => [
   { icon: <Mail size={18} />, label: "Email", value: "hoangpham2263@gmail.com", href: "mailto:hoangpham2263@gmail.com" },
@@ -22,11 +13,11 @@ const getContacts = (t: ReturnType<typeof getDictionary>["contact"]) => [
   { icon: <MapPin size={18} />, label: t.location, value: t.locationValue },
 ];
 
-export default function ContactView({ locale = "en" }: { locale?: Locale }) {
+export default function ContactCards({ locale = "en" }: { locale?: Locale }) {
   const t = getDictionary(locale).contact;
   const contacts = getContacts(t);
   return (
-    <div className="w-full max-w-5xl mt-0 md:mt-6">
+    <div>
       <div className="grid sm:grid-cols-2 gap-3">
         {contacts.map((c) => {
           const content = (

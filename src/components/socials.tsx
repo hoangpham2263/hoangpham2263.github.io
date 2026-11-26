@@ -12,7 +12,7 @@ export const Socials = ({ locale = "en" }: { locale?: Locale }) => {
         className="active:scale-[0.97] transition-all"
         asChild
       >
-        <Link href={localePath(locale, "/contact")}>{t.hero.contact}</Link>
+        <Link href={localePath(locale, "/services#contact")}>{t.hero.contact}</Link>
       </Button>
       <Button
         variant="outline"

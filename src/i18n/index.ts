@@ -40,7 +40,7 @@ export const languageAlternates = (path: string, locale: Locale) => {
 export const ogLocale = (locale: Locale) => (locale === "vi" ? "vi_VN" : "en_US");
 
 const en = {
-  nav: { projects: "Projects", experience: "Experience", services: "Services", blog: "Blog", tools: "Tools", games: "Games", wordpress: "WordPress", contact: "Contact" },
+  nav: { projects: "Projects", products: "Products", experience: "Experience", blog: "Blog", services: "Services" },
   hero: {
     bio: "Hi there 👋 I'm Hoang, a developer who enjoys turning ideas into real products. I like exploring new technology, building my own tools and automating repetitive work to get more done. Take a look around to get to know me better — and if you'd like to work together, feel free to reach out.",
     contact: "Contact",
@@ -78,6 +78,8 @@ const en = {
     description: "WordPress and WooCommerce websites, speed and technical SEO, data crawling, web apps and maintenance.",
     includes: "Includes",
     cta: "Discuss your project",
+    contactHeading: "Contact",
+    contactNote: "Tell me about your project — I usually reply within a day.",
   },
   blog: {
     title: "Blog",
@@ -87,8 +89,8 @@ const en = {
     all: "All",
   },
   tools: {
-    title: "Tools",
-    description: "Tools and automations I build for WordPress, e-commerce and everyday work.",
+    title: "Products",
+    description: "Tools, WordPress kit and TikTok LIVE games — tools and automations I build for WordPress, e-commerce and everyday work.",
     empty: "Tools are being built — check back soon.",
     done: "Live",
     guide: "Docs",
@@ -133,7 +135,7 @@ const en = {
 };
 
 const vi: typeof en = {
-  nav: { projects: "Dự án", experience: "Kinh nghiệm", services: "Dịch vụ", blog: "Blog", tools: "Công cụ", games: "Games", wordpress: "WordPress", contact: "Liên hệ" },
+  nav: { projects: "Dự án", products: "Sản phẩm", experience: "Kinh nghiệm", blog: "Blog", services: "Dịch vụ" },
   hero: {
     bio: "Xin chào 👋 Mình là Hoàng, một lập trình viên thích biến ý tưởng thành sản phẩm thật. Mình hay tìm hiểu công nghệ mới, tự làm những công cụ của riêng mình và tự động hóa các việc lặp lại để làm việc hiệu quả hơn. Mời bạn dạo một vòng portfolio để hiểu thêm về mình — nếu muốn cùng hợp tác, cứ liên hệ nhé.",
     contact: "Liên hệ",
@@ -171,6 +173,8 @@ const vi: typeof en = {
     description: "Thiết kế website WordPress, WooCommerce, tối ưu tốc độ & SEO kỹ thuật, crawl dữ liệu, web app và bảo trì website.",
     includes: "Bao gồm",
     cta: "Trao đổi dự án",
+    contactHeading: "Liên hệ",
+    contactNote: "Kể mình nghe về dự án của bạn — mình thường phản hồi trong ngày.",
   },
   blog: {
     title: "Blog",
@@ -180,8 +184,8 @@ const vi: typeof en = {
     all: "Tất cả",
   },
   tools: {
-    title: "Công cụ",
-    description: "Các tool và automation mình tự làm cho WordPress, thương mại điện tử và công việc hằng ngày.",
+    title: "Sản phẩm",
+    description: "Công cụ, WordPress Kit và game TikTok LIVE — các tool và automation mình tự làm cho WordPress, thương mại điện tử và công việc hằng ngày.",
     empty: "Các tool đang được phát triển — bạn quay lại sau nhé.",
     done: "Live",
     guide: "Docs",

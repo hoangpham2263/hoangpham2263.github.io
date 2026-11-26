@@ -1,3 +1,4 @@
+import ProductsTabs from "@/components/products-tabs";
 import ContentCard from "@/components/content-card";
 import { siteConfig } from "@/config/site.config";
 import { toolsConfig } from "@/config/tools.config";
@@ -19,6 +20,7 @@ export function ToolsView({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).tools;
   return (
     <div className="w-full max-w-5xl mt-0 md:mt-6">
+      <ProductsTabs active="tools" locale={locale} />
       {toolsConfig.length === 0 ? (
         <p className="rounded-xl border border-dashed p-6 text-sm text-muted-foreground">{t.empty}</p>
       ) : (
@@ -73,7 +75,7 @@ export function wordpressMetadata(locale: Locale): Metadata {
   return {
     title: `${t.privateHeading} | ${siteConfig.creator.name}`,
     description: t.privateNote,
-    alternates: languageAlternates("/wordpress", locale),
+    alternates: languageAlternates("/tools/wordpress", locale),
   };
 }
 
@@ -81,14 +83,13 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).tools;
   return (
     <div className="w-full max-w-5xl mt-0 md:mt-6">
+      <ProductsTabs active="wordpress" locale={locale} />
       {(() => {
             const list = toolsConfig.filter((tool) => tool.kind === "wp" || tool.kind === "private");
             if (!list.length) return null;
             return (
               <section className="space-y-3 md:space-y-4">
-                <div>
-                  <h2 className="text-lg font-semibold font-heading">{t.privateHeading}</h2>
-                </div>
+                <p className="text-sm text-muted-foreground">{t.privateNote}</p>
                 {([
                   ["theme", "Themes"],
                   ["plugin", "Plugins"],

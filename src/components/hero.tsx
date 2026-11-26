@@ -43,9 +43,9 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
       <div className="flex flex-col text-sm space-y-2 max-w-2xl text-foreground/85 mt-4 mb-2 lg:mb-4">
         {[
           { value: projects.filter((p) => p.lang === locale).length, label: locale === "vi" ? "Dự án" : "Projects", href: "/" },
-          { value: toolsConfig.filter((x) => (x.kind ?? "app") === "app").length, label: locale === "vi" ? "Công cụ" : "Tools", href: "/tools" },
-          { value: gamesConfig.length, label: "TikTok Games", href: "/games" },
-          { value: toolsConfig.filter((x) => x.kind === "wp" || x.kind === "private").length, label: "WordPress Kit", href: "/wordpress" },
+          { value: toolsConfig.filter((x) => (x.kind ?? "app") === "app" || x.kind === "guide").length, label: locale === "vi" ? "Công cụ" : "Tools", href: "/tools" },
+          { value: toolsConfig.filter((x) => x.kind === "wp" || x.kind === "private").length, label: "WordPress Kit", href: "/tools/wordpress" },
+          { value: gamesConfig.length, label: "TikTok Games", href: "/tools/games" },
           { value: blogs.filter((b) => b.published && b.lang === locale).length, label: "Blog", href: "/blog" },
         ].map((stat) => (
           <p key={stat.label}>

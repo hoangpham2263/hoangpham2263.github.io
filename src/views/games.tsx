@@ -1,3 +1,4 @@
+import ProductsTabs from "@/components/products-tabs";
 import GamesBrowser from "@/components/games-browser";
 import { gameCategories, gameCoreStack, gamesConfig } from "@/config/games.config";
 import { siteConfig } from "@/config/site.config";
@@ -9,7 +10,7 @@ export function gamesMetadata(locale: Locale): Metadata {
   return {
     title: `${t.title} | ${siteConfig.creator.name}`,
     description: t.description,
-    alternates: languageAlternates("/games", locale),
+    alternates: languageAlternates("/tools/games", locale),
   };
 }
 
@@ -17,7 +18,9 @@ export function GamesView({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).games;
 
   return (
-    <div className="w-full max-w-5xl mt-0 md:mt-6 space-y-6">
+    <div className="w-full max-w-5xl mt-0 md:mt-6">
+      <ProductsTabs active="games" locale={locale} />
+      <div className="space-y-6">
       <section className="rounded-xl border p-4 sm:p-5 space-y-3 bg-muted/20">
         <div className="flex items-center gap-2 flex-wrap">
           <h2 className="text-lg font-semibold font-heading">{t.heading}</h2>
@@ -50,6 +53,7 @@ export function GamesView({ locale }: { locale: Locale }) {
           showing: t.showing,
         }}
       />
+      </div>
     </div>
   );
 }
