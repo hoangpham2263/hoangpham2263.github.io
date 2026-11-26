@@ -63,10 +63,10 @@ image: "./cover.webp"
 
 ## Logo & thương hiệu
 
-- Logo dùng ở mọi sản phẩm: `public/brand/hp-icon.svg` (icon vuông xanh "HP" có `</>` vàng), bản favicon đơn giản `public/brand/hp-favicon.svg`, chữ `hoangpham-wordmark.svg` / `hoangpham-wordmark-light.svg` (nền tối), PNG lớn `icon-512.png`.
-- Favicon của site: `public/favicon.ico`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png` — khai báo trong `src/app/layout.tsx`.
-- Các tool (File Converter, File Compressor, PDF Cutter, QR Generator, Image Resizer) chép thư mục `brand/` này vào repo riêng của từng tool.
-- Màu chính: xanh `#2563eb`; nút chính dùng nền chuyển màu `#3b82f6 → #2563eb`.
+- Toàn bộ bộ nhận diện thương hiệu (SVG vector thuần `<path>`, PNG độ phân giải cao, Social & Favicon) được lưu tập trung tại repo public [`hoangpham2263/brand`](https://github.com/hoangpham2263/brand) và gọi qua CDN `https://cdn.jsdelivr.net/gh/hoangpham2263/brand@main/...` (`svg/hoangpham-icon-tile.svg`, `favicon/favicon.svg`, `favicon/favicon.ico`, `favicon/apple-touch-icon.png`).
+- Favicon gốc dự phòng của site: `public/favicon.ico`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png` — khai báo chính trong `src/app/layout.tsx` trỏ về `hoangpham2263/brand`.
+- Mọi tool (File Converter, File Compressor, PDF Tools, QR Generator, Image Resizer, Link Converter, Memories, Domain, Go, Tools Hub, WP docs) đều trỏ trực tiếp tới CDN `hoangpham2263/brand` — sau này đổi logo chỉ cần cập nhật 1 chỗ duy nhất.
+- Hệ màu chuẩn: Primary `#1877F2` (gradient `#42A5F5 → #1877F2 → #0B5FCC`), Dark Primary `#5AA2FF`, nền sáng `#F3F6FB`, nền tối `#0B0F17`.
 
 ## Trang 404 & RSS
 

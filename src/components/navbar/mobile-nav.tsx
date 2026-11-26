@@ -43,7 +43,7 @@ export default function MobileNav() {
       <header className="flex items-center justify-between h-14 pl-4 pr-2 border-b bg-background">
         <Link href={localePath(locale, "/")} className="flex items-center gap-2 font-semibold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/hp-icon.svg" alt="" width={30} height={30} />
+          <img src="https://cdn.jsdelivr.net/gh/hoangpham2263/brand@main/svg/hoangpham-icon-tile.svg" alt="" width={30} height={30} />
           <span>{siteConfig.name}</span>
         </Link>
         <div className="flex items-center gap-1">

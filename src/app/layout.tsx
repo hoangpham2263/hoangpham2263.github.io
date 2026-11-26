@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/brand/hp-favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "https://cdn.jsdelivr.net/gh/hoangpham2263/brand@main/favicon/favicon.ico", sizes: "any" },
+      { url: "https://cdn.jsdelivr.net/gh/hoangpham2263/brand@main/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "https://cdn.jsdelivr.net/gh/hoangpham2263/brand@main/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "https://cdn.jsdelivr.net/gh/hoangpham2263/brand@main/favicon/apple-touch-icon.png",
   },
   openGraph: {
     title: text.title,

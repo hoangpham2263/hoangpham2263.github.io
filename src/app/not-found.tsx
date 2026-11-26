@@ -9,7 +9,7 @@ export default function NotFound() {
       <div className="w-full max-w-lg text-center">
         <Link href="/" className="inline-block" aria-label="HoangPham">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/hp-icon.svg" alt="HoangPham" width={56} height={56} />
+          <img src="https://cdn.jsdelivr.net/gh/hoangpham2263/brand@main/svg/hoangpham-icon-tile.svg" alt="HoangPham" width={56} height={56} />
         </Link>
         <p className="mt-8 text-7xl font-bold font-heading tracking-tight bg-gradient-to-br from-blue-500 to-blue-700 bg-clip-text text-transparent">
           404
