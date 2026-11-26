@@ -19,11 +19,11 @@ export const toolsOfTab = (tab: Exclude<ProductTab, "games">) =>
 
 // The Products tabs, in order. The hero stats read this list too, so names and counts match.
 export const productTabs = (locale: Locale): { key: ProductTab; label: string; href: string; count: number }[] => [
-  { key: "tools", label: locale === "vi" ? "Công cụ web" : "Web tools", href: "/tools", count: toolsOfTab("tools").length },
-  { key: "apps", label: locale === "vi" ? "Ứng dụng AI" : "AI apps", href: "/tools/apps", count: toolsOfTab("apps").length },
-  { key: "docs", label: locale === "vi" ? "Tài liệu" : "Docs", href: "/tools/docs", count: toolsOfTab("docs").length },
-  { key: "wordpress", label: "WordPress Kit", href: "/tools/wordpress", count: toolsOfTab("wordpress").length },
-  { key: "games", label: "TikTok Games", href: "/tools/games", count: gamesConfig.length },
+  { key: "tools", label: locale === "vi" ? "Công cụ web" : "Web tools", href: "/products", count: toolsOfTab("tools").length },
+  { key: "apps", label: locale === "vi" ? "Ứng dụng AI" : "AI apps", href: "/products/ai-apps", count: toolsOfTab("apps").length },
+  { key: "docs", label: locale === "vi" ? "Tài liệu" : "Docs", href: "/products/docs", count: toolsOfTab("docs").length },
+  { key: "wordpress", label: "WordPress Kit", href: "/products/wordpress-kit", count: toolsOfTab("wordpress").length },
+  { key: "games", label: "TikTok Games", href: "/products/tiktok-games", count: gamesConfig.length },
 ];
 
 // Sub-tabs of the Products page: one home for everything people can use or download

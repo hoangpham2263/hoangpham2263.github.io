@@ -11,14 +11,14 @@ export function toolsMetadata(locale: Locale): Metadata {
   return {
     title: `${t.title} | ${siteConfig.creator.name}`,
     description: t.description,
-    alternates: languageAlternates("/tools", locale),
+    alternates: languageAlternates("/products", locale),
   };
 }
 
 const tabMeta = {
-  tools: { path: "/tools", vi: "Công cụ web", en: "Web tools" },
-  apps: { path: "/tools/apps", vi: "Ứng dụng AI", en: "AI apps" },
-  docs: { path: "/tools/docs", vi: "Tài liệu", en: "Docs" },
+  tools: { path: "/products", vi: "Công cụ web", en: "Web tools" },
+  apps: { path: "/products/ai-apps", vi: "Ứng dụng AI", en: "AI apps" },
+  docs: { path: "/products/docs", vi: "Tài liệu", en: "Docs" },
 } as const;
 
 export function toolsTabMetadata(locale: Locale, tab: "apps" | "docs"): Metadata {
@@ -78,7 +78,7 @@ export function wordpressMetadata(locale: Locale): Metadata {
   return {
     title: `${t.privateHeading} | ${siteConfig.creator.name}`,
     description: t.privateNote,
-    alternates: languageAlternates("/tools/wordpress", locale),
+    alternates: languageAlternates("/products/wordpress-kit", locale),
   };
 }
 

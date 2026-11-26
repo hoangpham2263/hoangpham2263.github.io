@@ -145,6 +145,31 @@ export const toolsConfig: Tool[] = [
     ],
   },
   {
+    name: "English Coach",
+    kind: "desktop",
+    description: {
+      vi: "Giáo viên tiếng Anh AI từ A1 đến C2: agent (Claude Code, Codex) dạy và chấm bài theo lộ trình, app chạy cục bộ để xem từ vựng, buổi học và tiến bộ.",
+      en: "AI English teacher from A1 to C2: an agent (Claude Code, Codex) teaches and grades along a set path; a local app shows vocabulary, lessons and progress.",
+    },
+    status: "done",
+    tags: ["Node.js", "Claude Code", "Codex CLI", "JSON"],
+    links: [
+      { name: "Website", url: "https://hoangpham.is-a.dev/english-coach/" },
+      { name: "GitHub", url: "https://github.com/hoangpham2263/english-coach" },
+    ],
+  },
+  {
+    name: "Video Editing Tools",
+    kind: "desktop",
+    description: {
+      vi: "Dựng video dọc 9:16 cho TikTok, Reels, Shorts theo phong cách video mẫu bằng Remotion và FFmpeg, kèm web quản lý source và thành phẩm.",
+      en: "Builds vertical 9:16 videos for TikTok, Reels and Shorts in the style of a sample video with Remotion and FFmpeg, plus a web app for sources and finished videos.",
+    },
+    status: "done",
+    tags: ["Node.js", "Remotion", "FFmpeg", "Claude Code"],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/video-editing-tools" }],
+  },
+  {
     name: "Fortera Materials Guide",
     kind: "guide",
     description: {
@@ -171,6 +196,17 @@ export const toolsConfig: Tool[] = [
       { name: "Website", url: "https://hoangpham.is-a.dev/wp-crawl-standard/" },
       { name: "GitHub", url: "https://github.com/hoangpham2263/wp-crawl-standard" },
     ],
+  },
+  {
+    name: "Anti-LLM Skill",
+    kind: "guide",
+    description: {
+      vi: "Skill cho Claude Code biên tập câu chữ tiếng Việt và tiếng Anh cho tự nhiên, đúng dữ kiện và sạch ký tự định dạng.",
+      en: "A Claude Code skill that edits Vietnamese and English text to read naturally, stay factual and drop stray formatting characters.",
+    },
+    status: "done",
+    tags: ["Claude Code", "Skill", "Markdown"],
+    links: [{ name: "GitHub", url: "https://github.com/hoangpham2263/anti-llm-skill" }],
   },
   {
     name: "wp-theme-starter",

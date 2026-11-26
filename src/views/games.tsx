@@ -10,7 +10,7 @@ export function gamesMetadata(locale: Locale): Metadata {
   return {
     title: `${t.title} | ${siteConfig.creator.name}`,
     description: t.description,
-    alternates: languageAlternates("/tools/games", locale),
+    alternates: languageAlternates("/products/tiktok-games", locale),
   };
 }
 

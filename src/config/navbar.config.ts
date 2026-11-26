@@ -1,9 +1,9 @@
 import { NavItem } from "@/types";
 
-// Main menu. Tools, WordPress Kit and TikTok Games live under Products (/tools) as sub-tabs.
+// Main menu. Tools, WordPress Kit and TikTok Games live under Products (/products) as sub-tabs.
 export const navbarConfig: NavItem[] = [
   { title: "Projects", url: "/" },
-  { title: "Products", url: "/tools" },
+  { title: "Products", url: "/products" },
   { title: "Experience", url: "/experience" },
   { title: "Blog", url: "/blog" },
   { title: "Services", url: "/services" },
