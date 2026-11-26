@@ -20,16 +20,6 @@ export const gameCategories: GameCategory[] = [
   { id: "fun", label: { vi: "Giải trí tương tác", en: "Just for Fun" } },
 ];
 
-export const gameCoreStack = [
-  "Node.js",
-  "WebSocket",
-  "HTML5 Canvas",
-  "TikTok LIVE",
-  "OBS 9:16",
-  "Edge TTS",
-  "WebAudio",
-];
-
 export const gamesConfig: LiveGame[] = [
   // 1. Player vs Player (11)
   {
