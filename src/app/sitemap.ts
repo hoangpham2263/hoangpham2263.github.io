@@ -6,7 +6,7 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 // /projects is left out: its canonical is the home page
-const staticPaths = ["/", "/tools", "/tools/wordpress", "/tools/games", "/experience", "/blog", "/services", "/cv"];
+const staticPaths = ["/", "/tools", "/tools/wordpress", "/tools/games", "/experience", "/blog", "/services", "/contact", "/cv"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = siteConfig.siteUrl.replace(/\/$/, "");

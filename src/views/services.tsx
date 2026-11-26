@@ -1,9 +1,10 @@
-import ContactCards from "@/views/contact";
+import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site.config";
 import { servicesConfig } from "@/config/services.config";
-import { getDictionary, languageAlternates, type Locale } from "@/i18n";
+import { getDictionary, languageAlternates, localePath, type Locale } from "@/i18n";
 import { Check } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export function servicesMetadata(locale: Locale): Metadata {
   const t = getDictionary(locale).services;
@@ -36,13 +37,11 @@ export function ServicesView({ locale }: { locale: Locale }) {
           </div>
         ))}
       </div>
-      <section id="contact" className="scroll-mt-24 mt-10 space-y-3 md:space-y-4">
-        <div className="space-y-1">
-          <h2 className="text-lg font-semibold font-heading">{t.contactHeading}</h2>
-          <p className="text-sm text-muted-foreground">{t.contactNote}</p>
-        </div>
-        <ContactCards locale={locale} />
-      </section>
+      <div className="mt-6 flex justify-center">
+        <Button className="shadow-none" asChild>
+          <Link href={localePath(locale, "/contact")}>{t.cta}</Link>
+        </Button>
+      </div>
     </div>
   );
 }

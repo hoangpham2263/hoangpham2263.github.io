@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { chipClass, chipCountClass, chipRow } from "@/components/ui/chip";
 import type { GameCategory, GameCategoryId, LiveGame } from "@/config/games.config";
 import type { Locale } from "@/i18n";
 
@@ -60,15 +60,10 @@ export default function GamesBrowser({ games, categories, locale, labels }: Game
       key={value ?? "all"}
       type="button"
       onClick={() => setActive(value)}
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors",
-        active === value
-          ? "border-transparent bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/25"
-          : "hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
-      )}
+      className={chipClass(active === value)}
     >
       {label}
-      <span className={cn("text-xs", active === value ? "opacity-80" : "text-muted-foreground")}>{count}</span>
+      <span className={chipCountClass(active === value)}>{count}</span>
     </button>
   );
 

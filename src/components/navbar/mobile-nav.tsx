@@ -19,7 +19,7 @@ export default function MobileNav() {
   const t = getDictionary(locale);
   const path = stripLocale(pathname);
   const [open, setOpen] = useState(false);
-  const labels: Record<string, string> = { "/": t.nav.projects, "/tools": t.nav.products, "/experience": t.nav.experience, "/blog": t.nav.blog, "/services": t.nav.services };
+  const labels: Record<string, string> = { "/": t.nav.projects, "/tools": t.nav.products, "/experience": t.nav.experience, "/blog": t.nav.blog, "/services": t.nav.services, "/contact": t.nav.contact };
   const isActive = (url: string) =>
     url === "/" ? path.startsWith("/projects") : path === url || path.startsWith(`${url}/`);
 

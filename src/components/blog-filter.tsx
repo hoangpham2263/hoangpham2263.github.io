@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
+import { chipClass, chipCountClass, chipRow } from "@/components/ui/chip";
 
 // Category chips above the post list; cards carry data-category and are hidden when filtered out
 export default function BlogFilter({
@@ -45,20 +45,17 @@ export default function BlogFilter({
       key={label}
       type="button"
       onClick={() => choose(value)}
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors",
-        active === value ? "border-transparent bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md shadow-blue-500/25" : "hover:border-primary/40 hover:bg-primary/[0.06] hover:text-primary"
-      )}
+      className={chipClass(active === value)}
     >
       {label}
-      <span className={cn("text-xs", active === value ? "opacity-80" : "text-muted-foreground")}>{count}</span>
+      <span className={chipCountClass(active === value)}>{count}</span>
     </button>
   );
 
   return (
     <div data-restore>
       {categories.length > 1 && (
-        <div className="mb-4 flex flex-wrap gap-2">
+        <div className={chipRow}>
           {chip(allLabel, total, null)}
           {categories.map((c) => chip(c.name, c.count, c.name))}
         </div>

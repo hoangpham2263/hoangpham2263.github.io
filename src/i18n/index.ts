@@ -40,7 +40,7 @@ export const languageAlternates = (path: string, locale: Locale) => {
 export const ogLocale = (locale: Locale) => (locale === "vi" ? "vi_VN" : "en_US");
 
 const en = {
-  nav: { projects: "Projects", products: "Products", experience: "Experience", blog: "Blog", services: "Services" },
+  nav: { projects: "Projects", products: "Products", experience: "Experience", blog: "Blog", services: "Services", contact: "Contact" },
   hero: {
     bio: "Hi there 👋 I'm Hoang, a developer who enjoys turning ideas into real products. I like exploring new technology, building my own tools and automating repetitive work to get more done. Take a look around to get to know me better — and if you'd like to work together, feel free to reach out.",
     contact: "Contact",
@@ -78,8 +78,6 @@ const en = {
     description: "WordPress and WooCommerce websites, speed and technical SEO, data crawling, web apps and maintenance.",
     includes: "Includes",
     cta: "Discuss your project",
-    contactHeading: "Contact",
-    contactNote: "Tell me about your project — I usually reply within a day.",
   },
   blog: {
     title: "Blog",
@@ -135,7 +133,7 @@ const en = {
 };
 
 const vi: typeof en = {
-  nav: { projects: "Dự án", products: "Sản phẩm", experience: "Kinh nghiệm", blog: "Blog", services: "Dịch vụ" },
+  nav: { projects: "Dự án", products: "Sản phẩm", experience: "Kinh nghiệm", blog: "Blog", services: "Dịch vụ", contact: "Liên hệ" },
   hero: {
     bio: "Xin chào 👋 Mình là Hoàng, một lập trình viên thích biến ý tưởng thành sản phẩm thật. Mình hay tìm hiểu công nghệ mới, tự làm những công cụ của riêng mình và tự động hóa các việc lặp lại để làm việc hiệu quả hơn. Mời bạn dạo một vòng portfolio để hiểu thêm về mình — nếu muốn cùng hợp tác, cứ liên hệ nhé.",
     contact: "Liên hệ",
@@ -173,8 +171,6 @@ const vi: typeof en = {
     description: "Thiết kế website WordPress, WooCommerce, tối ưu tốc độ & SEO kỹ thuật, crawl dữ liệu, web app và bảo trì website.",
     includes: "Bao gồm",
     cta: "Trao đổi dự án",
-    contactHeading: "Liên hệ",
-    contactNote: "Kể mình nghe về dự án của bạn — mình thường phản hồi trong ngày.",
   },
   blog: {
     title: "Blog",
