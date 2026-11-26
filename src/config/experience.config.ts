@@ -6,7 +6,7 @@ export const experiencesConfig: Experience[] = [
     employmentType: "Full-time",
     company: {
       name: "Vani Ecom",
-      url: "https://vaniecom.com/",
+      url: "",
     },
     location: {
       name: "Ho Chi Minh City",
@@ -14,12 +14,10 @@ export const experiencesConfig: Experience[] = [
     start: "October 2026",
     end: "Present",
     description: [
-      "Built Vaniecom Hub (Next.js, TypeScript, PostgreSQL, Playwright MCP): an internal platform for multi-brand Shopify project management, AI inbox triage, skill library and shared browser profiles",
-      "Developed parallel AI desktop tools: multi-session batch product/review image generation with Loox CSV export (Product Review), automated short-form product video production with FFmpeg & Grok AI (Product Video), and multi-store Shopify CLI management (Shopify Switch)",
-      "Built Social Autopilot and a multi-brand AI content skill system: automated cross-platform research, post/album generation, approval workflows and scheduled publishing to Facebook and Instagram via Metricool MCP",
-      "Customised and reskinned Shopify storefronts (Liquid, CSS/JS): optimised page speed and rebuilt responsive layouts/banners for US stores with automated QA checks and core protection",
-      "Conducted keyword/niche research and automated product listing: analysed keywords and niches (Google Keyword Planner, Etsy), prepared product image sets, pushed draft products via Shopify Admin GraphQL, and built a searchable materials guide for 214 products",
-      "Managed Facebook and Instagram channels: planned content, produced visuals and short videos, published posts and handled customer comments and messages",
+      "Managed and customised Shopify storefronts (Liquid, CSS/JS)",
+      "Market and keyword research, product listing",
+      "Planned and produced content for Facebook and Instagram",
+      "Built internal tools and AI automation",
     ],
   },
   {
