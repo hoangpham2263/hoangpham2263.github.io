@@ -51,7 +51,8 @@ export function ToolsView({ locale, tab = "tools" }: { locale: Locale; tab?: "to
               tags={tool.tags}
               links={tool.links}
               locale={locale}
-              badge={
+              // AI apps run on the user's machine, so no "Live" status there
+              badge={tab === "apps" ? undefined : (
                 <span
                   className={cn(
                     "text-xs px-2 py-0.5 rounded font-medium",
@@ -64,7 +65,7 @@ export function ToolsView({ locale, tab = "tools" }: { locale: Locale; tab?: "to
                 >
                   {tab === "docs" ? t.guide : tool.status === "done" ? t.done : t.building}
                 </span>
-              }
+              )}
             />
           ))}
         </div>

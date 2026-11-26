@@ -145,20 +145,6 @@ export const toolsConfig: Tool[] = [
     ],
   },
   {
-    name: "English Coach",
-    kind: "desktop",
-    description: {
-      vi: "Giáo viên tiếng Anh AI từ A1 đến C2: agent (Claude Code, Codex) dạy và chấm bài theo lộ trình, app chạy cục bộ để xem từ vựng, buổi học và tiến bộ.",
-      en: "AI English teacher from A1 to C2: an agent (Claude Code, Codex) teaches and grades along a set path; a local app shows vocabulary, lessons and progress.",
-    },
-    status: "done",
-    tags: ["Node.js", "Claude Code", "Codex CLI", "JSON"],
-    links: [
-      { name: "Website", url: "https://hoangpham.is-a.dev/english-coach/" },
-      { name: "GitHub", url: "https://github.com/hoangpham2263/english-coach" },
-    ],
-  },
-  {
     name: "Video Editing Tools",
     kind: "desktop",
     description: {
