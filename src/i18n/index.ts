@@ -95,8 +95,6 @@ const en = {
     private: "Private",
     privateHeading: "WordPress Kit",
     privateNote: "Themes, plugins and snippets I use to build WordPress sites.",
-    appsHeading: "Web tools",
-    guidesHeading: "Docs",
     building: "In progress",
   },
   games: {
@@ -179,8 +177,6 @@ const vi: typeof en = {
     private: "Private",
     privateHeading: "WordPress Kit",
     privateNote: "Theme, plugin và snippet mình dùng để dựng site WordPress.",
-    appsHeading: "Web tools",
-    guidesHeading: "Docs",
     building: "In progress",
   },
   games: {

@@ -1,7 +1,6 @@
-import ProductsTabs from "@/components/products-tabs";
+import ProductsTabs, { toolsOfTab } from "@/components/products-tabs";
 import ContentCard from "@/components/content-card";
 import { siteConfig } from "@/config/site.config";
-import { toolsConfig } from "@/config/tools.config";
 import { getDictionary, languageAlternates, type Locale } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { Code, Download, Github } from "lucide-react";
@@ -16,54 +15,58 @@ export function toolsMetadata(locale: Locale): Metadata {
   };
 }
 
-export function ToolsView({ locale }: { locale: Locale }) {
+const tabMeta = {
+  tools: { path: "/tools", vi: "Công cụ web", en: "Web tools" },
+  apps: { path: "/tools/apps", vi: "Ứng dụng AI", en: "AI apps" },
+  docs: { path: "/tools/docs", vi: "Tài liệu", en: "Docs" },
+} as const;
+
+export function toolsTabMetadata(locale: Locale, tab: "apps" | "docs"): Metadata {
   const t = getDictionary(locale).tools;
+  return {
+    title: `${tabMeta[tab][locale]} | ${siteConfig.creator.name}`,
+    description: t.description,
+    alternates: languageAlternates(tabMeta[tab].path, locale),
+  };
+}
+
+// Web tools, AI apps and Docs tabs: same card list, different entries
+export function ToolsView({ locale, tab = "tools" }: { locale: Locale; tab?: "tools" | "apps" | "docs" }) {
+  const t = getDictionary(locale).tools;
+  const list = toolsOfTab(tab);
   return (
     <div className="w-full max-w-5xl mt-0 md:mt-6">
-      <ProductsTabs active="tools" locale={locale} />
-      {toolsConfig.length === 0 ? (
+      <ProductsTabs active={tab} locale={locale} />
+      {list.length === 0 ? (
         <p className="rounded-xl border border-dashed p-6 text-sm text-muted-foreground">{t.empty}</p>
       ) : (
-        <div className="space-y-10">
-          {(["app", "guide"] as const).map((kind) => {
-            const list = toolsConfig.filter((tool) => (tool.kind ?? "app") === kind);
-            if (!list.length) return null;
-            return (
-              <section key={kind} className="space-y-3 md:space-y-4">
-                <div>
-                  <h2 className="text-lg font-semibold font-heading">{kind === "app" ? t.appsHeading : t.guidesHeading}</h2>
-                </div>
-                <div className="space-y-3 md:space-y-6">
-                  {list.map((tool) => (
-                    <ContentCard
-                      key={tool.name}
-                      title={tool.name}
-                      description={tool.description[locale]}
-                      href={tool.links.find((l) => l.name.toLowerCase() === "website")?.url ?? tool.links[0]?.url}
-                      image={tool.image ? { src: tool.image, width: 1200, height: 675 } : undefined}
-                      tags={tool.tags}
-                      links={tool.links}
-                      locale={locale}
-                      badge={
-                        <span
-                          className={cn(
-                            "text-xs px-2 py-0.5 rounded font-medium",
-                            kind === "guide"
-                              ? "border border-cyan-600/40 text-cyan-700 dark:text-cyan-300 bg-cyan-500/10"
-                              : tool.status === "done"
-                                ? "bg-primary text-primary-foreground"
-                                : "bg-secondary text-secondary-foreground"
-                          )}
-                        >
-                          {kind === "guide" ? t.guide : tool.status === "done" ? t.done : t.building}
-                        </span>
-                      }
-                    />
-                  ))}
-                </div>
-              </section>
-            );
-          })}
+        <div className="space-y-3 md:space-y-6">
+          {list.map((tool) => (
+            <ContentCard
+              key={tool.name}
+              title={tool.name}
+              description={tool.description[locale]}
+              href={tool.links.find((l) => l.name.toLowerCase() === "website")?.url ?? tool.links[0]?.url}
+              image={tool.image ? { src: tool.image, width: 1200, height: 675 } : undefined}
+              tags={tool.tags}
+              links={tool.links}
+              locale={locale}
+              badge={
+                <span
+                  className={cn(
+                    "text-xs px-2 py-0.5 rounded font-medium",
+                    tab === "docs"
+                      ? "border border-cyan-600/40 text-cyan-700 dark:text-cyan-300 bg-cyan-500/10"
+                      : tool.status === "done"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary text-secondary-foreground"
+                  )}
+                >
+                  {tab === "docs" ? t.guide : tool.status === "done" ? t.done : t.building}
+                </span>
+              }
+            />
+          ))}
         </div>
       )}
     </div>
@@ -85,7 +88,7 @@ export function WordPressKitView({ locale }: { locale: Locale }) {
     <div className="w-full max-w-5xl mt-0 md:mt-6">
       <ProductsTabs active="wordpress" locale={locale} />
       {(() => {
-            const list = toolsConfig.filter((tool) => tool.kind === "wp" || tool.kind === "private");
+            const list = toolsOfTab("wordpress");
             if (!list.length) return null;
             return (
               <section className="space-y-3 md:space-y-4">

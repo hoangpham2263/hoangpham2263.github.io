@@ -6,8 +6,7 @@ import ThemeToggler from "@/components/theme/toggler";
 import { Rss } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { blogs, projects } from "#site/content";
-import { gamesConfig } from "@/config/games.config";
-import { toolsConfig } from "@/config/tools.config";
+import { productTabs } from "@/components/products-tabs";
 import LanguageSwitcher from "@/components/language-switcher";
 import { getDictionary, localePath, type Locale } from "@/i18n";
 
@@ -43,9 +42,7 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
       <div className="flex flex-col text-sm space-y-2 max-w-2xl text-foreground/85 mt-4 mb-2 lg:mb-4">
         {[
           { value: projects.filter((p) => p.lang === locale).length, label: locale === "vi" ? "Dự án" : "Projects", href: "/" },
-          { value: toolsConfig.filter((x) => (x.kind ?? "app") === "app" || x.kind === "guide").length, label: locale === "vi" ? "Công cụ" : "Tools", href: "/tools" },
-          { value: toolsConfig.filter((x) => x.kind === "wp" || x.kind === "private").length, label: "WordPress Kit", href: "/tools/wordpress" },
-          { value: gamesConfig.length, label: "TikTok Games", href: "/tools/games" },
+          ...productTabs(locale).map((tab) => ({ value: tab.count, label: tab.label, href: tab.href })),
           { value: blogs.filter((b) => b.published && b.lang === locale).length, label: "Blog", href: "/blog" },
         ].map((stat) => (
           <p key={stat.label}>

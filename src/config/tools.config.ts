@@ -4,7 +4,7 @@ export type Tool = {
   name: string;
   description: { vi: string; en: string };
   status: "done" | "building";
-  kind?: "app" | "guide" | "wp" | "private"; // app = runs in the browser (default), guide = docs, wp = public WordPress kit repo, private = private WordPress kit repo
+  kind?: "app" | "desktop" | "guide" | "wp" | "private"; // app = runs in the browser (default), desktop = AI desktop app / automation, guide = docs, wp = public WordPress kit repo, private = private WordPress kit repo
   tags: string[];
   links: { name: string; url: string }[]; // e.g. { name: "GitHub", url: "https://github.com/..." }
   premium?: boolean; // paid plugin (WordPress tab groups it separately)
@@ -105,6 +105,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "Product Review",
+    kind: "desktop",
     description: {
       vi: "Ứng dụng desktop đa phiên tạo ảnh sản phẩm/review mẫu hàng loạt bằng AI (Codex, Claude Code, Antigravity, Google Flow) và xuất CSV Loox.",
       en: "Multi-session desktop app for batch AI product/review image generation (Codex, Claude Code, Antigravity, Google Flow) with Loox CSV export.",
@@ -118,6 +119,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "Product Video",
+    kind: "desktop",
     description: {
       vi: "Ứng dụng desktop dựng video ngắn giới thiệu sản phẩm tự động với FFmpeg, Codex CLI và Grok AI (phân tích video mẫu, chuyển cảnh, phụ đề, nhạc nền).",
       en: "Desktop app for automated short-form product video creation with FFmpeg, Codex CLI and Grok AI (reference analysis, transitions, subtitles and music).",
@@ -131,6 +133,7 @@ export const toolsConfig: Tool[] = [
   },
   {
     name: "Social Autopilot",
+    kind: "desktop",
     description: {
       vi: "Công cụ tự động nghiên cứu nội dung đa nền tảng, tạo bài đăng/album ảnh AI theo skill thương hiệu và lên lịch đăng Facebook, Instagram qua Metricool MCP.",
       en: "Automated cross-platform content research, brand-guided AI post/album generation and scheduled publishing to Facebook & Instagram via Metricool MCP.",
